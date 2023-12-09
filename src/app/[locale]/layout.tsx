@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation'
 
 // i18n
 import { Providers } from '@/components/Providers'
+import i18nConfig from '@/i18nConfig'
 
-// export function generateStaticParams() {
-//   return locales.map((locale) => ({ locale }))
-// }
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }))
+}
 
 export const metadata: Metadata = {
   //TODO: add metaData
@@ -21,7 +22,7 @@ export default function LocaleLayout({
   params: { locale: string }
 }) {
   // if locale is invalid, return 404
-  // if (!locales.includes(params.locale as any)) notFound()
+  if (!i18nConfig.locales.includes(params.locale as any)) notFound()
 
   return (
     <html
