@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
-import { locales } from '@/middleware'
+import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
+import { locales, Locale } from '@/middleware'
 import { notFound } from 'next/navigation'
 
 import { getTranslations } from 'next-intl/server'
@@ -9,7 +9,7 @@ import { getTranslations } from 'next-intl/server'
 export default async function Home({
     params: { locale },
 }: {
-    params: { locale: string }
+    params: { locale: Locale }
 }) {
     unstable_setRequestLocale(locale)
     if (!locales.includes(locale as any)) notFound()

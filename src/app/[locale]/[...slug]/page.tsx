@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { locales, Locale } from '@/middleware'
-import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
+import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
+import { locales, Locale } from '@/middleware'
 import { notFound } from 'next/navigation'
 
 export type PageProps = {
