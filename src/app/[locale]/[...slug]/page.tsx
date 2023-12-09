@@ -7,6 +7,7 @@ export default function Home({
 }: {
 		params: { slug: string, locale: (typeof locales)[number] }
 }) {
+	console.log(slug, locale)
   unstable_setRequestLocale(locale)
   const t = useTranslations('Index')
 
