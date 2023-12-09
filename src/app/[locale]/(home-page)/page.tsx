@@ -3,7 +3,7 @@ export default function Home({
 }: {
   params: { locale: string }
 }) {
-  // Hello Husky 2 Electric Boogaloo
+  // Hello Husky 3: Oopsie I forgot is-ci
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
