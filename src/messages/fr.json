@@ -1,5 +1,4 @@
 {
-  "Index": {
-    "title": "Bonjour le monde!"
-  }
+  "home_title": "Bonjour le Monde",
+  "home_greeting": "Bienvenue sur mon site"
 }
