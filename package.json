@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --no-cache",
+    "serve": "next build && next start --port 8000",
+    "format": "prettier --write --config .prettierrc \"./**/*.{js,jsx,ts,tsx,json,scss,css}\"",
+    "prepare": "is-ci || husky install && chmod ug+x .husky/*",
+    "lh": "lighthouse http://localhost:3000 --view"
   },
   "dependencies": {
     "@netlify/next": "^1.4.9",
@@ -14,7 +18,11 @@
     "next-i18n-router": "^5.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-intl": "^6.5.5"
+    "react-intl": "^6.5.5",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -24,9 +32,18 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
-		"prettier": "^3.0.1",
-		"prettier-plugin-tailwindcss": "^0.5.5",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.5.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write --config .prettierrc \"./**/*.{js,jsx,ts,tsx,json,scss,css}\""
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write --config .prettierrc \"./**/*.{js,jsx,ts,tsx,json,scss,css}\""
+    ]
   }
 }
