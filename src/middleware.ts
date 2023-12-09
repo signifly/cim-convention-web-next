@@ -2,6 +2,7 @@ import createMiddleware from 'next-intl/middleware'
 
 export const locales = ['en', 'fr']
 export const defaultLocale = 'en'
+export type Locale = (typeof locales)[number]
 
 export default createMiddleware({
     locales,

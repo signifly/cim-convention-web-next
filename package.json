@@ -15,6 +15,8 @@
     "dependencies": {
         "@netlify/next": "^1.4.9",
         "clsx": "^2.0.0",
+        "graphql": "^16.8.1",
+        "graphql-request": "^6.1.0",
         "husky": "^8.0.3",
         "is-ci": "^3.0.1",
         "next": "14.0.4",
