@@ -14,7 +14,6 @@ export default async function Home({
     unstable_setRequestLocale(locale)
     if (!locales.includes(locale as any)) notFound()
 
-    const t = await getTranslations('Index')
     const { data: pageData } = await fetchDatoContent(
         getPageBySlugQuery({
             locale: locale,
@@ -24,10 +23,7 @@ export default async function Home({
     )
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <h1 className="text-5xl font-bold">Home Page</h1>
-            <p className="text-xl">{t('title')}</p>
-            <p className="text-xl">Locale: {locale}</p>
+        <main className="">
             {pageData?.homePage?.body?.map((block: any) => (
                 <ComponentParser key={block.id} data={block} />
             ))}

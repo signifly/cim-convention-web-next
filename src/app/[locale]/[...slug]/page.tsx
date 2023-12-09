@@ -11,11 +11,9 @@ export type PageProps = {
     }
 }
 
-export default async function Home({
+export default async function Page({
     params: { slug, locale },
-}: {
-    params: { slug: string; locale: string }
-}) {
+}: PageProps): Promise<JSX.Element | void> {
     unstable_setRequestLocale(locale)
     if (!locales.includes(locale as any)) notFound()
 
@@ -27,9 +25,7 @@ export default async function Home({
     )
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <h1 className="text-5xl font-bold">Page: {slug}</h1>
-            <p className="text-xl">Locale: {locale}</p>
+        <main className="">
             {pageData?.page?.body?.map((block: any) => (
                 <ComponentParser key={block.id} data={block} />
             ))}
