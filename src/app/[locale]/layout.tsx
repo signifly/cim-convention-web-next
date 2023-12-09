@@ -1,13 +1,12 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 // i18n
-import type { Locale } from '@/i18nConfig'
-import i18nConfig from '@/i18nConfig'
 import { Providers } from '@/components/Providers'
+import { locales } from '@/middleware'
 
 export function generateStaticParams() {
-  const locales = i18nConfig.locales.map((locale: Locale) => ({ locale }))
   return locales
 }
 
@@ -20,8 +19,12 @@ export default function HomePageLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { locale: Locale }
+  params: { locale: (typeof locales)[number] }
 }) {
+  // if locale is invalid, return 404
+  if (!locales.includes(params.locale as any)) notFound()
+  console.log(params.locale)
+
   return (
     <html
       lang={params.locale}
