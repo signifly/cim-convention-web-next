@@ -3,7 +3,7 @@ export default function Home({
 }: {
   params: { locale: string }
 }) {
-  //test changes with husky
+  // Hello Husky 2 Electric Boogaloo
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
