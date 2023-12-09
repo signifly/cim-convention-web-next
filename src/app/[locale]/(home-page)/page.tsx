@@ -1,19 +1,12 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
-import { useTranslations } from 'next-intl'
-import { locales } from '@/middleware'
-
 export default function Home({
   params: { locale },
 }: {
-  params: { locale: (typeof locales)[number] }
+  params: { locale: string }
 }) {
-	console.log(locale)
-  unstable_setRequestLocale(locale)
-  const t = useTranslations('Index')
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {t('title')}
+			<h1 className="text-5xl font-bold">Home Page</h1>
+			<p className="text-xl">Locale: {locale}</p>
     </main>
   )
 }

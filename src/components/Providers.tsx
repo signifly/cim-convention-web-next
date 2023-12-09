@@ -1,9 +1,9 @@
 // import { ThemeProvider } from '@/components/ThemeProvider'
-import { locales } from '@/middleware'
+// import { locales } from '@/middleware'
 
 type ProviderProps = {
   children: React.ReactNode
-  params: { locale: (typeof locales)[number] }
+  params: { locale: string }
 }
 
 export async function Providers({ children, params }: ProviderProps) {

@@ -1,15 +1,13 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
 import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 // i18n
 import { Providers } from '@/components/Providers'
-import { locales } from '@/middleware'
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
-}
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }))
+// }
 
 export const metadata: Metadata = {
   //TODO: add metaData
@@ -20,11 +18,10 @@ export default function LocaleLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { locale: (typeof locales)[number] }
+  params: { locale: string }
 }) {
   // if locale is invalid, return 404
-  if (!locales.includes(params.locale as any)) notFound()
-  unstable_setRequestLocale(params.locale)
+  // if (!locales.includes(params.locale as any)) notFound()
 
   return (
     <html
