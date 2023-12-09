@@ -1,24 +1,18 @@
-import { Locale } from '@/i18nConfig'
-import ClientIntlProvider from './ClientIntlProvider'
-import getIntl from '@/messages/getIntl'
 // import { ThemeProvider } from '@/components/ThemeProvider'
 
 type ProviderProps = {
-  children: React.ReactNode
-  params: { locale: Locale }
+    children: React.ReactNode
+    params: { locale: string }
 }
 
 export async function Providers({ children, params }: ProviderProps) {
-  //TODO: fetch i18n messages from Dato instead
-  const intl = await getIntl(params.locale)
+    //TODO: fetch i18n messages from Dato instead
 
-  return (
-    <>
-      {/* <ThemeProvider> */}
-      <ClientIntlProvider messages={intl.messages} locale={params.locale}>
-        {children}
-      </ClientIntlProvider>
-      {/* </ThemeProvider> */}
-    </>
-  )
+    return (
+        <>
+            {/* <ThemeProvider> */}
+            {children}
+            {/* </ThemeProvider> */}
+        </>
+    )
 }
