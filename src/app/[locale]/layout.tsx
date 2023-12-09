@@ -1,3 +1,4 @@
+import { unstable_setRequestLocale } from 'next-intl/server'
 import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -7,14 +8,14 @@ import { Providers } from '@/components/Providers'
 import { locales } from '@/middleware'
 
 export function generateStaticParams() {
-  return locales
+  return locales.map((locale) => ({ locale }))
 }
 
 export const metadata: Metadata = {
   //TODO: add metaData
 }
 
-export default function HomePageLayout({
+export default function LocaleLayout({
   children,
   params,
 }: {
@@ -23,7 +24,7 @@ export default function HomePageLayout({
 }) {
   // if locale is invalid, return 404
   if (!locales.includes(params.locale as any)) notFound()
-  console.log(params.locale)
+  unstable_setRequestLocale(params.locale)
 
   return (
     <html
