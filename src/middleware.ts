@@ -6,9 +6,10 @@ export const defaultLocale = 'en'
 export default createMiddleware({
     locales,
     defaultLocale,
+    localePrefix: 'as-needed',
 })
 
 export const config = {
     // Match only internationalized pathnames
-    matcher: ['/', '/(en|fr)/:path*'],
+    matcher: ['/((?!api|_next|_ipx|.*\\..*).*)'],
 }
