@@ -1,9 +1,11 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { cn } from '@/utils/clsxMerge'
 
-type ContainerProps = { children: ReactNode } & ComponentPropsWithoutRef<'div'>
+type GridContainerProps = {
+  children: ReactNode
+} & ComponentPropsWithoutRef<'div'>
 
-export const Container = (props: ContainerProps) => {
+export const GridContainer = (props: GridContainerProps) => {
   const { className, children, ...rest } = props
 
   return (

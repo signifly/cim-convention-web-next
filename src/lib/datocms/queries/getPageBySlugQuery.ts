@@ -23,6 +23,7 @@ export const getPageBySlugQuery = ({
   return gql`
     ${HERO_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
+		${RESPONSIVE_IMAGE_FRAGMENT}
 
       query PageQuery {
         _site {
