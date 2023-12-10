@@ -5,16 +5,40 @@ import type { CSSProperties } from 'react'
 export const EuclidCircularA: NextFont = localFont({
   // TODO: convert otf to woff2 and replace path
   src: [
+    // bold
+    {
+      path: '../../public/fonts/Euclid Circular A Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    // bold italic
+    {
+      path: '../../public/fonts/Euclid Circular A Bold Italic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
     // semi-bold
     {
       path: '../../public/fonts/Euclid Circular A SemiBold.ttf',
-      weight: '300',
+      weight: '600',
       style: 'normal',
     },
     // semi-bold italic
     {
       path: '../../public/fonts/Euclid Circular A SemiBold Italic.ttf',
-      weight: '300',
+      weight: '600',
+      style: 'italic',
+    },
+    // medium
+    {
+      path: '../../public/fonts/Euclid Circular A Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    // medium italic
+    {
+      path: '../../public/fonts/Euclid Circular A Medium Italic.ttf',
+      weight: '500',
       style: 'italic',
     },
     // regular
@@ -29,40 +53,16 @@ export const EuclidCircularA: NextFont = localFont({
       weight: '400',
       style: 'italic',
     },
-    // medium
-    {
-      path: '../../public/fonts/Euclid Circular A Medium.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    // medium italic
-    {
-      path: '../../public/fonts/Euclid Circular A Medium Italic.ttf',
-      weight: '600',
-      style: 'italic',
-    },
     // light
     {
       path: '../../public/fonts/Euclid Circular A Light.ttf',
-      weight: '700',
+      weight: '300',
       style: 'normal',
     },
     // light italic
     {
       path: '../../public/fonts/Euclid Circular A Light Italic.ttf',
-      weight: '700',
-      style: 'italic',
-    },
-    // bold
-    {
-      path: '../../public/fonts/Euclid Circular A Bold.ttf',
-      weight: '800',
-      style: 'normal',
-    },
-    // bold italic
-    {
-      path: '../../public/fonts/Euclid Circular A Bold Italic.ttf',
-      weight: '800',
+      weight: '300',
       style: 'italic',
     },
   ],

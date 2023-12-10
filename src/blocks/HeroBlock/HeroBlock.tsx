@@ -4,7 +4,7 @@ export function HeroBlock(props: HeroBlockRecord) {
   const { emphasizedText, restOfHeadline } = props
 
   return (
-    <div>
+    <div id="hero">
       <h1>
         <span>{emphasizedText}</span>
         {restOfHeadline}

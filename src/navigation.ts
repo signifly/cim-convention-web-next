@@ -13,7 +13,11 @@ export const pathnames = {
   '/[locale]': '/[locale]',
   '/[locale]/[...slug]': '/[locale]/[...slug]',
   '/[...slug]': '/[...slug]',
-} satisfies Pathnames<typeof locales>
+} satisfies Pathnames<typeof locales> & Record<string & {}, string>
 
 export const { Link, redirect, usePathname, useRouter } =
-  createLocalizedPathnamesNavigation({ locales, localePrefix, pathnames })
+  createLocalizedPathnamesNavigation({
+    locales,
+    localePrefix,
+    pathnames: pathnames as typeof pathnames & Record<string & {}, string>,
+  })

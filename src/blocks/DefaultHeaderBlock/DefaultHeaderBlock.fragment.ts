@@ -17,6 +17,7 @@ export const DEFAULT_HEADER_BLOCK_FRAGMENT = gql`
     fragment DefaultHeaderBlockFragment on DefaultHeaderBlockRecord {
         id
         _modelApiKey
+				ctaButtonLabel
 				cimLogo {
 					url
 					alt

@@ -42,6 +42,9 @@ const config: Config = {
         'brand-gradient':
           'linear-gradient(to bottom right, #FFF000, #00A550, #00ADEF)',
       },
+      boxShadow: {
+        xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
+      },
     },
   },
   plugins: [],

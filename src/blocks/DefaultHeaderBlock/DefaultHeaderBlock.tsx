@@ -9,7 +9,7 @@ import { DefaultHeaderBlockRecord } from '@/types/generated'
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { SmartLink } from '@/components/SmartLink/index'
+import { StyledLink } from '@/components/StyledLink'
 
 export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
   const { cimLogo, siteLogo, menu, ctaButtonLabel } = props
@@ -44,13 +44,13 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
 
   const DesktopMenuContent = () => {
     return (
-      <Popover.Group className="hidden lg:flex lg:gap-x-12">
+      <Popover.Group className="hidden lg:flex lg:gap-x-9">
         {menu?.menuItems.map((item) => {
           const { subMenuItems } = item
           if (subMenuItems.length > 0) {
             return (
               <Popover key={item.id} className="relative">
-                <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                <Popover.Button className="flex items-center gap-x-1 font-medium leading-6 text-gray-900">
                   {item.linkTo?.title}
                   <ChevronDownIcon
                     className="h-5 w-5 flex-none text-gray-400"
@@ -74,7 +74,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                           subMenu.linkTo && (
                             <div
                               key={subMenu.id}
-                              className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                              className="group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 hover:bg-gray-50"
                             >
                               <div className="flex-auto">
                                 <Link
@@ -84,7 +84,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                                       slug: [subMenu.linkTo.slug],
                                     },
                                   }}
-                                  className="block font-semibold text-gray-900"
+                                  className="block font-medium text-gray-900"
                                 >
                                   {subMenu.name}
                                   <span className="absolute inset-0" />
@@ -107,7 +107,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                     pathname: '/[...slug]',
                     params: { slug: [item.linkTo.slug] },
                   }}
-                  className="text-sm font-semibold leading-6 text-gray-900"
+                  className="font-medium leading-6 text-gray-900"
                 >
                   {item.linkTo.title}
                 </Link>
@@ -156,7 +156,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                     <Disclosure key={item.id} as="div" className="-mx-3">
                       {({ open }) => (
                         <>
-                          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50">
                             {item.name}
                             <ChevronDownIcon
                               className={cn(
@@ -171,15 +171,15 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                               (item) =>
                                 item.linkTo && (
                                   <Disclosure.Button key={item.name} as="div">
-                                    <SmartLink
+                                    <Link
                                       href={{
                                         pathname: '/[...slug]',
                                         params: { slug: [item.linkTo.slug] },
                                       }}
-                                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                      className="block rounded-lg py-2 pl-6 pr-3 font-medium leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                       {item.name}
-                                    </SmartLink>
+                                    </Link>
                                   </Disclosure.Button>
                                 ),
                             )}
@@ -191,16 +191,16 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                 } else {
                   return (
                     item.linkTo && (
-                      <SmartLink
+                      <Link
                         key={item.id}
                         href={{
                           pathname: '/[...slug]',
                           params: { slug: [item.linkTo.slug] },
                         }}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                       >
                         {item.linkTo?.title}
-                      </SmartLink>
+                      </Link>
                     )
                   )
                 }
@@ -209,7 +209,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
             <div className="py-6">
               <a
                 href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
               >
                 Log in
               </a>
@@ -234,10 +234,21 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
         </div>
 
         {/* Right side  */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-8">
+          <div className="shrink-0">
+            <StyledLink
+              href={{
+                pathname: '/[...slug]',
+                params: { slug: ['register'] },
+              }}
+            >
+              {ctaButtonLabel}
+            </StyledLink>
+          </div>
+          <div className="h-full min-h-[56px] border border-brand-grey-300" />
+          <div className="relative h-full min-h-[56px] w-[40px]">
+            <Image src={cimLogo.url} alt={cimLogo.alt} fill />
+          </div>
         </div>
       </nav>
 
