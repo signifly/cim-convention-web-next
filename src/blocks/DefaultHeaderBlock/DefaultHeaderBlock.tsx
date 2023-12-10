@@ -239,7 +239,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
             <StyledLink
               href={{
                 pathname: '/[...slug]',
-                params: { slug: ['register'] },
+                params: { slug: ['register'] }, // TODO: replace with actual slug
               }}
             >
               {ctaButtonLabel}
