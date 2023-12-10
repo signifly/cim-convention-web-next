@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss'
 
+const BASE_FONT_SIZE = 16
+const rem = (px, key = px) => ({ [key]: `${px / BASE_FONT_SIZE}rem` })
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -44,6 +47,19 @@ const config: Config = {
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
+      },
+      fontSize: {
+        ...rem(11),
+        ...rem(12),
+        ...rem(14),
+        ...rem(16),
+        ...rem(18),
+        ...rem(20),
+        ...rem(24),
+        ...rem(28),
+        ...rem(32),
+        ...rem(40),
+        ...rem(48),
       },
     },
   },
