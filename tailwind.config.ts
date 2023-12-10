@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const BASE_FONT_SIZE = 16
-const rem = (px, key = px) => ({ [key]: `${px / BASE_FONT_SIZE}rem` })
+const rem = (px: number, key = px) => ({ [key]: `${px / BASE_FONT_SIZE}rem` })
 
 const config: Config = {
   content: [
