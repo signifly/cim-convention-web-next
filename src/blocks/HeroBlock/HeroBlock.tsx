@@ -1,4 +1,6 @@
-export function HeroBlock(props: any) {
+import { HeroBlockRecord } from '@/types/generated'
+
+export function HeroBlock(props: HeroBlockRecord) {
     const { emphasizedText, restOfHeadline } = props
 
     return (

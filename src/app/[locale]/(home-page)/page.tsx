@@ -4,8 +4,6 @@ import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { locales, Locale } from '@/middleware'
 import { notFound } from 'next/navigation'
 
-import { getTranslations } from 'next-intl/server'
-
 export default async function Home({
     params: { locale },
 }: {
