@@ -6,7 +6,7 @@ type AnchorLinkProps = ComponentPropsWithoutRef<'a'>
 
 export const AnchorLink = (props: AnchorLinkProps) => {
   const { href, children, ...rest } = props
-  const { pathname } = usePathname()
+  const pathname = usePathname()
 
   return (
     <a href={`/${pathname}${href}`} {...rest}>

@@ -32,7 +32,7 @@ export const getPageBySlugQuery = ({
             }
         }
 
-        ${queryType}(locale: ${l} ${filter}) {
+        ${queryType} (locale: ${l} ${filter}) {
             _seoMetaTags {
                 attributes
                 tag
