@@ -1,7 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import React from 'react'
+import { EuclidCircularA } from '@/styles/typography'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { cn } from '@/utils/clsxMerge'
 
 // i18n
 import { Providers } from '@/components/Providers'
@@ -29,7 +31,7 @@ export default function LocaleLayout({
   return (
     <html
       lang={params.locale}
-      className="h-full antialiased"
+      className={cn('h-full antialiased', EuclidCircularA.className)}
       suppressHydrationWarning
     >
       <body className="flex h-full bg-zinc-50 dark:bg-black">

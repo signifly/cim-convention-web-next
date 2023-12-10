@@ -16,6 +16,9 @@ const config: Config = {
         '2xl': '6rem',
       },
     },
+    fontFamily: {
+      sans: ['var(--euclid-circular-a)'],
+    },
     extend: {
       colors: {
         'brand-yellow': '#FFF000',
