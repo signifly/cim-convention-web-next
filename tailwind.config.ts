@@ -4,9 +4,18 @@ const config: Config = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/blocks/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        container: {
+            padding: {
+                DEFAULT: '1.5rem',
+                lg: '2rem',
+                xl: '5rem',
+                '2xl': '6rem',
+            },
+        },
         extend: {
             colors: {
                 'brand-yellow': '#FFF000',

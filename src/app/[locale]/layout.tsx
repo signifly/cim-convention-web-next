@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 // i18n
 import { Providers } from '@/components/Providers'
-import { locales } from '@/middleware'
+import { Locale, locales } from '@/navigation'
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }))
@@ -20,7 +20,7 @@ export default function LocaleLayout({
     params,
 }: {
     children: React.ReactNode
-    params: { locale: string }
+    params: { locale: Locale }
 }) {
     // if locale is invalid, return 404
     if (!locales.includes(params.locale as any)) notFound()

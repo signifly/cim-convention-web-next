@@ -1,7 +1,8 @@
 import { gql } from 'graphql-request'
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
-// import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
-import { locales, defaultLocale, Locale } from '@/middleware'
+import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
+import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
+import { locales, defaultLocale, Locale } from '@/navigation'
 
 type Params = {
     locale: Locale
@@ -21,6 +22,7 @@ export const getPageBySlugQuery = ({
 
     return gql`
     ${HERO_BLOCK_FRAGMENT}
+		${DEFAULT_HEADER_BLOCK_FRAGMENT}
 
       query PageQuery {
         _site {
@@ -36,6 +38,9 @@ export const getPageBySlugQuery = ({
                 tag
                 content
             }
+						header {
+							...DefaultHeaderBlockFragment
+						}
             body {
                 ...HeroBlockFragment
             }

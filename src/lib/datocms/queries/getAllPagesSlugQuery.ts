@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request'
-import { locales, defaultLocale, Locale } from '@/middleware'
+import { locales, defaultLocale, Locale } from '@/navigation'
 
 type Params = {
     locale: Locale

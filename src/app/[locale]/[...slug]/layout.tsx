@@ -6,7 +6,7 @@ import { getAllPagesSlugQuery } from '@/lib/datocms/queries/getAllPagesSlugQuery
 import { Header } from '@/blocks/Header/Header'
 import { Footer } from '@/blocks/Footer/Footer'
 import { PageProps } from './page'
-import { Locale } from '@/middleware'
+import { Locale } from '@/navigation'
 
 export async function generateStaticParams({ params }: PageProps) {
     const res = await fetchDatoContent(
