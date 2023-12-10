@@ -1,7 +1,9 @@
-import { AnnouncementBannerRecord } from '@/types/generated'
+import { AnnouncementBannerBlockRecord } from '@/types/generated'
 import React from 'react'
 
-export const AnnouncementBannerBlock = (props: AnnouncementBannerRecord) => {
+export const AnnouncementBannerBlock = (
+  props: AnnouncementBannerBlockRecord,
+) => {
   const { text } = props
 
   return (

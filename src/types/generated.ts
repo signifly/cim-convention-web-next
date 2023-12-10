@@ -108,9 +108,9 @@ export type AltFileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
-/** Block of type Announcement Banner (announcement_banner) */
-export type AnnouncementBannerRecord = RecordInterface & {
-  __typename?: 'AnnouncementBannerRecord'
+/** Block of type Announcement Banner Block (announcement_banner_block) */
+export type AnnouncementBannerBlockRecord = RecordInterface & {
+  __typename?: 'AnnouncementBannerBlockRecord'
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -128,8 +128,8 @@ export type AnnouncementBannerRecord = RecordInterface & {
   text: Scalars['String']['output']
 }
 
-/** Block of type Announcement Banner (announcement_banner) */
-export type AnnouncementBannerRecord_SeoMetaTagsArgs = {
+/** Block of type Announcement Banner Block (announcement_banner_block) */
+export type AnnouncementBannerBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -437,7 +437,7 @@ export type HeroBlockRecordListListNonNullMultiLocaleField = {
 }
 
 export type HomePageModelHeaderField =
-  | AnnouncementBannerRecord
+  | AnnouncementBannerBlockRecord
   | DefaultHeaderBlockRecord
 
 export type HomePageModelHeaderFieldListListNonNullMultiLocaleField = {
@@ -2182,7 +2182,7 @@ export type PageModelFilter = {
 }
 
 export type PageModelHeaderField =
-  | AnnouncementBannerRecord
+  | AnnouncementBannerBlockRecord
   | DefaultHeaderBlockRecord
 
 export enum PageModelOrderBy {
