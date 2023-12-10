@@ -1988,6 +1988,7 @@ export type MenuMenuItemRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
   linkTo?: Maybe<PageRecord>;
+  name: Scalars['String']['output'];
   subMenuItems: Array<MenuMenuItemRecord>;
 };
 

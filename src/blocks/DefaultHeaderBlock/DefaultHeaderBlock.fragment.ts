@@ -3,11 +3,14 @@ import { generateRecursiveQuery } from '@/utils/generateRecursiveQuery'
 
 const queryField = 'subMenuItems'
 const nestedFields = [
-    `linkTo {
+  `linkTo {
 			id
 			slug
+			title
 		}
 `,
+  'name',
+  'id',
 ]
 
 export const DEFAULT_HEADER_BLOCK_FRAGMENT = gql`

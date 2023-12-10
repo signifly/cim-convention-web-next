@@ -1,6 +1,6 @@
 import {
-    createLocalizedPathnamesNavigation,
-    Pathnames,
+  createLocalizedPathnamesNavigation,
+  Pathnames,
 } from 'next-intl/navigation'
 
 export const locales = ['en', 'fr'] as const
@@ -9,9 +9,11 @@ export const defaultLocale = 'en'
 export type Locale = (typeof locales)[number]
 
 export const pathnames = {
-    '/': '/',
-    '/[locale]': '/[locale]',
+  '/': '/',
+  '/[locale]': '/[locale]',
+  '/[locale]/[...slug]': '/[locale]/[...slug]',
+  '/[...slug]': '/[...slug]',
 } satisfies Pathnames<typeof locales>
 
 export const { Link, redirect, usePathname, useRouter } =
-    createLocalizedPathnamesNavigation({ locales, localePrefix, pathnames })
+  createLocalizedPathnamesNavigation({ locales, localePrefix, pathnames })

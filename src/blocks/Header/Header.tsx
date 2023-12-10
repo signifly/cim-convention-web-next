@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 export function Header() {
   return (
@@ -6,12 +6,12 @@ export function Header() {
       <header
         className="pointer-events-none relative z-50 flex flex-none flex-col"
         style={{
-          height: "var(--header-height)",
-          marginBottom: "var(--header-mb)",
+          height: 'var(--header-height)',
+          marginBottom: 'var(--header-mb)',
         }}
       >
         Header
       </header>
     </>
-  );
+  )
 }

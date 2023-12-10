@@ -9,29 +9,29 @@ import { PageProps } from './page'
 import { Locale } from '@/navigation'
 
 export async function generateStaticParams({ params }: PageProps) {
-    const res = await fetchDatoContent(
-        getAllPagesSlugQuery({ locale: params.locale }),
-    )
-    const result = res.data?.allPages?.map((page: any) => {
-        return { slug: [page.slug] }
-    })
+  const res = await fetchDatoContent(
+    getAllPagesSlugQuery({ locale: params.locale }),
+  )
+  const result = res.data?.allPages?.map((page: any) => {
+    return { slug: [page.slug] }
+  })
 
-    return result
+  return result
 }
 
 export default function HomePageLayout({
-    children,
-    params,
+  children,
+  params,
 }: {
-    children: React.ReactNode
-    params: { locale: Locale }
+  children: React.ReactNode
+  params: { locale: Locale }
 }) {
-    unstable_setRequestLocale(params.locale)
-    return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
-    )
+  unstable_setRequestLocale(params.locale)
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
 }

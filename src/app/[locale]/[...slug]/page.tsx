@@ -5,30 +5,30 @@ import { locales, Locale } from '@/navigation'
 import { notFound } from 'next/navigation'
 
 export type PageProps = {
-    params: {
-        locale: Locale
-        slug: string[]
-    }
+  params: {
+    locale: Locale
+    slug: string[]
+  }
 }
 
 export default async function Page({
-    params: { slug, locale },
+  params: { slug, locale },
 }: PageProps): Promise<JSX.Element | void> {
-    unstable_setRequestLocale(locale)
-    if (!locales.includes(locale as any)) notFound()
+  unstable_setRequestLocale(locale)
+  if (!locales.includes(locale as any)) notFound()
 
-    const { data: pageData } = await fetchDatoContent(
-        getPageBySlugQuery({
-            locale: locale,
-            slug: slug[0],
-        }),
-    )
+  const { data: pageData } = await fetchDatoContent(
+    getPageBySlugQuery({
+      locale: locale,
+      slug: slug[0],
+    }),
+  )
 
-    return (
-        <main className="">
-            {pageData?.page?.body?.map((block: any) => (
-                <ComponentParser key={block.id} data={block} />
-            ))}
-        </main>
-    )
+  return (
+    <main className="">
+      {pageData?.page?.body?.map((block: any) => (
+        <ComponentParser key={block.id} data={block} />
+      ))}
+    </main>
+  )
 }

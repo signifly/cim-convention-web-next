@@ -1,3 +1,3 @@
 export function Footer() {
-  return <footer className="mt-32 flex-none">Footer</footer>;
+  return <footer className="mt-32 flex-none">Footer</footer>
 }
