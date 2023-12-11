@@ -441,15 +441,15 @@ export type HeroBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   anchorId: Scalars['String']['output']
-  date?: Maybe<Scalars['String']['output']>
-  emphasizedHeadlineText?: Maybe<Scalars['String']['output']>
+  date: Scalars['String']['output']
+  headline: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   image: ImageFileField
-  location?: Maybe<Scalars['String']['output']>
-  restOfHeadline?: Maybe<Scalars['String']['output']>
+  location: Scalars['String']['output']
   sponsorHeading: Scalars['String']['output']
   sponsorLogo?: Maybe<AltFileField>
   subHeadline: Scalars['String']['output']
+  textToHighlight?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Hero Block (hero_block) */

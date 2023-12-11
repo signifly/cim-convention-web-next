@@ -12,8 +12,8 @@ export const HERO_BLOCK_FRAGMENT = gql`
     }
     location
     date
-    emphasizedHeadlineText
-    restOfHeadline
+    headline
+    textToHighlight
     subHeadline
     sponsorHeading
     sponsorLogo {

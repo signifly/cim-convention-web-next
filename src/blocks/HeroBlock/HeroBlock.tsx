@@ -8,12 +8,20 @@ export function HeroBlock(props: HeroBlockRecord) {
     image,
     location,
     date,
-    emphasizedHeadlineText,
-    restOfHeadline,
+    textToHighlight,
+    headline,
     subHeadline,
     sponsorHeading,
     sponsorLogo,
   } = props
+
+  const headlineText =
+    typeof textToHighlight === 'string'
+      ? headline.replace(
+          textToHighlight,
+          `<span class="bg-brand-gradient bg-clip-text text-transparent">${textToHighlight}</span>`,
+        )
+      : headline
 
   return (
     <section
@@ -27,12 +35,10 @@ export function HeroBlock(props: HeroBlockRecord) {
           </p>
           <p className="pl-4 text-brand-grey-400">{date}</p>
         </div>
-        <h1 className="mb-4 text-32 font-[600] leading-[125%] tracking-tight lg:col-span-6 lg:col-start-1 lg:mb-6 lg:text-48">
-          <span className="bg-brand-gradient bg-clip-text text-transparent">
-            {emphasizedHeadlineText}
-          </span>{' '}
-          {restOfHeadline}
-        </h1>
+        <h1
+          dangerouslySetInnerHTML={{ __html: headlineText }}
+          className="mb-4 text-32 font-[600] leading-[125%] tracking-tight lg:col-span-6 lg:col-start-1 lg:mb-6 lg:text-48"
+        />
         <p className="mb-10 leading-[150%] text-brand-grey-600 lg:col-span-6 lg:col-start-1 lg:mb-16">
           {subHeadline}
         </p>
