@@ -10,8 +10,21 @@ export const TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT = gql`
         ...ResponsiveImageFragment
       }
     }
-    structuredText {
-      value
+    textContent {
+      ... on TwoColumnWithImageBlockWithHeadingHighlightRecord {
+        id
+        _modelApiKey
+        headline
+        textToHighlight
+        body
+      }
+      ... on TwoColumnWithImageBlockDefaultRecord {
+        id
+        _modelApiKey
+        structuredText {
+          value
+        }
+      }
     }
   }
 `
