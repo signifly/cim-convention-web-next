@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Technology Stack
 
-## Getting Started
+This project uses [DatoCMS](https://www.datocms.com/) as the Content Management System and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-First, run the development server:
+For internationalization support, we use [`next-i18n-router`](https://github.com/i18nexus/next-i18n-router) along side [`react-intl`](https://www.npmjs.com/package/react-intl).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- I18N with `next-intl`
+- Automatic linting and formatting with `es-lint`, `prettier` and `husky`
+- Sitemap generation with `next-sitemap`
+- Content management with `dato-cms`
+- Dynamic metadata with `react-datocms/seo`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## CI/CD
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+CI/CD can be handled by any hosting provider of your choice, we use [husky]() precommit hook for code formatting and lint checking.
 
-## Learn More
+## Test Suite
 
-To learn more about Next.js, take a look at the following resources:
+Test suite is also not provided to give flexibility back to the code owner of the project to decide on the most suitable solution depending on project size and needs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## TODO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Bellow is a list of `// TODO` items you will find throughout the project that is required before the project is production ready. You will find helpful resource linked in each item.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Customize `tailwind.config.ts` as required, if the project is content heavy, consider adding [tailwind-typography](https://tailwindcss.com/docs/typography-plugin)
+- [ ] Add [fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
+- [ ] Add static OR generate dynamic [meta data](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+- [ ] Add [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) to dynamic routes for SSG
+- [ ] Add [favicon](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons)
+- [ ] Add static OR generate [`robots.txt`](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)
+- [ ] Fetch i18n messages from DatoCMS
+- [ ] Sitemap generation with [`next-sitemap`](https://www.npmjs.com/package/next-sitemap)
+- [ ] Redirect/ rewrite generation
