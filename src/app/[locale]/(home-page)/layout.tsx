@@ -1,4 +1,5 @@
 import React from 'react'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 import { Footer } from '@/blocks/Footer/Footer'
 import { Locale } from '@/navigation'
@@ -15,6 +16,7 @@ export default async function HomePageLayout({
   children: React.ReactNode
   params: { locale: Locale }
 }) {
+  unstable_setRequestLocale(locale)
   const { data: pageData } = await fetchDatoContent(
     getPageBySlugQuery({
       locale: locale,

@@ -51,7 +51,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
             return (
               <Popover key={item.id} className="relative">
                 <Popover.Button className="flex items-center gap-x-1 font-medium leading-6 text-gray-900">
-                  {item.linkTo?.title}
+                  {item.name}
                   <ChevronDownIcon
                     className="h-5 w-5 flex-none text-gray-400"
                     aria-hidden="true"
@@ -99,19 +99,21 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
               </Popover>
             )
           } else {
-            return (
-              item.linkTo && (
-                <Link
-                  key={item.id}
-                  href={{
-                    pathname: '/[...slug]',
-                    params: { slug: [item.linkTo.slug] },
-                  }}
-                  className="font-medium leading-6 text-gray-900"
-                >
-                  {item.linkTo.title}
-                </Link>
-              )
+            return item.linkTo ? (
+              <Link
+                key={item.id}
+                href={{
+                  pathname: '/[...slug]',
+                  params: { slug: [item.linkTo.slug] },
+                }}
+                className="font-medium leading-6 text-gray-900"
+              >
+                {item.linkTo.title}
+              </Link>
+            ) : (
+              <span className="font-medium leading-6 text-gray-900">
+                {item.name}
+              </span>
             )
           }
         })}
@@ -167,21 +169,26 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                             />
                           </Disclosure.Button>
                           <Disclosure.Panel className="mt-2 space-y-2">
-                            {item.subMenuItems.map(
-                              (item) =>
-                                item.linkTo && (
-                                  <Disclosure.Button key={item.name} as="div">
-                                    <Link
-                                      href={{
-                                        pathname: '/[...slug]',
-                                        params: { slug: [item.linkTo.slug] },
-                                      }}
-                                      className="block rounded-lg py-2 pl-6 pr-3 font-medium leading-7 text-gray-900 hover:bg-gray-50"
-                                    >
-                                      {item.name}
-                                    </Link>
-                                  </Disclosure.Button>
-                                ),
+                            {item.subMenuItems.map((item) =>
+                              item.linkTo ? (
+                                <Disclosure.Button key={item.name} as="div">
+                                  <Link
+                                    href={{
+                                      pathname: '/[...slug]',
+                                      params: { slug: [item.linkTo.slug] },
+                                    }}
+                                    className="block rounded-lg py-2 pl-6 pr-3 font-medium leading-7 text-gray-900 hover:bg-gray-50"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </Disclosure.Button>
+                              ) : (
+                                <Disclosure.Button key={item.name} as="div">
+                                  <span className="block rounded-lg py-2 pl-6 pr-3 font-medium leading-7 text-gray-900 hover:bg-gray-50">
+                                    {item.name}
+                                  </span>
+                                </Disclosure.Button>
+                              ),
                             )}
                           </Disclosure.Panel>
                         </>
@@ -189,19 +196,21 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                     </Disclosure>
                   )
                 } else {
-                  return (
-                    item.linkTo && (
-                      <Link
-                        key={item.id}
-                        href={{
-                          pathname: '/[...slug]',
-                          params: { slug: [item.linkTo.slug] },
-                        }}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.linkTo?.title}
-                      </Link>
-                    )
+                  return item.linkTo ? (
+                    <Link
+                      key={item.id}
+                      href={{
+                        pathname: '/[...slug]',
+                        params: { slug: [item.linkTo.slug] },
+                      }}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <span className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50">
+                      {item.name}
+                    </span>
                   )
                 }
               })}

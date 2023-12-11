@@ -1,12 +1,12 @@
 import React from 'react'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
-import { fetchDatoContent } from '@/lib/datocms'
+import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getAllPagesSlugQuery } from '@/lib/datocms/queries/getAllPagesSlugQuery'
-import { Header } from '@/blocks/Header/Header'
 import { Footer } from '@/blocks/Footer/Footer'
 import { PageProps } from './page'
 import { Locale } from '@/navigation'
+import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 
 export async function generateStaticParams({ params }: PageProps) {
   const res = await fetchDatoContent(
@@ -19,17 +19,26 @@ export async function generateStaticParams({ params }: PageProps) {
   return result
 }
 
-export default function HomePageLayout({
+export default async function HomePageLayout({
   children,
-  params,
+  params: { slug, locale },
 }: {
   children: React.ReactNode
-  params: { locale: Locale }
+  params: { slug: string; locale: Locale }
 }) {
-  unstable_setRequestLocale(params.locale)
+  unstable_setRequestLocale(locale)
+  const { data: pageData } = await fetchDatoContent(
+    getPageBySlugQuery({
+      locale,
+      slug,
+    }),
+  )
+
   return (
     <>
-      <Header />
+      {pageData?.page?.header.map((block: any) => (
+        <ComponentParser key={block.id} data={block} />
+      ))}
       {children}
       <Footer />
     </>

@@ -5,5 +5,13 @@ export const TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT = gql`
     id
     _modelApiKey
     anchorId
+    image {
+      responsiveImage(imgixParams: { auto: format }) {
+        ...ResponsiveImageFragment
+      }
+    }
+    structuredText {
+      value
+    }
   }
 `
