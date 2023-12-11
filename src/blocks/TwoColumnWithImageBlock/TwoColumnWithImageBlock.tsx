@@ -4,16 +4,24 @@ import {
   TwoColumnWithImageBlockRecord,
   TwoColumnWithImageBlockModelTextContentField,
   TwoColumnWithImageBlockWithHeadingHighlightRecord,
-  TwoColumnWithImageBlockDefaultRecord,
 } from '@/types/generated'
+import type { StructuredTextDocument } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
 import { Image as DatoImage } from 'react-datocms'
+import { cn } from '@/utils/clsxMerge'
 
-const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
+const TextDefault = (props: { structuredText: StructuredTextDocument }) => {
   const { structuredText } = props
 
   return (
-    <div className="col-span-4 mb-8 space-y-6 lg:col-span-7 lg:col-start-6 lg:flex lg:flex-col lg:items-start lg:justify-center lg:px-10">
+    <div
+      className={cn(
+        'col-span-4 mb-8',
+        'lg:col-span-7 lg:col-start-6 lg:flex lg:flex-col lg:items-start lg:justify-center lg:px-10',
+        '[&_h2]:mb-2 [&_h2]:text-18 [&_h2]:font-medium',
+        '[&_p:last-of-type]:mb-0 [&_p]:mb-10',
+      )}
+    >
       <StructuredText data={structuredText} />
     </div>
   )
@@ -62,15 +70,21 @@ const TextContent = ({
 export const TwoColumnWithImageBlock = (
   props: TwoColumnWithImageBlockRecord,
 ) => {
-  const { anchorId, image, textContent } = props
+  const { anchorId, image, textContent, mobileLayout } = props
+  const defaultStyle =
+    'col-span-4 aspect-square rounded-lg lg:col-span-5 lg:row-start-1'
+  const imageAboveStyle = 'row-start-1 mb-8'
 
   return (
-    <section id={anchorId} className="bg-grey-25 py-8 lg:py-16">
+    <section id={anchorId} className="bg-brand-grey-25 py-8 lg:py-16">
       <GridContainer>
         <TextContent block={textContent[0]} />
         <DatoImage
           data={image.responsiveImage}
-          className="col-span-4 aspect-square rounded-lg lg:col-span-5 lg:row-start-1"
+          className={cn(
+            defaultStyle,
+            mobileLayout === 'image_above' && imageAboveStyle,
+          )}
         />
       </GridContainer>
     </section>
