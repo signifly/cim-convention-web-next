@@ -57,8 +57,8 @@ export function HeroBlock(props: HeroBlockRecord) {
       <div className="relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
         <DatoImage
           data={image.responsiveImage}
-          className="relative h-full"
-          pictureClassName="relative h-full"
+          className="relative h-full w-auto object-cover"
+          pictureClassName="relative h-full w-auto object-cover"
           priority
         />
         <div className="absolute left-0 right-0 top-0 h-1/2 bg-gradient-to-b from-brand-grey-100 to-transparent lg:left-[unset] lg:h-full lg:w-full lg:bg-gradient-to-l lg:from-transparent lg:to-brand-grey-100" />
