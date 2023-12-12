@@ -5,6 +5,8 @@ import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock.fragment'
 import { TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock.fragment'
 import { AD_BANNER_BLOCK_FRAGMENT } from '@/blocks/AdBannerBlock/AdBannerBlock.fragment'
+import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock.fragment'
+
 import { locales, defaultLocale, Locale } from '@/navigation'
 
 type Params = {
@@ -29,6 +31,7 @@ export const getPageBySlugQuery = ({
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
+		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 
@@ -54,6 +57,7 @@ export const getPageBySlugQuery = ({
                 ...HeroBlockFragment
 								...TwoColumnWithImageBlockFragment
 								...AdBannerBlockFragment
+								...AdThreeColumnBlockFragment
             }
         }
       }

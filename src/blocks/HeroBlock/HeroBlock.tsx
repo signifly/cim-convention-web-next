@@ -27,6 +27,7 @@ export function HeroBlock(props: HeroBlockRecord) {
     <section
       id={anchorId}
       className="relative overflow-y-hidden bg-brand-grey-100"
+      aria-label="hero section"
     >
       <GridContainer className="z-10 block pt-8 lg:grid lg:pb-20 lg:pt-24">
         <div className="mb-6 flex h-min items-center justify-start text-18 lg:col-span-4 lg:text-20">
