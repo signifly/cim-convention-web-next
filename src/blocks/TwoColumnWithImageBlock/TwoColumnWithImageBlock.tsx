@@ -4,6 +4,7 @@ import {
   TwoColumnWithImageBlockRecord,
   TwoColumnWithImageBlockModelTextContentField,
   TwoColumnWithImageBlockDefaultRecord,
+  TwoColumnWithImageBlockWithFeatureListRecord,
   TwoColumnWithImageBlockWithHeadingHighlightRecord,
   CtaButtonRecord,
 } from '@/types/generated'
@@ -11,6 +12,7 @@ import { StructuredText } from 'react-datocms'
 import { Image as DatoImage } from 'react-datocms'
 import { cn } from '@/utils/clsxMerge'
 import { StyledLink, StyledLinkExternal } from '@/components/StyledLink'
+import { CheckIcon } from '@heroicons/react/20/solid'
 
 const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
   const { structuredText } = props
@@ -30,6 +32,35 @@ const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
       {/* @ts-ignore - type mismatch from generated types */}
       <StructuredText data={structuredText} />
     </div>
+  )
+}
+
+const TextWithFeatureList = (
+  props: TwoColumnWithImageBlockWithFeatureListRecord,
+) => {
+  const { featureList } = props
+
+  return (
+    <ul className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+      {featureList.map((feature) => {
+        return (
+          <li key={feature.id} className="flex gap-x-4">
+            <CheckIcon
+              className="h-[20px] w-[20px] text-brand-green"
+              aria-hidden
+            />
+            <div className="text-16 lg:text-18">
+              <h2 className="font-medium leading-[125%] text-brand-grey-950 lg:leading-[140%]">
+                {feature.name}
+              </h2>
+              <p className="font-normal leading-[150%] text-brand-grey-600 lg:leading-[155%]">
+                {feature.description}
+              </p>
+            </div>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 
@@ -66,7 +97,7 @@ const CtaButtons = ({
   return (
     <div
       className={cn(
-        'flex items-center justify-start lg:col-span-full lg:col-start-6 lg:mt-10 lg:gap-x-6',
+        'mt-6 flex flex-wrap items-start justify-start gap-4 lg:col-span-full lg:col-start-6 lg:mt-10 lg:flex-row lg:gap-x-6',
         className,
       )}
     >
@@ -124,6 +155,7 @@ const TextContentWrapper = ({
 
   const variations = {
     two_column_with_image_block_default: TextDefault,
+    two_column_with_image_block_with_feature_list: TextWithFeatureList,
     two_column_with_image_block_with_heading_highlight:
       TextWithHeadingHighlight,
   }
@@ -163,7 +195,10 @@ export const TwoColumnWithImageBlock = (
       <GridContainer>
         <TextContentWrapper
           block={textContent[0]}
-          className={cn(desktopLayout === 'image_right' && 'lg:col-start-1')}
+          className={cn(
+            mobileLayout === 'image_above' && 'mb-0',
+            desktopLayout === 'image_right' && 'lg:col-start-1',
+          )}
           ctaButtons={ctaButtons}
         />
         <DatoImage

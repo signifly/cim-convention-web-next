@@ -39,10 +39,10 @@ export function HeroBlock(props: HeroBlockRecord) {
           dangerouslySetInnerHTML={{ __html: headlineText }}
           className="mb-4 text-32 font-[600] leading-[125%] tracking-tight lg:col-span-6 lg:col-start-1 lg:mb-6 lg:text-48"
         />
-        <p className="mb-10 leading-[150%] text-brand-grey-600 lg:col-span-6 lg:col-start-1 lg:mb-16">
+        <p className="mb-10 leading-[150%] text-brand-grey-600 lg:col-span-6 lg:col-start-1 lg:mb-16 lg:text-20 lg:leading-[155%]">
           {subHeadline}
         </p>
-        <div className="mb-4 text-xs text-brand-grey-600 lg:col-span-3 lg:col-start-1">
+        <div className="mb-4 text-xs leading-[1.3] text-brand-grey-600 lg:col-span-3 lg:col-start-1 lg:text-16 lg:leading-[1.4]">
           {sponsorHeading}
         </div>
         {sponsorLogo?.responsiveImage && (

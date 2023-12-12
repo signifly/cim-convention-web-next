@@ -301,6 +301,32 @@ export enum FaviconType {
   MsApplication = 'msApplication',
 }
 
+/** Block of type Feature List > Item (feature_list_item) */
+export type FeatureListItemRecord = RecordInterface & {
+  __typename?: 'FeatureListItemRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  description: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  name: Scalars['String']['output']
+}
+
+/** Block of type Feature List > Item (feature_list_item) */
+export type FeatureListItemRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type FileField = FileFieldInterface & {
   __typename?: 'FileField'
   _createdAt: Scalars['DateTime']['output']
@@ -2870,6 +2896,7 @@ export type TwoColumnWithImageBlockDefaultRecord_SeoMetaTagsArgs = {
 
 export type TwoColumnWithImageBlockModelTextContentField =
   | TwoColumnWithImageBlockDefaultRecord
+  | TwoColumnWithImageBlockWithFeatureListRecord
   | TwoColumnWithImageBlockWithHeadingHighlightRecord
 
 /** Block of type Two Column With Image Block (two_column_with_image_block) */
@@ -2900,6 +2927,31 @@ export type TwoColumnWithImageBlockRecord = RecordInterface & {
 
 /** Block of type Two Column With Image Block (two_column_with_image_block) */
 export type TwoColumnWithImageBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Two Column With Image Block > With Feature List (two_column_with_image_block_with_feature_list) */
+export type TwoColumnWithImageBlockWithFeatureListRecord = RecordInterface & {
+  __typename?: 'TwoColumnWithImageBlockWithFeatureListRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  featureList: Array<FeatureListItemRecord>
+  id: Scalars['ItemId']['output']
+}
+
+/** Block of type Two Column With Image Block > With Feature List (two_column_with_image_block_with_feature_list) */
+export type TwoColumnWithImageBlockWithFeatureListRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
