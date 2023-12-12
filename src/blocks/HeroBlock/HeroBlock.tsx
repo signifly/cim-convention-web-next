@@ -50,6 +50,7 @@ export function HeroBlock(props: HeroBlockRecord) {
             data={sponsorLogo.responsiveImage}
             className="lg:col-span-3 lg:col-start-1 lg:h-9 lg:w-24"
             pictureClassName="h-8 w-20 object-contain object-left lg:w-24 lg:h-9"
+            priority
           />
         )}
       </GridContainer>
