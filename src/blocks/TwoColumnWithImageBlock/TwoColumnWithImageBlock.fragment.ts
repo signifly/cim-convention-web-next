@@ -26,7 +26,11 @@ export const TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT = gql`
         }
       }
     }
+    ctaButtons {
+      ...CtaButtonFragment
+    }
     mobileLayout
     desktopLayout
+    backgroundColor
   }
 `

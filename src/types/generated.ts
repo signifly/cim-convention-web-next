@@ -214,6 +214,35 @@ export type CreatedAtFilter = {
   neq?: InputMaybe<Scalars['DateTime']['input']>
 }
 
+/** Block of type CTA Button (cta_button) */
+export type CtaButtonRecord = RecordInterface & {
+  __typename?: 'CtaButtonRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  externalLink?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  linkTo?: Maybe<PageRecord>
+  stylingOption: Scalars['String']['output']
+  useExternalLink?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type CTA Button (cta_button) */
+export type CtaButtonRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Default Footer Block (default_footer_block) */
 export type DefaultFooterBlockRecord = RecordInterface & {
   __typename?: 'DefaultFooterBlockRecord'
@@ -2860,6 +2889,8 @@ export type TwoColumnWithImageBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   anchorId: Scalars['String']['output']
+  backgroundColor: Scalars['String']['output']
+  ctaButtons: Array<CtaButtonRecord>
   desktopLayout: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   image: ImageAltFileField
