@@ -1,7 +1,5 @@
 import React from 'react'
 import { unstable_setRequestLocale } from 'next-intl/server'
-
-import { Footer } from '@/blocks/Footer/Footer'
 import { Locale } from '@/navigation'
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
@@ -25,13 +23,21 @@ export default async function HomePageLayout({
     }),
   )
 
+  console.log('pageData', pageData)
+
   return (
     <>
       {pageData?.homePage?.header.map((block: any) => (
         <ComponentParser key={block.id} data={block} />
       ))}
       {children}
-      <Footer />
+      {pageData?.homePage?.footer.map((block: any) => (
+        <ComponentParser
+          key={block.id}
+          data={{ ...block, socialLinks: pageData.socialLink }}
+        />
+      ))}
+      {/* <Footer /> */}
     </>
   )
 }
