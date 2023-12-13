@@ -26,10 +26,9 @@ export default async function Page({
 
   return (
     <main className="">
-      {pageData?.page?.body?.map(
-        (block: any) =>
-          block.id && <ComponentParser key={block.id} data={block} />,
-      )}
+      {pageData?.page?.body?.map((block: any) => (
+        <ComponentParser key={block.id} data={block} />
+      ))}
     </main>
   )
 }
