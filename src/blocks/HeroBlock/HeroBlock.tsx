@@ -40,10 +40,10 @@ export function HeroBlock(props: HeroBlockRecord) {
           dangerouslySetInnerHTML={{ __html: headlineText }}
           className="mb-4 text-32 font-[600] leading-[125%] tracking-tight lg:col-span-6 lg:col-start-1 lg:mb-6 lg:text-48"
         />
-        <p className="mb-10 leading-[150%] text-brand-grey-600 lg:col-span-6 lg:col-start-1 lg:mb-16">
+        <p className="mb-10 leading-[150%] text-brand-grey-600 lg:col-span-6 lg:col-start-1 lg:mb-16 lg:text-20 lg:leading-[155%]">
           {subHeadline}
         </p>
-        <div className="mb-4 text-xs text-brand-grey-600 lg:col-span-3 lg:col-start-1">
+        <div className="mb-4 text-xs leading-[1.3] text-brand-grey-600 lg:col-span-3 lg:col-start-1 lg:text-16 lg:leading-[1.4]">
           {sponsorHeading}
         </div>
         {sponsorLogo?.responsiveImage && (
@@ -51,14 +51,15 @@ export function HeroBlock(props: HeroBlockRecord) {
             data={sponsorLogo.responsiveImage}
             className="lg:col-span-3 lg:col-start-1 lg:h-9 lg:w-24"
             pictureClassName="h-8 w-20 object-contain object-left lg:w-24 lg:h-9"
+            priority
           />
         )}
       </GridContainer>
       <div className="relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
         <DatoImage
           data={image.responsiveImage}
-          className="relative h-full"
-          pictureClassName="relative h-full"
+          className="relative h-full w-auto object-cover"
+          pictureClassName="relative h-full w-auto object-cover"
           priority
         />
         <div className="absolute left-0 right-0 top-0 h-1/2 bg-gradient-to-b from-brand-grey-100 to-transparent lg:left-[unset] lg:h-full lg:w-full lg:bg-gradient-to-l lg:from-transparent lg:to-brand-grey-100" />

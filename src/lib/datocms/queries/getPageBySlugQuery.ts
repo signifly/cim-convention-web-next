@@ -1,13 +1,17 @@
 import { gql } from 'graphql-request'
+import { locales, defaultLocale, Locale } from '@/navigation'
+
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
 import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
-import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock.fragment'
 import { TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock.fragment'
 import { AD_BANNER_BLOCK_FRAGMENT } from '@/blocks/AdBannerBlock/AdBannerBlock.fragment'
 import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock.fragment'
 
 import { locales, defaultLocale, Locale } from '@/navigation'
+
+import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
+import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 
 type Params = {
   locale: Locale
@@ -34,6 +38,7 @@ export const getPageBySlugQuery = ({
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
+		${CTA_BUTTON_FRAGMENT}
 
       query PageQuery {
         _site {
