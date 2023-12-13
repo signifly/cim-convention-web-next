@@ -43,7 +43,6 @@ export default async function HomePageLayout({
       {pageData?.page?.footer.map((block: any) => (
         <ComponentParser key={block.id} data={block} />
       ))}
-      {/* <Footer /> */}
     </>
   )
 }

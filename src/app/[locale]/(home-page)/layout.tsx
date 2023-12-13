@@ -23,8 +23,6 @@ export default async function HomePageLayout({
     }),
   )
 
-  console.log('pageData', pageData)
-
   return (
     <>
       {pageData?.homePage?.header.map((block: any) => (
@@ -37,7 +35,6 @@ export default async function HomePageLayout({
           data={{ ...block, socialLinks: pageData.socialLink }}
         />
       ))}
-      {/* <Footer /> */}
     </>
   )
 }

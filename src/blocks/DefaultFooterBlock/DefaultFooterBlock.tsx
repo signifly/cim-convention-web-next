@@ -1,18 +1,11 @@
 import { StyledLink } from '@/components/StyledLink'
-import { DefaultFooterBlockRecord } from '@/types/generated'
+import { DefaultFooterBlockRecord, SocialLinkRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import SocialMedia from '@/components/SocialMedia'
 
-type SocialLinks = {
-  facebook: string
-  instagram: string
-  twitter: string
-  youtube: string
-}
-
 type DefaultFooterBlockRecordExt = DefaultFooterBlockRecord & {
-  socialLinks: SocialLinks
+  socialLinks: SocialLinkRecord
 }
 
 export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
@@ -53,11 +46,11 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           <div className="flex gap-[40px]">
             {Object.keys(socialLinks).map(
               (key: string, index: number) =>
-                socialLinks[key as keyof SocialLinks] && (
+                socialLinks[key as keyof SocialLinkRecord] && (
                   <SocialMedia
                     key={index}
                     socialMediaName={key}
-                    socialMediaURL={socialLinks[key as keyof SocialLinks]}
+                    socialMediaURL={socialLinks[key as keyof SocialLinkRecord]}
                   ></SocialMedia>
                 ),
             )}
