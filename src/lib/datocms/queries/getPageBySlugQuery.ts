@@ -2,6 +2,7 @@ import { gql } from 'graphql-request'
 import { locales, defaultLocale, Locale } from '@/navigation'
 
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
+import { DEFAULT_FOOTER_BLOCK_FRAGMENT } from '@/blocks/DefaultFooterBlock/DefaultFooterBlock.fragment'
 import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
 import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock.fragment'
 import { TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock.fragment'
@@ -33,6 +34,7 @@ export const getPageBySlugQuery = ({
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
+    ${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
@@ -62,6 +64,17 @@ export const getPageBySlugQuery = ({
 								...AdBannerBlockFragment
 								...AdThreeColumnBlockFragment
             }
+            footer {
+              ...DefaultFooterBlockFragment
+            }
+        }
+
+        socialLink {
+          facebook
+          instagram
+          linkedin
+          twitter
+          youtube
         }
       }
 `
