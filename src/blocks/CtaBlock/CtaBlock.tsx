@@ -7,7 +7,10 @@ export const CtaBlock = (props: CtaBlockRecord) => {
   const { anchorId, headline, subHeadline, ctaButton } = props
 
   return (
-    <section id={anchorId ?? ''}>
+    <section
+      id={anchorId ?? ''}
+      className="bg-gradient-to-b from-brand-grey-200 via-white/50 to-white/50"
+    >
       <GridContainer className="grid-cols-1 place-items-center py-14 text-center lg:grid-cols-1">
         <h2 className="mb-4 text-28/[125%] font-semibold tracking-[-0.14px] text-brand-grey-950 lg:text-40/[115%]">
           {headline}
