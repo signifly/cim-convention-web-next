@@ -295,6 +295,7 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
   newsletterParagraph?: Maybe<Scalars['String']['output']>
   newsletterTitle?: Maybe<Scalars['String']['output']>
+  sponsorLink?: Maybe<Scalars['String']['output']>
   sponsorLogo?: Maybe<FileField>
   sponsorTitle?: Maybe<Scalars['String']['output']>
 }

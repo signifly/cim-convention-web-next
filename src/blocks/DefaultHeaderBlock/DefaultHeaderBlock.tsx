@@ -74,7 +74,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                           subMenu.linkTo && (
                             <div
                               key={subMenu.id}
-                              className="group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 hover:bg-gray-50"
+                              className="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6 hover:bg-gray-50"
                             >
                               <div className="flex-auto">
                                 <Link
@@ -158,7 +158,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                     <Disclosure key={item.id} as="div" className="-mx-3">
                       {({ open }) => (
                         <>
-                          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50">
+                          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-medium text-gray-900 hover:bg-gray-50">
                             {item.name}
                             <ChevronDownIcon
                               className={cn(
@@ -203,12 +203,12 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                         pathname: '/[...slug]',
                         params: { slug: [item.linkTo.slug] },
                       }}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
                     </Link>
                   ) : (
-                    <span className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50">
+                    <span className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50">
                       {item.name}
                     </span>
                   )
@@ -218,7 +218,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
             <div className="py-6">
               <a
                 href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
               >
                 Log in
               </a>
