@@ -8,6 +8,7 @@ import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerB
 import { TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock.fragment'
 import { AD_BANNER_BLOCK_FRAGMENT } from '@/blocks/AdBannerBlock/AdBannerBlock.fragment'
 import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock.fragment'
+import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragment'
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
@@ -36,6 +37,7 @@ export const getPageBySlugQuery = ({
 		${AD_BANNER_BLOCK_FRAGMENT}
     ${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
+		${DIVIDER_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -63,6 +65,7 @@ export const getPageBySlugQuery = ({
 								...TwoColumnWithImageBlockFragment
 								...AdBannerBlockFragment
 								...AdThreeColumnBlockFragment
+								...DividerBlockFragment
             }
             footer {
               ...DefaultFooterBlockFragment
