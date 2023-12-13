@@ -5,6 +5,7 @@ import { AnnouncementBannerBlock } from '@/blocks/AnnouncementBannerBlock/Announ
 import { TwoColumnWithImageBlock } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock'
 import { AdBannerBlock } from '@/blocks/AdBannerBlock/AdBannerBlock'
 import { AdThreeColumnBlock } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock'
+import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -17,4 +18,5 @@ export const componentsMap = {
   two_column_with_image_block: TwoColumnWithImageBlock,
   ad_banner_block: AdBannerBlock,
   ad_three_column_block: AdThreeColumnBlock,
+  divider_block: DividerBlock,
 }
