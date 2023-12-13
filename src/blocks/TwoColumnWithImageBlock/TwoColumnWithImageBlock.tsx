@@ -11,7 +11,7 @@ import {
 import { StructuredText } from 'react-datocms'
 import { Image as DatoImage } from 'react-datocms'
 import { cn } from '@/utils/clsxMerge'
-import { StyledLink, StyledLinkExternal } from '@/components/StyledLink'
+import { CtaButton } from '@/components/CtaButton'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
@@ -102,41 +102,7 @@ const CtaButtons = ({
       )}
     >
       {buttons.map((button) => {
-        const {
-          label,
-          useExternalLink,
-          linkTo,
-          externalLink,
-          id,
-          stylingOption,
-        } = button
-
-        if (!useExternalLink && linkTo) {
-          return (
-            <StyledLink
-              key={id}
-              href={{
-                pathname: '/[...slug]',
-                params: { slug: [linkTo.slug] },
-              }}
-              variant={stylingOption as 'primary' | 'secondary'}
-            >
-              {label}
-            </StyledLink>
-          )
-        }
-
-        if (useExternalLink && externalLink !== '') {
-          return (
-            <StyledLinkExternal
-              key={id}
-              href={externalLink as string}
-              variant={stylingOption as 'primary' | 'secondary'}
-            >
-              {label}
-            </StyledLinkExternal>
-          )
-        }
+        return <CtaButton key={button.id} {...button} />
       })}
     </div>
   )

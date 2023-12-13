@@ -6,6 +6,7 @@ import { AnnouncementBannerBlock } from '@/blocks/AnnouncementBannerBlock/Announ
 import { TwoColumnWithImageBlock } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock'
 import { AdBannerBlock } from '@/blocks/AdBannerBlock/AdBannerBlock'
 import { AdThreeColumnBlock } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock'
+import { CtaBlock } from '@/blocks/CtaBlock/CtaBlock'
 import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
 
 export type ComponentsMap = {
@@ -20,5 +21,6 @@ export const componentsMap = {
   ad_banner_block: AdBannerBlock,
   default_footer_block: DefaultFooterBlock,
   ad_three_column_block: AdThreeColumnBlock,
+  cta_block: CtaBlock,
   divider_block: DividerBlock,
 }
