@@ -1,18 +1,45 @@
-import React, { ComponentProps } from 'react'
+import React, { ComponentProps, ComponentPropsWithoutRef } from 'react'
 import { Link, pathnames } from '@/navigation'
 import { cn } from '@/utils/clsxMerge'
 
+type CustomLinkProps = {
+  variant?: 'primary' | 'secondary'
+}
+
+const baseStyle = 'py-[10px] px-6 rounded-[4px] font-[500] shadow-xs'
+const primaryStyle = 'text-white bg-brand-gradient'
+const secondaryStyle = 'bg-white text-brand-grey-950'
+
 export function StyledLink<Pathname extends keyof typeof pathnames>(
-  props: ComponentProps<typeof Link<Pathname>>,
+  props: ComponentProps<typeof Link<Pathname>> & CustomLinkProps,
 ) {
-  const { href, className, children, ...rest } = props
-  const defaultStyle =
-    'py-[10px] px-6 text-white rounded-[4px] bg-brand-gradient font-[500] shadow-xs'
-  const style = cn(defaultStyle, className)
+  const { href, className, children, variant = 'primary', ...rest } = props
+  const style = cn(
+    baseStyle,
+    variant === 'primary' ? primaryStyle : secondaryStyle,
+    className,
+  )
 
   return (
     <Link href={href} className={style} {...rest}>
       {children}
     </Link>
+  )
+}
+
+export const StyledLinkExternal = (
+  props: ComponentPropsWithoutRef<'a'> & CustomLinkProps,
+) => {
+  const { className, children, variant = 'primary', ...rest } = props
+  const style = cn(
+    baseStyle,
+    variant === 'secondary' ? secondaryStyle : primaryStyle,
+    className,
+  )
+
+  return (
+    <a className={style} {...rest}>
+      {children}
+    </a>
   )
 }

@@ -25,7 +25,24 @@ export const TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT = gql`
           value
         }
       }
+      ... on TwoColumnWithImageBlockWithFeatureListRecord {
+        id
+        _modelApiKey
+        featureList {
+          ... on FeatureListItemRecord {
+            id
+            _modelApiKey
+            name
+            description
+          }
+        }
+      }
+    }
+    ctaButtons {
+      ...CtaButtonFragment
     }
     mobileLayout
+    desktopLayout
+    backgroundColor
   }
 `
