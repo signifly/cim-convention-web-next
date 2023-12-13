@@ -523,57 +523,6 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecord = RecordInterface & {
-  __typename?: 'FooterBlockRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  contactButtonLabel?: Maybe<Scalars['String']['output']>
-  contactButtonLink?: Maybe<Scalars['String']['output']>
-  contactParagraph?: Maybe<Scalars['String']['output']>
-  contactTitle?: Maybe<Scalars['String']['output']>
-  copyright?: Maybe<Scalars['String']['output']>
-  id: Scalars['ItemId']['output']
-  newsletterButtonLabel?: Maybe<Scalars['String']['output']>
-  newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
-  newsletterParagraph?: Maybe<Scalars['String']['output']>
-  newsletterTitle?: Maybe<Scalars['String']['output']>
-  sponsorLogo?: Maybe<FileField>
-  sponsorTitle?: Maybe<Scalars['String']['output']>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecordContactParagraphArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecordNewsletterParagraphArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>
-}
-
-export type FooterBlockRecordListListNonNullMultiLocaleField = {
-  __typename?: 'FooterBlockRecordListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<FooterBlockRecord>
-}
-
 export type GlobalSeoField = {
   __typename?: 'GlobalSeoField'
   facebookPageUrl?: Maybe<Scalars['String']['output']>
