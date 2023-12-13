@@ -2923,6 +2923,31 @@ export type Tag = {
   tag: Scalars['String']['output']
 }
 
+/** Block of type Testimonials Block (testimonials_block) */
+export type TestimonialsBlockRecord = RecordInterface & {
+  __typename?: 'TestimonialsBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+}
+
+/** Block of type Testimonials Block (testimonials_block) */
+export type TestimonialsBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type TwoColumnWithImageBlockDefaultModelStructuredTextField = {
   __typename?: 'TwoColumnWithImageBlockDefaultModelStructuredTextField'
   blocks: Array<Scalars['String']['output']>
