@@ -36,9 +36,10 @@ export default async function HomePageLayout({
 
   return (
     <>
-      {pageData?.page?.header.map((block: any) => (
-        <ComponentParser key={block.id} data={block} />
-      ))}
+      {pageData?.page?.header.map(
+        (block: any) =>
+          block.id && <ComponentParser key={block.id} data={block} />,
+      )}
       {children}
       <Footer />
     </>

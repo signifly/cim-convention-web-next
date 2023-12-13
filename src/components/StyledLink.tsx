@@ -6,7 +6,8 @@ type CustomLinkProps = {
   variant?: 'primary' | 'secondary'
 }
 
-const baseStyle = 'py-[10px] px-6 rounded-[4px] font-[500] shadow-xs'
+const baseStyle =
+  'py-[10px] px-6 rounded-[4px] font-[500] shadow-xs text-14/[125%] lg:text-16'
 const primaryStyle = 'text-white bg-brand-gradient'
 const secondaryStyle = 'bg-white text-brand-grey-950'
 

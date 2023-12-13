@@ -240,6 +240,34 @@ export type CreatedAtFilter = {
   neq?: InputMaybe<Scalars['DateTime']['input']>
 }
 
+/** Block of type CTA Block (cta_block) */
+export type CtaBlockRecord = RecordInterface & {
+  __typename?: 'CtaBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  ctaButton: Array<CtaButtonRecord>
+  headline: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  subHeadline: Scalars['String']['output']
+}
+
+/** Block of type CTA Block (cta_block) */
+export type CtaBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type CTA Button (cta_button) */
 export type CtaButtonRecord = RecordInterface & {
   __typename?: 'CtaButtonRecord'
@@ -295,6 +323,7 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
   newsletterParagraph?: Maybe<Scalars['String']['output']>
   newsletterTitle?: Maybe<Scalars['String']['output']>
+  sponsorLink?: Maybe<Scalars['String']['output']>
   sponsorLogo?: Maybe<FileField>
   sponsorTitle?: Maybe<Scalars['String']['output']>
 }
@@ -345,6 +374,30 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
 
 /** Block of type Default Header Block (default_header_block) */
 export type DefaultHeaderBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Divider (divider_block) */
+export type DividerBlockRecord = RecordInterface & {
+  __typename?: 'DividerBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+}
+
+/** Block of type Divider (divider_block) */
+export type DividerBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -568,6 +621,8 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 export type HomePageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
+  | CtaBlockRecord
+  | DividerBlockRecord
   | HeroBlockRecord
   | TwoColumnWithImageBlockRecord
 
@@ -2383,6 +2438,8 @@ export type OrientationFilter = {
 export type PageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
+  | CtaBlockRecord
+  | DividerBlockRecord
   | HeroBlockRecord
   | TwoColumnWithImageBlockRecord
 
