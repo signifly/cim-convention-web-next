@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request'
 
-export const FOOTER_BLOCK_FRAGMENT = gql`
-  fragment FooterBlockFragment on FooterBlockRecord {
+export const DEFAULT_FOOTER_BLOCK_FRAGMENT = gql`
+  fragment DefaultFooterBlockFragment on DefaultFooterBlockRecord {
     id
     _modelApiKey
     contactButtonLabel
@@ -14,10 +14,13 @@ export const FOOTER_BLOCK_FRAGMENT = gql`
     newsletterParagraph
     newsletterTitle
     sponsorTitle
+    sponsorLink
     sponsorLogo {
       responsiveImage(imgixParams: { auto: format }) {
         ...ResponsiveImageFragment
       }
+      url
+      alt
     }
   }
 `

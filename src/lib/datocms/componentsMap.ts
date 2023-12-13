@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { HeroBlock } from '@/blocks/HeroBlock/HeroBlock'
-import { FooterBlock } from '@/blocks/FooterBlock/FooterBlock'
+import { DefaultFooterBlock } from '@/blocks/DefaultFooterBlock/DefaultFooterBlock'
 import { DefaultHeaderBlock } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock'
 import { AnnouncementBannerBlock } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock'
 import { TwoColumnWithImageBlock } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock'
@@ -16,5 +16,5 @@ export const componentsMap = {
   announcement_banner_block: AnnouncementBannerBlock,
   two_column_with_image_block: TwoColumnWithImageBlock,
   ad_banner_block: AdBannerBlock,
-  footer_block: FooterBlock,
+  default_footer_block: DefaultFooterBlock,
 }

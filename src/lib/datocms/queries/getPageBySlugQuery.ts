@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request'
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
-import { FOOTER_BLOCK_FRAGMENT } from '@/blocks/FooterBlock/FooterBlock.fragment'
+import { DEFAULT_FOOTER_BLOCK_FRAGMENT } from '@/blocks/DefaultFooterBlock/DefaultFooterBlock.fragment'
 import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock.fragment'
@@ -30,7 +30,7 @@ export const getPageBySlugQuery = ({
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
-    ${FOOTER_BLOCK_FRAGMENT}
+    ${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 
@@ -58,7 +58,7 @@ export const getPageBySlugQuery = ({
 								...AdBannerBlockFragment
             }
             footer {
-              ...FooterBlockFragment
+              ...DefaultFooterBlockFragment
             }
         }
 

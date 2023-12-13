@@ -1,7 +1,7 @@
 import { StyledLink } from '@/components/StyledLink'
-import { FooterBlockRecord } from '@/types/generated'
+import { DefaultFooterBlockRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
-import SVGSelector from '@/components/SVGSelector/SVGSelector'
+import Image from 'next/image'
 import SocialMedia from '@/components/SocialMedia'
 
 type SocialLinks = {
@@ -11,9 +11,11 @@ type SocialLinks = {
   youtube: string
 }
 
-type FooterBlockRecordExt = FooterBlockRecord & { socialLinks: SocialLinks }
+type DefaultFooterBlockRecordExt = DefaultFooterBlockRecord & {
+  socialLinks: SocialLinks
+}
 
-export function FooterBlock(props: FooterBlockRecordExt) {
+export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
   const {
     contactButtonLabel,
     contactButtonLink,
@@ -25,6 +27,7 @@ export function FooterBlock(props: FooterBlockRecordExt) {
     newsletterParagraph,
     newsletterTitle,
     sponsorLogo,
+    sponsorLink,
     sponsorTitle,
     socialLinks,
   } = props
@@ -78,13 +81,25 @@ export function FooterBlock(props: FooterBlockRecordExt) {
         {/* Sponsor */}
         <div className="relative col-span-full col-start-1 flex h-[100%] flex-col justify-start gap-[32px] border-t-[1px] border-gray-700 pt-[20px] align-top md:col-span-2 md:col-start-11 md:border-t-0 md:pl-[24px] md:pt-0  md:after:absolute md:after:left-0 md:after:top-[50%] md:after:h-[100%] md:after:w-[1px] md:after:translate-y-[-50%] md:after:bg-gray-700 md:after:content-['']">
           <h6 className=" uppercase">{sponsorTitle}</h6>
-          {sponsorLogo?.responsiveImage && (
-            <DatoImage
-              data={sponsorLogo.responsiveImage}
-              className="lg:col-span-3 lg:col-start-1 lg:h-9 lg:w-24"
-              pictureClassName="h-8 w-20 object-contain object-left lg:w-24 lg:h-9"
-            />
-          )}
+          <div className="flex">
+            <a href={sponsorLink || ''}>
+              <div className="relative h-[77px] w-[56px]">
+                {sponsorLogo?.responsiveImage ? (
+                  <DatoImage
+                    data={sponsorLogo.responsiveImage}
+                    className="lg:col-span-3 lg:col-start-1 lg:h-9 lg:w-24"
+                    pictureClassName="h-8 w-20 object-contain object-left lg:w-24 lg:h-9"
+                  />
+                ) : (
+                  <Image
+                    src={sponsorLogo?.url || ''}
+                    alt={sponsorLogo?.alt || ''}
+                    fill
+                  />
+                )}
+              </div>
+            </a>
+          </div>
         </div>
         {/* Copyright */}
         <div className="col-span-full mt-[40px] flex h-[100%] flex-col justify-start border-t-[1px] border-gray-700 pb-[40px] pt-[24px] align-top">
