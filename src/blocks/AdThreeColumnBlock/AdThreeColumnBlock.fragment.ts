@@ -6,6 +6,8 @@ export const AD_THREE_COLUMN_BLOCK_FRAGMENT = gql`
     _modelApiKey
     anchorId
     images {
+      url
+      alt
       responsiveImage(imgixParams: { auto: format }) {
         ...ResponsiveImageFragment
       }
