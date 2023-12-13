@@ -8,7 +8,7 @@ export const AnnouncementBannerBlock = (
 
   return (
     <section
-      className="bg-brand-grey-800 py-[10px] text-center text-11 leading-[140%] text-white lg:text-14"
+      className="bg-brand-grey-800 py-[10px] text-center text-11/[140%] text-white lg:text-14"
       aria-label="announcement banner"
     >
       <div className="container mx-auto">{text}</div>

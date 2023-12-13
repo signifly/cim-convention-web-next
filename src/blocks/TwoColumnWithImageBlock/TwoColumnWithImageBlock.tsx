@@ -17,10 +17,10 @@ import { CheckIcon } from '@heroicons/react/20/solid'
 const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
   const { structuredText } = props
   const h2 =
-    '[&_h2]:mb-4 [&_h2]:text-20 [&_h2]:font-semibold [&_h2]:leading-[140%] [&_h2]:text-brand-grey-950'
-  const h2Large = 'lg:[&_h2]:mb-8 lg:[&_h2]:text-32 lg:[&_h2]:leading-[125%]'
+    '[&_h2]:mb-4 [&_h2]:text-20/[140%] [&_h2]:font-semibold [&_h2]:text-brand-grey-950'
+  const h2Large = 'lg:[&_h2]:mb-8 lg:[&_h2]:text-32/[125%]'
   const h3 =
-    '[&_h3]:mb-2 [&_h3]:text-18 [&_h3]:font-medium [&_h3]:leading-[140%] [&_h3]:text-brand-grey-950'
+    '[&_h3]:mb-2 [&_h3]:text-18/[140%] [&_h3]:font-medium [&_h3]:text-brand-grey-950'
   const h3Large = 'lg:[&_h3]:mb-6 lg:[&_h3]:text-24'
   const ul = '[&_ul>li]:list-disc [&_ul]:ml-4 [&_ul]:lg:ml-8'
   const p =
@@ -81,9 +81,9 @@ const TextWithHeadingHighlight = (
     <div className="space-y-6 lg:space-y-8">
       <h2
         dangerouslySetInnerHTML={{ __html: headlineText }}
-        className="text-20 font-semibold leading-[140%] tracking-tight text-brand-grey-950 lg:text-32"
+        className="text-20/[140%] font-semibold tracking-tight text-brand-grey-950 lg:text-32"
       />
-      <p className="text-16 font-normal leading-[150%] text-brand-grey-600 lg:text-20 lg:leading-[155%] ">
+      <p className="text-16/[150%] font-normal text-brand-grey-600 lg:text-20/[155%]">
         {body}
       </p>
     </div>
