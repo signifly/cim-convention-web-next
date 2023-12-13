@@ -63,6 +63,32 @@ export type AdBannerBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Ad Three Column Block (ad_three_column_block) */
+export type AdThreeColumnBlockRecord = RecordInterface & {
+  __typename?: 'AdThreeColumnBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  images: Array<FileField>
+}
+
+/** Block of type Ad Three Column Block (ad_three_column_block) */
+export type AdThreeColumnBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type AltFileField = FileFieldInterface & {
   __typename?: 'AltFileField'
   _createdAt: Scalars['DateTime']['output']
@@ -259,12 +285,39 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  contactButtonLabel?: Maybe<Scalars['String']['output']>
+  contactButtonLink?: Maybe<Scalars['String']['output']>
+  contactParagraph?: Maybe<Scalars['String']['output']>
+  contactTitle?: Maybe<Scalars['String']['output']>
+  copyright?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
+  newsletterButtonLabel?: Maybe<Scalars['String']['output']>
+  newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
+  newsletterParagraph?: Maybe<Scalars['String']['output']>
+  newsletterTitle?: Maybe<Scalars['String']['output']>
+  sponsorLogo?: Maybe<FileField>
+  sponsorTitle?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
 export type DefaultFooterBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Default Footer Block (default_footer_block) */
+export type DefaultFooterBlockRecordContactParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Default Footer Block (default_footer_block) */
+export type DefaultFooterBlockRecordNewsletterParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+export type DefaultFooterBlockRecordListListNonNullMultiLocaleField = {
+  __typename?: 'DefaultFooterBlockRecordListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<DefaultFooterBlockRecord>
 }
 
 /** Block of type Default Header Block (default_header_block) */
@@ -470,57 +523,6 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecord = RecordInterface & {
-  __typename?: 'FooterBlockRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  contactButtonLabel?: Maybe<Scalars['String']['output']>
-  contactButtonLink?: Maybe<Scalars['String']['output']>
-  contactParagraph?: Maybe<Scalars['String']['output']>
-  contactTitle?: Maybe<Scalars['String']['output']>
-  copyright?: Maybe<Scalars['String']['output']>
-  id: Scalars['ItemId']['output']
-  newsletterButtonLabel?: Maybe<Scalars['String']['output']>
-  newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
-  newsletterParagraph?: Maybe<Scalars['String']['output']>
-  newsletterTitle?: Maybe<Scalars['String']['output']>
-  sponsorLogo?: Maybe<FileField>
-  sponsorTitle?: Maybe<Scalars['String']['output']>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecordContactParagraphArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>
-}
-
-/** Block of type Footer Block (footer_block) */
-export type FooterBlockRecordNewsletterParagraphArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>
-}
-
-export type FooterBlockRecordListListNonNullMultiLocaleField = {
-  __typename?: 'FooterBlockRecordListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<FooterBlockRecord>
-}
-
 export type GlobalSeoField = {
   __typename?: 'GlobalSeoField'
   facebookPageUrl?: Maybe<Scalars['String']['output']>
@@ -565,6 +567,7 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 
 export type HomePageModelBodyField =
   | AdBannerBlockRecord
+  | AdThreeColumnBlockRecord
   | HeroBlockRecord
   | TwoColumnWithImageBlockRecord
 
@@ -591,7 +594,7 @@ export type HomePageRecord = RecordInterface & {
     Array<HomePageModelBodyFieldListListNonNullMultiLocaleField>
   >
   _allFooterLocales?: Maybe<
-    Array<FooterBlockRecordListListNonNullMultiLocaleField>
+    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
   >
   _allHeaderLocales?: Maybe<
     Array<HomePageModelHeaderFieldListListNonNullMultiLocaleField>
@@ -613,7 +616,7 @@ export type HomePageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<HomePageModelBodyField>
-  footer: Array<FooterBlockRecord>
+  footer: Array<DefaultFooterBlockRecord>
   header: Array<HomePageModelHeaderField>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
@@ -2379,6 +2382,7 @@ export type OrientationFilter = {
 
 export type PageModelBodyField =
   | AdBannerBlockRecord
+  | AdThreeColumnBlockRecord
   | HeroBlockRecord
   | TwoColumnWithImageBlockRecord
 
@@ -2440,7 +2444,7 @@ export type PageRecord = RecordInterface & {
     Array<PageModelBodyFieldListListNonNullMultiLocaleField>
   >
   _allFooterLocales?: Maybe<
-    Array<FooterBlockRecordListListNonNullMultiLocaleField>
+    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
   >
   _allSeoSettingsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
@@ -2460,7 +2464,7 @@ export type PageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<PageModelBodyField>
-  footer: Array<FooterBlockRecord>
+  footer: Array<DefaultFooterBlockRecord>
   header: Array<PageModelHeaderField>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
