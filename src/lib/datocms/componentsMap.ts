@@ -8,6 +8,7 @@ import { AdBannerBlock } from '@/blocks/AdBannerBlock/AdBannerBlock'
 import { AdThreeColumnBlock } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock'
 import { CtaBlock } from '@/blocks/CtaBlock/CtaBlock'
 import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
+import { TestimonialsBlock } from '@/blocks/TestimonialsBlock/TestimonialsBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -23,4 +24,5 @@ export const componentsMap = {
   ad_three_column_block: AdThreeColumnBlock,
   cta_block: CtaBlock,
   divider_block: DividerBlock,
+  testimonials_block: TestimonialsBlock,
 }
