@@ -3,7 +3,6 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getAllPagesSlugQuery } from '@/lib/datocms/queries/getAllPagesSlugQuery'
-import { Footer } from '@/blocks/Footer/Footer'
 import { PageProps } from './page'
 import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
