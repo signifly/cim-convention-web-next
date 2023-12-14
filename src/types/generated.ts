@@ -844,8 +844,8 @@ export type HomePageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<HomePageModelBodyField>
-  footerLink?: Maybe<FooterRecord>
-  headerLink?: Maybe<HeaderRecord>
+  footer?: Maybe<FooterRecord>
+  header?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
   slug?: Maybe<Scalars['String']['output']>

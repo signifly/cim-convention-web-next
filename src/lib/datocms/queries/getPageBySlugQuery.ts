@@ -58,7 +58,7 @@ export const getPageBySlugQuery = ({
                 tag
                 content
             }
-            headerLink {
+            header {
               blocks {
                 ...DefaultHeaderBlockFragment
 							  ...AnnouncementBannerBlockFragment
@@ -72,7 +72,7 @@ export const getPageBySlugQuery = ({
 								...CtaBlockFragment
 								...DividerBlockFragment
             }
-            footerLink {
+            footer {
               blocks {
                 ...DefaultFooterBlockFragment
               }
