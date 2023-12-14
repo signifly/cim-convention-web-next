@@ -404,12 +404,6 @@ export type DefaultFooterBlockRecordNewsletterParagraphArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
-export type DefaultFooterBlockRecordListListNonNullMultiLocaleField = {
-  __typename?: 'DefaultFooterBlockRecordListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<DefaultFooterBlockRecord>
-}
-
 /** Block of type Default Header Block (default_header_block) */
 export type DefaultHeaderBlockRecord = RecordInterface & {
   __typename?: 'DefaultHeaderBlockRecord'
@@ -827,27 +821,11 @@ export type HomePageModelBodyFieldListListNonNullMultiLocaleField = {
   value: Array<HomePageModelBodyField>
 }
 
-export type HomePageModelHeaderField =
-  | AnnouncementBannerBlockRecord
-  | DefaultHeaderBlockRecord
-
-export type HomePageModelHeaderFieldListListNonNullMultiLocaleField = {
-  __typename?: 'HomePageModelHeaderFieldListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<HomePageModelHeaderField>
-}
-
 /** Record of type Home Page (home_page) */
 export type HomePageRecord = RecordInterface & {
   __typename?: 'HomePageRecord'
   _allBodyLocales?: Maybe<
     Array<HomePageModelBodyFieldListListNonNullMultiLocaleField>
-  >
-  _allFooterLocales?: Maybe<
-    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
-  >
-  _allHeaderLocales?: Maybe<
-    Array<HomePageModelHeaderFieldListListNonNullMultiLocaleField>
   >
   _allSeoSettingsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringMultiLocaleField>>
@@ -866,9 +844,7 @@ export type HomePageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<HomePageModelBodyField>
-  footer: Array<DefaultFooterBlockRecord>
   footerLink?: Maybe<FooterRecord>
-  header: Array<HomePageModelHeaderField>
   headerLink?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
@@ -877,16 +853,6 @@ export type HomePageRecord = RecordInterface & {
 
 /** Record of type Home Page (home_page) */
 export type HomePageRecord_AllBodyLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecord_AllFooterLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecord_AllHeaderLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -907,18 +873,6 @@ export type HomePageRecord_SeoMetaTagsArgs = {
 
 /** Record of type Home Page (home_page) */
 export type HomePageRecordBodyArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecordFooterArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecordHeaderArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
@@ -2682,10 +2636,6 @@ export type PageModelFilter = {
   title?: InputMaybe<StringFilter>
 }
 
-export type PageModelHeaderField =
-  | AnnouncementBannerBlockRecord
-  | DefaultHeaderBlockRecord
-
 export enum PageModelOrderBy {
   CreatedAtAsc = '_createdAt_ASC',
   CreatedAtDesc = '_createdAt_DESC',
@@ -2715,9 +2665,6 @@ export type PageRecord = RecordInterface & {
   _allBodyLocales?: Maybe<
     Array<PageModelBodyFieldListListNonNullMultiLocaleField>
   >
-  _allFooterLocales?: Maybe<
-    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
-  >
   _allSeoSettingsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
@@ -2736,9 +2683,7 @@ export type PageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<PageModelBodyField>
-  footer: Array<DefaultFooterBlockRecord>
   footerLink?: Maybe<FooterRecord>
-  header: Array<PageModelHeaderField>
   headerLink?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
@@ -2748,11 +2693,6 @@ export type PageRecord = RecordInterface & {
 
 /** Record of type Page (page) */
 export type PageRecord_AllBodyLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
-export type PageRecord_AllFooterLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -2778,12 +2718,6 @@ export type PageRecord_SeoMetaTagsArgs = {
 
 /** Record of type Page (page) */
 export type PageRecordBodyArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Page (page) */
-export type PageRecordFooterArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
