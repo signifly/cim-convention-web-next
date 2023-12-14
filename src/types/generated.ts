@@ -192,6 +192,67 @@ export type BooleanFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
+/** Block of type Cards Container Block > Card Block (card_block) */
+export type CardBlockRecord = RecordInterface & {
+  __typename?: 'CardBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  image?: Maybe<FileField>
+  paragraph?: Maybe<Scalars['String']['output']>
+  subtitle?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Cards Container Block > Card Block (card_block) */
+export type CardBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Cards Container Block > Card Block (card_block) */
+export type CardBlockRecordParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Cards Container Block (cards_container_block) */
+export type CardsContainerBlockRecord = RecordInterface & {
+  __typename?: 'CardsContainerBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  background?: Maybe<Scalars['String']['output']>
+  cards: Array<CardBlockRecord>
+  id: Scalars['ItemId']['output']
+  mobileLayout?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Cards Container Block (cards_container_block) */
+export type CardsContainerBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type CollectionMetadata = {
   __typename?: 'CollectionMetadata'
   count: Scalars['IntType']['output']
@@ -341,12 +402,6 @@ export type DefaultFooterBlockRecordContactParagraphArgs = {
 /** Block of type Default Footer Block (default_footer_block) */
 export type DefaultFooterBlockRecordNewsletterParagraphArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
-}
-
-export type DefaultFooterBlockRecordListListNonNullMultiLocaleField = {
-  __typename?: 'DefaultFooterBlockRecordListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<DefaultFooterBlockRecord>
 }
 
 /** Block of type Default Header Block (default_header_block) */
@@ -576,6 +631,70 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+export type FooterModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  name?: InputMaybe<StringFilter>
+}
+
+export enum FooterModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+}
+
+/** Record of type Footer (footer) */
+export type FooterRecord = RecordInterface & {
+  __typename?: 'FooterRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  blocks: Array<DefaultFooterBlockRecord>
+  id: Scalars['ItemId']['output']
+  name?: Maybe<Scalars['String']['output']>
+}
+
+/** Record of type Footer (footer) */
+export type FooterRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type GlobalSeoField = {
   __typename?: 'GlobalSeoField'
   facebookPageUrl?: Maybe<Scalars['String']['output']>
@@ -583,6 +702,74 @@ export type GlobalSeoField = {
   siteName?: Maybe<Scalars['String']['output']>
   titleSuffix?: Maybe<Scalars['String']['output']>
   twitterAccount?: Maybe<Scalars['String']['output']>
+}
+
+export type HeaderModelBlocksField =
+  | AnnouncementBannerBlockRecord
+  | DefaultHeaderBlockRecord
+
+export type HeaderModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<HeaderModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<HeaderModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  name?: InputMaybe<StringFilter>
+}
+
+export enum HeaderModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+}
+
+/** Record of type Header (header) */
+export type HeaderRecord = RecordInterface & {
+  __typename?: 'HeaderRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  blocks: Array<HeaderModelBlocksField>
+  id: Scalars['ItemId']['output']
+  name?: Maybe<Scalars['String']['output']>
+}
+
+/** Record of type Header (header) */
+export type HeaderRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Block of type Hero Block (hero_block) */
@@ -621,9 +808,11 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 export type HomePageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
+  | CardsContainerBlockRecord
   | CtaBlockRecord
   | DividerBlockRecord
   | HeroBlockRecord
+  | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
 
 export type HomePageModelBodyFieldListListNonNullMultiLocaleField = {
@@ -632,27 +821,11 @@ export type HomePageModelBodyFieldListListNonNullMultiLocaleField = {
   value: Array<HomePageModelBodyField>
 }
 
-export type HomePageModelHeaderField =
-  | AnnouncementBannerBlockRecord
-  | DefaultHeaderBlockRecord
-
-export type HomePageModelHeaderFieldListListNonNullMultiLocaleField = {
-  __typename?: 'HomePageModelHeaderFieldListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<HomePageModelHeaderField>
-}
-
 /** Record of type Home Page (home_page) */
 export type HomePageRecord = RecordInterface & {
   __typename?: 'HomePageRecord'
   _allBodyLocales?: Maybe<
     Array<HomePageModelBodyFieldListListNonNullMultiLocaleField>
-  >
-  _allFooterLocales?: Maybe<
-    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
-  >
-  _allHeaderLocales?: Maybe<
-    Array<HomePageModelHeaderFieldListListNonNullMultiLocaleField>
   >
   _allSeoSettingsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringMultiLocaleField>>
@@ -671,8 +844,8 @@ export type HomePageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<HomePageModelBodyField>
-  footer: Array<DefaultFooterBlockRecord>
-  header: Array<HomePageModelHeaderField>
+  footer?: Maybe<FooterRecord>
+  header?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
   slug?: Maybe<Scalars['String']['output']>
@@ -680,16 +853,6 @@ export type HomePageRecord = RecordInterface & {
 
 /** Record of type Home Page (home_page) */
 export type HomePageRecord_AllBodyLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecord_AllFooterLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecord_AllHeaderLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -710,18 +873,6 @@ export type HomePageRecord_SeoMetaTagsArgs = {
 
 /** Record of type Home Page (home_page) */
 export type HomePageRecordBodyArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecordFooterArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Home Page (home_page) */
-export type HomePageRecordHeaderArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
@@ -2320,6 +2471,20 @@ export enum ItemStatus {
   Updated = 'updated',
 }
 
+/** Specifies how to filter Single-link fields */
+export type LinkFilter = {
+  /** Search for records with an exact match. The specified value must be a Record ID */
+  eq?: InputMaybe<Scalars['ItemId']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records linked to one of the specified records */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
+  /** Exclude records with an exact match. The specified value must be a Record ID */
+  neq?: InputMaybe<Scalars['ItemId']['input']>
+  /** Filter records not linked to one of the specified records */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']['input']>>>
+}
+
 /** Specifies how to filter by locale */
 export type LocalesFilter = {
   /** Filter records that are localized in all the specified locales */
@@ -2438,9 +2603,11 @@ export type OrientationFilter = {
 export type PageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
+  | CardsContainerBlockRecord
   | CtaBlockRecord
   | DividerBlockRecord
   | HeroBlockRecord
+  | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
 
 export type PageModelBodyFieldListListNonNullMultiLocaleField = {
@@ -2461,15 +2628,13 @@ export type PageModelFilter = {
   _status?: InputMaybe<StatusFilter>
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
+  footerLink?: InputMaybe<LinkFilter>
+  headerLink?: InputMaybe<LinkFilter>
   id?: InputMaybe<ItemIdFilter>
   seoSettings?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
   title?: InputMaybe<StringFilter>
 }
-
-export type PageModelHeaderField =
-  | AnnouncementBannerBlockRecord
-  | DefaultHeaderBlockRecord
 
 export enum PageModelOrderBy {
   CreatedAtAsc = '_createdAt_ASC',
@@ -2500,9 +2665,6 @@ export type PageRecord = RecordInterface & {
   _allBodyLocales?: Maybe<
     Array<PageModelBodyFieldListListNonNullMultiLocaleField>
   >
-  _allFooterLocales?: Maybe<
-    Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
-  >
   _allSeoSettingsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
@@ -2521,8 +2683,8 @@ export type PageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<PageModelBodyField>
-  footer: Array<DefaultFooterBlockRecord>
-  header: Array<PageModelHeaderField>
+  footerLink?: Maybe<FooterRecord>
+  headerLink?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
   slug: Scalars['String']['output']
@@ -2531,11 +2693,6 @@ export type PageRecord = RecordInterface & {
 
 /** Record of type Page (page) */
 export type PageRecord_AllBodyLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
-export type PageRecord_AllFooterLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -2561,12 +2718,6 @@ export type PageRecord_SeoMetaTagsArgs = {
 
 /** Record of type Page (page) */
 export type PageRecordBodyArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Page (page) */
-export type PageRecordFooterArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
@@ -2611,6 +2762,10 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query'
   /** Returns meta information regarding a record collection */
+  _allFootersMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
+  _allHeadersMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allMenusMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
@@ -2619,11 +2774,19 @@ export type Query = {
   /** Returns the single instance record */
   _site: Site
   /** Returns a collection of records */
+  allFooters: Array<FooterRecord>
+  /** Returns a collection of records */
+  allHeaders: Array<HeaderRecord>
+  /** Returns a collection of records */
   allMenus: Array<MenuRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
+  /** Returns a specific record */
+  footer?: Maybe<FooterRecord>
+  /** Returns a specific record */
+  header?: Maybe<HeaderRecord>
   /** Returns the single instance record */
   homePage?: Maybe<HomePageRecord>
   /** Returns a specific record */
@@ -2634,6 +2797,18 @@ export type Query = {
   socialLink?: Maybe<SocialLinkRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
+}
+
+/** The query root for this schema */
+export type Query_AllFootersMetaArgs = {
+  filter?: InputMaybe<FooterModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllHeadersMetaArgs = {
+  filter?: InputMaybe<HeaderModelFilter>
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** The query root for this schema */
@@ -2658,6 +2833,26 @@ export type Query_AllUploadsMetaArgs = {
 export type Query_SiteArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type QueryAllFootersArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FooterModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FooterModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
+export type QueryAllHeadersArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<HeaderModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<HeaderModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
 }
 
 /** The query root for this schema */
@@ -2688,6 +2883,22 @@ export type QueryAllUploadsArgs = {
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>
   skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
+export type QueryFooterArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FooterModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FooterModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryHeaderArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<HeaderModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<HeaderModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2940,11 +3151,41 @@ export type TestimonialsBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   anchorId?: Maybe<Scalars['String']['output']>
+  headline: Scalars['String']['output']
   id: Scalars['ItemId']['output']
+  testimonials: Array<TestimonialsBlockTestimonialRecord>
+  textToHighlight?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Testimonials Block (testimonials_block) */
 export type TestimonialsBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Testimonials Block > Testimonial (testimonials_block_testimonial) */
+export type TestimonialsBlockTestimonialRecord = RecordInterface & {
+  __typename?: 'TestimonialsBlockTestimonialRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  author: Scalars['String']['output']
+  company: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  quote?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Testimonials Block > Testimonial (testimonials_block_testimonial) */
+export type TestimonialsBlockTestimonialRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 

@@ -25,11 +25,11 @@ export default async function HomePageLayout({
 
   return (
     <>
-      {pageData?.homePage?.header.map((block: any) => (
+      {pageData?.homePage?.header?.blocks.map((block: any) => (
         <ComponentParser key={block.id} data={block} />
       ))}
       {children}
-      {pageData?.homePage?.footer.map((block: any) => (
+      {pageData?.homePage?.footer?.blocks.map((block: any) => (
         <ComponentParser
           key={block.id}
           data={{ ...block, socialLinks: pageData.socialLink }}

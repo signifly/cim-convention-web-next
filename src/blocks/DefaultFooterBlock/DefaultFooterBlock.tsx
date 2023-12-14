@@ -43,17 +43,20 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
             </StyledLink>
           </div>
           <div className="text-gray-400">{contactParagraph}</div>
-          <div className="mt-[32px] flex gap-[40px]">
-            {Object.keys(socialLinks).map(
-              (key: string, index: number) =>
-                socialLinks[key as keyof SocialLinkRecord] && (
-                  <SocialMedia
-                    key={index}
-                    socialMediaName={key}
-                    socialMediaURL={socialLinks[key as keyof SocialLinkRecord]}
-                  ></SocialMedia>
-                ),
-            )}
+          <div className="flex gap-[40px]">
+            {socialLinks &&
+              Object.keys(socialLinks).map(
+                (key: string, index: number) =>
+                  socialLinks[key as keyof SocialLinkRecord] && (
+                    <SocialMedia
+                      key={index}
+                      socialMediaName={key}
+                      socialMediaURL={
+                        socialLinks[key as keyof SocialLinkRecord]
+                      }
+                    ></SocialMedia>
+                  ),
+              )}
           </div>
         </div>
         {/* Newsletter */}

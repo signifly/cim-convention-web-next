@@ -36,11 +36,11 @@ export default async function HomePageLayout({
 
   return (
     <>
-      {pageData?.page?.header.map((block: any) => (
+      {pageData?.page?.header?.blocks.map((block: any) => (
         <ComponentParser key={block.id} data={block} />
       ))}
       {children}
-      {pageData?.page?.footer.map((block: any) => (
+      {pageData?.page?.footer?.blocks.map((block: any) => (
         <ComponentParser key={block.id} data={block} />
       ))}
     </>
