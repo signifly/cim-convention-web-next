@@ -4,6 +4,9 @@
 .structured-text {
   > * {
     @apply mb-8 text-16 text-brand-grey-600 lg:mb-10 lg:text-18;
+    &:last-child {
+      @apply mb-0;
+    }
   }
 
   h2 {
