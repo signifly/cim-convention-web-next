@@ -33,11 +33,8 @@ export const getPageBySlugQuery = ({
 
   return gql`
     ${HERO_BLOCK_FRAGMENT}
-		${DEFAULT_HEADER_BLOCK_FRAGMENT}
-		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
-    ${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
@@ -60,10 +57,6 @@ export const getPageBySlugQuery = ({
                 tag
                 content
             }
-						header {
-							...DefaultHeaderBlockFragment
-							...AnnouncementBannerBlockFragment
-						}
             body {
                 ...HeroBlockFragment
 								...TwoColumnWithImageBlockFragment
@@ -72,9 +65,6 @@ export const getPageBySlugQuery = ({
 								...CtaBlockFragment
 								...DividerBlockFragment
 								...TestimonialsBlockFragment
-            }
-            footer {
-              ...DefaultFooterBlockFragment
             }
         }
 

@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import brandColors from './src/styles/brandColors'
+import { brandColors } from './src/styles/brandColors'
 
 const BASE_FONT_SIZE = 16
 const rem = (px: number, key = px) => ({ [key]: `${px / BASE_FONT_SIZE}rem` })
