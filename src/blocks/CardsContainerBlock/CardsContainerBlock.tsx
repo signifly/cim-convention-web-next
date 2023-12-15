@@ -14,7 +14,7 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
         )}
       </GridContainer>
       {cards.length && (
-        <GridContainer>
+        <GridContainer className="gap-[16px] md:gap-[32px]">
           {cards.map((card: CardBlockRecord) => {
             return (
               <div
