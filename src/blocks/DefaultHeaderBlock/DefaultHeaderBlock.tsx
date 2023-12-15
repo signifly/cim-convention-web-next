@@ -223,7 +223,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
               })}
             </div>
             <div className="py-6">
-              {/* TODO: replace this with actual CTA button  */}
+              {/* @TODO: replace this with actual CTA button  */}
               <a
                 href="#"
                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
@@ -256,7 +256,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
             <StyledLink
               href={{
                 pathname: '/[...slug]',
-                params: { slug: ['register'] }, // TODO: replace with actual slug
+                params: { slug: ['register'] }, // @TODO: replace with actual slug
               }}
             >
               {ctaButtonLabel}

@@ -36,7 +36,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
               className="flex w-[100%] max-w-[568px] justify-center align-middle lg:w-auto"
               href={{
                 pathname: '/[...slug]',
-                params: { slug: [`/${contactButtonLink}`] }, // TODO: replace with actual slug
+                params: { slug: [`/${contactButtonLink}`] }, // @TODO: replace with actual slug
               }}
             >
               {contactButtonLabel}

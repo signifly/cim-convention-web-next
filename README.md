@@ -22,7 +22,7 @@ Test suite is also not provided to give flexibility back to the code owner of th
 
 ## TODO
 
-Bellow is a list of `// TODO` items you will find throughout the project that is required before the project is production ready. You will find helpful resource linked in each item.
+Bellow is a list of `// @TODO` items you will find throughout the project that is required before the project is production ready. You will find helpful resource linked in each item.
 
 - [ ] Customize `tailwind.config.ts` as required, if the project is content heavy, consider adding [tailwind-typography](https://tailwindcss.com/docs/typography-plugin)
 - [ ] Add [fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
