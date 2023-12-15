@@ -10,6 +10,7 @@ import { AD_BANNER_BLOCK_FRAGMENT } from '@/blocks/AdBannerBlock/AdBannerBlock.f
 import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock.fragment'
 import { CTA_BLOCK_FRAGMENT } from '@/blocks/CtaBlock/CtaBlock.fragment'
 import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragment'
+import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/TestimonialsBlock.fragment'
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
@@ -34,16 +35,17 @@ export const getPageBySlugQuery = ({
 
   return gql`
     ${HERO_BLOCK_FRAGMENT}
-		${DEFAULT_HEADER_BLOCK_FRAGMENT}
-		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
-    ${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
 		${CARDS_CONTAINER_BLOCK_FRAGMENT}
 		${CARD_BLOCK_FRAGMENT}
+		${TESTIMONIALS_BLOCK_FRAGMENT}
+		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
+		${DEFAULT_HEADER_BLOCK_FRAGMENT}
+		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -76,6 +78,7 @@ export const getPageBySlugQuery = ({
 								...CtaBlockFragment
 								...DividerBlockFragment
 								...CardsContainerBlockFragment
+								...TestimonialsBlockFragment
             }
             footer {
               blocks {

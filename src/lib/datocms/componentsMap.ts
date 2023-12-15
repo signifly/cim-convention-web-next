@@ -10,6 +10,7 @@ import { CtaBlock } from '@/blocks/CtaBlock/CtaBlock'
 import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
 import { CardsContainerBlock } from '@/blocks/CardsContainerBlock/CardsContainerBlock'
 import { CardBlock } from '@/blocks/CardBlock/CardBlock'
+import { TestimonialsBlock } from '@/blocks/TestimonialsBlock/TestimonialsBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -27,4 +28,5 @@ export const componentsMap = {
   divider_block: DividerBlock,
   cards_container_block: CardsContainerBlock,
   card_block: CardBlock,
+  testimonials_block: TestimonialsBlock,
 }
