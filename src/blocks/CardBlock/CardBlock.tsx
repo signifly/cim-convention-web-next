@@ -1,31 +1,47 @@
-import { CardBlockRecord } from '@/types/generated'
+import { CardBlockRecord, Maybe } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 
-export function CardBlock(props: CardBlockRecord) {
-  let { title, subtitle, paragraph, image } = props
+type CardBlockRecordExt = CardBlockRecord & { mobileLayout?: Maybe<string> }
+
+export function CardBlock(props: CardBlockRecordExt) {
+  let { title, subtitle, paragraph, image, mobileLayout } = props
+
   return (
-    <div className="flex flex-col overflow-hidden rounded-[8px] border-[1px] border-brand-grey-200 bg-white">
-      <div className="h-[60%] overflow-hidden">
+    <div className="flex min-h-[100%] flex-col overflow-hidden rounded-[8px] border-[1px] border-brand-grey-200 bg-white">
+      <div
+        className={`${
+          mobileLayout === 'single' ? 'h-[285px]' : 'h-[136px]'
+        } overflow-hidden md:h-[300px]`}
+      >
         {image &&
           (image?.responsiveImage ? (
             <DatoImage
               data={image.responsiveImage}
-              className="w-auto object-cover"
+              className="h-[100%] w-auto object-cover"
+              pictureClassName="object-cover"
             />
           ) : (
             <Image src={image?.url || ''} alt={image?.alt || ''} fill />
           ))}
       </div>
-      <div className="h-[40%] p-[24px]">
-        <p className="mb-[4px] text-[20px]/[140%] font-semibold">{title}</p>
-        <p className="text-[16px]/[140%] font-normal text-brand-grey-600">
-          {subtitle}
-        </p>
-        <div
-          className="mt-[32px] text-[16px]/[140%] font-normal text-brand-grey-600"
-          dangerouslySetInnerHTML={{ __html: paragraph || '' }}
-        ></div>
+      <div className="p-[12px] md:p-[24px]">
+        {title && (
+          <p className="mb-[4px] text-[16px]/[140%] font-semibold md:text-[20px]/[140%]">
+            {title}
+          </p>
+        )}
+        {subtitle && (
+          <p className="text-[12px]/[130%] font-normal text-brand-grey-600 md:text-[16px]/[140%]">
+            {subtitle}
+          </p>
+        )}
+        {paragraph && (
+          <div
+            className="mt-[12px] text-[12px]/[130%] font-normal text-brand-grey-600 md:mt-[32px] md:text-[16px]/[140%]"
+            dangerouslySetInnerHTML={{ __html: paragraph || '' }}
+          ></div>
+        )}
       </div>
     </div>
   )

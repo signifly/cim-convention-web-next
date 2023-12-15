@@ -34,7 +34,7 @@ export default function LocaleLayout({
       className={cn('h-full antialiased', EuclidCircularA.className)}
       suppressHydrationWarning
     >
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+      <body className="flex h-full bg-zinc-50">
         <Providers params={params}>
           <div className="relative flex w-full flex-col">{children}</div>
         </Providers>

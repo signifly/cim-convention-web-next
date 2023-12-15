@@ -49,7 +49,7 @@ const config: Config = {
         'brand-gradient':
           'linear-gradient(to bottom right, #FFF000, #00A550, #00ADEF)',
         'brand-gradient-light':
-          'linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(109deg, #FFF000 -3.65%, #00A550 56.69%, #00ADEF 104.94%)',
+          'linear-gradient(180deg, #F2F4F7 0%, rgba(242, 244, 247, 0.00) 100%)',
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
