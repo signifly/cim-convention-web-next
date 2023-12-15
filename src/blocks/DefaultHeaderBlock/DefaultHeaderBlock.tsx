@@ -69,8 +69,8 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                 >
                   <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                     <div className="p-4">
-                      {subMenuItems.map(
-                        (subMenu) =>
+                      {subMenuItems.map((subMenu) => {
+                        return (
                           subMenu.linkTo && (
                             <div
                               key={subMenu.id}
@@ -91,8 +91,9 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                                 </Link>
                               </div>
                             </div>
-                          ),
-                      )}
+                          )
+                        )
+                      })}
                     </div>
                   </Popover.Panel>
                 </Transition>
@@ -111,7 +112,10 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                 {item.linkTo.title}
               </Link>
             ) : (
-              <span className="font-medium leading-6 text-gray-900">
+              <span
+                key={item.id}
+                className="font-medium leading-6 text-gray-900"
+              >
                 {item.name}
               </span>
             )
@@ -208,7 +212,10 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
                       {item.name}
                     </Link>
                   ) : (
-                    <span className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50">
+                    <span
+                      key={item.id}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
+                    >
                       {item.name}
                     </span>
                   )
@@ -216,6 +223,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
               })}
             </div>
             <div className="py-6">
+              {/* TODO: replace this with actual CTA button  */}
               <a
                 href="#"
                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
