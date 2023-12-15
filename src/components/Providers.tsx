@@ -6,7 +6,7 @@ type ProviderProps = {
 }
 
 export async function Providers({ children }: ProviderProps) {
-  //TODO: fetch i18n messages from Dato instead
+  //@TODO: fetch i18n messages from Dato instead
 
   return (
     <>

@@ -1,9 +1,8 @@
 import { NextFont } from 'next/dist/compiled/@next/font'
 import localFont from 'next/font/local'
-import type { CSSProperties } from 'react'
 
 export const EuclidCircularA: NextFont = localFont({
-  // TODO: convert otf to woff2 and replace path
+  // @TODO: convert to woff2
   src: [
     // bold
     {
