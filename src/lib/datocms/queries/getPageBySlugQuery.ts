@@ -39,6 +39,9 @@ export const getPageBySlugQuery = ({
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
 		${TESTIMONIALS_BLOCK_FRAGMENT}
+		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
+		${DEFAULT_HEADER_BLOCK_FRAGMENT}
+		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -70,6 +73,7 @@ export const getPageBySlugQuery = ({
 								...AdThreeColumnBlockFragment
 								...CtaBlockFragment
 								...DividerBlockFragment
+								...TestimonialsBlockFragment
             }
             footer {
               blocks {

@@ -64,7 +64,7 @@ export const TestimonialsBlock = (props: TestimonialsBlockRecord) => {
         breakpoints={{
           [1024]: {
             slidesPerView: 2,
-            spaceBetween: 32,
+            spaceBetween: 30,
           },
         }}
         style={{
@@ -87,6 +87,9 @@ export const TestimonialsBlock = (props: TestimonialsBlockRecord) => {
             <SwiperSlide key={`${testimonial.id}}-${i}`}>
               <div className="py-8 lg:py-12">
                 <blockquote className="rounded-lg bg-white p-4 text-16/[150%] font-normal text-brand-grey-950 lg:p-10 lg:text-20">
+                  <p className="mb-4 lg:mb-10">
+                    {testimonial.id}-{i}
+                  </p>
                   <p className="mb-4 lg:mb-10">{testimonial.quote}</p>
                   <cite className="not-italic">
                     <p className="text-16/[140%] font-semibold tracking-[-0.08px] lg:text-20">
