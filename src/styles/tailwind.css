@@ -12,6 +12,7 @@
   h2 {
     @apply mb-4 text-20/[140%] font-semibold text-brand-grey-950 lg:mb-8 lg:text-32/[125%];
   }
+
   h3 {
     @apply mb-4 text-20/[140%] font-semibold text-brand-grey-950 lg:mb-6 lg:text-24;
   }
