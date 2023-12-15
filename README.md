@@ -24,10 +24,10 @@ Test suite is also not provided to give flexibility back to the code owner of th
 
 Bellow is a list of `// @TODO` items you will find throughout the project that is required before the project is production ready. You will find helpful resource linked in each item.
 
-- [ ] Customize `tailwind.config.ts` as required, if the project is content heavy, consider adding [tailwind-typography](https://tailwindcss.com/docs/typography-plugin)
-- [ ] Add [fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-- [ ] Add static OR generate dynamic [meta data](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
-- [ ] Add [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) to dynamic routes for SSG
+- [x] Customize `tailwind.config.ts` as required, if the project is content heavy, consider adding [tailwind-typography](https://tailwindcss.com/docs/typography-plugin)
+- [x] Add [fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
+- [x] Add static OR generate dynamic [meta data](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+- [x] Add [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) to dynamic routes for SSG
 - [ ] Add [favicon](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons)
 - [ ] Add static OR generate [`robots.txt`](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)
 - [ ] Fetch i18n messages from DatoCMS
