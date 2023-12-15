@@ -13,13 +13,13 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
     >
       <GridContainer>
         {title && (
-          <h1 className="col-span-full mb-[32px] text-[20px]/[140%] font-semibold md:mb-[48px] md:text-[32px]/[125%]">
+          <h1 className="col-span-full mb-8 text-20/[140%] font-semibold md:mb-[48px] md:text-32/[125%]">
             {title}
           </h1>
         )}
       </GridContainer>
       {cards.length && (
-        <GridContainer className="auto-rows-[1fr] gap-[16px] md:gap-[32px]">
+        <GridContainer className="auto-rows-[1fr] gap-[16px] md:gap-8">
           {cards.map((card: CardBlockRecord) => {
             return (
               <div

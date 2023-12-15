@@ -27,18 +27,18 @@ export function CardBlock(props: CardBlockRecordExt) {
       </div>
       <div className="p-[12px] md:p-[24px]">
         {title && (
-          <p className="mb-[4px] text-[16px]/[140%] font-semibold md:text-[20px]/[140%]">
+          <p className="mb-[4px] text-16/[140%] font-semibold md:text-20/[140%]">
             {title}
           </p>
         )}
         {subtitle && (
-          <p className="text-[12px]/[130%] font-normal text-brand-grey-600 md:text-[16px]/[140%]">
+          <p className="text-12/[130%] font-normal text-brand-grey-600 md:text-16/[140%]">
             {subtitle}
           </p>
         )}
         {paragraph && (
           <div
-            className="mt-[12px] text-[12px]/[130%] font-normal text-brand-grey-600 md:mt-[32px] md:text-[16px]/[140%]"
+            className="mt-[12px] text-12/[130%] font-normal text-brand-grey-600 md:mt-8 md:text-16/[140%]"
             dangerouslySetInnerHTML={{ __html: paragraph || '' }}
           ></div>
         )}
