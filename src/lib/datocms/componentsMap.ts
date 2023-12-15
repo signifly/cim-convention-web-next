@@ -11,6 +11,7 @@ import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
 import { CardsContainerBlock } from '@/blocks/CardsContainerBlock/CardsContainerBlock'
 import { CardBlock } from '@/blocks/CardBlock/CardBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock/TestimonialsBlock'
+import { PageHeaderBlock } from '@/blocks/PageHeaderBlock/PageHeaderBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -29,4 +30,5 @@ export const componentsMap = {
   cards_container_block: CardsContainerBlock,
   card_block: CardBlock,
   testimonials_block: TestimonialsBlock,
+  page_header_block: PageHeaderBlock,
 }

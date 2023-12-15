@@ -812,8 +812,10 @@ export type HomePageModelBodyField =
   | CtaBlockRecord
   | DividerBlockRecord
   | HeroBlockRecord
+  | PageHeaderBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
+  | VideoBlockRecord
 
 export type HomePageModelBodyFieldListListNonNullMultiLocaleField = {
   __typename?: 'HomePageModelBodyFieldListListNonNullMultiLocaleField'
@@ -2600,6 +2602,32 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
+/** Block of type Page Header Block (page_header_block) */
+export type PageHeaderBlockRecord = RecordInterface & {
+  __typename?: 'PageHeaderBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  subTitle: Scalars['String']['output']
+  title: Scalars['String']['output']
+}
+
+/** Block of type Page Header Block (page_header_block) */
+export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type PageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
@@ -2607,8 +2635,10 @@ export type PageModelBodyField =
   | CtaBlockRecord
   | DividerBlockRecord
   | HeroBlockRecord
+  | PageHeaderBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
+  | VideoBlockRecord
 
 export type PageModelBodyFieldListListNonNullMultiLocaleField = {
   __typename?: 'PageModelBodyFieldListListNonNullMultiLocaleField'
@@ -3672,6 +3702,43 @@ export type UploadWidthFilter = {
   lte?: InputMaybe<Scalars['IntType']['input']>
   /** Search assets that do not have the specified width */
   neq?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** Block of type Video Block (video_block) */
+export type VideoBlockRecord = RecordInterface & {
+  __typename?: 'VideoBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  title?: Maybe<Scalars['String']['output']>
+  video?: Maybe<VideoField>
+}
+
+/** Block of type Video Block (video_block) */
+export type VideoBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type VideoField = {
+  __typename?: 'VideoField'
+  height: Scalars['IntType']['output']
+  provider: Scalars['String']['output']
+  providerUid: Scalars['String']['output']
+  thumbnailUrl: Scalars['String']['output']
+  title: Scalars['String']['output']
+  url: Scalars['String']['output']
+  width: Scalars['IntType']['output']
 }
 
 export enum VideoMp4Res {

@@ -11,6 +11,7 @@ import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdTh
 import { CTA_BLOCK_FRAGMENT } from '@/blocks/CtaBlock/CtaBlock.fragment'
 import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragment'
 import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/TestimonialsBlock.fragment'
+import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
@@ -46,6 +47,7 @@ export const getPageBySlugQuery = ({
 		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
+		${PAGE_HEADER_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -71,6 +73,7 @@ export const getPageBySlugQuery = ({
               }
             }
             body {
+								...PageHeaderBlockFragment
                 ...HeroBlockFragment
 								...TwoColumnWithImageBlockFragment
 								...AdBannerBlockFragment
