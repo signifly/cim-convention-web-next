@@ -14,7 +14,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  //TODO: add metaData
+  // @TODO: add metaData
 }
 
 export default function LocaleLayout({
