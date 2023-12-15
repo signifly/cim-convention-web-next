@@ -16,19 +16,9 @@ import { CheckIcon } from '@heroicons/react/20/solid'
 
 const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
   const { structuredText } = props
-  const h2 =
-    '[&_h2]:mb-4 [&_h2]:text-20/[140%] [&_h2]:font-semibold [&_h2]:text-brand-grey-950'
-  const h2Large = 'lg:[&_h2]:mb-8 lg:[&_h2]:text-32/[125%]'
-  const h3 =
-    '[&_h3]:mb-2 [&_h3]:text-18/[140%] [&_h3]:font-medium [&_h3]:text-brand-grey-950'
-  const h3Large = 'lg:[&_h3]:mb-6 lg:[&_h3]:text-24'
-  const ul = '[&_ul>li]:list-disc [&_ul]:ml-4 [&_ul]:lg:ml-8'
-  const p =
-    '[&_p:last-of-type]:mb-0 [&_p]:mb-8 lg:[&_p]:mb-10 text-16 text-brand-grey-600 font-normal'
-  const pLarge = 'lg:[&_p]:text-18'
 
   return (
-    <div className={cn(h2, h2Large, h3, h3Large, ul, p, pLarge)}>
+    <div className="structured-text">
       {/* @ts-ignore - type mismatch from generated types */}
       <StructuredText data={structuredText} />
     </div>
