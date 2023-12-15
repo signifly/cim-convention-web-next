@@ -8,8 +8,10 @@ type CustomLinkProps = {
 
 const baseStyle =
   'py-[10px] px-6 rounded font-[500] shadow-xs text-14/[125%] lg:text-16'
-const primaryStyle = 'text-white bg-brand-gradient'
-const secondaryStyle = 'bg-white text-brand-grey-950'
+const primaryStyle =
+  'text-white bg-brand-gradient disabled:bg-brand-gradient-light focus:shadow-skyblue transition-all focus:outline-none'
+const secondaryStyle =
+  'bg-white text-brand-grey-950 transition-all focus:shadow-skyblue focus:outline-none'
 
 export function StyledLink<Pathname extends keyof typeof pathnames>(
   props: ComponentProps<typeof Link<Pathname>> & CustomLinkProps,
