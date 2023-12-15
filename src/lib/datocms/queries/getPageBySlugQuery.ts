@@ -14,6 +14,8 @@ import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/Testimon
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
+import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
+import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -38,6 +40,8 @@ export const getPageBySlugQuery = ({
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
+		${CARDS_CONTAINER_BLOCK_FRAGMENT}
+		${CARD_BLOCK_FRAGMENT}
 		${TESTIMONIALS_BLOCK_FRAGMENT}
 		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
@@ -73,6 +77,7 @@ export const getPageBySlugQuery = ({
 								...AdThreeColumnBlockFragment
 								...CtaBlockFragment
 								...DividerBlockFragment
+								...CardsContainerBlockFragment
 								...TestimonialsBlockFragment
             }
             footer {
