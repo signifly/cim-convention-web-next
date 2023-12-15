@@ -2628,8 +2628,8 @@ export type PageModelFilter = {
   _status?: InputMaybe<StatusFilter>
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
-  footer?: InputMaybe<LinkFilter>
-  header?: InputMaybe<LinkFilter>
+  footerLink?: InputMaybe<LinkFilter>
+  headerLink?: InputMaybe<LinkFilter>
   id?: InputMaybe<ItemIdFilter>
   seoSettings?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
@@ -2683,8 +2683,8 @@ export type PageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   body: Array<PageModelBodyField>
-  footer?: Maybe<FooterRecord>
-  header?: Maybe<HeaderRecord>
+  footerLink?: Maybe<FooterRecord>
+  headerLink?: Maybe<HeaderRecord>
   id: Scalars['ItemId']['output']
   seoSettings?: Maybe<SeoField>
   slug: Scalars['String']['output']

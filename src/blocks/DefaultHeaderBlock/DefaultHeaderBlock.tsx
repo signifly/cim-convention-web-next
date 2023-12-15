@@ -232,7 +232,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
   return (
     <header className="border-b border-brand-grey-300 bg-white">
       <nav
-        className="container mx-auto flex items-center justify-between py-4 lg:py-6"
+        className="container mx-auto box-border flex max-w-[1264px] items-center justify-between py-4  lg:py-6"
         aria-label="Global"
       >
         {/* Left side */}

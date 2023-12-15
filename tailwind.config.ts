@@ -12,12 +12,16 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1264',
+      '2xl': '1536px',
+    },
     container: {
       padding: {
-        DEFAULT: '1.5rem',
-        lg: '2rem',
-        xl: '5rem',
-        '2xl': '6rem',
+        DEFAULT: '24px',
       },
     },
     fontFamily: {
@@ -30,9 +34,12 @@ const config: Config = {
       backgroundImage: {
         'brand-gradient':
           'linear-gradient(to bottom right, #FFF000, #00A550, #00ADEF)',
+        'brand-gradient-light':
+          'linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(109deg, #FFF000 -3.65%, #00A550 56.69%, #00ADEF 104.94%)',
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
+        skyblue: '0px 0px 0px 4px #00ADEF4D',
       },
       fontSize: {
         ...rem(11),

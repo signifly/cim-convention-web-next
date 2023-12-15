@@ -57,6 +57,12 @@ export const getPageBySlugQuery = ({
                 tag
                 content
             }
+            header {
+              blocks {
+                ...DefaultHeaderBlockFragment
+							  ...AnnouncementBannerBlockFragment
+              }
+            }
             body {
                 ...HeroBlockFragment
 								...TwoColumnWithImageBlockFragment
@@ -64,7 +70,11 @@ export const getPageBySlugQuery = ({
 								...AdThreeColumnBlockFragment
 								...CtaBlockFragment
 								...DividerBlockFragment
-								...TestimonialsBlockFragment
+            }
+            footer {
+              blocks {
+                ...DefaultFooterBlockFragment
+              }
             }
         }
 
