@@ -1,9 +1,9 @@
 import React, { HTMLAttributes } from 'react'
-import FacebookIcon from './SVGs/FacebookIcon'
-import InstagramIcon from './SVGs/InstagramIcon'
-import LinkedinIcon from './SVGs/LinkedinIcon'
-import XIcon from './SVGs/XIcon'
-import YoutubeIcon from './SVGs/YoutubeIcon'
+import FacebookIcon from './Icons/FacebookIcon'
+import InstagramIcon from './Icons/InstagramIcon'
+import LinkedinIcon from './Icons/LinkedinIcon'
+import XIcon from './Icons/XIcon'
+import YoutubeIcon from './Icons/YoutubeIcon'
 
 const SVGMap = {
   facebook_icon: FacebookIcon,
@@ -13,7 +13,7 @@ const SVGMap = {
   youtube_icon: YoutubeIcon,
 }
 
-const SVGSelector = ({
+const IconSelector = ({
   selectorId,
   ...rest
 }: { selectorId: string } & HTMLAttributes<HTMLElement>) => {
@@ -22,4 +22,4 @@ const SVGSelector = ({
   return SVG ? <SVG {...rest} /> : null
 }
 
-export default SVGSelector
+export default IconSelector
