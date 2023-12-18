@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react'
-import SVGSelector from './SVGSelector/SVGSelector'
+import IconSelector from './IconSelector/IconSelector'
 
 type SocialMedia = {
   socialMediaName: string
@@ -11,7 +11,7 @@ const SocialMedia = (socialMedia: SocialMedia) => {
 
   return (
     <a href={socialMediaURL} target="_blank">
-      <SVGSelector
+      <IconSelector
         selectorId={`${socialMediaName}_icon`}
         className="aspect-square h-[20px] w-[20px]"
       />

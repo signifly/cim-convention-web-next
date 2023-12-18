@@ -18,6 +18,7 @@ import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
+import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -48,6 +49,7 @@ export const getPageBySlugQuery = ({
 		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
+		${VIDEO_BLOCK_FRAGMENT}
 		${PAGE_HEADER_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
 
@@ -85,6 +87,7 @@ export const getPageBySlugQuery = ({
 								...CardsContainerBlockFragment
 								...TestimonialsBlockFragment
 								...StatisticsBlockFragment
+                ...VideoBlockFragment
             }
             footer {
               blocks {
