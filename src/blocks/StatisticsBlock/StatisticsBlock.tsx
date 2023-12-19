@@ -1,12 +1,13 @@
 import React from 'react'
 import { StatisticsBlockRecord } from '@/types/generated'
 import { GridContainer } from '@/components/GridContainer'
+import IconSelector from '@/components/IconSelector/IconSelector'
 import { cn } from '@/utils/clsxMerge'
 
 export const StatisticsBlock = (props: StatisticsBlockRecord) => {
   const { anchorId, headline, subHeadline, stats, styleOptions } = props
 
-  // @TODO: add modular icons
+  // @TODO: add icons
 
   return (
     <section
@@ -36,7 +37,14 @@ export const StatisticsBlock = (props: StatisticsBlockRecord) => {
               <div className="text-24/[140%] font-medium lg:text-40/[115%]">
                 {stat.value}
               </div>
-              <div className="text-14/[150%] lg:text-20/[155%]">
+              <div className="flex items-center gap-x-2 text-14/[150%] lg:text-20/[155%]">
+                <IconSelector
+                  selectorId={stat.iconSelection}
+                  className={cn(
+                    'aspect-square h-4 w-4 lg:h-6 lg:w-6',
+                    styleOptions === 'light' && 'text-brand-grey-800',
+                  )}
+                />
                 {stat.label}
               </div>
 

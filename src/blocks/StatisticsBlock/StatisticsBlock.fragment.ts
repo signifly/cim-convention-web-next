@@ -12,6 +12,7 @@ export const STATISTICS_BLOCK_FRAGMENT = gql`
       _modelApiKey
       label
       value
+      iconSelection
     }
     styleOptions
   }
