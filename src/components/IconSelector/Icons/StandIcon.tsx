@@ -1,9 +1,7 @@
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { HTMLAttributes } from 'react'
 import { cn } from '@/utils/clsxMerge'
 
-const StandIcon = (props: ComponentPropsWithoutRef<'svg'>) => {
-  const { className } = props
-
+const StandIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
   return (
     <svg
       viewBox="0 0 24 24"

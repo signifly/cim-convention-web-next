@@ -1,9 +1,7 @@
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { HTMLAttributes } from 'react'
 import { cn } from '@/utils/clsxMerge'
 
-const PresentationChartIcon = (props: ComponentPropsWithoutRef<'svg'>) => {
-  const { className } = props
-
+const PresentationChartIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
   return (
     <svg
       viewBox="0 0 25 25"

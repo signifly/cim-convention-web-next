@@ -1,8 +1,7 @@
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { HTMLAttributes } from 'react'
 import { cn } from '@/utils/clsxMerge'
 
-const GlobeIcon = (props: ComponentPropsWithoutRef<'svg'>) => {
-  const { className } = props
+const GlobeIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
   return (
     <svg
       viewBox="0 0 24 24"
