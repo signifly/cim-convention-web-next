@@ -19,6 +19,8 @@ import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
+import { PAST_CONVENTIONS_BLOCK_FRAGMENT } from '@/blocks/PastConventionsBlock/PastConventionsBlock.fragment'
+import { CONVENTION_BLOCK_FRAGMENT } from '@/blocks/ConventionBlock/ConventionBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -51,6 +53,8 @@ export const getPageBySlugQuery = ({
 		${ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT}
 		${VIDEO_BLOCK_FRAGMENT}
 		${PAGE_HEADER_BLOCK_FRAGMENT}
+		${PAST_CONVENTIONS_BLOCK_FRAGMENT}
+		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
@@ -88,6 +92,7 @@ export const getPageBySlugQuery = ({
 								...TestimonialsBlockFragment
 								...StatisticsBlockFragment
                 ...VideoBlockFragment
+                ...PastConventionsBlockFragment
             }
             footer {
               blocks {

@@ -13,6 +13,8 @@ import { CardBlock } from '@/blocks/CardBlock/CardBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock/TestimonialsBlock'
 import { VideoBlock } from '@/blocks/VideoBlock/VideoBlock'
 import { PageHeaderBlock } from '@/blocks/PageHeaderBlock/PageHeaderBlock'
+import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventionsBlock'
+import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
 
 export type ComponentsMap = {
@@ -34,5 +36,7 @@ export const componentsMap = {
   testimonials_block: TestimonialsBlock,
   video_block: VideoBlock,
   page_header_block: PageHeaderBlock,
+  past_conventions_block: PastConventionsBlock,
+  convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
 }

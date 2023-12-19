@@ -17,7 +17,7 @@ export function VideoBlock(props: VideoBlockRecord) {
       <GridContainer className="gap-8">
         {title && (
           <div className="col-span-full flex justify-center">
-            <h1 className="text-32/[125%] font-semibold">{title}</h1>
+            <h2 className="text-32/[125%] font-semibold">{title}</h2>
           </div>
         )}
         <div className="col-span-full col-start-1 lg:col-span-10 lg:col-start-2">
