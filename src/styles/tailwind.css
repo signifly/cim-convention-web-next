@@ -22,4 +22,8 @@
   }
 }
 
+:root {
+  --swiper-wrapper-transition-timing-function: linear;
+}
+
 @tailwind utilities;
