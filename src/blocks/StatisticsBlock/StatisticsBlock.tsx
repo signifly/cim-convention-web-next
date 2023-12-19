@@ -7,8 +7,6 @@ import { cn } from '@/utils/clsxMerge'
 export const StatisticsBlock = (props: StatisticsBlockRecord) => {
   const { anchorId, headline, subHeadline, stats, styleOptions } = props
 
-  // @TODO: add icons
-
   return (
     <section
       id={anchorId || ''}
