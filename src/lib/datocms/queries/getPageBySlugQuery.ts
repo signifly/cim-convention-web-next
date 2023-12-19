@@ -12,6 +12,7 @@ import { CTA_BLOCK_FRAGMENT } from '@/blocks/CtaBlock/CtaBlock.fragment'
 import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragment'
 import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/TestimonialsBlock.fragment'
 import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
+import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
@@ -54,6 +55,7 @@ export const getPageBySlugQuery = ({
 		${PAGE_HEADER_BLOCK_FRAGMENT}
 		${PAST_CONVENTIONS_BLOCK_FRAGMENT}
 		${CONVENTION_BLOCK_FRAGMENT}
+		${STATISTICS_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -88,6 +90,7 @@ export const getPageBySlugQuery = ({
 								...DividerBlockFragment
 								...CardsContainerBlockFragment
 								...TestimonialsBlockFragment
+								...StatisticsBlockFragment
                 ...VideoBlockFragment
                 ...PastConventionsBlockFragment
             }
