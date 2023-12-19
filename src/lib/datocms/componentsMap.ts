@@ -13,6 +13,7 @@ import { CardBlock } from '@/blocks/CardBlock/CardBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock/TestimonialsBlock'
 import { VideoBlock } from '@/blocks/VideoBlock/VideoBlock'
 import { PageHeaderBlock } from '@/blocks/PageHeaderBlock/PageHeaderBlock'
+import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -33,4 +34,5 @@ export const componentsMap = {
   testimonials_block: TestimonialsBlock,
   video_block: VideoBlock,
   page_header_block: PageHeaderBlock,
+  statistics_block: StatisticsBlock,
 }

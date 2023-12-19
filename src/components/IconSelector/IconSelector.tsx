@@ -4,6 +4,11 @@ import InstagramIcon from './Icons/InstagramIcon'
 import LinkedinIcon from './Icons/LinkedinIcon'
 import XIcon from './Icons/XIcon'
 import YoutubeIcon from './Icons/YoutubeIcon'
+import UserIcon from './Icons/UserIcon'
+import BriefcaseIcon from './Icons/BriefcaseIcon'
+import StandIcon from './Icons/StandIcon'
+import PresentationChartIcon from './Icons/PresentationChartIcon'
+import GlobeIcon from './Icons/GlobeIcon'
 
 const SVGMap = {
   facebook_icon: FacebookIcon,
@@ -11,6 +16,11 @@ const SVGMap = {
   linkedin_icon: LinkedinIcon,
   twitter_icon: XIcon,
   youtube_icon: YoutubeIcon,
+  user_icon: UserIcon,
+  briefcase_icon: BriefcaseIcon,
+  stand_icon: StandIcon,
+  presentation_chart_icon: PresentationChartIcon,
+  globe_icon: GlobeIcon,
 }
 
 const IconSelector = ({

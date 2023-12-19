@@ -283,6 +283,33 @@ export type ColorField = {
   red: Scalars['IntType']['output']
 }
 
+/** Block of type Past Conventions Block > Convention Block (convention_block) */
+export type ConventionBlockRecord = RecordInterface & {
+  __typename?: 'ConventionBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  logo?: Maybe<FileField>
+  name?: Maybe<Scalars['String']['output']>
+  url?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Past Conventions Block > Convention Block (convention_block) */
+export type ConventionBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by creation datetime */
 export type CreatedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
@@ -813,6 +840,8 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | HeroBlockRecord
   | PageHeaderBlockRecord
+  | PastConventionsBlockRecord
+  | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
   | VideoBlockRecord
@@ -2636,6 +2665,8 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | HeroBlockRecord
   | PageHeaderBlockRecord
+  | PastConventionsBlockRecord
+  | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
   | VideoBlockRecord
@@ -2767,6 +2798,32 @@ export type PageRecordSlugArgs = {
 /** Record of type Page (page) */
 export type PageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Past Conventions Block (past_conventions_block) */
+export type PastConventionsBlockRecord = RecordInterface & {
+  __typename?: 'PastConventionsBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  conventions: Array<ConventionBlockRecord>
+  id: Scalars['ItemId']['output']
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Past Conventions Block (past_conventions_block) */
+export type PastConventionsBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3102,6 +3159,62 @@ export type SocialLinkRecord = RecordInterface & {
 
 /** Record of type Social Link (social_link) */
 export type SocialLinkRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Statistics Block  (statistics_block) */
+export type StatisticsBlockRecord = RecordInterface & {
+  __typename?: 'StatisticsBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
+  headline: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  stats: Array<StatisticsBlockStatRecord>
+  styleOptions: Scalars['String']['output']
+  subHeadline: Scalars['String']['output']
+}
+
+/** Block of type Statistics Block  (statistics_block) */
+export type StatisticsBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Statistics Block > Stat (statistics_block_stat) */
+export type StatisticsBlockStatRecord = RecordInterface & {
+  __typename?: 'StatisticsBlockStatRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  iconSelection: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  value: Scalars['String']['output']
+}
+
+/** Block of type Statistics Block > Stat (statistics_block_stat) */
+export type StatisticsBlockStatRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
