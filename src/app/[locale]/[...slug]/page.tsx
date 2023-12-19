@@ -23,6 +23,7 @@ export default async function Page({
       slug: slug[0],
     }),
   )
+  console.log(pageData?.page.body)
 
   return (
     <main className="">

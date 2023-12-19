@@ -1,6 +1,7 @@
 import { gql } from 'graphql-request'
 import { locales, defaultLocale, Locale } from '@/navigation'
 
+// Blocks fragments
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
 import { DEFAULT_FOOTER_BLOCK_FRAGMENT } from '@/blocks/DefaultFooterBlock/DefaultFooterBlock.fragment'
 import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
@@ -13,14 +14,16 @@ import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragm
 import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/TestimonialsBlock.fragment'
 import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
 import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
-
-import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
-import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
-import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
 import { PAST_CONVENTIONS_BLOCK_FRAGMENT } from '@/blocks/PastConventionsBlock/PastConventionsBlock.fragment'
 import { CONVENTION_BLOCK_FRAGMENT } from '@/blocks/ConventionBlock/ConventionBlock.fragment'
+import { SPONSOR_LIST_BLOCK_FRAGMENT } from '@/blocks/SponsorListBlock/SponsorListBlock.fragment'
+
+// Shared fragments
+import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
+import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
+import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -56,6 +59,7 @@ export const getPageBySlugQuery = ({
 		${PAST_CONVENTIONS_BLOCK_FRAGMENT}
 		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
+		${SPONSOR_LIST_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -93,6 +97,7 @@ export const getPageBySlugQuery = ({
 								...StatisticsBlockFragment
                 ...VideoBlockFragment
                 ...PastConventionsBlockFragment
+								...SponsorListBlockFragment
             }
             footer {
               blocks {
