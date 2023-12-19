@@ -283,6 +283,66 @@ export type ColorField = {
   red: Scalars['IntType']['output']
 }
 
+/** Block of type Contact Block (contact_block) */
+export type ContactBlockRecord = RecordInterface & {
+  __typename?: 'ContactBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  cards: Array<ContactCardBlockRecord>
+  id: Scalars['ItemId']['output']
+  subtitle?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Contact Block (contact_block) */
+export type ContactBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Contact Block > Contact Card Block (contact_card_block) */
+export type ContactCardBlockRecord = RecordInterface & {
+  __typename?: 'ContactCardBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  description?: Maybe<Scalars['String']['output']>
+  email?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  name?: Maybe<Scalars['String']['output']>
+  phone?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Contact Block > Contact Card Block (contact_card_block) */
+export type ContactCardBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Contact Block > Contact Card Block (contact_card_block) */
+export type ContactCardBlockRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Block of type Past Conventions Block > Convention Block (convention_block) */
 export type ConventionBlockRecord = RecordInterface & {
   __typename?: 'ConventionBlockRecord'
@@ -841,6 +901,7 @@ export type HomePageModelBodyField =
   | HeroBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
+  | SponsorListBlockRecord
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
@@ -2661,11 +2722,13 @@ export type PageModelBodyField =
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
+  | ContactBlockRecord
   | CtaBlockRecord
   | DividerBlockRecord
   | HeroBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
+  | SponsorListBlockRecord
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
@@ -3083,6 +3146,7 @@ export type SeoField = {
   __typename?: 'SeoField'
   description?: Maybe<Scalars['String']['output']>
   image?: Maybe<FileField>
+  noIndex?: Maybe<Scalars['BooleanType']['output']>
   title?: Maybe<Scalars['String']['output']>
   twitterCard?: Maybe<Scalars['String']['output']>
 }
@@ -3105,6 +3169,7 @@ export type Site = {
   faviconMetaTags: Array<Tag>
   globalSeo?: Maybe<GlobalSeoField>
   locales: Array<SiteLocale>
+  noIndex?: Maybe<Scalars['BooleanType']['output']>
 }
 
 export type SiteFaviconMetaTagsArgs = {
@@ -3159,6 +3224,61 @@ export type SocialLinkRecord = RecordInterface & {
 
 /** Record of type Social Link (social_link) */
 export type SocialLinkRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Sponsor List Block (sponsor_list_block) */
+export type SponsorListBlockRecord = RecordInterface & {
+  __typename?: 'SponsorListBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
+  headline: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  previousYearLinkLabel?: Maybe<Scalars['String']['output']>
+  previousYearLinkUrl: Scalars['String']['output']
+  rows: Array<SponsorListBlockRowRecord>
+}
+
+/** Block of type Sponsor List Block (sponsor_list_block) */
+export type SponsorListBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Sponsor List Block > Row (sponsor_list_block_row) */
+export type SponsorListBlockRowRecord = RecordInterface & {
+  __typename?: 'SponsorListBlockRowRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  logos: Array<AltFileField>
+  title: Scalars['String']['output']
+}
+
+/** Block of type Sponsor List Block > Row (sponsor_list_block_row) */
+export type SponsorListBlockRowRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
