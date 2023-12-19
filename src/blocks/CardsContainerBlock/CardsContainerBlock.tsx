@@ -13,9 +13,9 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
     >
       <GridContainer>
         {title && (
-          <h1 className="col-span-full mb-8 text-20/[140%] font-semibold md:mb-[48px] md:text-32/[125%]">
+          <h2 className="col-span-full mb-8 text-20/[140%] font-semibold md:mb-[48px] md:text-32/[125%]">
             {title}
-          </h1>
+          </h2>
         )}
       </GridContainer>
       {cards.length && (
