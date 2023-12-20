@@ -35,7 +35,7 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
           speed: isOverflowing ? 1 : 0,
         },
         fixedWidth: `${
-          (parseInt(each.px) - (each.maxItems - 1) * 32) / each.maxItems // breakpoint width - (number of logos - 1) * gap / number of logos
+          (parseInt(each.px) - (each.maxItems - 1) * 32) / each.maxItems // (breakpoint width - num of gaps * gap length) / numof logos
         }px`,
         type: isOverflowing ? 'loop' : 'slide',
       }
