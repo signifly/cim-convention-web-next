@@ -718,6 +718,20 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+/** Specifies how to filter Single-file/image fields */
+export type FileFilter = {
+  /** Search for records with an exact match. The specified value must be an Upload ID */
+  eq?: InputMaybe<Scalars['UploadId']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records that have one of the specified uploads */
+  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']['input']>>>
+  /** Exclude records with an exact match. The specified value must be an Upload ID */
+  neq?: InputMaybe<Scalars['UploadId']['input']>
+  /** Filter records that do not have one of the specified uploads */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']['input']>>>
+}
+
 export type FooterModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
@@ -3166,6 +3180,8 @@ export type Query = {
   _allMenusMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
+  _allSponsorsMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata
   /** Returns the single instance record */
@@ -3180,6 +3196,8 @@ export type Query = {
   allMenus: Array<MenuRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
+  /** Returns a collection of records */
+  allSponsors: Array<SponsorRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
   /** Returns a specific record */
@@ -3196,6 +3214,8 @@ export type Query = {
   page?: Maybe<PageRecord>
   /** Returns the single instance record */
   socialLink?: Maybe<SocialLinkRecord>
+  /** Returns a specific record */
+  sponsor?: Maybe<SponsorRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
 }
@@ -3227,6 +3247,12 @@ export type Query_AllMenusMetaArgs = {
 /** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   filter?: InputMaybe<PageModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllSponsorsMetaArgs = {
+  filter?: InputMaybe<SponsorModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3293,6 +3319,16 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllSponsorsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<SponsorModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<SponsorModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
 export type QueryAllUploadsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<UploadFilter>
@@ -3352,6 +3388,14 @@ export type QueryPageArgs = {
 export type QuerySocialLinkArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type QuerySponsorArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<SponsorModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<SponsorModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3550,11 +3594,81 @@ export type SponsorListBlockRowRecord = RecordInterface & {
   id: Scalars['ItemId']['output']
   logoSize: Scalars['String']['output']
   logos: Array<AltFileField>
+  sponsors: Array<SponsorRecord>
   title: Scalars['String']['output']
 }
 
 /** Block of type Sponsor List Block > Row (sponsor_list_block_row) */
 export type SponsorListBlockRowRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type SponsorModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<SponsorModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<SponsorModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  logo?: InputMaybe<FileFilter>
+  name?: InputMaybe<StringFilter>
+  websiteUrl?: InputMaybe<StringFilter>
+}
+
+export enum SponsorModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  WebsiteUrlAsc = 'websiteUrl_ASC',
+  WebsiteUrlDesc = 'websiteUrl_DESC',
+}
+
+/** Record of type Sponsor (sponsor) */
+export type SponsorRecord = RecordInterface & {
+  __typename?: 'SponsorRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  logo: FileField
+  name: Scalars['String']['output']
+  websiteUrl: Scalars['String']['output']
+}
+
+/** Record of type Sponsor (sponsor) */
+export type SponsorRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 

@@ -1,16 +1,17 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { SponsorListBlockRowRecord } from '@/types/generated'
 import Image from 'next/image'
 import { Image as DatoImage } from 'react-datocms'
 import '@splidejs/react-splide/css'
+import { cn } from '@/utils/clsxMerge'
 
 // @ts-ignore - Splidejs needs to update their package.json: https://github.com/Splidejs/splide/issues/1248
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
 export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
-  const { title, logoSize, logos } = props
+  const { title, logoSize, sponsors } = props
 
   const generateSplideBreakpoints = ([...breakpoints]: {
     px: string
@@ -23,10 +24,10 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
     } = {}
 
     breakpoints.forEach((each) => {
-      const isOverflowing = logos.length > each.maxItems
+      const isOverflowing = sponsors.length > each.maxItems
       breakpointsObject[each.px] = {
         // Show the number of logos or the max number of logos per breakpoint, whichever is smaller
-        perPage: Math.min(logos.length, each.maxItems),
+        perPage: Math.min(sponsors.length, each.maxItems),
         // If there are more logos than the max number of logos per breakpoint, enable autoscroll
         autoScroll: {
           autoStart: isOverflowing,
@@ -53,7 +54,7 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
         { px: '640', maxItems: 3 },
       ]),
     },
-    perPage: Math.min(logos.length, 2),
+    perPage: Math.min(sponsors.length, 2),
     drag: 'free',
     gap: '32px',
     pagination: false,
@@ -66,7 +67,7 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
     },
     fixedWidth: '50%',
     fixedHeight: logoSize === 'large' ? '72px' : '64px',
-    type: logos.length > 2 ? 'loop' : 'slide',
+    type: sponsors.length > 2 ? 'loop' : 'slide',
   }
 
   return (
@@ -79,24 +80,31 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
         options={options}
         extensions={{ AutoScroll }}
       >
-        {logos.map((logo) => (
-          <SplideSlide
-            key={logo.id}
-            className="relative flex h-full grow-0 items-center justify-center"
-          >
-            {logo.responsiveImage && (
-              <DatoImage
-                data={logo.responsiveImage}
-                className="h-full w-full"
-                pictureClassName="object-contain object-center"
-                priority
-              />
-            )}
-            {!logo.responsiveImage && (
-              <Image src={logo.url} alt={logo.alt} fill />
-            )}
-          </SplideSlide>
-        ))}
+        {sponsors.map(({ id, logo, name, websiteUrl }) => {
+          return (
+            <SplideSlide
+              key={id}
+              className="relative flex h-full grow-0 items-center justify-center"
+            >
+              <a href={websiteUrl} target="_blank">
+                {logo.responsiveImage && (
+                  <DatoImage
+                    data={logo.responsiveImage}
+                    className={cn(
+                      'max-h-[64px] object-contain',
+                      logoSize === 'large' && 'max-h-[72px]',
+                    )}
+                    pictureClassName="object-contain object-center"
+                    priority
+                  />
+                )}
+                {!logo.responsiveImage && (
+                  <Image src={logo.url} alt={logo.alt} fill />
+                )}
+              </a>
+            </SplideSlide>
+          )
+        })}
       </Splide>
     </div>
   )

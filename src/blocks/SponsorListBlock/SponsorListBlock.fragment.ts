@@ -13,15 +13,20 @@ export const SPONSOR_LIST_BLOCK_FRAGMENT = gql`
       _modelApiKey
       title
       logoSize
-      logos {
+      sponsors {
         id
-        url
-        alt
-        width
-        height
-        responsiveImage(imgixParams: { auto: format }) {
-          ...ResponsiveImageFragment
+        name
+        logo {
+          id
+          url
+          alt
+          width
+          height
+          responsiveImage(imgixParams: { auto: format }) {
+            ...ResponsiveImageFragment
+          }
         }
+        websiteUrl
       }
     }
   }
