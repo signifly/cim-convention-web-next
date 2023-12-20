@@ -17,6 +17,7 @@ import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventi
 import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
 import { AccordionBlock } from '@/blocks/AccordionBlock/AccordionBlock'
+import { OneColumnTextBlock } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -41,4 +42,5 @@ export const componentsMap = {
   convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
   accordion_block: AccordionBlock,
+  one_column_text_block: OneColumnTextBlock,
 }

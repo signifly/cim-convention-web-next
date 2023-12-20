@@ -14,6 +14,7 @@ import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/Testimon
 import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
 import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
 import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock.fragment'
+import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
 
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
@@ -58,6 +59,7 @@ export const getPageBySlugQuery = ({
 		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
 		${ACCORDION_BLOCK_FRAGMENT}
+		${ONE_COLUMN_TEXT_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -96,6 +98,7 @@ export const getPageBySlugQuery = ({
                 ...VideoBlockFragment
                 ...PastConventionsBlockFragment
 								...AccordionBlockFragment
+								...OneColumnTextBlockFragment
             }
             footer {
               blocks {

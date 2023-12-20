@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDownIcon, PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
+import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import { cn } from '@/utils/clsxMerge'
 
 const Accordion = AccordionPrimitive.Root

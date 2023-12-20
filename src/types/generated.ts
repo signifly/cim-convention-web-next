@@ -1219,6 +1219,7 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
@@ -3004,6 +3005,36 @@ export enum MuxThumbnailFormatType {
   Png = 'png',
 }
 
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord = RecordInterface & {
+  __typename?: 'OneColumnTextBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  text: Scalars['String']['output']
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecordTextArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Specifies how to filter by image orientation */
 export type OrientationFilter = {
   /** Search uploads with the specified orientation */
@@ -3048,6 +3079,7 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
