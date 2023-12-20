@@ -99,7 +99,7 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
                   />
                 )}
                 {!logo.responsiveImage && (
-                  <Image src={logo.url} alt={logo.alt} fill />
+                  <Image src={logo.url} alt={logo.alt || name || ''} fill />
                 )}
               </a>
             </SplideSlide>
