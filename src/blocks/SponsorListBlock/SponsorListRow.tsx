@@ -1,46 +1,103 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { SponsorListBlockRowRecord } from '@/types/generated'
 import Image from 'next/image'
 import { Image as DatoImage } from 'react-datocms'
-import { SwiperContainer, SwiperSlide } from '@/components/SwiperContainer'
+import '@splidejs/react-splide/css'
+
+// @ts-ignore - Splidejs needs to update their package.json: https://github.com/Splidejs/splide/issues/1248
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
 export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
-  const { title, logos } = props
+  const { title, logoSize, logos } = props
+
+  const generateSplideBreakpoints = ([...breakpoints]: {
+    px: string
+    maxItems: number
+  }[]): {
+    [key: string]: any
+  } => {
+    const breakpointsObject: {
+      [key: string]: any
+    } = {}
+
+    breakpoints.forEach((each) => {
+      const isOverflowing = logos.length > each.maxItems
+      breakpointsObject[each.px] = {
+        // Show the number of logos or the max number of logos per breakpoint, whichever is smaller
+        perPage: Math.min(logos.length, each.maxItems),
+        // If there are more logos than the max number of logos per breakpoint, enable autoscroll
+        autoScroll: {
+          autoStart: isOverflowing,
+          pauseOnHover: isOverflowing,
+          speed: isOverflowing ? 1 : 0,
+        },
+        fixedWidth: `${
+          (parseInt(each.px) - (each.maxItems - 1) * 32) / each.maxItems // breakpoint width - (number of logos - 1) * gap / number of logos
+        }px`,
+        type: isOverflowing ? 'loop' : 'slide',
+      }
+    })
+
+    return breakpointsObject
+  }
+
+  const options = {
+    breakpoints: {
+      ...generateSplideBreakpoints([
+        { px: '1536', maxItems: 7 },
+        { px: '1264', maxItems: 6 },
+        { px: '1024', maxItems: 5 },
+        { px: '768', maxItems: 4 },
+        { px: '640', maxItems: 3 },
+      ]),
+    },
+    perPage: Math.min(logos.length, 2),
+    drag: 'free',
+    gap: '32px',
+    pagination: false,
+    arrows: false,
+    mediaQuery: 'min',
+    autoScroll: {
+      pauseOnHover: true,
+      rewind: false,
+      speed: 1,
+    },
+    fixedWidth: '50%',
+    fixedHeight: logoSize === 'large' ? '72px' : '64px',
+    type: logos.length > 2 ? 'loop' : 'slide',
+  }
 
   return (
     <div className="col-span-full border-t border-brand-grey-300 py-3">
-      <h3 className="mb-6">{title}</h3>
-      <SwiperContainer
-        slidesPerView={'auto'}
-        spaceBetween={32}
-        autoplay={{ delay: 0 }}
-        loop
-        speed={5000}
-        easing="linear"
+      <h3 id="sponsor-list-title" className="mb-6">
+        {title}
+      </h3>
+      <Splide
+        aria-labelledby="sponsor-list-title"
+        options={options}
+        extensions={{ AutoScroll }}
       >
         {logos.map((logo) => (
-          <SwiperSlide
+          <SplideSlide
             key={logo.id}
-            style={{
-              width: '20%',
-            }}
+            className="relative flex h-full grow-0 items-center justify-center"
           >
             {logo.responsiveImage && (
-              <DatoImage data={logo.responsiveImage} className="h-24 w-24" />
-            )}
-            {!logo.responsiveImage && (
-              <Image
-                src={logo.url}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className="h-24 w-24"
+              <DatoImage
+                data={logo.responsiveImage}
+                className="h-full w-full"
+                pictureClassName="object-contain object-center"
+                priority
               />
             )}
-          </SwiperSlide>
+            {!logo.responsiveImage && (
+              <Image src={logo.url} alt={logo.alt} fill />
+            )}
+          </SplideSlide>
         ))}
-      </SwiperContainer>
+      </Splide>
     </div>
   )
 }

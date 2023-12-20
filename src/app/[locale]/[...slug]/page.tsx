@@ -23,7 +23,8 @@ export default async function Page({
       slug: slug[0],
     }),
   )
-  console.log(pageData?.page.body)
+
+  if (!pageData?.page) return notFound()
 
   return (
     <main className="">
