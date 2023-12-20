@@ -12,6 +12,7 @@ export const SPONSOR_LIST_BLOCK_FRAGMENT = gql`
       id
       _modelApiKey
       title
+      logoSize
       logos {
         id
         url
