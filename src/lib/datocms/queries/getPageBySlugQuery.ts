@@ -21,6 +21,7 @@ import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
 import { PAST_CONVENTIONS_BLOCK_FRAGMENT } from '@/blocks/PastConventionsBlock/PastConventionsBlock.fragment'
 import { CONVENTION_BLOCK_FRAGMENT } from '@/blocks/ConventionBlock/ConventionBlock.fragment'
+import { FORM_BLOCK_FRAGMENT } from '@/blocks/FormBlock/FormBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -56,6 +57,7 @@ export const getPageBySlugQuery = ({
 		${PAST_CONVENTIONS_BLOCK_FRAGMENT}
 		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
+		${FORM_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -93,6 +95,7 @@ export const getPageBySlugQuery = ({
 								...StatisticsBlockFragment
                 ...VideoBlockFragment
                 ...PastConventionsBlockFragment
+                ...FormBlockFragment
             }
             footer {
               blocks {

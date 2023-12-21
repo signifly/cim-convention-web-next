@@ -16,6 +16,7 @@ import { PageHeaderBlock } from '@/blocks/PageHeaderBlock/PageHeaderBlock'
 import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventionsBlock'
 import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
+import { FormBlock } from '@/blocks/FormBlock/FormBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -39,4 +40,5 @@ export const componentsMap = {
   past_conventions_block: PastConventionsBlock,
   convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
+  form_block: FormBlock,
 }

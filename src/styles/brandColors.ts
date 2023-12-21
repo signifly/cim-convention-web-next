@@ -3,6 +3,7 @@ export const brandColors = {
   'brand-green': '#00A550',
   'brand-blue': '#00ADEF',
   'brand-red': '#980003',
+  'brand-red-translucent': 'rgba(152, 0, 3, 0.08)',
   'brand-grey-25': '#FCFCFD',
   'brand-grey-50': '#F9FAFB',
   'brand-grey-100': '#F2F4F7',

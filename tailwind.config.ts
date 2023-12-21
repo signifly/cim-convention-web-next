@@ -36,6 +36,7 @@ const config: Config = {
           'linear-gradient(to bottom right, #FFF000, #00A550, #00ADEF)',
         'brand-gradient-light':
           'linear-gradient(180deg, #F2F4F7 0%, rgba(242, 244, 247, 0.00) 100%)',
+        'brand-gradient-form': 'linear-gradient(180deg, #FFF 0%, #EAECF0 50%)',
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
