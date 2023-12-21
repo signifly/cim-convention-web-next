@@ -964,6 +964,7 @@ export type FormModelFilter = {
   buttonLabel?: InputMaybe<StringFilter>
   id?: InputMaybe<ItemIdFilter>
   name?: InputMaybe<StringFilter>
+  requireSignature?: InputMaybe<BooleanFilter>
 }
 
 export enum FormModelOrderBy {
@@ -989,6 +990,8 @@ export enum FormModelOrderBy {
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
+  RequireSignatureAsc = 'requireSignature_ASC',
+  RequireSignatureDesc = 'requireSignature_DESC',
 }
 
 /** Record of type Form (form) */
@@ -1011,6 +1014,7 @@ export type FormRecord = RecordInterface & {
   fieldset: Array<FormModelFieldsetField>
   id: Scalars['ItemId']['output']
   name?: Maybe<Scalars['String']['output']>
+  requireSignature?: Maybe<Scalars['BooleanType']['output']>
 }
 
 /** Record of type Form (form) */
@@ -1091,6 +1095,7 @@ export type FormTextareaRecord = RecordInterface & {
   fieldId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   label: Scalars['String']['output']
+  placeholder?: Maybe<Scalars['String']['output']>
   required?: Maybe<Scalars['BooleanType']['output']>
 }
 

@@ -24,6 +24,8 @@ export default async function Page({
     }),
   )
 
+  if (!pageData?.page) return notFound()
+
   return (
     <main className="">
       {pageData?.page?.body?.map(

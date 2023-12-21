@@ -24,6 +24,8 @@
     "@netlify/next": "^1.4.9",
     "@radix-ui/react-accordion": "^1.1.2",
     "accordian": "^0.0.1",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "clsx": "^2.0.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
