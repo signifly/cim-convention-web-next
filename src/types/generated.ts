@@ -37,6 +37,67 @@ export type Scalars = {
   UploadId: { input: any; output: any }
 }
 
+export type AccordionBlockItemModelContentField = {
+  __typename?: 'AccordionBlockItemModelContentField'
+  blocks: Array<Scalars['String']['output']>
+  links: Array<Scalars['String']['output']>
+  value: Scalars['JsonField']['output']
+}
+
+/** Block of type Accordion Block > Item (accordion_block_item) */
+export type AccordionBlockItemRecord = RecordInterface & {
+  __typename?: 'AccordionBlockItemRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  content: AccordionBlockItemModelContentField
+  id: Scalars['ItemId']['output']
+  triggerText: Scalars['String']['output']
+}
+
+/** Block of type Accordion Block > Item (accordion_block_item) */
+export type AccordionBlockItemRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Accordion Block (accordion_block) */
+export type AccordionBlockRecord = RecordInterface & {
+  __typename?: 'AccordionBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  accordionType: Scalars['String']['output']
+  anchorId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  items: Array<AccordionBlockItemRecord>
+  title: Scalars['String']['output']
+}
+
+/** Block of type Accordion Block (accordion_block) */
+export type AccordionBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Ad Banner Block (ad_banner_block) */
 export type AdBannerBlockRecord = RecordInterface & {
   __typename?: 'AdBannerBlockRecord'
@@ -718,6 +779,20 @@ export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+/** Specifies how to filter Single-file/image fields */
+export type FileFilter = {
+  /** Search for records with an exact match. The specified value must be an Upload ID */
+  eq?: InputMaybe<Scalars['UploadId']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records that have one of the specified uploads */
+  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']['input']>>>
+  /** Exclude records with an exact match. The specified value must be an Upload ID */
+  neq?: InputMaybe<Scalars['UploadId']['input']>
+  /** Filter records that do not have one of the specified uploads */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']['input']>>>
+}
+
 export type FooterModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<FooterModelFilter>>>
@@ -779,6 +854,253 @@ export type FooterRecord = RecordInterface & {
 
 /** Record of type Footer (footer) */
 export type FooterRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form Block (form_block) */
+export type FormBlockRecord = RecordInterface & {
+  __typename?: 'FormBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  description?: Maybe<Scalars['String']['output']>
+  form: FormRecord
+  id: Scalars['ItemId']['output']
+  image?: Maybe<FileField>
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Form Block (form_block) */
+export type FormBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form Block (form_block) */
+export type FormBlockRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Form > Checkbox Group (form_checkbox_group) */
+export type FormCheckboxGroupRecord = RecordInterface & {
+  __typename?: 'FormCheckboxGroupRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  checkboxOptions: Array<FormCheckboxRecord>
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  required?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type Form > Checkbox Group (form_checkbox_group) */
+export type FormCheckboxGroupRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > Checkbox (form_checkbox) */
+export type FormCheckboxRecord = RecordInterface & {
+  __typename?: 'FormCheckboxRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  value: Scalars['String']['output']
+}
+
+/** Block of type Form > Checkbox (form_checkbox) */
+export type FormCheckboxRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type FormModelFieldsetField =
+  | FormCheckboxGroupRecord
+  | FormSignatureRecord
+  | FormTextInputRecord
+  | FormTextareaRecord
+
+export type FormModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FormModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<FormModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  buttonLabel?: InputMaybe<StringFilter>
+  id?: InputMaybe<ItemIdFilter>
+  name?: InputMaybe<StringFilter>
+  requireSignature?: InputMaybe<BooleanFilter>
+}
+
+export enum FormModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  ButtonLabelAsc = 'buttonLabel_ASC',
+  ButtonLabelDesc = 'buttonLabel_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  RequireSignatureAsc = 'requireSignature_ASC',
+  RequireSignatureDesc = 'requireSignature_DESC',
+}
+
+/** Record of type Form (form) */
+export type FormRecord = RecordInterface & {
+  __typename?: 'FormRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  buttonLabel?: Maybe<Scalars['String']['output']>
+  fieldset: Array<FormModelFieldsetField>
+  id: Scalars['ItemId']['output']
+  name?: Maybe<Scalars['String']['output']>
+  requireSignature?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Record of type Form (form) */
+export type FormRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > Signature (form_signature) */
+export type FormSignatureRecord = RecordInterface & {
+  __typename?: 'FormSignatureRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  required?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type Form > Signature (form_signature) */
+export type FormSignatureRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > Text Input (form_text_input) */
+export type FormTextInputRecord = RecordInterface & {
+  __typename?: 'FormTextInputRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  required?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type Form > Text Input (form_text_input) */
+export type FormTextInputRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > Textarea (form_textarea) */
+export type FormTextareaRecord = RecordInterface & {
+  __typename?: 'FormTextareaRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  placeholder?: Maybe<Scalars['String']['output']>
+  required?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type Form > Textarea (form_textarea) */
+export type FormTextareaRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -893,12 +1215,16 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 }
 
 export type HomePageModelBodyField =
+  | AccordionBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
+  | ContactBlockRecord
   | CtaBlockRecord
   | DividerBlockRecord
+  | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
@@ -2684,6 +3010,36 @@ export enum MuxThumbnailFormatType {
   Png = 'png',
 }
 
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord = RecordInterface & {
+  __typename?: 'OneColumnTextBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  text: Scalars['String']['output']
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecordTextArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Specifies how to filter by image orientation */
 export type OrientationFilter = {
   /** Search uploads with the specified orientation */
@@ -2719,13 +3075,16 @@ export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
 }
 
 export type PageModelBodyField =
+  | AccordionBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
   | CtaBlockRecord
   | DividerBlockRecord
+  | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
@@ -2914,11 +3273,15 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allFootersMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allFormsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allHeadersMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allMenusMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
+  _allSponsorsMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata
   /** Returns the single instance record */
@@ -2926,15 +3289,21 @@ export type Query = {
   /** Returns a collection of records */
   allFooters: Array<FooterRecord>
   /** Returns a collection of records */
+  allForms: Array<FormRecord>
+  /** Returns a collection of records */
   allHeaders: Array<HeaderRecord>
   /** Returns a collection of records */
   allMenus: Array<MenuRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
+  /** Returns a collection of records */
+  allSponsors: Array<SponsorRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
   /** Returns a specific record */
   footer?: Maybe<FooterRecord>
+  /** Returns a specific record */
+  form?: Maybe<FormRecord>
   /** Returns a specific record */
   header?: Maybe<HeaderRecord>
   /** Returns the single instance record */
@@ -2945,6 +3314,8 @@ export type Query = {
   page?: Maybe<PageRecord>
   /** Returns the single instance record */
   socialLink?: Maybe<SocialLinkRecord>
+  /** Returns a specific record */
+  sponsor?: Maybe<SponsorRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
 }
@@ -2952,6 +3323,12 @@ export type Query = {
 /** The query root for this schema */
 export type Query_AllFootersMetaArgs = {
   filter?: InputMaybe<FooterModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllFormsMetaArgs = {
+  filter?: InputMaybe<FormModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -2974,6 +3351,12 @@ export type Query_AllPagesMetaArgs = {
 }
 
 /** The query root for this schema */
+export type Query_AllSponsorsMetaArgs = {
+  filter?: InputMaybe<SponsorModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
 export type Query_AllUploadsMetaArgs = {
   filter?: InputMaybe<UploadFilter>
   locale?: InputMaybe<SiteLocale>
@@ -2992,6 +3375,16 @@ export type QueryAllFootersArgs = {
   first?: InputMaybe<Scalars['IntType']['input']>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<FooterModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
+export type QueryAllFormsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FormModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FormModelOrderBy>>>
   skip?: InputMaybe<Scalars['IntType']['input']>
 }
 
@@ -3026,6 +3419,16 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllSponsorsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<SponsorModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<SponsorModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
 export type QueryAllUploadsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<UploadFilter>
@@ -3041,6 +3444,14 @@ export type QueryFooterArgs = {
   filter?: InputMaybe<FooterModelFilter>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<FooterModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryFormArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FormModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FormModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3077,6 +3488,14 @@ export type QueryPageArgs = {
 export type QuerySocialLinkArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type QuerySponsorArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<SponsorModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<SponsorModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3273,12 +3692,83 @@ export type SponsorListBlockRowRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
+  logoSize: Scalars['String']['output']
   logos: Array<AltFileField>
+  sponsors: Array<SponsorRecord>
   title: Scalars['String']['output']
 }
 
 /** Block of type Sponsor List Block > Row (sponsor_list_block_row) */
 export type SponsorListBlockRowRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type SponsorModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<SponsorModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<SponsorModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  logo?: InputMaybe<FileFilter>
+  name?: InputMaybe<StringFilter>
+  websiteUrl?: InputMaybe<StringFilter>
+}
+
+export enum SponsorModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  WebsiteUrlAsc = 'websiteUrl_ASC',
+  WebsiteUrlDesc = 'websiteUrl_DESC',
+}
+
+/** Record of type Sponsor (sponsor) */
+export type SponsorRecord = RecordInterface & {
+  __typename?: 'SponsorRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  logo: FileField
+  name: Scalars['String']['output']
+  websiteUrl: Scalars['String']['output']
+}
+
+/** Record of type Sponsor (sponsor) */
+export type SponsorRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
