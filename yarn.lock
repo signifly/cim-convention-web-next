@@ -1399,10 +1399,6 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.6.0.tgz#1898e7a7b943680d757417a47fb10f5fcc230b39"
   integrity sha512-2/U3GXA6YiPYQDLGwtGlnNgKYBSwCFIHf8Y9LUY5VATHdtbLlU0Y1R3QoBnT0aB4qv/BEiVVsj7LJXoQCgJ2vA==
 
-"@stencil/core@^2.13.0":
-  version "2.22.3"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.22.3.tgz#83987e20bba855c450f6d6780e3a20192603f13f"
-  integrity sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng==
 "@splidejs/react-splide@^0.7.12":
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.7.12.tgz#c7efe231bbbb6812da64689178b6c871269baff5"
@@ -1582,13 +1578,6 @@
     busboy "^1.6.0"
     fast-querystring "^1.1.1"
     tslib "^2.3.1"
-
-accordian@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/accordian/-/accordian-0.0.1.tgz#b8502d3a462a883a26ad5a5e8c03b800811df8a1"
-  integrity sha512-OPf9714fAls8wER514ffqPZSj8n0xF+ZdhzQrZ3KB+U9LdHFJjarXfUbwO+8B15PKe/54w5PhJxru48Z1a6VkA==
-  dependencies:
-    "@stencil/core" "^2.13.0"
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
