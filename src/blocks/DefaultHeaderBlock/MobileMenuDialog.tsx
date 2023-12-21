@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
 import { cn } from '@/utils/clsxMerge'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { AltFileField, MenuRecord } from '@/types/generated'
 import { Link } from '@/navigation'
