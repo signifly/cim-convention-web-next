@@ -37,6 +37,67 @@ export type Scalars = {
   UploadId: { input: any; output: any }
 }
 
+export type AccordionBlockItemModelContentField = {
+  __typename?: 'AccordionBlockItemModelContentField'
+  blocks: Array<Scalars['String']['output']>
+  links: Array<Scalars['String']['output']>
+  value: Scalars['JsonField']['output']
+}
+
+/** Block of type Accordion Block > Item (accordion_block_item) */
+export type AccordionBlockItemRecord = RecordInterface & {
+  __typename?: 'AccordionBlockItemRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  content: AccordionBlockItemModelContentField
+  id: Scalars['ItemId']['output']
+  triggerText: Scalars['String']['output']
+}
+
+/** Block of type Accordion Block > Item (accordion_block_item) */
+export type AccordionBlockItemRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Accordion Block (accordion_block) */
+export type AccordionBlockRecord = RecordInterface & {
+  __typename?: 'AccordionBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  accordionType: Scalars['String']['output']
+  anchorId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  items: Array<AccordionBlockItemRecord>
+  title: Scalars['String']['output']
+}
+
+/** Block of type Accordion Block (accordion_block) */
+export type AccordionBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Ad Banner Block (ad_banner_block) */
 export type AdBannerBlockRecord = RecordInterface & {
   __typename?: 'AdBannerBlockRecord'
@@ -903,6 +964,7 @@ export type FormModelFilter = {
   buttonLabel?: InputMaybe<StringFilter>
   id?: InputMaybe<ItemIdFilter>
   name?: InputMaybe<StringFilter>
+  requireSignature?: InputMaybe<BooleanFilter>
 }
 
 export enum FormModelOrderBy {
@@ -928,6 +990,8 @@ export enum FormModelOrderBy {
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
+  RequireSignatureAsc = 'requireSignature_ASC',
+  RequireSignatureDesc = 'requireSignature_DESC',
 }
 
 /** Record of type Form (form) */
@@ -950,6 +1014,7 @@ export type FormRecord = RecordInterface & {
   fieldset: Array<FormModelFieldsetField>
   id: Scalars['ItemId']['output']
   name?: Maybe<Scalars['String']['output']>
+  requireSignature?: Maybe<Scalars['BooleanType']['output']>
 }
 
 /** Record of type Form (form) */
@@ -1030,6 +1095,7 @@ export type FormTextareaRecord = RecordInterface & {
   fieldId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   label: Scalars['String']['output']
+  placeholder?: Maybe<Scalars['String']['output']>
   required?: Maybe<Scalars['BooleanType']['output']>
 }
 
@@ -1149,6 +1215,7 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 }
 
 export type HomePageModelBodyField =
+  | AccordionBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
@@ -1157,6 +1224,7 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
@@ -2942,6 +3010,36 @@ export enum MuxThumbnailFormatType {
   Png = 'png',
 }
 
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord = RecordInterface & {
+  __typename?: 'OneColumnTextBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  text: Scalars['String']['output']
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type One Column Text Block (one_column_text_block) */
+export type OneColumnTextBlockRecordTextArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Specifies how to filter by image orientation */
 export type OrientationFilter = {
   /** Search uploads with the specified orientation */
@@ -2977,6 +3075,7 @@ export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
 }
 
 export type PageModelBodyField =
+  | AccordionBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
@@ -2985,6 +3084,7 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
   | SponsorListBlockRecord
