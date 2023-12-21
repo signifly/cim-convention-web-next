@@ -17,6 +17,8 @@ import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventi
 import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
 import { SponsorListBlock } from '@/blocks/SponsorListBlock/SponsorListBlock'
+import { ContactBlock } from '@/blocks/ContactBlock/ContactBlock'
+import { ContactCardBlock } from '@/blocks/ContactCardBlock/ContactCardBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -41,4 +43,6 @@ export const componentsMap = {
   convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
   sponsor_list_block: SponsorListBlock,
+  contact_block: ContactBlock,
+  contact_card_block: ContactCardBlock,
 }
