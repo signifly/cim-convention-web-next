@@ -29,11 +29,11 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
     <footer className="flex-none bg-gray-800 text-sm text-white">
       <div className="container mx-auto grid max-w-[1264px] grid-cols-4 items-center justify-between gap-x-4 gap-y-4 py-4 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[20px] lg:py-6">
         {/* Contact */}
-        <div className="col-span-full col-start-1 flex h-[100%] flex-col justify-start gap-8 align-top lg:col-span-3">
+        <div className="col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 lg:col-span-3">
           <h6 className="uppercase">{contactTitle}</h6>
           <div className="flex w-[100%] lg:w-auto">
             <StyledLink
-              className="flex w-[100%] max-w-[568px] justify-center align-middle lg:w-auto"
+              className="items-centermiddle flex w-[100%] max-w-[568px] justify-center lg:w-auto"
               href={{
                 pathname: '/[...slug]',
                 params: { slug: [`/${contactButtonLink}`] }, // @TODO: replace with actual slug
@@ -60,7 +60,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           </div>
         </div>
         {/* Newsletter */}
-        <div className="relative col-span-full col-start-1 flex h-[100%] flex-col justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] align-top lg:col-span-5 lg:col-start-5 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
+        <div className="relative col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] lg:col-span-5 lg:col-start-5 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
           <h6 className="uppercase">{newsletterTitle}</h6>
           <div className="flex w-[100%] flex-col gap-[16px] lg:flex-row">
             <input
@@ -75,7 +75,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           <div className=" text-gray-400">{newsletterParagraph}</div>
         </div>
         {/* Sponsor */}
-        <div className="relative col-span-full col-start-1 flex h-[100%] flex-col justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] align-top lg:col-span-2 lg:col-start-11 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
+        <div className="relative col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] lg:col-span-2 lg:col-start-11 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
           <h6 className=" uppercase">{sponsorTitle}</h6>
           <div className="flex">
             <a href={sponsorLink || ''}>
@@ -98,7 +98,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           </div>
         </div>
         {/* Copyright */}
-        <div className="col-span-full mt-[40px] flex h-[100%] flex-col justify-start border-t-[1px] border-gray-700 pb-[40px] pt-[24px] align-top">
+        <div className="col-span-full mt-[40px] flex h-[100%] flex-col items-start justify-start border-t-[1px] border-gray-700 pb-[40px] pt-[24px]">
           <p className="text-gray-400">{copyright}</p>
         </div>
       </div>
