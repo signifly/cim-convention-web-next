@@ -11,7 +11,7 @@ export const GridContainer = (props: GridContainerProps) => {
   return (
     <div
       className={cn(
-        'container mx-auto box-border grid max-w-[1264px] grid-cols-4 gap-x-4  lg:grid-cols-12 lg:gap-x-8',
+        'container mx-auto box-border grid max-w-[1264px] grid-cols-4 gap-x-4 lg:grid-cols-12 lg:gap-x-8',
         className,
       )}
       {...rest}

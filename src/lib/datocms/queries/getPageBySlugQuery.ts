@@ -14,6 +14,9 @@ import { DIVIDER_BLOCK_FRAGMENT } from '@/blocks/DividerBlock/DividerBlock.fragm
 import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/TestimonialsBlock.fragment'
 import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
 import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
+import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock.fragment'
+import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
+
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
 import { PAST_CONVENTIONS_BLOCK_FRAGMENT } from '@/blocks/PastConventionsBlock/PastConventionsBlock.fragment'
@@ -61,6 +64,8 @@ export const getPageBySlugQuery = ({
 		${PAST_CONVENTIONS_BLOCK_FRAGMENT}
 		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
+		${ACCORDION_BLOCK_FRAGMENT}
+		${ONE_COLUMN_TEXT_BLOCK_FRAGMENT}
 		${SPONSOR_LIST_BLOCK_FRAGMENT}
 		${CONTACT_BLOCK_FRAGMENT}
     ${CONTACT_CARD_BLOCK_FRAGMENT}
@@ -101,6 +106,8 @@ export const getPageBySlugQuery = ({
 								...StatisticsBlockFragment
                 ...VideoBlockFragment
                 ...PastConventionsBlockFragment
+								...AccordionBlockFragment
+								...OneColumnTextBlockFragment
 								...SponsorListBlockFragment
                 ...ContactBlockFragment
             }
