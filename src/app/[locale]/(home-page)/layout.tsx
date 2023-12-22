@@ -4,7 +4,9 @@ import { Locale } from '@/navigation'
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 
-console.log('[WARN]: Update revalidate interval before pushing to production')
+console.log(
+  '[WARN] - (home-page)/page.tsx: Update revalidate interval before pushing to production',
+)
 export const revalidate = 10
 
 export default async function HomePageLayout({
