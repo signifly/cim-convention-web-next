@@ -4,6 +4,7 @@ import { FormBlockRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
+// @ts-ignore - Type error: Could not find a declaration file for module 'react-signature-canvas'
 import SignatureCanvas from 'react-signature-canvas' // https://www.npmjs.com/package/react-signature-canvas
 import { GridContainer } from '@/components/GridContainer'
 import IconSelector from '@/components/IconSelector/IconSelector'
