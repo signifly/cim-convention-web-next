@@ -22,4 +22,15 @@
   }
 }
 
+/* Splide custom pagination */
+.splide__pagination {
+  .splide__pagination__page {
+    @apply h-1 w-6 rounded-none bg-brand-grey-300 active:bg-brand-grey-950 lg:w-10;
+  }
+
+  .splide__pagination__page.is-active {
+    @apply scale-100 bg-brand-grey-950;
+  }
+}
+
 @tailwind utilities;
