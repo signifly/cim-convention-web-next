@@ -961,10 +961,15 @@ export type FormModelFilter = {
   _status?: InputMaybe<StatusFilter>
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
-  buttonLabel?: InputMaybe<StringFilter>
+  fieldErrorMsg?: InputMaybe<StringFilter>
+  formErrorMsg?: InputMaybe<StringFilter>
   id?: InputMaybe<ItemIdFilter>
   name?: InputMaybe<StringFilter>
   requireSignature?: InputMaybe<BooleanFilter>
+  signatureClear?: InputMaybe<StringFilter>
+  signatureErrorMsg?: InputMaybe<StringFilter>
+  signatureLabel?: InputMaybe<StringFilter>
+  submitBtnLabel?: InputMaybe<StringFilter>
 }
 
 export enum FormModelOrderBy {
@@ -984,14 +989,24 @@ export enum FormModelOrderBy {
   UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
   UpdatedAtAsc = '_updatedAt_ASC',
   UpdatedAtDesc = '_updatedAt_DESC',
-  ButtonLabelAsc = 'buttonLabel_ASC',
-  ButtonLabelDesc = 'buttonLabel_DESC',
+  FieldErrorMsgAsc = 'fieldErrorMsg_ASC',
+  FieldErrorMsgDesc = 'fieldErrorMsg_DESC',
+  FormErrorMsgAsc = 'formErrorMsg_ASC',
+  FormErrorMsgDesc = 'formErrorMsg_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
   RequireSignatureAsc = 'requireSignature_ASC',
   RequireSignatureDesc = 'requireSignature_DESC',
+  SignatureClearAsc = 'signatureClear_ASC',
+  SignatureClearDesc = 'signatureClear_DESC',
+  SignatureErrorMsgAsc = 'signatureErrorMsg_ASC',
+  SignatureErrorMsgDesc = 'signatureErrorMsg_DESC',
+  SignatureLabelAsc = 'signatureLabel_ASC',
+  SignatureLabelDesc = 'signatureLabel_DESC',
+  SubmitBtnLabelAsc = 'submitBtnLabel_ASC',
+  SubmitBtnLabelDesc = 'submitBtnLabel_DESC',
 }
 
 /** Record of type Form (form) */
@@ -1010,11 +1025,16 @@ export type FormRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  buttonLabel?: Maybe<Scalars['String']['output']>
+  fieldErrorMsg?: Maybe<Scalars['String']['output']>
   fieldset: Array<FormModelFieldsetField>
+  formErrorMsg?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   name?: Maybe<Scalars['String']['output']>
   requireSignature?: Maybe<Scalars['BooleanType']['output']>
+  signatureClear?: Maybe<Scalars['String']['output']>
+  signatureErrorMsg?: Maybe<Scalars['String']['output']>
+  signatureLabel?: Maybe<Scalars['String']['output']>
+  submitBtnLabel?: Maybe<Scalars['String']['output']>
 }
 
 /** Record of type Form (form) */
