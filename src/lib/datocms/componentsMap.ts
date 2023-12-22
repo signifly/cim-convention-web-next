@@ -16,6 +16,7 @@ import { PageHeaderBlock } from '@/blocks/PageHeaderBlock/PageHeaderBlock'
 import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventionsBlock'
 import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
+import { FormBlock } from '@/blocks/FormBlock/FormBlock'
 import { AccordionBlock } from '@/blocks/AccordionBlock/AccordionBlock'
 import { OneColumnTextBlock } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock'
 import { SponsorListBlock } from '@/blocks/SponsorListBlock/SponsorListBlock'
@@ -44,6 +45,7 @@ export const componentsMap = {
   past_conventions_block: PastConventionsBlock,
   convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
+  form_block: FormBlock,
   accordion_block: AccordionBlock,
   one_column_text_block: OneColumnTextBlock,
   sponsor_list_block: SponsorListBlock,
