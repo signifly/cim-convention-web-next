@@ -1,59 +1,11 @@
 import React from 'react'
-import { Fragment, useState, MouseEvent, useRef } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { Popover, Transition } from '@headlessui/react'
 import { MenuRecord } from '@/types/generated'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Link } from '@/navigation'
 
 export const DesktopMenuContent = ({ menu }: { menu: MenuRecord }) => {
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const timeoutDuration = 250
-  let timeout: ReturnType<typeof setTimeout>
-
-  const closeDesktopMenu = (e: MouseEvent<HTMLElement>) => {
-    console.log('closeDesktopMenu')
-    console.log(e)
-
-    e.target.dispatchEvent(
-      new KeyboardEvent('keydown', {
-        key: 'Escape',
-        bubbles: true,
-        cancelable: true,
-      }),
-    )
-  }
-
-  const handleTriggerMouseEnter = (
-    e: MouseEvent<HTMLButtonElement>,
-    open: boolean,
-  ) => {
-    clearTimeout(timeout)
-    const target = e.target as HTMLButtonElement
-    if (open) return
-    target.click()
-  }
-
-  const handleTriggerMouseLeave = (
-    e: MouseEvent<HTMLButtonElement>,
-    open: boolean,
-  ) => {
-    if (!open) return
-    console.log('handleTriggerMouseLeave')
-    timeout = setTimeout(() => {
-      closeDesktopMenu(e)
-    }, timeoutDuration)
-  }
-
-  const handlePanelMouseEnter = () => {
-    clearTimeout(timeout)
-  }
-
-  const handlePanelMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
-    timeout = setTimeout(() => {
-      closeDesktopMenu(e)
-    }, timeoutDuration)
-  }
-
   return (
     <Popover.Group className="hidden lg:flex lg:gap-x-9">
       {menu?.menuItems.map((item) => {
@@ -63,11 +15,7 @@ export const DesktopMenuContent = ({ menu }: { menu: MenuRecord }) => {
             <Popover key={item.id} className="relative">
               {({ open }) => (
                 <>
-                  <Popover.Button
-                    className="flex items-center gap-x-1 font-medium leading-6 text-gray-900"
-                    onMouseEnter={(e) => handleTriggerMouseEnter(e, open)}
-                    onMouseLeave={(e) => handleTriggerMouseLeave(e, open)}
-                  >
+                  <Popover.Button className="flex items-center gap-x-1 font-medium leading-6 text-gray-900">
                     {item.name}
                     <ChevronDownIcon
                       className="h-5 w-5 flex-none text-gray-400"
@@ -88,8 +36,6 @@ export const DesktopMenuContent = ({ menu }: { menu: MenuRecord }) => {
                       <Popover.Panel
                         static
                         className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-                        onMouseEnter={(e) => handlePanelMouseEnter(e)}
-                        onMouseLeave={(e) => handlePanelMouseLeave(e)}
                       >
                         <div className="p-4">
                           {subMenuItems.map((subMenu) => {
