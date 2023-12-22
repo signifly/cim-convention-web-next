@@ -962,6 +962,7 @@ export type FormModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   fieldErrorMsg?: InputMaybe<StringFilter>
+  fieldTypeErrorMsg?: InputMaybe<StringFilter>
   formErrorMsg?: InputMaybe<StringFilter>
   id?: InputMaybe<ItemIdFilter>
   name?: InputMaybe<StringFilter>
@@ -991,6 +992,8 @@ export enum FormModelOrderBy {
   UpdatedAtDesc = '_updatedAt_DESC',
   FieldErrorMsgAsc = 'fieldErrorMsg_ASC',
   FieldErrorMsgDesc = 'fieldErrorMsg_DESC',
+  FieldTypeErrorMsgAsc = 'fieldTypeErrorMsg_ASC',
+  FieldTypeErrorMsgDesc = 'fieldTypeErrorMsg_DESC',
   FormErrorMsgAsc = 'formErrorMsg_ASC',
   FormErrorMsgDesc = 'formErrorMsg_DESC',
   IdAsc = 'id_ASC',
@@ -1026,6 +1029,7 @@ export type FormRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   fieldErrorMsg?: Maybe<Scalars['String']['output']>
+  fieldTypeErrorMsg?: Maybe<Scalars['String']['output']>
   fieldset: Array<FormModelFieldsetField>
   formErrorMsg?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
@@ -1086,6 +1090,7 @@ export type FormTextInputRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   fieldId: Scalars['String']['output']
+  fieldType: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   label: Scalars['String']['output']
   required?: Maybe<Scalars['BooleanType']['output']>

@@ -21,6 +21,7 @@ export const FORM_BLOCK_FRAGMENT = gql`
       submitBtnLabel
       formErrorMsg
       fieldErrorMsg
+      fieldTypeErrorMsg
       fieldset {
         ... on FormTextareaRecord {
           id
@@ -35,6 +36,7 @@ export const FORM_BLOCK_FRAGMENT = gql`
           _modelApiKey
           label
           fieldId
+          fieldType
           required
         }
         ... on FormSignatureRecord {
