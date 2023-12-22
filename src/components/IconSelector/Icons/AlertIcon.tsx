@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react'
 import { cn } from '@/utils/clsxMerge'
 
-const BriefcaseIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
+const AlertIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
   return (
     <svg
       width="20"
@@ -22,4 +22,4 @@ const BriefcaseIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
   )
 }
 
-export default BriefcaseIcon
+export default AlertIcon

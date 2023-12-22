@@ -9,10 +9,15 @@ import SignatureCanvas from 'react-signature-canvas' // https://www.npmjs.com/pa
 import { GridContainer } from '@/components/GridContainer'
 import IconSelector from '@/components/IconSelector/IconSelector'
 
+type FieldError = {
+  field: string
+  error: string
+}
+
 export function FormBlock(props: FormBlockRecord) {
   let { form, title, description, image } = props
 
-  const [formErrors, setFormErrors] = useState<string[]>([])
+  const [formErrors, setFormErrors] = useState<FieldError[]>([])
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false)
 
   const sigCanvas = useRef(null)
@@ -60,18 +65,53 @@ export function FormBlock(props: FormBlockRecord) {
   }
 
   const validateForm = (formObject: any) => {
-    const errors: string[] = []
+    const errors: FieldError[] = []
+
     Object.keys(formObject).forEach((key) => {
-      const fieldData = form.fieldset.find((field) => field.fieldId === key)
+      const fieldData = form.fieldset.find(
+        (field) => field.fieldId === key,
+      ) as any
+      // Required Field Errors (required)
       if (
         !formObject[key] &&
         (fieldData?.required || (key === 'signature' && form.requireSignature))
       ) {
-        errors.push(key)
+        errors.push({ field: key, error: 'required' })
+      }
+
+      // Field Type Errors (pattern): Phone
+      if (fieldData?._modelApiKey === 'form_text_input') {
+        const phonePattern = /^[0-9()-+]{4,15}$/g
+        if (
+          fieldData?.fieldType === 'tel' &&
+          !phonePattern.test(formObject[key])
+        ) {
+          const existingError = errors.find((error) => error.field === key)
+          if (!existingError) {
+            errors.push({ field: key, error: 'pattern' })
+          }
+        }
+
+        // Field Type Errors (pattern): Email
+        const emailPattern = /^[^@]+@[^@]+\.[^@]+$/g
+        if (
+          fieldData?.fieldType === 'email' &&
+          !emailPattern.test(formObject[key])
+        ) {
+          const existingError = errors.find((error) => error.field === key)
+          if (!existingError) {
+            errors.push({ field: key, error: 'pattern' })
+          }
+        }
       }
     })
+
     setFormErrors(errors)
     return formErrors.length === 0
+  }
+
+  const fieldHasError = (fieldId: string) => {
+    return formErrors.find((error) => error.field === fieldId)
   }
 
   const clearSignature = () => {
@@ -173,7 +213,7 @@ export function FormBlock(props: FormBlockRecord) {
                   {/* Text Input */}
                   {field._modelApiKey === 'form_text_input' && (
                     <input
-                      type="text"
+                      type={field.fieldType || 'text'}
                       id={field.fieldId}
                       name={field.fieldId}
                       required={field.required}
@@ -221,9 +261,11 @@ export function FormBlock(props: FormBlockRecord) {
                     />
                   )}
                   {/* Field Error Message */}
-                  {formErrors.includes(field.fieldId) && (
+                  {fieldHasError(field.fieldId) && (
                     <span className="mt-2 text-12/[140%] text-brand-red md:text-14/[150%]">
-                      {form.fieldErrorMsg}
+                      {fieldHasError(field.fieldId)?.error === 'pattern'
+                        ? form.fieldTypeErrorMsg
+                        : form.fieldErrorMsg}
                     </span>
                   )}
                 </div>
@@ -241,12 +283,12 @@ export function FormBlock(props: FormBlockRecord) {
                     ref={sigCanvas}
                     penColor="black"
                     canvasProps={{
-                      height: 500,
+                      height: 250,
                       className: 'bg-white w-[100%] cursor-crosshair',
                     }}
                     onEnd={() => handleChange(null)}
                   />
-                  {formErrors.includes('signature') && (
+                  {fieldHasError('signature') && (
                     <div className="w-[100%] bg-brand-red py-2 text-center text-12 text-white">
                       {form.signatureErrorMsg}
                     </div>
@@ -254,6 +296,7 @@ export function FormBlock(props: FormBlockRecord) {
                   <button
                     className="w-[100%] overflow-hidden bg-gray-400 px-6 py-[10px] text-14/[125%] font-[500] text-white shadow-xs lg:text-16"
                     onClick={clearSignature}
+                    type="button"
                   >
                     {form.signatureClear}
                   </button>
