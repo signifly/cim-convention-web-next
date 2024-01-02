@@ -120,7 +120,7 @@ export const MobileMenuDialog = (props: Props) => {
                 }
               })}
             </div>
-            <div className="flex items-center justify-center gap-x-8 py-10">
+            <div className="flex items-center justify-center gap-x-8 py-8">
               <CtaButton {...ctaButton[0]} />
               <div
                 aria-hidden
