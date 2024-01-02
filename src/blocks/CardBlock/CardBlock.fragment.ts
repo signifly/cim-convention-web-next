@@ -7,6 +7,9 @@ export const CARD_BLOCK_FRAGMENT = gql`
     paragraph(markdown: true)
     subtitle
     title
+    buttons {
+      ...CtaButtonFragment
+    }
     image {
       url
       alt

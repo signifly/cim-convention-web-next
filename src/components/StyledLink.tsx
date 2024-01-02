@@ -7,7 +7,7 @@ type CustomLinkProps = {
 }
 
 const baseStyle =
-  'py-[10px] px-6 rounded font-[500] shadow-xs text-14/[125%] lg:text-16'
+  'py-[10px] px-6 rounded font-[500] shadow-xs text-14/[125%] lg:text-16 inline-block'
 const primaryStyle =
   'text-white bg-brand-gradient disabled:bg-brand-gradient-light focus:shadow-skyblue transition-all focus:outline-none'
 const secondaryStyle =
