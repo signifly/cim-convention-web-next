@@ -71,7 +71,7 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
               >
                 <CardBlock
                   {...{ ...card, mobileLayout, cardBorders, background }}
-                ></CardBlock>
+                />
               </div>
             )
           })}
