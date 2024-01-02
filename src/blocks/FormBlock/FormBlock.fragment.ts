@@ -4,6 +4,7 @@ export const FORM_BLOCK_FRAGMENT = gql`
   fragment FormBlockFragment on FormBlockRecord {
     id
     _modelApiKey
+    anchorId
     title
     description(markdown: true)
     image {

@@ -3,10 +3,10 @@ import { ConventionBlock } from '../ConventionBlock/ConventionBlock'
 import { GridContainer } from '@/components/GridContainer'
 
 export function PastConventionsBlock(props: PastConventionsBlockRecord) {
-  let { title, conventions } = props
+  let { title, anchorId, conventions } = props
 
   return (
-    <div className="bg-white py-16">
+    <section className="bg-white py-16" id={anchorId}>
       <GridContainer>
         <div className="col-span-full mb-[56px] flex justify-center">
           {title && <h2 className="m-auto text-32 font-semibold">{title}</h2>}
@@ -21,6 +21,6 @@ export function PastConventionsBlock(props: PastConventionsBlockRecord) {
           })}
         </div>
       </GridContainer>
-    </div>
+    </section>
   )
 }

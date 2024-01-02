@@ -2,7 +2,7 @@ import { GridContainer } from '@/components/GridContainer'
 import { VideoBlockRecord } from '@/types/generated'
 
 export function VideoBlock(props: VideoBlockRecord) {
-  let { title, video } = props
+  let { title, anchorId, video } = props
 
   const videoUrl = video
     ? video.provider === 'youtube' && video.providerUid
@@ -13,7 +13,7 @@ export function VideoBlock(props: VideoBlockRecord) {
   if (!videoUrl) return null
 
   return (
-    <div className="bg-brand-gradient-light py-8 md:py-20">
+    <section className="bg-brand-gradient-light py-8 md:py-20" id={anchorId}>
       <GridContainer className="gap-8">
         {title && (
           <div className="col-span-full flex justify-center">
@@ -27,6 +27,6 @@ export function VideoBlock(props: VideoBlockRecord) {
           ></iframe>
         </div>
       </GridContainer>
-    </div>
+    </section>
   )
 }
