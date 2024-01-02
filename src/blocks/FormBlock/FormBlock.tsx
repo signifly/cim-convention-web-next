@@ -15,7 +15,7 @@ type FieldError = {
 }
 
 export function FormBlock(props: FormBlockRecord) {
-  let { form, title, description, image } = props
+  let { form, anchorId, title, description, image } = props
 
   const [formErrors, setFormErrors] = useState<FieldError[]>([])
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false)
@@ -152,7 +152,10 @@ export function FormBlock(props: FormBlockRecord) {
     'checked:bg-[url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMC42NjY2IDEuNUw0LjI0OTkyIDcuOTE2NjdMMS4zMzMyNSA1IiBzdHJva2U9IiMwMEE1NTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=")] checked:bg-no-repeat checked:bg-center checked:bg-[background-size: 75%] checked:p-1'
 
   return (
-    <div className="flex flex-col gap-8 bg-brand-gradient-form py-10 md:gap-16 md:py-20">
+    <section
+      className="flex flex-col gap-8 bg-brand-gradient-form py-10 md:gap-16 md:py-20"
+      id={anchorId}
+    >
       <div className="container flex max-w-[100%] flex-col items-center justify-center gap-4 text-center">
         <h2 className="text-20/[140%] font-semibold md:text-32/[125%]">
           {title}
@@ -323,6 +326,6 @@ export function FormBlock(props: FormBlockRecord) {
           </form>
         </div>
       </GridContainer>
-    </div>
+    </section>
   )
 }

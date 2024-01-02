@@ -302,6 +302,7 @@ export type CardsContainerBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   background?: Maybe<Scalars['String']['output']>
   cards: Array<CardBlockRecord>
   id: Scalars['ItemId']['output']
@@ -360,6 +361,7 @@ export type ContactBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   cards: Array<ContactCardBlockRecord>
   id: Scalars['ItemId']['output']
   subtitle?: Maybe<Scalars['String']['output']>
@@ -873,6 +875,7 @@ export type FormBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   description?: Maybe<Scalars['String']['output']>
   form: FormRecord
   id: Scalars['ItemId']['output']
@@ -3051,6 +3054,7 @@ export type OneColumnTextBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   text: Scalars['String']['output']
 }
@@ -3264,6 +3268,7 @@ export type PastConventionsBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   conventions: Array<ConventionBlockRecord>
   id: Scalars['ItemId']['output']
   title?: Maybe<Scalars['String']['output']>
@@ -4468,6 +4473,7 @@ export type VideoBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   title?: Maybe<Scalars['String']['output']>
   video?: Maybe<VideoField>

@@ -3,13 +3,14 @@ import { CardBlock } from '../CardBlock/CardBlock'
 import { GridContainer } from '@/components/GridContainer'
 
 export function CardsContainerBlock(props: CardsContainerBlockRecord) {
-  let { cards, title, mobileLayout, background } = props
+  let { cards, anchorId, title, mobileLayout, background } = props
 
   return (
-    <div
+    <section
       className={`${
         background === 'solid' ? 'bg-brand-grey-25' : 'bg-brand-gradient-light'
       } py-8 md:py-20`}
+      id={anchorId}
     >
       <GridContainer>
         {title && (
@@ -34,6 +35,6 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
           })}
         </GridContainer>
       )}
-    </div>
+    </section>
   )
 }
