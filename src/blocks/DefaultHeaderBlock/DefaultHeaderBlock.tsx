@@ -6,9 +6,9 @@ import { Link } from '@/navigation'
 import { AltFileField, DefaultHeaderBlockRecord } from '@/types/generated'
 import { DesktopMenuContent } from '@/blocks/DefaultHeaderBlock/DesktopMenuContent'
 import { MobileMenuDialog } from '@/blocks/DefaultHeaderBlock/MobileMenuDialog'
+import { CtaButton } from '@/components/CtaButton'
 
 import { Bars3Icon } from '@heroicons/react/24/outline'
-import { StyledLink } from '@/components/StyledLink'
 
 const SiteLogo = (props: AltFileField) => {
   const { url, alt } = props
@@ -29,7 +29,7 @@ const SiteLogo = (props: AltFileField) => {
 }
 
 export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
-  const { cimLogo, siteLogo, menu, ctaButtonLabel } = props
+  const { cimLogo, siteLogo, menu, ctaButton } = props
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const MobileMenuButton = () => (
@@ -61,14 +61,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
         {/* Right side  */}
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-8">
           <div className="shrink-0">
-            <StyledLink
-              href={{
-                pathname: '/[...slug]',
-                params: { slug: ['register'] }, // @TODO: replace with actual slug
-              }}
-            >
-              {ctaButtonLabel}
-            </StyledLink>
+            <CtaButton {...ctaButton[0]} />
           </div>
           <div className="h-full min-h-[56px] border border-brand-grey-300" />
           <div className="relative h-full min-h-[56px] w-[40px]">
@@ -80,10 +73,9 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
       {/* Mobile menu Dialog */}
       {menu && (
         <MobileMenuDialog
-          menu={menu}
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
-          siteLogo={siteLogo}
+          {...props}
         />
       )}
     </header>
