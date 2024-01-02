@@ -269,6 +269,7 @@ export type CardBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  buttons: Array<CtaButtonRecord>
   id: Scalars['ItemId']['output']
   image?: Maybe<FileField>
   paragraph?: Maybe<Scalars['String']['output']>
@@ -304,15 +305,24 @@ export type CardsContainerBlockRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   anchorId: Scalars['String']['output']
   background?: Maybe<Scalars['String']['output']>
+  cardBorders?: Maybe<Scalars['BooleanType']['output']>
   cards: Array<CardBlockRecord>
+  desktopLayout?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   mobileLayout?: Maybe<Scalars['String']['output']>
+  paragraph?: Maybe<Scalars['String']['output']>
+  textAlignment?: Maybe<Scalars['String']['output']>
   title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Cards Container Block (cards_container_block) */
 export type CardsContainerBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Cards Container Block (cards_container_block) */
+export type CardsContainerBlockRecordParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
 export type CollectionMetadata = {
