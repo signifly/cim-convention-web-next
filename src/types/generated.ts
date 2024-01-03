@@ -98,6 +98,38 @@ export type AccordionBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Accordion Group Block (accordion_group_block) */
+export type AccordionGroupBlockRecord = RecordInterface & {
+  __typename?: 'AccordionGroupBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  displayAnchorLinks?: Maybe<Scalars['BooleanType']['output']>
+  id: Scalars['ItemId']['output']
+  sections: Array<AccordionBlockRecord>
+  supportText?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Accordion Group Block (accordion_group_block) */
+export type AccordionGroupBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Accordion Group Block (accordion_group_block) */
+export type AccordionGroupBlockRecordSupportTextArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Block of type Ad Banner Block (ad_banner_block) */
 export type AdBannerBlockRecord = RecordInterface & {
   __typename?: 'AdBannerBlockRecord'
@@ -114,6 +146,7 @@ export type AdBannerBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  adBlock: Array<AdBlockRecord>
   anchorId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   image: FileField
@@ -121,6 +154,32 @@ export type AdBannerBlockRecord = RecordInterface & {
 
 /** Block of type Ad Banner Block (ad_banner_block) */
 export type AdBannerBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Ad Block (ad_block) */
+export type AdBlockRecord = RecordInterface & {
+  __typename?: 'AdBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  image: FileField
+  url?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Ad Block (ad_block) */
+export type AdBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -140,6 +199,7 @@ export type AdThreeColumnBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  adBlocks: Array<AdBlockRecord>
   anchorId?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   images: Array<FileField>
@@ -1254,6 +1314,7 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 
 export type HomePageModelBodyField =
   | AccordionBlockRecord
+  | AccordionGroupBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
@@ -3117,6 +3178,7 @@ export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
 
 export type PageModelBodyField =
   | AccordionBlockRecord
+  | AccordionGroupBlockRecord
   | AdBannerBlockRecord
   | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
