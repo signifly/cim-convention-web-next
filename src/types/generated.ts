@@ -582,7 +582,6 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   cimLogo: AltFileField
   ctaButton: Array<CtaButtonRecord>
-  ctaButtonLabel: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   menu?: Maybe<MenuRecord>
   siteLogo: AltFileField
@@ -3105,6 +3104,8 @@ export type PageHeaderBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
+  mainSponsor?: Maybe<SponsorRecord>
+  mainSponsorLabel?: Maybe<Scalars['String']['output']>
   subTitle: Scalars['String']['output']
   title: Scalars['String']['output']
 }

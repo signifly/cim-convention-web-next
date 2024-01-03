@@ -6,5 +6,21 @@ export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
     _modelApiKey
     title
     subTitle
+    mainSponsor {
+      id
+      name
+      logo {
+        id
+        url
+        alt
+        width
+        height
+        responsiveImage(imgixParams: { auto: format }) {
+          ...ResponsiveImageFragment
+        }
+      }
+      websiteUrl
+    }
+    mainSponsorLabel
   }
 `
