@@ -1,10 +1,9 @@
+import React from 'react'
 import { GridContainer } from '@/components/GridContainer'
 import { PageHeaderBlockRecord } from '@/types/generated'
-import React from 'react'
 
 export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
   const { title, subTitle } = props
-
   return (
     <section className="bg-brand-gradient-light">
       <GridContainer className="grid-cols-1 p-6 lg:py-12">
