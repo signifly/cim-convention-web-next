@@ -122,13 +122,17 @@ export const MobileMenuDialog = (props: Props) => {
             </div>
             <div className="flex items-center justify-center gap-x-8 py-8">
               <CtaButton {...ctaButton[0]} />
-              <div
-                aria-hidden
-                className="min-h-[56px] border-r border-brand-grey-300"
-              />
-              <div className="relative min-h-[56px] w-[40px]">
-                <Image src={cimLogo.url} alt={cimLogo.alt} fill />
-              </div>
+              {cimLogo && (
+                <>
+                  <div
+                    aria-hidden
+                    className="min-h-[56px] border-r border-brand-grey-300"
+                  />
+                  <div className="relative min-h-[56px] w-[40px]">
+                    <Image src={cimLogo.url} alt={cimLogo.alt} fill />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
