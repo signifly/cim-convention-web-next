@@ -3,19 +3,25 @@ import { Dialog, Disclosure } from '@headlessui/react'
 import { cn } from '@/utils/clsxMerge'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { AltFileField, MenuRecord } from '@/types/generated'
 import { Link } from '@/navigation'
 import Image from 'next/image'
+import { CtaButton } from '@/components/CtaButton'
+import { DefaultHeaderBlockRecord } from '@/types/generated'
 
-type Props = {
-  menu: MenuRecord
+type Props = DefaultHeaderBlockRecord & {
   mobileMenuOpen: boolean
   setMobileMenuOpen: Dispatch<SetStateAction<boolean>>
-  siteLogo: AltFileField
 }
 
 export const MobileMenuDialog = (props: Props) => {
-  const { menu, mobileMenuOpen, setMobileMenuOpen, siteLogo } = props
+  const {
+    menu,
+    mobileMenuOpen,
+    setMobileMenuOpen,
+    siteLogo,
+    cimLogo,
+    ctaButton,
+  } = props
 
   return (
     <Dialog
@@ -46,7 +52,7 @@ export const MobileMenuDialog = (props: Props) => {
           </button>
         </div>
         <div className="mt-6 flow-root">
-          <div className="-my-6 divide-y divide-gray-500/10">
+          <div className="-my-6 divide-y divide-brand-grey-300">
             <div className="space-y-2 py-6">
               {menu?.menuItems.map((item) => {
                 if (item.subMenuItems.length > 0) {
@@ -114,14 +120,15 @@ export const MobileMenuDialog = (props: Props) => {
                 }
               })}
             </div>
-            <div className="py-6">
-              {/* @TODO: replace this with actual CTA button  */}
-              <a
-                href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-medium text-gray-900 hover:bg-gray-50"
-              >
-                Log in
-              </a>
+            <div className="flex items-center justify-center gap-x-8 py-8">
+              <CtaButton {...ctaButton[0]} />
+              <div
+                aria-hidden
+                className="min-h-[56px] border-r border-brand-grey-300"
+              />
+              <div className="relative min-h-[56px] w-[40px]">
+                <Image src={cimLogo.url} alt={cimLogo.alt} fill />
+              </div>
             </div>
           </div>
         </div>

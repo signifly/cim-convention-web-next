@@ -581,6 +581,7 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   cimLogo: AltFileField
+  ctaButton: Array<CtaButtonRecord>
   ctaButtonLabel: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   menu?: Maybe<MenuRecord>
