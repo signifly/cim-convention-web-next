@@ -2,7 +2,6 @@ import React from 'react'
 import { GridContainer } from '@/components/GridContainer'
 import { PageHeaderBlockRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
-import { cn } from '@/utils/clsxMerge'
 import Image from 'next/image'
 
 export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
