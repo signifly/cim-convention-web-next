@@ -10,8 +10,8 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
 
   return (
     <section className="bg-brand-gradient-light">
-      <GridContainer className="flex flex-col gap-y-6 p-6 lg:flex-row lg:items-center lg:justify-between lg:py-12">
-        <div>
+      <GridContainer className="flex flex-col gap-y-6 p-6 lg:flex-row lg:items-stretch lg:justify-between lg:py-12">
+        <div className="">
           <h1 className="mb-2 text-12/[130%] font-normal uppercase tracking-[0.24px] lg:mb-4 lg:text-14/[140%] lg:tracking-[0.28px]">
             {title}
           </h1>
@@ -19,9 +19,9 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
             {subTitle}
           </p>
         </div>
-        <div className="flex grow-0 flex-col gap-y-2">
+        <div className="flex min-h-full flex-col gap-y-2">
           {mainSponsorLabel && (
-            <p className="col-span-full text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
+            <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
               {mainSponsorLabel}
             </p>
           )}
