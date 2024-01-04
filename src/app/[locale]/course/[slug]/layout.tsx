@@ -16,9 +16,11 @@ export async function generateStaticParams({ params }: PageProps) {
   const res = await fetchDatoContent(
     getAllCoursesSlugQuery({ locale: params.locale }),
   )
-  const result = res.data?.allShortCourses?.map((page: any) => {
-    return { slug: page.slug }
-  })
+  // @todo: filter null values
+  const result = res.data?.allShortCourses
+    ?.map((page: any) => ({ slug: page.slug }))
+    // filter falsy values from N/A locales
+    .filter(({ slug }: { slug: string | null }) => Boolean(slug))
 
   return result
 }

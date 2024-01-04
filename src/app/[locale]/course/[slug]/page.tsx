@@ -30,7 +30,6 @@ export default async function Page({
 
   if (!courseData?.shortCourse) return notFound()
   const { buttons } = courseData.shortCourse satisfies ShortCourseRecord
-  console.log(courseData.shortCourse)
 
   return (
     <main className="bg-brand-grey-25">

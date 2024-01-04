@@ -4882,20 +4882,6 @@ export type FocalPoint = {
   y: Scalars['FloatType']['output']
 }
 
-export type AllShortCoursesQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type AllShortCoursesQueryQuery = {
-  __typename?: 'Query'
-  allShortCourses: Array<{
-    __typename?: 'ShortCourseRecord'
-    id: string
-    courseTitle: string
-    _status: ItemStatus
-    _firstPublishedAt?: string | null
-    slug: string
-  }>
-}
-
 export type AllPagesQueryQueryVariables = Exact<{ [key: string]: never }>
 
 export type AllPagesQueryQuery = {
@@ -4910,41 +4896,6 @@ export type AllPagesQueryQuery = {
   }>
 }
 
-export const AllShortCoursesQueryDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'AllShortCoursesQuery' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'allShortCourses' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'courseTitle' } },
-                { kind: 'Field', name: { kind: 'Name', value: '_status' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: '_firstPublishedAt' },
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<
-  AllShortCoursesQueryQuery,
-  AllShortCoursesQueryQueryVariables
->
 export const AllPagesQueryDocument = {
   kind: 'Document',
   definitions: [
