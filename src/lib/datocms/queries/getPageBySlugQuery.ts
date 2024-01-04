@@ -7,6 +7,7 @@ import { DEFAULT_FOOTER_BLOCK_FRAGMENT } from '@/blocks/DefaultFooterBlock/Defau
 import { DEFAULT_HEADER_BLOCK_FRAGMENT } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlock.fragment'
 import { ANNOUNCEMENT_BANNER_BLOCK_FRAGMENT } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock.fragment'
 import { TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock.fragment'
+import { AD_BLOCK_FRAGMENT } from '@/blocks/AdBlock/AdBlock.fragment'
 import { AD_BANNER_BLOCK_FRAGMENT } from '@/blocks/AdBannerBlock/AdBannerBlock.fragment'
 import { AD_THREE_COLUMN_BLOCK_FRAGMENT } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock.fragment'
 import { CTA_BLOCK_FRAGMENT } from '@/blocks/CtaBlock/CtaBlock.fragment'
@@ -50,6 +51,7 @@ export const getPageBySlugQuery = ({
   return gql`
     ${HERO_BLOCK_FRAGMENT}
 		${TWO_COLUMN_WITH_IMAGE_BLOCK_FRAGMENT}
+		${AD_BLOCK_FRAGMENT}
 		${AD_BANNER_BLOCK_FRAGMENT}
 		${AD_THREE_COLUMN_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
@@ -99,6 +101,7 @@ export const getPageBySlugQuery = ({
 								...PageHeaderBlockFragment
                 ...HeroBlockFragment
 								...TwoColumnWithImageBlockFragment
+                ...AdBlockFragment
 								...AdBannerBlockFragment
 								...AdThreeColumnBlockFragment
 								...CtaBlockFragment
