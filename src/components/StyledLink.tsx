@@ -11,7 +11,7 @@ const baseStyle =
 const primaryStyle =
   'text-white bg-brand-gradient disabled:bg-brand-gradient-light focus:shadow-skyblue transition-all focus:outline-none'
 const secondaryStyle =
-  'bg-white text-brand-grey-950 transition-all focus:shadow-skyblue focus:outline-none'
+  'bg-white text-brand-grey-950 transition-all focus:shadow-skyblue focus:outline-none border border-brand-grey-300'
 
 export function StyledLink<Pathname extends keyof typeof pathnames>(
   props: ComponentProps<typeof Link<Pathname>> & CustomLinkProps,
