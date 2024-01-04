@@ -48,6 +48,16 @@ export const getCourseBySlugQuery = ({ locale, slug }: Params): string => {
 							...AnnouncementBannerBlockFragment
 						}
 					}
+					pageTitle
+					courseTitle
+					duration
+					dates
+					startEndTime
+					image {
+						responsiveImage (imgixParams: { auto: format }) {
+							...ResponsiveImageFragment
+						}
+					}
 					description {
 						value
 					}

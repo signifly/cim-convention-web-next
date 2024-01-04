@@ -28,7 +28,6 @@ export type Scalars = {
   Float: { input: number; output: number }
   BooleanType: { input: any; output: any }
   CustomData: { input: any; output: any }
-  Date: { input: any; output: any }
   DateTime: { input: any; output: any }
   FloatType: { input: any; output: any }
   IntType: { input: any; output: any }
@@ -600,24 +599,6 @@ export type CtaButtonRecordListListNonNullMultiLocaleField = {
   __typename?: 'CtaButtonRecordListListNonNullMultiLocaleField'
   locale?: Maybe<SiteLocale>
   value: Array<CtaButtonRecord>
-}
-
-/** Specifies how to filter Date fields */
-export type DateFilter = {
-  /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
-  /** Filter records with a value that's strictly greater than the one specified */
-  gt?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's greater than or equal to the one specified */
-  gte?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's less than the one specified */
-  lt?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's less or equal than the one specified */
-  lte?: InputMaybe<Scalars['Date']['input']>
-  /** Exclude records with an exact match */
-  neq?: InputMaybe<Scalars['Date']['input']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
@@ -3806,7 +3787,7 @@ export type ShortCourseModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   courseTitle?: InputMaybe<StringFilter>
-  dates?: InputMaybe<DateFilter>
+  dates?: InputMaybe<StringFilter>
   description?: InputMaybe<StructuredTextFilter>
   duration?: InputMaybe<StringFilter>
   footer?: InputMaybe<LinkFilter>
@@ -3857,6 +3838,7 @@ export type ShortCourseRecord = RecordInterface & {
     Array<CtaButtonRecordListListNonNullMultiLocaleField>
   >
   _allCourseTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allDatesLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allDurationLocales?: Maybe<Array<StringMultiLocaleField>>
   _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
@@ -3878,7 +3860,7 @@ export type ShortCourseRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   buttons: Array<CtaButtonRecord>
   courseTitle: Scalars['String']['output']
-  dates: Scalars['Date']['output']
+  dates: Scalars['String']['output']
   description: ShortCourseModelDescriptionField
   duration?: Maybe<Scalars['String']['output']>
   footer?: Maybe<FooterRecord>
@@ -3898,6 +3880,11 @@ export type ShortCourseRecord_AllButtonsLocalesArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecord_AllCourseTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllDatesLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -3939,6 +3926,12 @@ export type ShortCourseRecordButtonsArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecordCourseTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordDatesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
