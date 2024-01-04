@@ -28,6 +28,7 @@ export type Scalars = {
   Float: { input: number; output: number }
   BooleanType: { input: any; output: any }
   CustomData: { input: any; output: any }
+  Date: { input: any; output: any }
   DateTime: { input: any; output: any }
   FloatType: { input: any; output: any }
   IntType: { input: any; output: any }
@@ -130,32 +131,6 @@ export type AccordionGroupBlockRecordSupportTextArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
-/** Block of type Ad Banner Block (ad_banner_block) */
-export type AdBannerBlockRecord = RecordInterface & {
-  __typename?: 'AdBannerBlockRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
-  id: Scalars['ItemId']['output']
-  image: FileField
-}
-
-/** Block of type Ad Banner Block (ad_banner_block) */
-export type AdBannerBlockRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
 /** Block of type Ad Block (ad_block) */
 export type AdBlockRecord = RecordInterface & {
   __typename?: 'AdBlockRecord'
@@ -250,32 +225,6 @@ export type AdRecord = RecordInterface & {
 
 /** Record of type Ad (ad) */
 export type AdRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Block of type Ad Three Column Block (ad_three_column_block) */
-export type AdThreeColumnBlockRecord = RecordInterface & {
-  __typename?: 'AdThreeColumnBlockRecord'
-  _createdAt: Scalars['DateTime']['output']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
-  _isValid: Scalars['BooleanType']['output']
-  _modelApiKey: Scalars['String']['output']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
-  _updatedAt: Scalars['DateTime']['output']
-  anchorId?: Maybe<Scalars['String']['output']>
-  id: Scalars['ItemId']['output']
-  images: Array<FileField>
-}
-
-/** Block of type Ad Three Column Block (ad_three_column_block) */
-export type AdThreeColumnBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -645,6 +594,30 @@ export type CtaButtonRecord = RecordInterface & {
 /** Block of type CTA Button (cta_button) */
 export type CtaButtonRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+export type CtaButtonRecordListListNonNullMultiLocaleField = {
+  __typename?: 'CtaButtonRecordListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<CtaButtonRecord>
+}
+
+/** Specifies how to filter Date fields */
+export type DateFilter = {
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['Date']['input']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with a value that's strictly greater than the one specified */
+  gt?: InputMaybe<Scalars['Date']['input']>
+  /** Filter records with a value that's greater than or equal to the one specified */
+  gte?: InputMaybe<Scalars['Date']['input']>
+  /** Filter records with a value that's less than the one specified */
+  lt?: InputMaybe<Scalars['Date']['input']>
+  /** Filter records with a value that's less or equal than the one specified */
+  lte?: InputMaybe<Scalars['Date']['input']>
+  /** Exclude records with an exact match */
+  neq?: InputMaybe<Scalars['Date']['input']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
@@ -1384,9 +1357,7 @@ export type HeroBlockRecord_SeoMetaTagsArgs = {
 export type HomePageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
-  | AdBannerBlockRecord
   | AdBlockRecord
-  | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
   | CtaBlockRecord
@@ -3249,9 +3220,7 @@ export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
 export type PageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
-  | AdBannerBlockRecord
   | AdBlockRecord
-  | AdThreeColumnBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
   | CtaBlockRecord
@@ -3458,6 +3427,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allShortCoursesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allSponsorsMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata
@@ -3478,6 +3449,8 @@ export type Query = {
   /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
+  allShortCourses: Array<ShortCourseRecord>
+  /** Returns a collection of records */
   allSponsors: Array<SponsorRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
@@ -3493,6 +3466,8 @@ export type Query = {
   menu?: Maybe<MenuRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
+  /** Returns a specific record */
+  shortCourse?: Maybe<ShortCourseRecord>
   /** Returns the single instance record */
   socialLink?: Maybe<SocialLinkRecord>
   /** Returns a specific record */
@@ -3534,6 +3509,12 @@ export type Query_AllMenusMetaArgs = {
 /** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   filter?: InputMaybe<PageModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllShortCoursesMetaArgs = {
+  filter?: InputMaybe<ShortCourseModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3624,6 +3605,16 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllShortCoursesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ShortCourseModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<ShortCourseModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
 export type QueryAllSponsorsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<SponsorModelFilter>
@@ -3687,6 +3678,14 @@ export type QueryPageArgs = {
   filter?: InputMaybe<PageModelFilter>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryShortCourseArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ShortCourseModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<ShortCourseModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3785,6 +3784,189 @@ export type SeoFieldMultiLocaleField = {
 export type SeoFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']['input']>
+}
+
+export type ShortCourseModelDescriptionField = {
+  __typename?: 'ShortCourseModelDescriptionField'
+  blocks: Array<Scalars['String']['output']>
+  links: Array<Scalars['String']['output']>
+  value: Scalars['JsonField']['output']
+}
+
+export type ShortCourseModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ShortCourseModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<ShortCourseModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _locales?: InputMaybe<LocalesFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  courseTitle?: InputMaybe<StringFilter>
+  dates?: InputMaybe<DateFilter>
+  description?: InputMaybe<StructuredTextFilter>
+  duration?: InputMaybe<StringFilter>
+  id?: InputMaybe<ItemIdFilter>
+  image?: InputMaybe<FileFilter>
+  pageTitle?: InputMaybe<StringFilter>
+  seo?: InputMaybe<SeoFilter>
+  slug?: InputMaybe<SlugFilter>
+  startEndTime?: InputMaybe<StringFilter>
+}
+
+export enum ShortCourseModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  CourseTitleAsc = 'courseTitle_ASC',
+  CourseTitleDesc = 'courseTitle_DESC',
+  DatesAsc = 'dates_ASC',
+  DatesDesc = 'dates_DESC',
+  DurationAsc = 'duration_ASC',
+  DurationDesc = 'duration_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PageTitleAsc = 'pageTitle_ASC',
+  PageTitleDesc = 'pageTitle_DESC',
+  StartEndTimeAsc = 'startEndTime_ASC',
+  StartEndTimeDesc = 'startEndTime_DESC',
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord = RecordInterface & {
+  __typename?: 'ShortCourseRecord'
+  _allButtonsLocales?: Maybe<
+    Array<CtaButtonRecordListListNonNullMultiLocaleField>
+  >
+  _allCourseTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allDurationLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
+  _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allStartEndTimeLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _locales: Array<SiteLocale>
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  buttons: Array<CtaButtonRecord>
+  courseTitle: Scalars['String']['output']
+  dates: Scalars['Date']['output']
+  description: ShortCourseModelDescriptionField
+  duration?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  image: ImageAltFileField
+  pageTitle: Scalars['String']['output']
+  seo?: Maybe<SeoField>
+  slug: Scalars['String']['output']
+  startEndTime: Scalars['String']['output']
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllButtonsLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllCourseTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllDurationLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllPageTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllSeoLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllSlugLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllStartEndTimeLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordButtonsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordCourseTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordDurationArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordPageTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordSeoArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordSlugArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordStartEndTimeArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
 }
 
 export type Site = {
@@ -4083,6 +4265,20 @@ export type StringNonNullMultiLocaleField = {
   __typename?: 'StringNonNullMultiLocaleField'
   locale?: Maybe<SiteLocale>
   value: Scalars['String']['output']
+}
+
+/** Specifies how to filter Structured Text fields values */
+export type StructuredTextFilter = {
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with the specified field set as blank (null or single empty paragraph) */
+  isBlank?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records based on a regular expression */
+  matches?: InputMaybe<StringMatchesFilter>
+  /** Exclude records based on a regular expression */
+  notMatches?: InputMaybe<StringMatchesFilter>
 }
 
 export type Tag = {

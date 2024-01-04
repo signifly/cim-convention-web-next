@@ -5,8 +5,6 @@ import { DefaultHeaderBlock } from '@/blocks/DefaultHeaderBlock/DefaultHeaderBlo
 import { AnnouncementBannerBlock } from '@/blocks/AnnouncementBannerBlock/AnnouncementBannerBlock'
 import { TwoColumnWithImageBlock } from '@/blocks/TwoColumnWithImageBlock/TwoColumnWithImageBlock'
 import { AdBlock } from '@/blocks/AdBlock/AdBlock'
-import { AdBannerBlock } from '@/blocks/AdBannerBlock/AdBannerBlock'
-import { AdThreeColumnBlock } from '@/blocks/AdThreeColumnBlock/AdThreeColumnBlock'
 import { CtaBlock } from '@/blocks/CtaBlock/CtaBlock'
 import { DividerBlock } from '@/blocks/DividerBlock/DividerBlock'
 import { CardsContainerBlock } from '@/blocks/CardsContainerBlock/CardsContainerBlock'
@@ -34,9 +32,7 @@ export const componentsMap = {
   announcement_banner_block: AnnouncementBannerBlock,
   two_column_with_image_block: TwoColumnWithImageBlock,
   ad_block: AdBlock,
-  ad_banner_block: AdBannerBlock,
   default_footer_block: DefaultFooterBlock,
-  ad_three_column_block: AdThreeColumnBlock,
   cta_block: CtaBlock,
   divider_block: DividerBlock,
   cards_container_block: CardsContainerBlock,
