@@ -6,12 +6,21 @@ export class dtf {
   }
 
   getDay() {
-    return this.date.toLocaleDateString('en-US', { weekday: 'long' })
+    return this.date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      timeZone: 'UTC',
+    })
   }
   getMonth() {
-    return this.date.toLocaleDateString('en-US', { month: 'long' })
+    return this.date.toLocaleDateString('en-US', {
+      month: 'long',
+      timeZone: 'UTC',
+    })
   }
   getDate() {
-    return this.date.toLocaleDateString('en-US', { day: 'numeric' })
+    return this.date.toLocaleDateString('en-US', {
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
   }
 }
