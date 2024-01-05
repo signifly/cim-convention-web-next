@@ -47,9 +47,9 @@ export function CardBlock(props: CardBlockRecordExt) {
         </div>
       )}
 
-      <div className="p-[12px] md:p-[24px]">
+      <div className="p-3 md:p-[24px]">
         {title && (
-          <p className="mb-[4px] text-16/[140%] font-semibold md:text-20/[140%]">
+          <p className="mb-1 text-16/[140%] font-semibold md:text-20/[140%]">
             {title}
           </p>
         )}
@@ -60,7 +60,7 @@ export function CardBlock(props: CardBlockRecordExt) {
         )}
         {paragraph && (
           <div
-            className={`mt-[12px] text-12/[130%] font-normal text-brand-grey-600 ${
+            className={`mt-3 space-y-4 text-12/[130%] font-normal text-brand-grey-600 ${
               image
                 ? 'md:mt-8'
                 : buttons && buttons.length > 0
