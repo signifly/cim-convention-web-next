@@ -28,6 +28,7 @@ export type Scalars = {
   Float: { input: number; output: number }
   BooleanType: { input: any; output: any }
   CustomData: { input: any; output: any }
+  Date: { input: any; output: any }
   DateTime: { input: any; output: any }
   FloatType: { input: any; output: any }
   IntType: { input: any; output: any }
