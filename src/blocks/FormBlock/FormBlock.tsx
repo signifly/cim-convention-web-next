@@ -14,11 +14,20 @@ type FieldError = {
   error: string
 }
 
+type PostSubmit = {
+  posted: boolean
+  success: boolean
+}
+
 export function FormBlock(props: FormBlockRecord) {
   let { form, anchorId, title, description, image } = props
 
   const [formErrors, setFormErrors] = useState<FieldError[]>([])
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false)
+  const [postSubmit, setPostSubmit] = useState<PostSubmit>({
+    posted: false,
+    success: false,
+  })
 
   const sigCanvas = useRef(null)
   const formRef = useRef(null)
@@ -28,8 +37,25 @@ export function FormBlock(props: FormBlockRecord) {
     setFormSubmitted(true)
     const formObject = getFormObject()
     if (validateForm(formObject)) {
-      // @todo WIP; Send data to service when possible; remove console.log
-      console.log('Form Submitted!', formObject)
+      fetch('https://formspree.io/f/mgegepae', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject),
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            setPostSubmit({ posted: true, success: true })
+          } else {
+            setPostSubmit({ posted: true, success: false })
+          }
+          return response.json()
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+          setPostSubmit({ posted: true, success: false })
+        })
     }
   }
 
@@ -107,7 +133,7 @@ export function FormBlock(props: FormBlockRecord) {
     })
 
     setFormErrors(errors)
-    return formErrors.length === 0
+    return errors.length === 0
   }
 
   const fieldHasError = (fieldId: string) => {
@@ -220,6 +246,7 @@ export function FormBlock(props: FormBlockRecord) {
                       id={field.fieldId}
                       name={field.fieldId}
                       required={field.required}
+                      disabled={postSubmit.posted && postSubmit.success}
                       className="rounded border-[1px] border-brand-grey-300 px-[14px] py-3 text-14/[150%] focus:shadow-skyblue focus:outline-none md:text-16/[150%]"
                     />
                   )}
@@ -239,6 +266,9 @@ export function FormBlock(props: FormBlockRecord) {
                                 id={`${field.fieldId}_${option.value}`}
                                 name={field.fieldId}
                                 value={option.value}
+                                disabled={
+                                  postSubmit.posted && postSubmit.success
+                                }
                                 className={`h-[20px] w-[20px] cursor-pointer appearance-none rounded border-[1px] border-brand-grey-300 bg-white checked:border-brand-green focus:shadow-skyblue focus:outline-none ${checkmarkBg}`}
                               />
                               <label
@@ -261,6 +291,7 @@ export function FormBlock(props: FormBlockRecord) {
                       className="h-[150px] resize-none rounded border-[1px] border-brand-grey-300 px-[14px] py-3 text-14/[150%] focus:shadow-skyblue focus:outline-none md:text-16/[150%]"
                       placeholder={field.placeholder || ''}
                       required={field.required}
+                      disabled={postSubmit.posted && postSubmit.success}
                     />
                   )}
                   {/* Field Error Message */}
@@ -316,13 +347,31 @@ export function FormBlock(props: FormBlockRecord) {
                 {form.formErrorMsg}
               </div>
             )}
-
-            <button
-              type="submit"
-              className="col-span-2 rounded bg-brand-gradient px-6 py-[10px] text-14/[125%] font-[500] text-white shadow-xs transition-all focus:shadow-skyblue focus:outline-none disabled:bg-brand-gradient-light md:col-span-1 lg:text-16"
-            >
-              {form.submitBtnLabel}
-            </button>
+            <div className="col-span-2">
+              <button
+                disabled={postSubmit.posted && postSubmit.success}
+                type="submit"
+                className="w-[50%] rounded bg-brand-gradient px-6 py-[10px] text-14/[125%] font-[500] text-white shadow-xs transition-all focus:shadow-skyblue focus:outline-none disabled:bg-brand-gradient-light lg:text-16"
+              >
+                {form.submitBtnLabel}
+              </button>
+              {/* Submit Success */}
+              {postSubmit.posted &&
+                postSubmit.success &&
+                form.submitSuccessMessage && (
+                  <p className="col-span-full mt-2 text-12/[140%] text-brand-green md:text-14/[150%]">
+                    {form.submitSuccessMessage}
+                  </p>
+                )}
+              {/* Submit Error */}
+              {postSubmit.posted &&
+                !postSubmit.success &&
+                form.submitErrorMessage && (
+                  <p className="col-span-full mt-2 text-12/[140%] text-brand-red md:text-14/[150%]">
+                    {form.submitErrorMessage}
+                  </p>
+                )}
+            </div>
           </form>
         </div>
       </GridContainer>

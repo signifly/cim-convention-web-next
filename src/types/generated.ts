@@ -657,6 +657,8 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   sponsorLink?: Maybe<Scalars['String']['output']>
   sponsorLogo?: Maybe<FileField>
   sponsorTitle?: Maybe<Scalars['String']['output']>
+  submitErrorMessage?: Maybe<Scalars['String']['output']>
+  submitSuccessMessage?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */

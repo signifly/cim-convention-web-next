@@ -13,6 +13,8 @@ export const DEFAULT_FOOTER_BLOCK_FRAGMENT = gql`
     newsletterInputPlaceholder
     newsletterParagraph
     newsletterTitle
+    submitSuccessMessage
+    submitErrorMessage
     sponsorTitle
     sponsorLink
     sponsorLogo {

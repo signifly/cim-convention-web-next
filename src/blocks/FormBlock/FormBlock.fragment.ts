@@ -23,6 +23,8 @@ export const FORM_BLOCK_FRAGMENT = gql`
       formErrorMsg
       fieldErrorMsg
       fieldTypeErrorMsg
+      submitSuccessMessage
+      submitErrorMessage
       fieldset {
         ... on FormTextareaRecord {
           id
