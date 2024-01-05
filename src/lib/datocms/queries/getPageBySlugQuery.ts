@@ -31,6 +31,7 @@ import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CONTACT_BLOCK_FRAGMENT } from '@/blocks/ContactBlock/ContactBlock.fragment'
 import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCardBlock.fragment'
+import { REGISTRATION_BLOCK_FRAGMENT } from '@/blocks/RegistrationBlock/RegistrationBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -73,6 +74,7 @@ export const getPageBySlugQuery = ({
     ${CONTACT_CARD_BLOCK_FRAGMENT}
 		${SHORT_COURSES_LIST_BLOCK_FRAGMENT}
 		${ACCORDION_GROUP_BLOCK_FRAGMENT}
+    ${REGISTRATION_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -116,6 +118,7 @@ export const getPageBySlugQuery = ({
                 ...ContactBlockFragment
 								...ShortCoursesListBlockFragment
 								...AccordionGroupBlockFragment
+                ...RegistrationBlockFragment
             }
             footer {
               blocks {
