@@ -21,6 +21,7 @@ import { OneColumnTextBlock } from '@/blocks/OneColumnTextBlock/OneColumnTextBlo
 import { SponsorListBlock } from '@/blocks/SponsorListBlock/SponsorListBlock'
 import { ContactBlock } from '@/blocks/ContactBlock/ContactBlock'
 import { ContactCardBlock } from '@/blocks/ContactCardBlock/ContactCardBlock'
+import { AccordionGroupBlock } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -49,4 +50,5 @@ export const componentsMap = {
   sponsor_list_block: SponsorListBlock,
   contact_block: ContactBlock,
   contact_card_block: ContactCardBlock,
+  accordion_group_block: AccordionGroupBlock,
 }

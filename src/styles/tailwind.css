@@ -26,6 +26,10 @@ button:focus {
   ul {
     @apply ml-4 list-disc lg:ml-8;
   }
+
+  a {
+    @apply underline;
+  }
 }
 
 /* Splide custom pagination */

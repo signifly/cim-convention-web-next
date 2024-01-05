@@ -14,6 +14,7 @@ import { TESTIMONIALS_BLOCK_FRAGMENT } from '@/blocks/TestimonialsBlock/Testimon
 import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderBlock.fragment'
 import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
 import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock.fragment'
+import { ACCORDION_GROUP_BLOCK_FRAGMENT } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock.fragment'
 import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
 
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
@@ -69,6 +70,7 @@ export const getPageBySlugQuery = ({
 		${SPONSOR_LIST_BLOCK_FRAGMENT}
 		${CONTACT_BLOCK_FRAGMENT}
     ${CONTACT_CARD_BLOCK_FRAGMENT}
+		${ACCORDION_GROUP_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -110,6 +112,7 @@ export const getPageBySlugQuery = ({
 								...OneColumnTextBlockFragment
 								...SponsorListBlockFragment
                 ...ContactBlockFragment
+								...AccordionGroupBlockFragment
             }
             footer {
               blocks {
