@@ -18,7 +18,7 @@ export const AccordionBlock = (props: AccordionBlockRecord) => {
       id={anchorId}
     >
       <GridContainer>
-        <h2 className="mb-6 text-20/[140%] font-medium text-brand-green lg:mb-8 lg:text-24">
+        <h2 className="col-span-full mb-6 text-20/[140%] font-medium text-brand-green lg:mb-8 lg:text-24">
           {title}
         </h2>
         <Accordion
