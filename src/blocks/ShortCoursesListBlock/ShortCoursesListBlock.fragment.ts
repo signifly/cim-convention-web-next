@@ -8,6 +8,7 @@ export const SHORT_COURSES_LIST_BLOCK_FRAGMENT = gql`
     title
     linkLabel
     sections {
+      id
       duration
       dates
       time
