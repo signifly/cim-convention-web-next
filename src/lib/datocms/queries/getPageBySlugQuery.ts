@@ -15,6 +15,7 @@ import { PAGE_HEADER_BLOCK_FRAGMENT } from '@/blocks/PageHeaderBlock/PageHeaderB
 import { STATISTICS_BLOCK_FRAGMENT } from '@/blocks/StatisticsBlock/StatisticsBlock.fragment'
 import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock.fragment'
 import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
+import { SHORT_COURSES_LIST_BLOCK_FRAGMENT } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock.fragment'
 
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
@@ -69,6 +70,7 @@ export const getPageBySlugQuery = ({
 		${SPONSOR_LIST_BLOCK_FRAGMENT}
 		${CONTACT_BLOCK_FRAGMENT}
     ${CONTACT_CARD_BLOCK_FRAGMENT}
+		${SHORT_COURSES_LIST_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -110,6 +112,7 @@ export const getPageBySlugQuery = ({
 								...OneColumnTextBlockFragment
 								...SponsorListBlockFragment
                 ...ContactBlockFragment
+								...ShortCoursesListBlockFragment
             }
             footer {
               blocks {

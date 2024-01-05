@@ -28,7 +28,6 @@ export type Scalars = {
   Float: { input: number; output: number }
   BooleanType: { input: any; output: any }
   CustomData: { input: any; output: any }
-  Date: { input: any; output: any }
   DateTime: { input: any; output: any }
   FloatType: { input: any; output: any }
   IntType: { input: any; output: any }
@@ -385,6 +384,7 @@ export type CardsContainerBlockRecord = RecordInterface & {
   background?: Maybe<Scalars['String']['output']>
   cardBorders?: Maybe<Scalars['BooleanType']['output']>
   cards: Array<CardBlockRecord>
+  ctaButton: Array<CtaButtonRecord>
   desktopLayout?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   mobileLayout?: Maybe<Scalars['String']['output']>
@@ -600,24 +600,6 @@ export type CtaButtonRecordListListNonNullMultiLocaleField = {
   __typename?: 'CtaButtonRecordListListNonNullMultiLocaleField'
   locale?: Maybe<SiteLocale>
   value: Array<CtaButtonRecord>
-}
-
-/** Specifies how to filter Date fields */
-export type DateFilter = {
-  /** Search for records with an exact match */
-  eq?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']['input']>
-  /** Filter records with a value that's strictly greater than the one specified */
-  gt?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's greater than or equal to the one specified */
-  gte?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's less than the one specified */
-  lt?: InputMaybe<Scalars['Date']['input']>
-  /** Filter records with a value that's less or equal than the one specified */
-  lte?: InputMaybe<Scalars['Date']['input']>
-  /** Exclude records with an exact match */
-  neq?: InputMaybe<Scalars['Date']['input']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
@@ -1367,6 +1349,7 @@ export type HomePageModelBodyField =
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
+  | ShortCoursesListBlockRecord
   | SponsorListBlockRecord
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
@@ -3230,6 +3213,7 @@ export type PageModelBodyField =
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
+  | ShortCoursesListBlockRecord
   | SponsorListBlockRecord
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
@@ -3786,6 +3770,34 @@ export type SeoFilter = {
   exists?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
+/** Block of type Short Course List Block > Section (short_course_list_block_section) */
+export type ShortCourseListBlockSectionRecord = RecordInterface & {
+  __typename?: 'ShortCourseListBlockSectionRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  dates: Scalars['String']['output']
+  duration: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  shortCourses: Array<ShortCourseRecord>
+  time: Scalars['String']['output']
+}
+
+/** Block of type Short Course List Block > Section (short_course_list_block_section) */
+export type ShortCourseListBlockSectionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type ShortCourseModelDescriptionField = {
   __typename?: 'ShortCourseModelDescriptionField'
   blocks: Array<Scalars['String']['output']>
@@ -3806,9 +3818,11 @@ export type ShortCourseModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   courseTitle?: InputMaybe<StringFilter>
-  dates?: InputMaybe<DateFilter>
+  dates?: InputMaybe<StringFilter>
   description?: InputMaybe<StructuredTextFilter>
   duration?: InputMaybe<StringFilter>
+  footer?: InputMaybe<LinkFilter>
+  header?: InputMaybe<LinkFilter>
   id?: InputMaybe<ItemIdFilter>
   image?: InputMaybe<FileFilter>
   pageTitle?: InputMaybe<StringFilter>
@@ -3855,6 +3869,7 @@ export type ShortCourseRecord = RecordInterface & {
     Array<CtaButtonRecordListListNonNullMultiLocaleField>
   >
   _allCourseTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allDatesLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allDurationLocales?: Maybe<Array<StringMultiLocaleField>>
   _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
@@ -3876,9 +3891,11 @@ export type ShortCourseRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   buttons: Array<CtaButtonRecord>
   courseTitle: Scalars['String']['output']
-  dates: Scalars['Date']['output']
+  dates: Scalars['String']['output']
   description: ShortCourseModelDescriptionField
   duration?: Maybe<Scalars['String']['output']>
+  footer?: Maybe<FooterRecord>
+  header: HeaderRecord
   id: Scalars['ItemId']['output']
   image: ImageAltFileField
   pageTitle: Scalars['String']['output']
@@ -3894,6 +3911,11 @@ export type ShortCourseRecord_AllButtonsLocalesArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecord_AllCourseTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllDatesLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -3940,6 +3962,12 @@ export type ShortCourseRecordCourseTitleArgs = {
 }
 
 /** Record of type Short Course (short_course) */
+export type ShortCourseRecordDatesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
 export type ShortCourseRecordDurationArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
@@ -3966,6 +3994,33 @@ export type ShortCourseRecordSlugArgs = {
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecordStartEndTimeArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Short Courses List Block (short_courses_list_block) */
+export type ShortCoursesListBlockRecord = RecordInterface & {
+  __typename?: 'ShortCoursesListBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  sections: Array<ShortCourseListBlockSectionRecord>
+  title: Scalars['String']['output']
+}
+
+/** Block of type Short Courses List Block (short_courses_list_block) */
+export type ShortCoursesListBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 

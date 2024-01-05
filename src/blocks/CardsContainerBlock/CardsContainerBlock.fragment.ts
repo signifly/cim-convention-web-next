@@ -14,5 +14,8 @@ export const CARDS_CONTAINER_BLOCK_FRAGMENT = gql`
     cards {
       ...CardBlockFragment
     }
+    ctaButton {
+      ...CtaButtonFragment
+    }
   }
 `
