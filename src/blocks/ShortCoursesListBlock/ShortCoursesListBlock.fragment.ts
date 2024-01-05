@@ -6,6 +6,7 @@ export const SHORT_COURSES_LIST_BLOCK_FRAGMENT = gql`
     _modelApiKey
     anchorId
     title
+    linkLabel
     sections {
       duration
       dates

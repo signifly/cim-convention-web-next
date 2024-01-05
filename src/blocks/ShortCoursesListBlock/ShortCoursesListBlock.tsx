@@ -7,7 +7,7 @@ import {
 import { Link } from '@/navigation'
 
 export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
-  const { anchorId, title, sections } = props
+  const { anchorId, title, linkLabel, sections } = props
 
   return (
     <section id={anchorId} className="py-10 lg:py-16">
@@ -20,7 +20,7 @@ export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
         {sections.map((section: ShortCourseListBlockSectionRecord) => (
           <div key={section.id} className="col-span-full font-medium">
             <h3 className="flex flex-col gap-y-2 lg:flex-row lg:items-center lg:gap-x-4">
-              <span className="max-w-max rounded bg-brand-gradient px-2 py-1 text-white lg:px-3 lg:py-[6px] lg:text-16/[125%]">
+              <span className="max-w-max rounded bg-brand-gradient px-2 py-1 text-12/[100%] text-white lg:px-3 lg:py-[6px] lg:text-16/[125%]">
                 {section.duration}
               </span>
               <span className="flex flex-col gap-y-1 text-18/[140%] lg:flex-row lg:items-center lg:gap-x-4 lg:text-24/[140%]">
@@ -38,7 +38,7 @@ export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
                   >
                     {shortCourse.courseTitle}
                     <span className="text-14/[140%] text-brand-grey-700 underline transition-colors group-hover:text-brand-green">
-                      Learn more
+                      {linkLabel}
                       {/* @todo: update with text from CMS */}
                     </span>
                   </Link>
