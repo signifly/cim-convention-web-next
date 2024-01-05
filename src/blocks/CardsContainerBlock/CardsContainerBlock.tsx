@@ -20,17 +20,17 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
   let sectionBg = ''
 
   switch (background) {
-    case 'solid':
-      sectionBg = 'bg-brand-grey-25'
-      break
     case 'gradient':
       sectionBg = 'bg-brand-gradient-light'
       break
     case 'white':
       sectionBg = 'bg-white'
       break
-    case 'gray':
+    case 'dark_gray':
       sectionBg = 'bg-brand-grey-100'
+      break
+    case 'gray':
+      sectionBg = 'bg-brand-grey-25'
       break
     default:
       sectionBg = 'bg-brand-grey-25'
