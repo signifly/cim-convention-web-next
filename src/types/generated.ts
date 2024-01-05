@@ -3934,7 +3934,7 @@ export type RegistrationBlockRecord = RecordInterface & {
   earlyLabel: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   lateLabel: Scalars['String']['output']
-  registrationPeriod?: Maybe<Scalars['BooleanType']['output']>
+  registrationPeriod: Scalars['String']['output']
   tiers: Array<RegistrationTierBlockRecord>
 }
 
@@ -4062,7 +4062,7 @@ export type ScheduleBlockDayTimeSlotRecord = RecordInterface & {
   description?: Maybe<Scalars['String']['output']>
   endTime: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
-  linkTo: ScheduleBlockDayTimeSlotModelLinkToField
+  linkTo?: Maybe<ScheduleBlockDayTimeSlotModelLinkToField>
   startTime: Scalars['DateTime']['output']
   title: Scalars['String']['output']
 }
