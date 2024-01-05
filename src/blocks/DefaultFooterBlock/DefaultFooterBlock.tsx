@@ -1,11 +1,19 @@
+'use client'
+
 import { StyledLink } from '@/components/StyledLink'
 import { DefaultFooterBlockRecord, SocialLinkRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import SocialMedia from '@/components/SocialMedia'
+import { useRef, useState } from 'react'
 
 type DefaultFooterBlockRecordExt = DefaultFooterBlockRecord & {
   socialLinks: SocialLinkRecord
+}
+
+type PostSubmit = {
+  posted: boolean
+  success: boolean
 }
 
 export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
@@ -19,11 +27,51 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
     newsletterInputPlaceholder,
     newsletterParagraph,
     newsletterTitle,
+    submitSuccessMessage,
+    submitErrorMessage,
     sponsorLogo,
     sponsorLink,
     sponsorTitle,
     socialLinks,
   } = props
+
+  const [postSubmit, setPostSubmit] = useState<PostSubmit>({
+    posted: false,
+    success: false,
+  })
+
+  const formRef = useRef(null)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const formData = new FormData(formRef.current as any)
+    const formObject = {} as any
+
+    formData.forEach((value, key) => {
+      formObject[key] = value
+    })
+
+    fetch('https://formspree.io/f/xoqgqpea', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formObject),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          setPostSubmit({ posted: true, success: true })
+        } else {
+          setPostSubmit({ posted: true, success: false })
+        }
+        return response.json()
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+        setPostSubmit({ posted: true, success: false })
+      })
+  }
 
   return (
     <footer className="flex-none bg-gray-800 text-sm text-white">
@@ -62,16 +110,40 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
         {/* Newsletter */}
         <div className="relative col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] lg:col-span-5 lg:col-start-5 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
           <h6 className="uppercase">{newsletterTitle}</h6>
-          <div className="flex w-[100%] flex-col gap-[16px] lg:flex-row">
-            <input
-              type="text"
-              placeholder={newsletterInputPlaceholder || ''}
-              className="h-[100%] max-w-[568px] grow rounded bg-gray-700 px-[16px] py-[14px] leading-[125%] text-gray-400 focus:shadow-skyblue focus:outline-none"
-            />
-            <button className="h-[100%] max-w-[568px] rounded bg-white px-[24px] py-[10px] font-medium leading-[150%] text-gray-950">
-              {newsletterButtonLabel}
-            </button>
-          </div>
+          {!postSubmit.posted && (
+            <form
+              onSubmit={handleSubmit}
+              ref={formRef}
+              className="flex w-[100%] flex-col gap-[16px] lg:flex-row"
+            >
+              <input
+                id="email"
+                name="email"
+                type="text"
+                required
+                placeholder={newsletterInputPlaceholder || ''}
+                className="h-[100%] max-w-[568px] grow rounded bg-gray-700 px-[16px] py-[14px] leading-[125%] text-gray-400 focus:shadow-skyblue focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="h-[100%] max-w-[568px] rounded bg-white px-[24px] py-[10px] font-medium leading-[150%] text-gray-950"
+              >
+                {newsletterButtonLabel}
+              </button>
+            </form>
+          )}
+          {/* Submit Success */}
+          {postSubmit.posted && postSubmit.success && submitSuccessMessage && (
+            <p className="col-span-full mt-2 text-12/[140%] text-brand-green md:text-14/[150%]">
+              {submitSuccessMessage}
+            </p>
+          )}
+          {/* Submit Error */}
+          {postSubmit.posted && !postSubmit.success && submitErrorMessage && (
+            <p className="col-span-full mt-2 text-12/[140%] text-brand-red md:text-14/[150%]">
+              {submitErrorMessage}
+            </p>
+          )}
           <div className=" text-gray-400">{newsletterParagraph}</div>
         </div>
         {/* Sponsor */}
