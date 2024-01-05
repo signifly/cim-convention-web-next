@@ -1,9 +1,10 @@
 import { CardBlockRecord, CardsContainerBlockRecord } from '@/types/generated'
 import { CardBlock } from '../CardBlock/CardBlock'
 import { GridContainer } from '@/components/GridContainer'
+import { CtaButton } from '@/components/CtaButton'
 
 export function CardsContainerBlock(props: CardsContainerBlockRecord) {
-  let {
+  const {
     cards,
     anchorId,
     title,
@@ -13,19 +14,20 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
     desktopLayout,
     mobileLayout,
     background,
+    ctaButton,
   } = props
 
   let sectionBg = ''
 
   switch (background) {
-    case 'solid':
-      sectionBg = 'bg-brand-grey-25'
-      break
     case 'gradient':
       sectionBg = 'bg-brand-gradient-light'
       break
     case 'white':
       sectionBg = 'bg-white'
+      break
+    case 'dark_gray':
+      sectionBg = 'bg-brand-grey-100'
       break
     case 'gray':
       sectionBg = 'bg-brand-grey-25'
@@ -75,6 +77,11 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
               </div>
             )
           })}
+        </GridContainer>
+      )}
+      {ctaButton && (
+        <GridContainer className="mt-8 grid-cols-1 place-items-center lg:mt-12 lg:grid-cols-1">
+          <CtaButton {...ctaButton[0]} />
         </GridContainer>
       )}
     </section>

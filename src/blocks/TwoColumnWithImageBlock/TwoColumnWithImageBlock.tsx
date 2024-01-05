@@ -18,7 +18,7 @@ const TextDefault = (props: TwoColumnWithImageBlockDefaultRecord) => {
   const { structuredText } = props
 
   return (
-    <div className="structured-text">
+    <div className="structured-text grow">
       {/* @ts-ignore - type mismatch from generated types */}
       <StructuredText data={structuredText} />
     </div>
