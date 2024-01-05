@@ -28,7 +28,7 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
       sectionBg = 'bg-white'
       break
     case 'gray':
-      sectionBg = 'bg-brand-grey-25'
+      sectionBg = 'bg-brand-grey-100'
       break
     default:
       sectionBg = 'bg-brand-grey-25'
