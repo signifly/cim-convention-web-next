@@ -17,6 +17,7 @@ import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock
 import { ACCORDION_GROUP_BLOCK_FRAGMENT } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock.fragment'
 import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
 import { SHORT_COURSES_LIST_BLOCK_FRAGMENT } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock.fragment'
+import { SCHEDULE_BlOCK_FRAGMENT } from '@/blocks/ScheduleBlock/ScheduleBlock.fragment'
 
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
@@ -73,6 +74,7 @@ export const getPageBySlugQuery = ({
     ${CONTACT_CARD_BLOCK_FRAGMENT}
 		${SHORT_COURSES_LIST_BLOCK_FRAGMENT}
 		${ACCORDION_GROUP_BLOCK_FRAGMENT}
+		${SCHEDULE_BlOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -116,6 +118,7 @@ export const getPageBySlugQuery = ({
                 ...ContactBlockFragment
 								...ShortCoursesListBlockFragment
 								...AccordionGroupBlockFragment
+								...ScheduleBlockFragment
             }
             footer {
               blocks {
