@@ -8,7 +8,7 @@ import {
 import { dtf } from '@/utils/dateTimeFormat'
 
 const AnchorLinks = ({ days }: { days: Array<ScheduleBlockDayRecord> }) => (
-  <GridContainer className="inline-flex overflow-scroll py-4">
+  <GridContainer className="inline-flex justify-start overflow-scroll py-4">
     {days.map((day, index) => {
       const format = new dtf(day.date)
 
@@ -16,7 +16,7 @@ const AnchorLinks = ({ days }: { days: Array<ScheduleBlockDayRecord> }) => (
         <a
           key={index}
           href={`#${day.id}`}
-          className="inline min-w-[120px] space-y-1 rounded border border-brand-grey-300 bg-white p-3 font-medium"
+          className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium"
         >
           <time dateTime={day.date} className="text-12/[100%]">
             {format.getDay()}
