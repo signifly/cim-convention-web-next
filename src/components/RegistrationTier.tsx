@@ -47,7 +47,7 @@ export const RegistrationTier = (
           <div className="h-[calc(24px * 1.4)] flex items-start justify-center p-2">
             <IconSelector
               selectorId="chevron_icon"
-              className={` text-black ${
+              className={` text-black transition-all duration-300 ${
                 openDetails ? 'rotate-0' : 'rotate-180'
               }`}
             />
