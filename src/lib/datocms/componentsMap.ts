@@ -24,6 +24,7 @@ import { ContactCardBlock } from '@/blocks/ContactCardBlock/ContactCardBlock'
 import { ShortCoursesListBlock } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock'
 import { AccordionGroupBlock } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
+import { MapBlock } from '@/blocks/MapBlock/MapBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -55,4 +56,5 @@ export const componentsMap = {
   short_courses_list_block: ShortCoursesListBlock,
   accordion_group_block: AccordionGroupBlock,
   registration_block: RegistrationBlock,
+  map_block: MapBlock,
 }
