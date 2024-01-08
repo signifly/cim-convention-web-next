@@ -44,7 +44,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                 {!mainSponsor.logo.responsiveImage && (
                   <Image
                     src={mainSponsor.logo.url}
-                    alt={mainSponsor.logo.alt || name || ''}
+                    alt={mainSponsor.logo.alt || mainSponsor.name || ''}
                     fill
                   />
                 )}
@@ -88,7 +88,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                   {!mainSponsor.logo.responsiveImage && (
                     <Image
                       src={mainSponsor.logo.url}
-                      alt={mainSponsor.logo.alt || name || ''}
+                      alt={mainSponsor.logo.alt || mainSponsor.name || ''}
                       fill
                     />
                   )}
@@ -107,11 +107,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               />
             )}
             {!heroImage.responsiveImage && (
-              <Image
-                src={heroImage.url}
-                alt={heroImage.alt || name || ''}
-                fill
-              />
+              <Image src={heroImage.url} alt={heroImage.alt || ''} fill />
             )}
           </div>
         </div>
