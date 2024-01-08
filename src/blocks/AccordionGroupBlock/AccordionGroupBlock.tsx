@@ -4,10 +4,22 @@ import { AccordionGroupBlockRecord } from '@/types/generated'
 import { GridContainer } from '@/components/GridContainer'
 
 export const AccordionGroupBlock = (props: AccordionGroupBlockRecord) => {
-  const { displayAnchorLinks, sections, supportText } = props
+  const { displayAnchorLinks, sections, supportText, title, centeredLayout } =
+    props
 
   return (
-    <div className="pb-12 lg:pb-16">
+    <section className="bg-brand-grey-25 pb-12 lg:pb-16">
+      {title && (
+        <GridContainer>
+          <h2
+            className={`${
+              centeredLayout ? 'text-center' : 'text-left'
+            } col-span-full mt-12 text-20/[140%] font-semibold md:text-32/[125%] lg:mt-16`}
+          >
+            {title}
+          </h2>
+        </GridContainer>
+      )}
       {displayAnchorLinks && (
         <GridContainer className="flex gap-x-2 overflow-scroll py-4 lg:gap-x-4">
           {sections.map((section) => {
@@ -23,17 +35,36 @@ export const AccordionGroupBlock = (props: AccordionGroupBlockRecord) => {
           })}
         </GridContainer>
       )}
-      {sections.map((section, index) => {
-        return <AccordionBlock key={index} {...section} />
-      })}
+      {centeredLayout ? (
+        <GridContainer className="px-0">
+          {sections.map((section, index) => {
+            return (
+              <div
+                className="col-span-full col-start-1 lg:col-span-8 lg:col-start-3"
+                key={index}
+              >
+                <AccordionBlock {...section} />
+              </div>
+            )
+          })}
+        </GridContainer>
+      ) : (
+        sections.map((section, index) => {
+          return <AccordionBlock key={index} {...section} />
+        })
+      )}
       <GridContainer className="structured-text mt-8 grid-cols-1 lg:mt-16">
         {supportText && (
           <div
             dangerouslySetInnerHTML={{ __html: supportText }}
-            className="col-span-full"
+            className={
+              centeredLayout
+                ? 'col-span-full col-start-1 lg:col-span-8 lg:col-start-3'
+                : 'col-span-full'
+            }
           />
         )}
       </GridContainer>
-    </div>
+    </section>
   )
 }

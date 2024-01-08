@@ -115,10 +115,12 @@ export type AccordionGroupBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  centeredLayout?: Maybe<Scalars['BooleanType']['output']>
   displayAnchorLinks?: Maybe<Scalars['BooleanType']['output']>
   id: Scalars['ItemId']['output']
   sections: Array<AccordionBlockRecord>
   supportText?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Accordion Group Block (accordion_group_block) */
@@ -1570,6 +1572,7 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | MapBlockRecord
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
@@ -3239,6 +3242,12 @@ export enum ItemStatus {
   Updated = 'updated',
 }
 
+export type LatLonField = {
+  __typename?: 'LatLonField'
+  latitude: Scalars['FloatType']['output']
+  longitude: Scalars['FloatType']['output']
+}
+
 /** Specifies how to filter Single-link fields */
 export type LinkFilter = {
   /** Search for records with an exact match. The specified value must be a Record ID */
@@ -3261,6 +3270,32 @@ export type LocalesFilter = {
   anyIn?: InputMaybe<Array<SiteLocale>>
   /** Filter records that are not localized in any of the specified locales */
   notIn?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Block of type Map Block (map_block) */
+export type MapBlockRecord = RecordInterface & {
+  __typename?: 'MapBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  location?: Maybe<LatLonField>
+}
+
+/** Block of type Map Block (map_block) */
+export type MapBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Block of type Menu > Menu Item (menu_menu_item) */
@@ -3439,6 +3474,7 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | MapBlockRecord
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
@@ -4092,10 +4128,12 @@ export type ScheduleBlockDayTimeSlotRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   description?: Maybe<Scalars['String']['output']>
   endTime: Scalars['DateTime']['output']
+  externalLink?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   linkTo?: Maybe<ScheduleBlockDayTimeSlotModelLinkToField>
   startTime: Scalars['DateTime']['output']
   title: Scalars['String']['output']
+  useExternalLink?: Maybe<Scalars['BooleanType']['output']>
 }
 
 /** Block of type Schedule Block > Day > Time Slot (schedule_block_day_time_slot) */
