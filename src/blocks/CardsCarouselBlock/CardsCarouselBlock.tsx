@@ -40,9 +40,9 @@ export function CardsCarouselBlock(props: CardsCarouselBlockRecord) {
 
   const options = {
     breakpoints: {
-      '1024': {
-        gap: '32px',
-        perPage: 1,
+      '768': {
+        gap: '16px',
+        perPage: 2,
         padding: '24px',
       },
     },
