@@ -10,6 +10,7 @@ import StandIcon from './Icons/StandIcon'
 import PresentationChartIcon from './Icons/PresentationChartIcon'
 import GlobeIcon from './Icons/GlobeIcon'
 import AlertIcon from './Icons/AlertIcon'
+import ChevronIcon from './Icons/ChevronIcon'
 
 const SVGMap = {
   facebook_icon: FacebookIcon,
@@ -23,6 +24,7 @@ const SVGMap = {
   presentation_chart_icon: PresentationChartIcon,
   globe_icon: GlobeIcon,
   alert_icon: AlertIcon,
+  chevron_icon: ChevronIcon,
 }
 
 const IconSelector = ({
