@@ -5,7 +5,7 @@ import { CtaButton } from '@/components/CtaButton'
 
 type CardBlockRecordExt = CardBlockRecord & {
   mobileLayout?: Maybe<string>
-  cardBorders?: Maybe<string>
+  cardBorders?: Maybe<boolean>
   background?: Maybe<string>
 }
 

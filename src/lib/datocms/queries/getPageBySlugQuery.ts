@@ -31,6 +31,7 @@ import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CONTACT_BLOCK_FRAGMENT } from '@/blocks/ContactBlock/ContactBlock.fragment'
 import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCardBlock.fragment'
+import { CARDS_CAROUSEL_BLOCK_FRAGMENT } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -54,8 +55,9 @@ export const getPageBySlugQuery = ({
 		${AD_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
-		${CARDS_CONTAINER_BLOCK_FRAGMENT}
 		${CARD_BLOCK_FRAGMENT}
+		${CARDS_CAROUSEL_BLOCK_FRAGMENT}
+		${CARDS_CONTAINER_BLOCK_FRAGMENT}
 		${TESTIMONIALS_BLOCK_FRAGMENT}
 		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
@@ -104,6 +106,7 @@ export const getPageBySlugQuery = ({
                 ...AdBlockFragment
 								...CtaBlockFragment
 								...DividerBlockFragment
+								...CardsCarouselBlockFragment
 								...CardsContainerBlockFragment
 								...TestimonialsBlockFragment
 								...StatisticsBlockFragment
