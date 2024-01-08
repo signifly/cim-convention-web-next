@@ -1,6 +1,6 @@
 import React, { ComponentProps, ComponentPropsWithoutRef } from 'react'
 import { Link, pathnames } from '@/navigation'
-import { cn } from '@/utils/clsxMerge'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 type CustomLinkProps = {
   variant?: 'primary' | 'secondary'
@@ -17,10 +17,9 @@ export function StyledLink<Pathname extends keyof typeof pathnames>(
   props: ComponentProps<typeof Link<Pathname>> & CustomLinkProps,
 ) {
   const { href, className, children, variant = 'primary', ...rest } = props
-  const style = cn(
+  const style = twJoin(
     baseStyle,
-    variant === 'primary' ? primaryStyle : secondaryStyle,
-    className,
+    twMerge(variant === 'primary' ? primaryStyle : secondaryStyle, className),
   )
 
   return (
@@ -34,10 +33,9 @@ export const StyledLinkExternal = (
   props: ComponentPropsWithoutRef<'a'> & CustomLinkProps,
 ) => {
   const { className, children, variant = 'primary', ...rest } = props
-  const style = cn(
+  const style = twJoin(
     baseStyle,
-    variant === 'secondary' ? secondaryStyle : primaryStyle,
-    className,
+    twMerge(variant === 'primary' ? primaryStyle : secondaryStyle, className),
   )
 
   return (
