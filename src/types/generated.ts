@@ -357,7 +357,7 @@ export type BooleanFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>
 }
 
-/** Block of type Cards Container Block > Card Block (card_block) */
+/** Block of type Card Block (card_block) */
 export type CardBlockRecord = RecordInterface & {
   __typename?: 'CardBlockRecord'
   _createdAt: Scalars['DateTime']['output']
@@ -381,14 +381,42 @@ export type CardBlockRecord = RecordInterface & {
   title?: Maybe<Scalars['String']['output']>
 }
 
-/** Block of type Cards Container Block > Card Block (card_block) */
+/** Block of type Card Block (card_block) */
 export type CardBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Block of type Cards Container Block > Card Block (card_block) */
+/** Block of type Card Block (card_block) */
 export type CardBlockRecordParagraphArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Cards Carousel Block (cards_carousel_block) */
+export type CardsCarouselBlockRecord = RecordInterface & {
+  __typename?: 'CardsCarouselBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  background?: Maybe<Scalars['String']['output']>
+  cards: Array<CardBlockRecord>
+  id: Scalars['ItemId']['output']
+  title: Scalars['String']['output']
+}
+
+/** Block of type Cards Carousel Block (cards_carousel_block) */
+export type CardsCarouselBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Block of type Cards Container Block (cards_container_block) */
@@ -1535,6 +1563,7 @@ export type HomePageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
   | CtaBlockRecord
@@ -3386,10 +3415,11 @@ export type PageHeaderBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  heroImage?: Maybe<FileField>
   id: Scalars['ItemId']['output']
   mainSponsor?: Maybe<SponsorRecord>
   mainSponsorLabel?: Maybe<Scalars['String']['output']>
-  subTitle: Scalars['String']['output']
+  subTitle?: Maybe<Scalars['String']['output']>
   title: Scalars['String']['output']
 }
 
@@ -3402,6 +3432,7 @@ export type PageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
   | CtaBlockRecord

@@ -34,33 +34,17 @@ button:focus {
 
 .registration-tier-details {
   ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    @apply flex flex-col items-start gap-2;
   }
 
   li {
-    display: flex;
-    align-items: flex-start;
-    padding-left: 32px;
-    position: relative;
-    @apply text-brand-grey-600;
+    @apply relative flex items-start justify-start text-brand-grey-600;
   }
 
   li::before {
     content: '';
-    background-image: url('../assets/check.svg');
-    width: 20px;
-    height: 20px;
-    display: block;
-    position: absolute;
-    background-repeat: no-repeat;
     background-size: 75%;
-    background-position: center;
-    flex-shrink: 0;
-    top: 4px;
-    left: 0;
+    @apply mr-[12px] mt-1 block h-4 w-4 shrink-0 bg-[url('../assets/check.svg')] bg-center bg-no-repeat lg:h-[20px] lg:w-[20px];
   }
 }
 

@@ -14,9 +14,9 @@ const ChevronIcon = ({ className }: HTMLAttributes<HTMLElement>) => {
       <path
         d="M11 6.5L6 1.5L1 6.5"
         stroke="currentColor"
-        stroke-width="1.66667"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )
