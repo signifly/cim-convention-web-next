@@ -41,7 +41,7 @@ export const StyledLinkExternal = (
   )
 
   return (
-    <a className={style} {...rest}>
+    <a className={style} {...rest} target="_blank">
       {children}
     </a>
   )
