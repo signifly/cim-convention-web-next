@@ -8,6 +8,7 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
     _modelApiKey
     anchorId
     displayAnchorLinks
+		linkSupportLabel
     days {
       id
       date
@@ -18,16 +19,18 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
         title
         description
         linkTo {
-          ... on PageRecord {
+          ... on HomePageRecord {
 						${PageFields}
           }
           ... on PageRecord {
 						${PageFields}
           }
-          ... on PageRecord {
+          ... on ShortCourseRecord {
 						${PageFields}
           }
         }
+				useExternalLink 
+				externalLink
       }
     }
   }
