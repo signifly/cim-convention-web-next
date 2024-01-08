@@ -113,10 +113,6 @@ const TimeSlot = ({
     hour12: false,
   })
 
-  // @todo: add link if there is a linkTo record
-  // @todo: add support link label if there is a linkTo record
-  // @todo: add hover effect if there is a linkTo record
-
   const isLink = Boolean(timeSlot.linkTo) || timeSlot.externalLink
   const Comp = isLink ? (timeSlot.useExternalLink ? 'a' : Link) : 'li'
   let url: string | undefined = undefined
