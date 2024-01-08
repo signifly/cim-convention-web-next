@@ -42,7 +42,7 @@ export const StyledLinkExternal = (
   )
 
   return (
-    <a className={`${style} text-14/[125%]`} {...rest}>
+    <a className={`${style} text-14/[125%]`} {...rest} target="_blank">
       {children}
     </a>
   )
