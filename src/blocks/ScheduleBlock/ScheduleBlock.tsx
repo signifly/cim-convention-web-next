@@ -9,6 +9,7 @@ import { useFormatter } from 'next-intl'
 import { Link } from '@/navigation'
 import { cn } from '@/utils/clsxMerge'
 import ArrowSquareOutIcon from '@/components/IconSelector/Icons/ArrowSquareOutIcon'
+import { ProgramTag } from '@/components/ProgramTag'
 
 const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   const format = useFormatter()
@@ -29,12 +30,12 @@ const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   return (
     <a
       href={`#${day.id}`}
-      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium"
+      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium lg:box-content lg:px-6 lg:py-3"
     >
-      <time dateTime={day.date} className="text-12/[100%]">
+      <time dateTime={day.date} className="text-12/[100%] lg:text-16/[125%]">
         {weekDayString}
       </time>
-      <div className="text-14/[125%] text-brand-green">{`${monthString} ${dateString}`}</div>
+      <div className="text-14/[125%] text-brand-green lg:text-20/[140%]">{`${monthString} ${dateString}`}</div>
     </a>
   )
 }
@@ -140,7 +141,7 @@ const TimeSlot = ({
       href={url || ''}
       key={timeSlot.id}
       className={cn(
-        'group block rounded bg-brand-grey-100 p-3 transition-colors lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-6 lg:py-[20px]',
+        'group block items-baseline rounded bg-brand-grey-100 p-3 transition-colors lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-6 lg:py-[20px]',
         isLink && 'hover:bg-brand-grey-300',
       )}
     >
@@ -160,8 +161,10 @@ const TimeSlot = ({
           }`}
         </time>
       </span>
-      <h3 className="my-2 text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:text-18/[155%]">
+      <h3 className="my-2 flex flex-wrap items-center gap-x-2 whitespace-nowrap text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
         {timeSlot.title}
+        {timeSlot.tags.length > 0 &&
+          timeSlot.tags.map((each) => <ProgramTag {...each} key={each.id} />)}
       </h3>
       <p className="mb-2 text-14/[150%] font-normal text-brand-grey-600 lg:col-span-7 lg:col-start-3 lg:mb-0 lg:text-16">
         {timeSlot.description}
@@ -182,7 +185,7 @@ export const ScheduleBlock = (props: ScheduleBlockRecord) => {
   return (
     <section id={anchorId} className="bg-brand-grey-25">
       {displayAnchorLinks && (
-        <GridContainer className="flex overflow-scroll py-4">
+        <GridContainer className="flex overflow-scroll py-4 lg:gap-x-4">
           {days.map((day) => (
             <AnchorLink key={day.id} day={day} />
           ))}

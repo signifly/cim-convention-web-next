@@ -16,6 +16,11 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
         id
         startTime
         endTime
+				tags {
+					id
+					title
+					variant
+				}
         title
         description
         linkTo {
