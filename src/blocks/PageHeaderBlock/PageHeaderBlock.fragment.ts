@@ -22,5 +22,12 @@ export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
       websiteUrl
     }
     mainSponsorLabel
+    heroImage {
+      url
+      alt
+      responsiveImage(imgixParams: { auto: format }) {
+        ...ResponsiveImageFragment
+      }
+    }
   }
 `

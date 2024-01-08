@@ -32,6 +32,22 @@ button:focus {
   }
 }
 
+.registration-tier-details {
+  ul {
+    @apply flex flex-col items-start gap-2;
+  }
+
+  li {
+    @apply relative flex items-start justify-start text-brand-grey-600;
+  }
+
+  li::before {
+    content: '';
+    background-size: 75%;
+    @apply mr-[12px] mt-1 block h-4 w-4 shrink-0 bg-[url('../assets/check.svg')] bg-center bg-no-repeat lg:h-[20px] lg:w-[20px];
+  }
+}
+
 /* Splide custom pagination */
 .splide__pagination {
   .splide__pagination__page {

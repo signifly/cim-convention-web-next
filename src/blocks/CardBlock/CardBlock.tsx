@@ -3,13 +3,13 @@ import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import { CtaButton } from '@/components/CtaButton'
 
-type CardBlockRecordExt = CardBlockRecord & {
-  mobileLayout?: Maybe<string>
-  cardBorders?: Maybe<string>
-  background?: Maybe<string>
-}
-
-export function CardBlock(props: CardBlockRecordExt) {
+export function CardBlock(
+  props: CardBlockRecord & {
+    mobileLayout?: Maybe<string>
+    cardBorders?: Maybe<string>
+    background?: Maybe<string>
+  },
+) {
   let {
     title,
     subtitle,
