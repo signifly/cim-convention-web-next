@@ -23,7 +23,10 @@ import { ContactBlock } from '@/blocks/ContactBlock/ContactBlock'
 import { ContactCardBlock } from '@/blocks/ContactCardBlock/ContactCardBlock'
 import { ShortCoursesListBlock } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock'
 import { AccordionGroupBlock } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock'
+import { CardsCarouselBlock } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock'
+import { ScheduleBlock } from '@/blocks/ScheduleBlock/ScheduleBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
+import { MapBlock } from '@/blocks/MapBlock/MapBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -38,6 +41,7 @@ export const componentsMap = {
   default_footer_block: DefaultFooterBlock,
   cta_block: CtaBlock,
   divider_block: DividerBlock,
+  cards_carousel_block: CardsCarouselBlock,
   cards_container_block: CardsContainerBlock,
   card_block: CardBlock,
   testimonials_block: TestimonialsBlock,
@@ -54,5 +58,7 @@ export const componentsMap = {
   contact_card_block: ContactCardBlock,
   short_courses_list_block: ShortCoursesListBlock,
   accordion_group_block: AccordionGroupBlock,
+  schedule_block: ScheduleBlock,
   registration_block: RegistrationBlock,
+  map_block: MapBlock,
 }

@@ -39,7 +39,6 @@ export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
                     {shortCourse.courseTitle}
                     <span className="text-14/[140%] text-brand-grey-700 underline transition-colors group-hover:text-brand-green">
                       {linkLabel}
-                      {/* @todo: update with text from CMS */}
                     </span>
                   </Link>
                 </li>

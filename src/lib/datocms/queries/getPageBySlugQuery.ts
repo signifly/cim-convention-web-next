@@ -17,6 +17,7 @@ import { ACCORDION_BLOCK_FRAGMENT } from '@/blocks/AccordionBlock/AccordionBlock
 import { ACCORDION_GROUP_BLOCK_FRAGMENT } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock.fragment'
 import { ONE_COLUMN_TEXT_BLOCK_FRAGMENT } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock.fragment'
 import { SHORT_COURSES_LIST_BLOCK_FRAGMENT } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock.fragment'
+import { SCHEDULE_BlOCK_FRAGMENT } from '@/blocks/ScheduleBlock/ScheduleBlock.fragment'
 
 import { CARD_BLOCK_FRAGMENT } from '@/blocks/CardBlock/CardBlock.fragment'
 import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
@@ -31,7 +32,9 @@ import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CONTACT_BLOCK_FRAGMENT } from '@/blocks/ContactBlock/ContactBlock.fragment'
 import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCardBlock.fragment'
+import { CARDS_CAROUSEL_BLOCK_FRAGMENT } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock.fragment'
 import { REGISTRATION_BLOCK_FRAGMENT } from '@/blocks/RegistrationBlock/RegistrationBlock.fragment'
+import { MAP_BLOCK_FRAGMENT } from '@/blocks/MapBlock/MapBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -55,8 +58,9 @@ export const getPageBySlugQuery = ({
 		${AD_BLOCK_FRAGMENT}
 		${CTA_BLOCK_FRAGMENT}
 		${DIVIDER_BLOCK_FRAGMENT}
-		${CARDS_CONTAINER_BLOCK_FRAGMENT}
 		${CARD_BLOCK_FRAGMENT}
+		${CARDS_CAROUSEL_BLOCK_FRAGMENT}
+		${CARDS_CONTAINER_BLOCK_FRAGMENT}
 		${TESTIMONIALS_BLOCK_FRAGMENT}
 		${DEFAULT_FOOTER_BLOCK_FRAGMENT}
 		${DEFAULT_HEADER_BLOCK_FRAGMENT}
@@ -74,7 +78,9 @@ export const getPageBySlugQuery = ({
     ${CONTACT_CARD_BLOCK_FRAGMENT}
 		${SHORT_COURSES_LIST_BLOCK_FRAGMENT}
 		${ACCORDION_GROUP_BLOCK_FRAGMENT}
+		${SCHEDULE_BlOCK_FRAGMENT}
     ${REGISTRATION_BLOCK_FRAGMENT}
+    ${MAP_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -106,6 +112,7 @@ export const getPageBySlugQuery = ({
                 ...AdBlockFragment
 								...CtaBlockFragment
 								...DividerBlockFragment
+								...CardsCarouselBlockFragment
 								...CardsContainerBlockFragment
 								...TestimonialsBlockFragment
 								...StatisticsBlockFragment
@@ -118,7 +125,9 @@ export const getPageBySlugQuery = ({
                 ...ContactBlockFragment
 								...ShortCoursesListBlockFragment
 								...AccordionGroupBlockFragment
+								...ScheduleBlockFragment
                 ...RegistrationBlockFragment
+                ...MapBlockFragment
             }
             footer {
               blocks {
