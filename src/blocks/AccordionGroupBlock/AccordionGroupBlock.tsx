@@ -23,8 +23,8 @@ export const AccordionGroupBlock = (props: AccordionGroupBlockRecord) => {
           })}
         </GridContainer>
       )}
-      {sections.map((section, index) => {
-        return <AccordionBlock key={index} {...section} />
+      {sections.map((section) => {
+        return <AccordionBlock key={section.id} {...section} />
       })}
       <GridContainer className="structured-text mt-8 grid-cols-1 lg:mt-16">
         {supportText && (
