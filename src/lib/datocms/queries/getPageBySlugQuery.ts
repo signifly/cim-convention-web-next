@@ -35,6 +35,7 @@ import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCa
 import { CARDS_CAROUSEL_BLOCK_FRAGMENT } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock.fragment'
 import { REGISTRATION_BLOCK_FRAGMENT } from '@/blocks/RegistrationBlock/RegistrationBlock.fragment'
 import { MAP_BLOCK_FRAGMENT } from '@/blocks/MapBlock/MapBlock.fragment'
+import { ANCHOR_LINKS_BLOCK_FRAGMENT } from '@/blocks/AnchorLinksBlock/AnchorLinksBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -81,6 +82,7 @@ export const getPageBySlugQuery = ({
 		${SCHEDULE_BlOCK_FRAGMENT}
     ${REGISTRATION_BLOCK_FRAGMENT}
     ${MAP_BLOCK_FRAGMENT}
+    ${ANCHOR_LINKS_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -128,6 +130,7 @@ export const getPageBySlugQuery = ({
 								...ScheduleBlockFragment
                 ...RegistrationBlockFragment
                 ...MapBlockFragment
+                ...AnchorLinksBlockFragment
             }
             footer {
               blocks {
