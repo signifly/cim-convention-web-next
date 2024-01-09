@@ -256,6 +256,38 @@ export type AdRecordUrlArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecord = RecordInterface & {
+  __typename?: 'AlertBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  image: ImageAltFileField
+  paragraphs: Scalars['String']['output']
+  title: Scalars['String']['output']
+}
+
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecordParagraphsArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 export type AltFileField = FileFieldInterface & {
   __typename?: 'AltFileField'
   _createdAt: Scalars['DateTime']['output']
@@ -708,6 +740,33 @@ export type CtaButtonRecordListListNonNullMultiLocaleField = {
   __typename?: 'CtaButtonRecordListListNonNullMultiLocaleField'
   locale?: Maybe<SiteLocale>
   value: Array<CtaButtonRecord>
+}
+
+/** Block of type CTA Button With Heading Text (cta_button_with_heading_text) */
+export type CtaButtonWithHeadingTextRecord = RecordInterface & {
+  __typename?: 'CtaButtonWithHeadingTextRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  button: Array<CtaButtonRecord>
+  heading: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  supportText?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type CTA Button With Heading Text (cta_button_with_heading_text) */
+export type CtaButtonWithHeadingTextRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
@@ -1616,6 +1675,7 @@ export type HomePageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AlertBlockRecord
   | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
@@ -3519,6 +3579,7 @@ export type PageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AlertBlockRecord
   | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
@@ -5016,6 +5077,10 @@ export type TwoColumnWithImageBlockDefaultRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type TwoColumnWithImageBlockModelCtaButtonsField =
+  | CtaButtonRecord
+  | CtaButtonWithHeadingTextRecord
+
 export type TwoColumnWithImageBlockModelTextContentField =
   | TwoColumnWithImageBlockDefaultRecord
   | TwoColumnWithImageBlockWithFeatureListRecord
@@ -5039,7 +5104,7 @@ export type TwoColumnWithImageBlockRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   anchorId: Scalars['String']['output']
   backgroundColor: Scalars['String']['output']
-  ctaButtons: Array<CtaButtonRecord>
+  ctaButtons: Array<TwoColumnWithImageBlockModelCtaButtonsField>
   desktopLayout: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   image: ImageAltFileField
