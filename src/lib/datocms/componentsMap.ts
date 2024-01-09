@@ -27,6 +27,7 @@ import { CardsCarouselBlock } from '@/blocks/CardsCarouselBlock/CardsCarouselBlo
 import { ScheduleBlock } from '@/blocks/ScheduleBlock/ScheduleBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
 import { MapBlock } from '@/blocks/MapBlock/MapBlock'
+import { AnchorLinksBlock } from '@/blocks/AnchorLinksBlock/AnchorLinksBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -61,4 +62,5 @@ export const componentsMap = {
   schedule_block: ScheduleBlock,
   registration_block: RegistrationBlock,
   map_block: MapBlock,
+  anchor_links_block: AnchorLinksBlock,
 }
