@@ -6,6 +6,7 @@ import {
   TwoColumnWithImageBlockDefaultRecord,
   TwoColumnWithImageBlockWithFeatureListRecord,
   TwoColumnWithImageBlockWithHeadingHighlightRecord,
+  TwoColumnWithImageBlockModelCtaButtonsField,
   CtaButtonRecord,
 } from '@/types/generated'
 import { StructuredText } from 'react-datocms'
@@ -83,7 +84,9 @@ const TextWithHeadingHighlight = (
 const CtaButtons = ({
   buttons,
   className,
-}: { buttons: CtaButtonRecord[] } & ComponentPropsWithoutRef<'div'>) => {
+}: {
+  buttons: TwoColumnWithImageBlockModelCtaButtonsField[]
+} & ComponentPropsWithoutRef<'div'>) => {
   return (
     <div
       className={cn(
@@ -92,7 +95,7 @@ const CtaButtons = ({
       )}
     >
       {buttons.map((button) => {
-        return <CtaButton key={button.id} {...button} />
+        return <CtaButton key={button.id} {...(button as CtaButtonRecord)} />
       })}
     </div>
   )
@@ -104,7 +107,7 @@ const TextContentWrapper = ({
   ctaButtons,
 }: {
   block: TwoColumnWithImageBlockModelTextContentField
-  ctaButtons: CtaButtonRecord[]
+  ctaButtons: TwoColumnWithImageBlockModelCtaButtonsField[]
 } & ComponentPropsWithoutRef<'div'>) => {
   const defaultStyle =
     'col-span-4 mb-8 lg:col-span-7 lg:col-start-6 lg:flex lg:flex-col lg:items-start lg:justify-center lg:px-10 lg:mb-0'
