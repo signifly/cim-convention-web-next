@@ -54,7 +54,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
         </GridContainer>
       ) : (
         <div className="relative flex min-h-[400px] justify-start overflow-hidden">
-          <GridContainer className="relative z-20 h-[100%] flex-col gap-y-[48px] p-6 md:gap-y-[174px] lg:flex-row lg:items-stretch lg:justify-between lg:py-12">
+          <GridContainer className="relative h-[100%] flex-col gap-y-[48px] p-6 md:gap-y-[174px] lg:flex-row lg:items-stretch lg:justify-between lg:py-12">
             <div className="col-span-4">
               {subTitle && (
                 <p className="mb-2 text-12/[130%] font-normal uppercase tracking-[0.24px] lg:mb-4 lg:text-14/[140%] lg:tracking-[0.28px]">

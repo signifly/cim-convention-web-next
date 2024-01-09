@@ -18,9 +18,11 @@ export const AccordionBlock = (props: AccordionBlockRecord) => {
       id={anchorId}
     >
       <GridContainer>
-        <h2 className="col-span-full mb-6 text-20/[140%] font-medium text-brand-green lg:mb-8 lg:text-24">
-          {title}
-        </h2>
+        {title && (
+          <h3 className="col-span-full mb-6 text-20/[140%] font-medium text-brand-green lg:mb-8 lg:text-24">
+            {title}
+          </h3>
+        )}
         <Accordion
           type={accordionType as 'single' | 'multiple'}
           collapsible
@@ -32,7 +34,7 @@ export const AccordionBlock = (props: AccordionBlockRecord) => {
               value={`item-${index}`}
               className="border-grey-300 border-0 border-t last:border-b"
             >
-              <AccordionTrigger className="text-16/[125%] lg:text-18/[140%]">
+              <AccordionTrigger className="text-16/[125%] ring-0 lg:text-18/[140%]">
                 {item.triggerText}
               </AccordionTrigger>
               <AccordionContent>
