@@ -79,9 +79,9 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
         {/* Contact */}
         <div className="col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 lg:col-span-3">
           <h6 className="uppercase">{contactTitle}</h6>
-          <div className="flex w-[100%] lg:w-auto">
+          <div className="flex w-[100%] sm:w-auto">
             <StyledLink
-              className="items-centermiddle flex w-[100%] max-w-[568px] justify-center lg:w-auto"
+              className="flex w-[100%]  items-center justify-center lg:w-auto"
               href={{
                 pathname: '/[...slug]',
                 params: { slug: [contactButtonLink ?? ''] },
@@ -114,7 +114,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
             <form
               onSubmit={handleSubmit}
               ref={formRef}
-              className="flex w-[100%] flex-col gap-[16px] lg:flex-row"
+              className="flex w-[100%] flex-col items-start gap-[16px] lg:flex-row"
             >
               <input
                 id="email"
@@ -122,11 +122,11 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
                 type="text"
                 required
                 placeholder={newsletterInputPlaceholder || ''}
-                className="h-[100%] max-w-[568px] grow rounded bg-gray-700 px-[16px] py-[14px] leading-[125%] text-gray-400 focus:shadow-skyblue focus:outline-none"
+                className="h-[100%] w-[100%] max-w-[640px] grow rounded bg-gray-700 px-[16px] py-[14px] leading-[125%] text-gray-400 focus:shadow-skyblue focus:outline-none"
               />
               <button
                 type="submit"
-                className="h-[100%] max-w-[568px] rounded bg-white px-[24px] py-[10px] font-medium leading-[150%] text-gray-950"
+                className="h-[100%] w-[100%]  rounded bg-white px-[24px] py-[10px] font-medium leading-[150%] text-gray-950 sm:w-auto"
               >
                 {newsletterButtonLabel}
               </button>

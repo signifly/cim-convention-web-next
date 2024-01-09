@@ -3,13 +3,13 @@ import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import { CtaButton } from '@/components/CtaButton'
 
-export function CardBlock(
-  props: CardBlockRecord & {
-    mobileLayout?: Maybe<string>
-    cardBorders?: Maybe<string>
-    background?: Maybe<string>
-  },
-) {
+type CardBlockRecordExt = CardBlockRecord & {
+  mobileLayout?: Maybe<string>
+  cardBorders?: Maybe<boolean>
+  background?: Maybe<string>
+}
+
+export function CardBlock(props: CardBlockRecordExt) {
   let {
     title,
     subtitle,
@@ -47,41 +47,43 @@ export function CardBlock(
         </div>
       )}
 
-      <div className="p-3 md:p-[24px]">
-        {title && (
-          <p className="mb-1 text-16/[140%] font-semibold md:text-20/[140%]">
-            {title}
-          </p>
-        )}
-        {subtitle && (
-          <p className="text-12/[130%] font-normal text-brand-grey-600 md:text-16/[140%]">
-            {subtitle}
-          </p>
-        )}
-        {paragraph && (
-          <div
-            className={`mt-3 space-y-4 text-12/[130%] font-normal text-brand-grey-600 ${
-              image
-                ? 'md:mt-8'
-                : buttons && buttons.length > 0
-                  ? 'md:mt-4'
-                  : 'md:mt-6'
-            } md:text-16/[140%]`}
-            dangerouslySetInnerHTML={{ __html: paragraph || '' }}
-          ></div>
-        )}
-        {buttons && buttons.length > 0 && (
-          <div className="mt-[20px] flex w-[100%] flex-wrap gap-4 md:mt-6">
-            {buttons.map((button, index) => {
-              return (
-                <div key={index}>
-                  <CtaButton {...button} />
-                </div>
-              )
-            })}
-          </div>
-        )}
-      </div>
+      {(title || subtitle || paragraph) && (
+        <div className="p-3 md:p-[24px]">
+          {title && (
+            <p className="mb-1 text-16/[140%] font-semibold md:text-20/[140%]">
+              {title}
+            </p>
+          )}
+          {subtitle && (
+            <p className="text-12/[130%] font-normal text-brand-grey-600 md:text-16/[140%]">
+              {subtitle}
+            </p>
+          )}
+          {paragraph && (
+            <div
+              className={`mt-3 space-y-4 text-12/[130%] font-normal text-brand-grey-600 ${
+                image
+                  ? 'md:mt-8'
+                  : buttons && buttons.length > 0
+                    ? 'md:mt-4'
+                    : 'md:mt-6'
+              } md:text-16/[140%]`}
+              dangerouslySetInnerHTML={{ __html: paragraph || '' }}
+            ></div>
+          )}
+          {buttons && buttons.length > 0 && (
+            <div className="mt-[20px] flex w-[100%] flex-wrap gap-4 md:mt-6">
+              {buttons.map((button, index) => {
+                return (
+                  <div key={index}>
+                    <CtaButton {...button} />
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

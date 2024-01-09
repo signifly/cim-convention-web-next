@@ -23,6 +23,7 @@ import { ContactBlock } from '@/blocks/ContactBlock/ContactBlock'
 import { ContactCardBlock } from '@/blocks/ContactCardBlock/ContactCardBlock'
 import { ShortCoursesListBlock } from '@/blocks/ShortCoursesListBlock/ShortCoursesListBlock'
 import { AccordionGroupBlock } from '@/blocks/AccordionGroupBlock/AccordionGroupBlock'
+import { CardsCarouselBlock } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock'
 import { ScheduleBlock } from '@/blocks/ScheduleBlock/ScheduleBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
 
@@ -39,6 +40,7 @@ export const componentsMap = {
   default_footer_block: DefaultFooterBlock,
   cta_block: CtaBlock,
   divider_block: DividerBlock,
+  cards_carousel_block: CardsCarouselBlock,
   cards_container_block: CardsContainerBlock,
   card_block: CardBlock,
   testimonials_block: TestimonialsBlock,
