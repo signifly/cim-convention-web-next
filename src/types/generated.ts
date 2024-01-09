@@ -328,6 +328,57 @@ export type AltFileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+/** Block of type Anchor Links Block > Item (anchor_links_block_item) */
+export type AnchorLinksBlockItemRecord = RecordInterface & {
+  __typename?: 'AnchorLinksBlockItemRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorLink: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+}
+
+/** Block of type Anchor Links Block > Item (anchor_links_block_item) */
+export type AnchorLinksBlockItemRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Anchor Links Block (anchor_links_block) */
+export type AnchorLinksBlockRecord = RecordInterface & {
+  __typename?: 'AnchorLinksBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  links: Array<AnchorLinksBlockItemRecord>
+}
+
+/** Block of type Anchor Links Block (anchor_links_block) */
+export type AnchorLinksBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Announcement Banner Block (announcement_banner_block) */
 export type AnnouncementBannerBlockRecord = RecordInterface & {
   __typename?: 'AnnouncementBannerBlockRecord'
@@ -1565,6 +1616,7 @@ export type HomePageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
@@ -3467,6 +3519,7 @@ export type PageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
   | ContactBlockRecord
