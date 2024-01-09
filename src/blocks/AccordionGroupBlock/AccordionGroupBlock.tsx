@@ -2,6 +2,7 @@ import React from 'react'
 import { AccordionBlock } from '../AccordionBlock/AccordionBlock'
 import { AccordionGroupBlockRecord } from '@/types/generated'
 import { GridContainer } from '@/components/GridContainer'
+import { cn } from '@/utils/clsxMerge'
 
 export const AccordionGroupBlock = (props: AccordionGroupBlockRecord) => {
   const { displayAnchorLinks, sections, supportText, title, centeredLayout } =
@@ -53,7 +54,12 @@ export const AccordionGroupBlock = (props: AccordionGroupBlockRecord) => {
           return <AccordionBlock key={index} {...section} />
         })
       )}
-      <GridContainer className="structured-text mt-8 grid-cols-1 lg:mt-16">
+      <GridContainer
+        className={cn(
+          'structured-text grid-cols-1 ',
+          centeredLayout ? 'mt-4 lg:mt-0' : 'mt-8 lg:mt-16',
+        )}
+      >
         {supportText && (
           <div
             dangerouslySetInnerHTML={{ __html: supportText }}
