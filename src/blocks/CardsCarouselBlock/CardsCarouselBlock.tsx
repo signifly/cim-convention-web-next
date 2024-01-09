@@ -29,14 +29,7 @@ export function CardsCarouselBlock(props: CardsCarouselBlockRecord) {
       sectionBg = 'bg-brand-grey-25'
   }
 
-  // Matching max-width from other components using GridContainer with the padding of the carousel
-  let paddingPercentage
-  if (window) {
-    let contentPercentage = (1216 * 100) / window.innerWidth
-    paddingPercentage = 100 - contentPercentage
-  }
-
-  const options = {
+  let carouselOptions = {
     breakpoints: {
       '768': {
         gap: '16px',
@@ -47,15 +40,17 @@ export function CardsCarouselBlock(props: CardsCarouselBlockRecord) {
     arrows: false,
     pagination: false,
     type: 'slide',
-    padding: paddingPercentage ? `${paddingPercentage / 2}%` : '7.5%',
+    padding: '7.5%',
     gap: '16px',
     perPage: 3,
     rewind: true,
     rewindSpeed: 1000,
     autoplay: true,
-    interval: 3000,
+    speed: 1000,
+    interval: 4000,
     trimSpace: false,
-    focus: 'center',
+    focus: 0,
+    omitEnd: true,
   }
 
   return (
@@ -64,7 +59,7 @@ export function CardsCarouselBlock(props: CardsCarouselBlockRecord) {
         {title}
       </h2>
 
-      <Splide aria-labelledby="sponsor-list-title" options={options}>
+      <Splide aria-labelledby="sponsor-list-title" options={carouselOptions}>
         {cards.map((card: CardBlockRecord) => {
           return (
             <SplideSlide key={card.id}>
