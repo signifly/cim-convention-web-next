@@ -34,6 +34,7 @@ import { CONTACT_BLOCK_FRAGMENT } from '@/blocks/ContactBlock/ContactBlock.fragm
 import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCardBlock.fragment'
 import { CARDS_CAROUSEL_BLOCK_FRAGMENT } from '@/blocks/CardsCarouselBlock/CardsCarouselBlock.fragment'
 import { REGISTRATION_BLOCK_FRAGMENT } from '@/blocks/RegistrationBlock/RegistrationBlock.fragment'
+import { MAP_BLOCK_FRAGMENT } from '@/blocks/MapBlock/MapBlock.fragment'
 
 type Params = {
   locale: Locale
@@ -79,6 +80,7 @@ export const getPageBySlugQuery = ({
 		${ACCORDION_GROUP_BLOCK_FRAGMENT}
 		${SCHEDULE_BlOCK_FRAGMENT}
     ${REGISTRATION_BLOCK_FRAGMENT}
+    ${MAP_BLOCK_FRAGMENT}
 
 		${RESPONSIVE_IMAGE_FRAGMENT}
 		${CTA_BUTTON_FRAGMENT}
@@ -125,6 +127,7 @@ export const getPageBySlugQuery = ({
 								...AccordionGroupBlockFragment
 								...ScheduleBlockFragment
                 ...RegistrationBlockFragment
+                ...MapBlockFragment
             }
             footer {
               blocks {

@@ -1423,6 +1423,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/google.maps@^3.54.10":
+  version "3.54.10"
+  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.54.10.tgz#f3101dda3e873f3602ae664cf518592686ca215b"
+  integrity sha512-N6gwM01mKhooXaw+IKbUH7wJcIJCn8U60VoaVvom5EiQjmfgevhQ+0+/r17beXW5j8ad2x+WPr0iyOUodCw4/w==
+
 "@types/js-yaml@^4.0.0":
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-4.0.9.tgz#cd82382c4f902fed9691a2ed79ec68c5898af4c2"
@@ -1527,6 +1532,13 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
+
+"@vis.gl/react-google-maps@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@vis.gl/react-google-maps/-/react-google-maps-0.4.2.tgz#406ae358335eca089b1caf81db968d4ca5ff6e6d"
+  integrity sha512-h9lwefQyaWCHv6hGGAtR/xgG71rpepi0ORs/Q3dMCF7kj1z6Z1GCY2ygc7ylGA3GHJmUmigAabuFW9HYeDpWow==
+  dependencies:
+    "@types/google.maps" "^3.54.10"
 
 "@whatwg-node/events@^0.0.3":
   version "0.0.3"
