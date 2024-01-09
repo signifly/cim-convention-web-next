@@ -59,6 +59,7 @@ const config: Config = {
         skyblue: '0px 0px 0px 4px #00ADEF4D',
       },
       fontSize: {
+        ...rem(10),
         ...rem(11),
         ...rem(12),
         ...rem(14),

@@ -91,7 +91,7 @@ export type AccordionBlockRecord = RecordInterface & {
   anchorId: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   items: Array<AccordionBlockItemRecord>
-  title: Scalars['String']['output']
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Accordion Block (accordion_block) */
@@ -115,10 +115,12 @@ export type AccordionGroupBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  centeredLayout?: Maybe<Scalars['BooleanType']['output']>
   displayAnchorLinks?: Maybe<Scalars['BooleanType']['output']>
   id: Scalars['ItemId']['output']
   sections: Array<AccordionBlockRecord>
   supportText?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Accordion Group Block (accordion_group_block) */
@@ -1570,6 +1572,7 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | MapBlockRecord
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
@@ -3239,6 +3242,12 @@ export enum ItemStatus {
   Updated = 'updated',
 }
 
+export type LatLonField = {
+  __typename?: 'LatLonField'
+  latitude: Scalars['FloatType']['output']
+  longitude: Scalars['FloatType']['output']
+}
+
 /** Specifies how to filter Single-link fields */
 export type LinkFilter = {
   /** Search for records with an exact match. The specified value must be a Record ID */
@@ -3261,6 +3270,32 @@ export type LocalesFilter = {
   anyIn?: InputMaybe<Array<SiteLocale>>
   /** Filter records that are not localized in any of the specified locales */
   notIn?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Block of type Map Block (map_block) */
+export type MapBlockRecord = RecordInterface & {
+  __typename?: 'MapBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  location?: Maybe<LatLonField>
+}
+
+/** Block of type Map Block (map_block) */
+export type MapBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Block of type Menu > Menu Item (menu_menu_item) */
@@ -3439,6 +3474,7 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | FormBlockRecord
   | HeroBlockRecord
+  | MapBlockRecord
   | OneColumnTextBlockRecord
   | PageHeaderBlockRecord
   | PastConventionsBlockRecord
@@ -3608,6 +3644,87 @@ export type PastConventionsBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type ProgramTagModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ProgramTagModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<ProgramTagModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _locales?: InputMaybe<LocalesFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  title?: InputMaybe<StringFilter>
+  variant?: InputMaybe<StringFilter>
+}
+
+export enum ProgramTagModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  VariantAsc = 'variant_ASC',
+  VariantDesc = 'variant_DESC',
+}
+
+/** Record of type Program Tag (program_tag) */
+export type ProgramTagRecord = RecordInterface & {
+  __typename?: 'ProgramTagRecord'
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _locales: Array<SiteLocale>
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  title: Scalars['String']['output']
+  variant: Scalars['String']['output']
+}
+
+/** Record of type Program Tag (program_tag) */
+export type ProgramTagRecord_AllTitleLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Program Tag (program_tag) */
+export type ProgramTagRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Program Tag (program_tag) */
+export type ProgramTagRecordTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
@@ -3642,6 +3759,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allProgramTagsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allShortCoursesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allSponsorsMeta: CollectionMetadata
@@ -3664,6 +3783,8 @@ export type Query = {
   /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
+  allProgramTags: Array<ProgramTagRecord>
+  /** Returns a collection of records */
   allShortCourses: Array<ShortCourseRecord>
   /** Returns a collection of records */
   allSponsors: Array<SponsorRecord>
@@ -3681,6 +3802,8 @@ export type Query = {
   menu?: Maybe<MenuRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
+  /** Returns a specific record */
+  programTag?: Maybe<ProgramTagRecord>
   /** Returns a specific record */
   shortCourse?: Maybe<ShortCourseRecord>
   /** Returns the single instance record */
@@ -3724,6 +3847,12 @@ export type Query_AllMenusMetaArgs = {
 /** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   filter?: InputMaybe<PageModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllProgramTagsMetaArgs = {
+  filter?: InputMaybe<ProgramTagModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3820,6 +3949,16 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllProgramTagsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ProgramTagModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<ProgramTagModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
 export type QueryAllShortCoursesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<ShortCourseModelFilter>
@@ -3893,6 +4032,14 @@ export type QueryPageArgs = {
   filter?: InputMaybe<PageModelFilter>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryProgramTagArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ProgramTagModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<ProgramTagModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -4092,10 +4239,13 @@ export type ScheduleBlockDayTimeSlotRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   description?: Maybe<Scalars['String']['output']>
   endTime: Scalars['DateTime']['output']
+  externalLink?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   linkTo?: Maybe<ScheduleBlockDayTimeSlotModelLinkToField>
   startTime: Scalars['DateTime']['output']
+  tags: Array<ProgramTagRecord>
   title: Scalars['String']['output']
+  useExternalLink?: Maybe<Scalars['BooleanType']['output']>
 }
 
 /** Block of type Schedule Block > Day > Time Slot (schedule_block_day_time_slot) */
