@@ -256,6 +256,38 @@ export type AdRecordUrlArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecord = RecordInterface & {
+  __typename?: 'AlertBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  image: ImageAltFileField
+  paragraphs: Scalars['String']['output']
+  title: Scalars['String']['output']
+}
+
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Alert Block (alert_block) */
+export type AlertBlockRecordParagraphsArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 export type AltFileField = FileFieldInterface & {
   __typename?: 'AltFileField'
   _createdAt: Scalars['DateTime']['output']
@@ -1643,6 +1675,7 @@ export type HomePageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AlertBlockRecord
   | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
@@ -3546,6 +3579,7 @@ export type PageModelBodyField =
   | AccordionBlockRecord
   | AccordionGroupBlockRecord
   | AdBlockRecord
+  | AlertBlockRecord
   | AnchorLinksBlockRecord
   | CardsCarouselBlockRecord
   | CardsContainerBlockRecord
