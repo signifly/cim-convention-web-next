@@ -842,6 +842,7 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
   cimLogo: AltFileField
   ctaButton: Array<CtaButtonRecord>
   id: Scalars['ItemId']['output']
+  languageToggleLabel: Scalars['String']['output']
   menu?: Maybe<MenuRecord>
   siteLogo: AltFileField
 }

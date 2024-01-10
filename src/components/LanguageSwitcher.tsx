@@ -8,11 +8,14 @@ import { Link } from '@/navigation'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { locales, dynamicPathSegments } from '@/navigation'
 import { usePathname } from 'next/navigation'
+import { cn } from '@/utils/clsxMerge'
 
 export function LanguageSwitcher({
   _allSlugLocales,
+  languageToggleLabel,
 }: {
   _allSlugLocales: StringMultiLocaleField[]
+  languageToggleLabel: string
 }) {
   const currentLocale = useLocale()
   const pathname = usePathname()
@@ -25,15 +28,37 @@ export function LanguageSwitcher({
   const isDynamicPath = dynamicPathSegments.includes(firstSegment as any)
   const dynamicPath = isDynamicPath ? `${firstSegment}/` : ''
 
-  // @todo: add to mobile menu
-
   return (
-    <Popover>
-      <PopoverTrigger className="group flex items-center gap-x-1 uppercase">
-        {currentLocale}
-        <ChevronDownIcon className="h-5 w-5 text-brand-grey-400 transition-transform group-[&[data-state=open]]:rotate-180" />
-      </PopoverTrigger>
-      <PopoverContent className="flex flex-col gap-y-2 bg-white px-2 uppercase">
+    <div aria-label={languageToggleLabel}>
+      <div className="hidden lg:block">
+        <Popover>
+          <PopoverTrigger className="group flex items-center gap-x-1 uppercase">
+            {currentLocale}
+            <ChevronDownIcon className="h-5 w-5 text-brand-grey-400 transition-transform group-[&[data-state=open]]:rotate-180" />
+          </PopoverTrigger>
+          <PopoverContent className="flex flex-col gap-y-2 bg-white px-2 uppercase">
+            {locales.map((l) => {
+              const slug = _allSlugLocales.find((s) => s.locale === l)?.value
+              const href = `/${dynamicPath}${slug ?? ''}` // if there's no slug for this language, link to the homepage
+
+              return (
+                <Link
+                  key={l}
+                  href={href}
+                  locale={l}
+                  className="pl-2 pr-8 hover:bg-brand-grey-200"
+                  replace={Boolean(slug)} // if there is a slug, replace the current history entry
+                >
+                  {l}
+                </Link>
+              )
+            })}
+          </PopoverContent>
+        </Popover>
+      </div>
+
+      {/* Mobile version: */}
+      <div className="flex gap-x-8 py-5 lg:hidden">
         {locales.map((l) => {
           const slug = _allSlugLocales.find((s) => s.locale === l)?.value
           const href = `/${dynamicPath}${slug ?? ''}` // if there's no slug for this language, link to the homepage
@@ -43,14 +68,17 @@ export function LanguageSwitcher({
               key={l}
               href={href}
               locale={l}
-              className="pl-2 pr-8 hover:bg-brand-grey-200"
+              className={cn(
+                'uppercase',
+                l === currentLocale && 'text-brand-green underline',
+              )}
               replace={Boolean(slug)} // if there is a slug, replace the current history entry
             >
               {l}
             </Link>
           )
         })}
-      </PopoverContent>
-    </Popover>
+      </div>
+    </div>
   )
 }
