@@ -4,6 +4,7 @@ import { EuclidCircularA } from '@/styles/typography'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cn } from '@/utils/clsxMerge'
+import { MarkerIoScript } from '@/components/MarkerIoScript'
 
 // i18n
 import { Providers } from '@/components/Providers'
@@ -39,6 +40,7 @@ export default function LocaleLayout({
           <div className="relative flex w-full flex-col">{children}</div>
         </Providers>
       </body>
+      <MarkerIoScript />
     </html>
   )
 }
