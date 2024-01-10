@@ -27,6 +27,7 @@ import { CardsCarouselBlock } from '@/blocks/CardsCarouselBlock/CardsCarouselBlo
 import { ScheduleBlock } from '@/blocks/ScheduleBlock/ScheduleBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
 import { MapBlock } from '@/blocks/MapBlock/MapBlock'
+import { AlertBlock } from '@/blocks/AlertBlock/AlertBlock'
 import { AnchorLinksBlock } from '@/blocks/AnchorLinksBlock/AnchorLinksBlock'
 
 export type ComponentsMap = {
@@ -62,5 +63,6 @@ export const componentsMap = {
   schedule_block: ScheduleBlock,
   registration_block: RegistrationBlock,
   map_block: MapBlock,
+  alert_block: AlertBlock,
   anchor_links_block: AnchorLinksBlock,
 }

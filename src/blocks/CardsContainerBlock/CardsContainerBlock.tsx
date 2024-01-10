@@ -58,7 +58,7 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
         )}
       </GridContainer>
       {cards.length && (
-        <GridContainer className="auto-rows-[1fr] gap-[16px] md:gap-8">
+        <GridContainer className="auto-rows-[1fr] gap-4 md:gap-8">
           {cards.map((card: CardBlockRecord) => {
             return (
               <div
@@ -79,7 +79,7 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
           })}
         </GridContainer>
       )}
-      {ctaButton && (
+      {ctaButton[0] && (
         <GridContainer className="mt-8 grid-cols-1 place-items-center lg:mt-12 lg:grid-cols-1">
           <CtaButton {...ctaButton[0]} />
         </GridContainer>
