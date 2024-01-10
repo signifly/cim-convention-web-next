@@ -14,6 +14,9 @@ export function LanguageSwitcher({
 }) {
   const currentLocale = useLocale()
 
+  // @todo: add prefix for short courses
+  // @todo: add to mobile menu
+
   return (
     <Popover>
       <PopoverTrigger className="group flex items-center gap-x-1 uppercase">
