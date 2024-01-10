@@ -4,6 +4,7 @@ import {
 } from 'next-intl/navigation'
 
 export const locales = ['en', 'fr'] as const
+export const dynamicPathSegments = ['course'] as const
 export const localePrefix = 'as-needed'
 export const defaultLocale = 'en'
 export type Locale = (typeof locales)[number]
