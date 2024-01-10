@@ -28,6 +28,7 @@ import { ScheduleBlock } from '@/blocks/ScheduleBlock/ScheduleBlock'
 import { RegistrationBlock } from '@/blocks/RegistrationBlock/RegistrationBlock'
 import { MapBlock } from '@/blocks/MapBlock/MapBlock'
 import { AnchorLinksBlock } from '@/blocks/AnchorLinksBlock/AnchorLinksBlock'
+import { TwoColumnsTextBlock } from '@/blocks/TwoColumnsTextBlock/TwoColumnsTextBlock'
 
 export type ComponentsMap = {
   [key: string]: ReactNode
@@ -63,4 +64,5 @@ export const componentsMap = {
   registration_block: RegistrationBlock,
   map_block: MapBlock,
   anchor_links_block: AnchorLinksBlock,
+  two_columns_text_block: TwoColumnsTextBlock,
 }

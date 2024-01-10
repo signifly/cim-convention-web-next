@@ -1574,12 +1574,19 @@ export type HeaderModelBlocksField =
   | AnnouncementBannerBlockRecord
   | DefaultHeaderBlockRecord
 
+export type HeaderModelBlocksFieldListListNonNullMultiLocaleField = {
+  __typename?: 'HeaderModelBlocksFieldListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<HeaderModelBlocksField>
+}
+
 export type HeaderModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<HeaderModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<HeaderModelFilter>>>
   _createdAt?: InputMaybe<CreatedAtFilter>
   _firstPublishedAt?: InputMaybe<PublishedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  _locales?: InputMaybe<LocalesFilter>
   _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
   _publishedAt?: InputMaybe<PublishedAtFilter>
   _status?: InputMaybe<StatusFilter>
@@ -1615,11 +1622,15 @@ export enum HeaderModelOrderBy {
 /** Record of type Header (header) */
 export type HeaderRecord = RecordInterface & {
   __typename?: 'HeaderRecord'
+  _allBlocksLocales?: Maybe<
+    Array<HeaderModelBlocksFieldListListNonNullMultiLocaleField>
+  >
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
   _isValid: Scalars['BooleanType']['output']
+  _locales: Array<SiteLocale>
   _modelApiKey: Scalars['String']['output']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _publishedAt?: Maybe<Scalars['DateTime']['output']>
@@ -1634,7 +1645,18 @@ export type HeaderRecord = RecordInterface & {
 }
 
 /** Record of type Header (header) */
+export type HeaderRecord_AllBlocksLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Header (header) */
 export type HeaderRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Header (header) */
+export type HeaderRecordBlocksArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -1695,6 +1717,7 @@ export type HomePageModelBodyField =
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
+  | TwoColumnsTextBlockRecord
   | VideoBlockRecord
 
 export type HomePageModelBodyFieldListListNonNullMultiLocaleField = {
@@ -3599,6 +3622,7 @@ export type PageModelBodyField =
   | StatisticsBlockRecord
   | TestimonialsBlockRecord
   | TwoColumnWithImageBlockRecord
+  | TwoColumnsTextBlockRecord
   | VideoBlockRecord
 
 export type PageModelBodyFieldListListNonNullMultiLocaleField = {
@@ -5173,6 +5197,44 @@ export type TwoColumnWithImageBlockWithHeadingHighlightRecord_SeoMetaTagsArgs =
 
 /** Block of type Two Column With Image Block > With Heading Highlight (two_column_with_image_block_with_heading_highlight) */
 export type TwoColumnWithImageBlockWithHeadingHighlightRecordBodyArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Two Columns Text Block (two_columns_text_block) */
+export type TwoColumnsTextBlockRecord = RecordInterface & {
+  __typename?: 'TwoColumnsTextBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  textLeft: Scalars['String']['output']
+  textRight: Scalars['String']['output']
+  title: Scalars['String']['output']
+}
+
+/** Block of type Two Columns Text Block (two_columns_text_block) */
+export type TwoColumnsTextBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Two Columns Text Block (two_columns_text_block) */
+export type TwoColumnsTextBlockRecordTextLeftArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Two Columns Text Block (two_columns_text_block) */
+export type TwoColumnsTextBlockRecordTextRightArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
