@@ -1625,6 +1625,7 @@ export type HeaderRecord = RecordInterface & {
   _allBlocksLocales?: Maybe<
     Array<HeaderModelBlocksFieldListListNonNullMultiLocaleField>
   >
+  _allNameLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -1650,12 +1651,23 @@ export type HeaderRecord_AllBlocksLocalesArgs = {
 }
 
 /** Record of type Header (header) */
+export type HeaderRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Header (header) */
 export type HeaderRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Header (header) */
 export type HeaderRecordBlocksArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Header (header) */
+export type HeaderRecordNameArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }

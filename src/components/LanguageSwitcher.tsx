@@ -6,6 +6,7 @@ import { StringMultiLocaleField } from '@/types/generated'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover'
 import { Link } from '@/navigation'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { locales } from '@/navigation'
 
 export function LanguageSwitcher({
   _allSlugLocales,
@@ -24,16 +25,20 @@ export function LanguageSwitcher({
         <ChevronDownIcon className="h-5 w-5 text-brand-grey-400 transition-transform group-[&[data-state=open]]:rotate-180" />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col gap-y-2 bg-white px-2 uppercase">
-        {_allSlugLocales.map((l) => (
-          <Link
-            key={l.locale}
-            href={`/${l.value}`}
-            locale={l.locale || 'en'}
-            className="pl-2 pr-8 hover:bg-brand-grey-200"
-          >
-            {l.locale}
-          </Link>
-        ))}
+        {locales.map((l) => {
+          const slug = _allSlugLocales.find((s) => s.locale === l)?.value
+
+          return (
+            <Link
+              key={l}
+              href={`/${slug ?? ''}`}
+              locale={l}
+              className="pl-2 pr-8 hover:bg-brand-grey-200"
+            >
+              {l}
+            </Link>
+          )
+        })}
       </PopoverContent>
     </Popover>
   )
