@@ -15,6 +15,7 @@ export default async function Page({
   params: { slug, locale },
 }: PageProps): Promise<JSX.Element | void> {
   unstable_setRequestLocale(locale)
+  console.log({ slug, locale })
   if (!locales.includes(locale as any)) notFound()
 
   const { data: pageData } = await fetchDatoContent(

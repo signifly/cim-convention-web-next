@@ -45,7 +45,15 @@ export default async function HomePageLayout({
       {/* Header */}
       {courseData?.shortCourse?.header?.blocks.map(
         (block: any) =>
-          block.id && <ComponentParser key={block.id} data={block} />,
+          block.id && (
+            <ComponentParser
+              key={block.id}
+              data={{
+                ...block,
+                _allSlugLocales: courseData.shortCourse._allSlugLocales,
+              }}
+            />
+          ),
       )}
 
       {children}

@@ -29,7 +29,15 @@ export default async function HomePageLayout({
     <>
       {pageData?.homePage?.header?.blocks.map(
         (block: any) =>
-          block.id && <ComponentParser key={block.id} data={block} />,
+          block.id && (
+            <ComponentParser
+              key={block.id}
+              data={{
+                ...block,
+                _allSlugLocales: pageData.homePage._allSlugLocales,
+              }}
+            />
+          ),
       )}
       {children}
       {pageData?.homePage?.footer?.blocks.map(

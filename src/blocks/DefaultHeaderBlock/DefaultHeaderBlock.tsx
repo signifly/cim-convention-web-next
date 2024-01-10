@@ -3,12 +3,17 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Link } from '@/navigation'
-import { AltFileField, DefaultHeaderBlockRecord } from '@/types/generated'
+import {
+  AltFileField,
+  DefaultHeaderBlockRecord,
+  StringMultiLocaleField,
+} from '@/types/generated'
 import { DesktopMenuContent } from '@/blocks/DefaultHeaderBlock/DesktopMenuContent'
 import { MobileMenuDialog } from '@/blocks/DefaultHeaderBlock/MobileMenuDialog'
 import { CtaButton } from '@/components/CtaButton'
 
 import { Bars3Icon } from '@heroicons/react/24/outline'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 
 const SiteLogo = (props: AltFileField) => {
   const { url, alt } = props
@@ -28,8 +33,12 @@ const SiteLogo = (props: AltFileField) => {
   )
 }
 
-export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
-  const { cimLogo, siteLogo, menu, ctaButton } = props
+export function DefaultHeaderBlock(
+  props: DefaultHeaderBlockRecord & {
+    _allSlugLocales: StringMultiLocaleField[]
+  },
+) {
+  const { cimLogo, siteLogo, menu, ctaButton, _allSlugLocales } = props
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const MobileMenuButton = () => (
@@ -60,6 +69,7 @@ export function DefaultHeaderBlock(props: DefaultHeaderBlockRecord) {
 
         {/* Right side  */}
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-8">
+          <LanguageSwitcher _allSlugLocales={_allSlugLocales} />
           <div className="shrink-0">
             <CtaButton {...ctaButton[0]} />
           </div>

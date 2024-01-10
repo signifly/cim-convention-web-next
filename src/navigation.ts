@@ -14,7 +14,7 @@ export const pathnames = {
   '/[locale]/[...slug]': '/[locale]/[...slug]',
   '/[...slug]': '/[...slug]',
 
-  '/course/[slug]': {
+  '[locale]/course/[slug]': {
     en: '/course/[slug]',
     fr: '/cours/[slug]',
   },
