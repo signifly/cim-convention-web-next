@@ -16,9 +16,12 @@ export function LanguageSwitcher({
 }) {
   const currentLocale = useLocale()
   const pathname = usePathname()
-  const firstSegment = pathname
+
+  // remove 'fr' locales and empty strings for default locale
+  const removeLocales = pathname
     .split('/')
-    .filter((p) => locales.includes(p as any))[0]
+    .filter((p) => !locales.includes(p as any) && p !== '')
+  const firstSegment = removeLocales[0]
   const isDynamicPath = dynamicPathSegments.includes(firstSegment as any)
   const dynamicPath = isDynamicPath ? `${firstSegment}/` : ''
 
