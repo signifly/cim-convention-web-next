@@ -3,6 +3,7 @@ import { GridContainer } from '@/components/GridContainer'
 import { PageHeaderBlockRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
+import { OtherSponsorsCarousel } from '@/components/OtherSponsorsCarousel'
 
 export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
   const {
@@ -11,6 +12,9 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
     paragraph,
     mainSponsor,
     mainSponsorLabel,
+    hasOtherSponsors,
+    otherSponsors,
+    otherSponsorsLabel,
     heroImage,
   } = props
 
@@ -64,6 +68,12 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               </a>
             )}
           </div>
+          {hasOtherSponsors && (
+            <OtherSponsorsCarousel
+              otherSponsors={otherSponsors}
+              otherSponsorsLabel={otherSponsorsLabel}
+            />
+          )}
         </GridContainer>
       ) : (
         <div className="relative flex min-h-[400px] justify-start overflow-hidden">
