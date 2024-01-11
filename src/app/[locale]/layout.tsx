@@ -5,6 +5,9 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cn } from '@/utils/clsxMerge'
 import { MarkerIoScript } from '@/components/MarkerIoScript'
+import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
+import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
+import { toNextMetadata } from 'react-datocms/seo'
 
 // i18n
 import { Providers } from '@/components/Providers'
@@ -14,8 +17,24 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-export const metadata: Metadata = {
-  // @TODO: add metaData
+export const generateMetadata = async ({
+  params: { locale },
+}: {
+  params: { locale: Locale }
+}): Promise<Metadata> => {
+  const { data } = await fetchDatoContent(
+    getPageBySlugQuery({
+      locale: locale,
+      slug: '',
+      isHomePage: true,
+    }),
+  )
+  return !data.homePage._seoMetaTags
+    ? {}
+    : {
+        ...toNextMetadata([...data.homePage._seoMetaTags]),
+        metadataBase: new URL('https://convention.cim.org'),
+      }
 }
 
 export default function LocaleLayout({

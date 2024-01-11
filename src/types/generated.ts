@@ -897,9 +897,9 @@ export type DocumentLinksBlockAssetRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  asset?: Maybe<FileField>
+  asset: FileField
   id: Scalars['ItemId']['output']
-  label?: Maybe<Scalars['String']['output']>
+  label: Scalars['String']['output']
 }
 
 /** Block of type Document Links Block > Asset (document_links_block_asset) */
