@@ -37,6 +37,10 @@ export const getCourseBySlugQuery = ({ locale, slug }: Params): string => {
 					locale: ${l} 
 					filter: { slug: { eq: "${slug}" } }
 				) {
+					_allSlugLocales {
+						locale
+						value
+					}
 					_seoMetaTags {
 							attributes
 							tag

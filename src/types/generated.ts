@@ -707,6 +707,11 @@ export type CtaBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type CtaButtonModelLinkToField =
+  | HomePageRecord
+  | PageRecord
+  | ShortCourseRecord
+
 /** Block of type CTA Button (cta_button) */
 export type CtaButtonRecord = RecordInterface & {
   __typename?: 'CtaButtonRecord'
@@ -726,7 +731,7 @@ export type CtaButtonRecord = RecordInterface & {
   externalLink?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   label: Scalars['String']['output']
-  linkTo?: Maybe<PageRecord>
+  linkTo?: Maybe<CtaButtonModelLinkToField>
   stylingOption: Scalars['String']['output']
   useExternalLink?: Maybe<Scalars['BooleanType']['output']>
 }
@@ -3688,6 +3693,7 @@ export type PageHeaderBlockRecord = RecordInterface & {
   id: Scalars['ItemId']['output']
   mainSponsor?: Maybe<SponsorRecord>
   mainSponsorLabel?: Maybe<Scalars['String']['output']>
+  paragraph?: Maybe<Scalars['String']['output']>
   subTitle?: Maybe<Scalars['String']['output']>
   title: Scalars['String']['output']
 }
@@ -3695,6 +3701,11 @@ export type PageHeaderBlockRecord = RecordInterface & {
 /** Block of type Page Header Block (page_header_block) */
 export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Page Header Block (page_header_block) */
+export type PageHeaderBlockRecordParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
 export type PageModelBodyField =

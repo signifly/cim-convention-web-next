@@ -16,7 +16,7 @@ export const DesktopMenuContent = ({ menu }: { menu: MenuRecord }) => {
               <Popover.Button className="flex items-center gap-x-1 font-medium leading-6 text-gray-900">
                 {item.name}
                 <ChevronDownIcon
-                  className="h-5 w-5 flex-none text-gray-400"
+                  className="h-5 w-5 flex-none text-brand-grey-400"
                   aria-hidden="true"
                 />
               </Popover.Button>

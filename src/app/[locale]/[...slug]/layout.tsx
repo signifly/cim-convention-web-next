@@ -7,9 +7,7 @@ import { PageProps } from './page'
 import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 
-// console.log(
-//   '[WARN] - [...slug]/page.tsx: Update revalidate interval before pushing to production',
-// )
+// console.log('[WARN]: comment this out before pushing to production')
 // export const revalidate = 10
 
 export async function generateStaticParams({ params }: PageProps) {
@@ -43,7 +41,15 @@ export default async function HomePageLayout({
     <>
       {pageData?.page?.header?.blocks.map(
         (block: any) =>
-          block.id && <ComponentParser key={block.id} data={block} />,
+          block.id && (
+            <ComponentParser
+              key={block.id}
+              data={{
+                ...block,
+                _allSlugLocales: pageData.page._allSlugLocales,
+              }}
+            />
+          ),
       )}
       {children}
       {pageData?.page?.footer?.blocks.map(
