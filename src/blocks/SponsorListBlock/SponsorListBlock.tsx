@@ -13,7 +13,10 @@ export const SponsorListBlock = (props: SponsorListBlockRecord) => {
   } = props
 
   return (
-    <section id={anchorId} className="py-10 text-brand-grey-600 lg:py-20">
+    <section
+      id={anchorId ?? undefined}
+      className="py-10 text-brand-grey-600 lg:py-20"
+    >
       <GridContainer className="space-y-8">
         <div className="col-span-4 lg:col-span-full lg:mb-4">
           <h2 className="mb-2 text-20/[140%] font-semibold tracking-[-0.1px] text-brand-grey-950 lg:mb-4 lg:text-32/[125%]">

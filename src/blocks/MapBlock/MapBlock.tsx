@@ -10,7 +10,7 @@ export function MapBlock(props: MapBlockRecord) {
   const apiKey = process?.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''
 
   return (
-    <section id={anchorId || ''} className="bg-brand-grey-25 py-12">
+    <section id={anchorId || undefined} className="bg-brand-grey-25 py-12">
       <GridContainer>
         <APIProvider apiKey={apiKey}>
           <Map

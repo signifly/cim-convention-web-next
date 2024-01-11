@@ -24,7 +24,7 @@ export const AdBlock = (props: AdBlockRecord) => {
   const styleOption = banner ? 'banner' : 'default'
 
   return (
-    <section id={anchorId || ''} className={styles.section[styleOption]}>
+    <section id={anchorId || undefined} className={styles.section[styleOption]}>
       <GridContainer className={styles.grid[styleOption]}>
         <div className={styles.div[styleOption]}>
           {banner

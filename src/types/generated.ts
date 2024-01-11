@@ -520,7 +520,7 @@ export type CardsContainerBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   background?: Maybe<Scalars['String']['output']>
   cardBorders?: Maybe<Scalars['BooleanType']['output']>
   cards: Array<CardBlockRecord>
@@ -589,7 +589,7 @@ export type ContactBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   cards: Array<ContactCardBlockRecord>
   id: Scalars['ItemId']['output']
   subtitle?: Maybe<Scalars['String']['output']>
@@ -1229,7 +1229,7 @@ export type FormBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   description?: Maybe<Scalars['String']['output']>
   form: FormRecord
   id: Scalars['ItemId']['output']
@@ -1751,7 +1751,7 @@ export type HeroBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   date: Scalars['String']['output']
   headline: Scalars['String']['output']
   id: Scalars['ItemId']['output']
@@ -3564,6 +3564,12 @@ export type MenuMenuItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type MenuMenuItemRecordListListNonNullMultiLocaleField = {
+  __typename?: 'MenuMenuItemRecordListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<MenuMenuItemRecord>
+}
+
 export type MenuModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<MenuModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<MenuModelFilter>>>
@@ -3605,6 +3611,10 @@ export enum MenuModelOrderBy {
 /** Record of type Menu (menu) */
 export type MenuRecord = RecordInterface & {
   __typename?: 'MenuRecord'
+  _allMenuItemsLocales?: Maybe<
+    Array<MenuMenuItemRecordListListNonNullMultiLocaleField>
+  >
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -3624,7 +3634,29 @@ export type MenuRecord = RecordInterface & {
 }
 
 /** Record of type Menu (menu) */
+export type MenuRecord_AllMenuItemsLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Menu (menu) */
 export type MenuRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecordMenuItemsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3650,7 +3682,7 @@ export type OneColumnTextBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   text: Scalars['String']['output']
 }
@@ -3882,7 +3914,7 @@ export type PastConventionsBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   conventions: Array<ConventionBlockRecord>
   id: Scalars['ItemId']['output']
   title?: Maybe<Scalars['String']['output']>
@@ -4518,7 +4550,7 @@ export type ScheduleBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   days: Array<ScheduleBlockDayRecord>
   displayAnchorLinks?: Maybe<Scalars['BooleanType']['output']>
   id: Scalars['ItemId']['output']
@@ -4794,7 +4826,7 @@ export type ShortCoursesListBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   linkLabel: Scalars['String']['output']
   sections: Array<ShortCourseListBlockSectionRecord>
@@ -4886,7 +4918,7 @@ export type SponsorListBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   headline: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   previousYearLinkLabel?: Maybe<Scalars['String']['output']>
@@ -5012,7 +5044,7 @@ export type StatisticsBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   headline: Scalars['String']['output']
   id: Scalars['ItemId']['output']
   stats: Array<StatisticsBlockStatRecord>
@@ -5237,7 +5269,7 @@ export type TwoColumnWithImageBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   backgroundColor: Scalars['String']['output']
   ctaButtons: Array<TwoColumnWithImageBlockModelCtaButtonsField>
   desktopLayout: Scalars['String']['output']
@@ -5327,7 +5359,7 @@ export type TwoColumnsTextBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   textLeft: Scalars['String']['output']
   textRight: Scalars['String']['output']
@@ -5723,7 +5755,7 @@ export type VideoBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  anchorId: Scalars['String']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   title?: Maybe<Scalars['String']['output']>
   video?: Maybe<VideoField>

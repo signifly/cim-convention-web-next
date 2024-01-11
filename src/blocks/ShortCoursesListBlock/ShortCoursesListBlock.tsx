@@ -10,7 +10,7 @@ export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
   const { anchorId, title, linkLabel, sections } = props
 
   return (
-    <section id={anchorId} className="py-10 lg:py-16">
+    <section id={anchorId ?? undefined} className="py-10 lg:py-16">
       <GridContainer className="gap-y-10 lg:gap-y-12">
         {title && (
           <h2 className="col-span-full text-center text-20/[140%] font-semibold md:text-32/[125%]">

@@ -6,7 +6,7 @@ export function PastConventionsBlock(props: PastConventionsBlockRecord) {
   let { title, anchorId, conventions } = props
 
   return (
-    <section className="bg-white py-16" id={anchorId}>
+    <section className="bg-white py-16" id={anchorId ?? undefined}>
       <GridContainer>
         <div className="col-span-full mb-[56px] flex justify-center">
           {title && <h2 className="m-auto text-32 font-semibold">{title}</h2>}

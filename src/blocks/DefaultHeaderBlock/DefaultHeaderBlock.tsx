@@ -19,7 +19,7 @@ const SiteLogo = (props: AltFileField) => {
   const { url, alt } = props
 
   return (
-    <div className="flex h-[48px] w-1/2 lg:h-[64px] lg:flex-1">
+    <div className="flex h-[48px] w-1/2 shrink lg:h-[64px] lg:flex-1">
       <Link href="/" className="relative h-full w-full lg:w-[215px]">
         <span className="sr-only">CIM Convention</span>
         <Image
@@ -64,18 +64,18 @@ export function DefaultHeaderBlock(
   return (
     <header className="fixed top-0 z-50 w-[100%] border-b border-brand-grey-300 bg-white">
       <nav
-        className="container mx-auto box-border flex max-w-[1264px] items-center justify-between py-4  lg:py-6"
+        className="container mx-auto box-border flex max-w-[1264px] items-center justify-between py-4 lg:py-6"
         aria-label="Global"
       >
         {/* Left side */}
-        <div className="flex w-full items-center justify-between lg:w-max lg:gap-14">
+        <div className="flex w-full items-center justify-between lg:w-max lg:gap-6 xl:gap-10">
           <SiteLogo {...siteLogo} />
           <MobileMenuButton />
           {menu && <DesktopMenuContent menu={menu} />}
         </div>
 
         {/* Right side  */}
-        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-8">
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-3 xl:gap-x-8">
           <LanguageSwitcher
             _allSlugLocales={_allSlugLocales}
             languageToggleLabel={languageToggleLabel}

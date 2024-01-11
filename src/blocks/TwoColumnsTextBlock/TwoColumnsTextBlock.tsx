@@ -7,7 +7,7 @@ export const TwoColumnsTextBlock = (props: TwoColumnsTextBlockRecord) => {
 
   return (
     <section className="bg-brand-gradient-light py-8 md:py-16">
-      <GridContainer id={anchorId || ''}>
+      <GridContainer id={anchorId || undefined}>
         <h2 className="col-span-full mb-6 text-20/[140%] font-semibold md:mb-16 md:text-32/[125%]">
           {title}
         </h2>
