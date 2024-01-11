@@ -38,7 +38,7 @@ export function LanguageSwitcher({
           </PopoverTrigger>
           <PopoverContent className="flex flex-col gap-y-2 bg-white px-2 uppercase">
             {locales.map((l) => {
-              let slug = _allSlugLocales.find((s) => s.locale === l)?.value
+              let slug = _allSlugLocales?.find((s) => s.locale === l)?.value
               slug = slug === 'home-page' ? '' : slug
               const href = `/${dynamicPath}${slug ?? ''}` // if there's no slug for this language, link to the homepage
 
@@ -61,7 +61,8 @@ export function LanguageSwitcher({
       {/* Mobile version: */}
       <div className="flex gap-x-8 py-5 lg:hidden">
         {locales.map((l) => {
-          const slug = _allSlugLocales.find((s) => s.locale === l)?.value
+          let slug = _allSlugLocales?.find((s) => s.locale === l)?.value
+          slug = slug === 'home-page' ? '' : slug
           const href = `/${dynamicPath}${slug ?? ''}` // if there's no slug for this language, link to the homepage
 
           return (
