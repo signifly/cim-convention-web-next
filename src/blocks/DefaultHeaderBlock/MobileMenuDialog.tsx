@@ -127,10 +127,11 @@ export const MobileMenuDialog = (props: Props) => {
                 }
               })}
             </div>
-            <LanguageSwitcher
-              _allSlugLocales={_allSlugLocales}
-              languageToggleLabel={languageToggleLabel}
-            />
+            {/* @todo: add language switcher for Monday launch */}
+            {/* <LanguageSwitcher */}
+            {/*   _allSlugLocales={_allSlugLocales} */}
+            {/*   languageToggleLabel={languageToggleLabel} */}
+            {/* /> */}
             <div className="flex items-center justify-center gap-x-8 py-8">
               <CtaButton {...ctaButton[0]} />
               {cimLogo && (

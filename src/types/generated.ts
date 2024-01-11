@@ -3721,10 +3721,13 @@ export type PageHeaderBlockRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  hasOtherSponsors?: Maybe<Scalars['BooleanType']['output']>
   heroImage?: Maybe<FileField>
   id: Scalars['ItemId']['output']
   mainSponsor?: Maybe<SponsorRecord>
   mainSponsorLabel?: Maybe<Scalars['String']['output']>
+  otherSponsors: Array<SponsorRecord>
+  otherSponsorsLabel?: Maybe<Scalars['String']['output']>
   paragraph?: Maybe<Scalars['String']['output']>
   subTitle?: Maybe<Scalars['String']['output']>
   title: Scalars['String']['output']

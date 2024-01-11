@@ -3,7 +3,10 @@ import {
   Pathnames,
 } from 'next-intl/navigation'
 
-export const locales = ['en', 'fr'] as const
+export const locales = [
+  'en',
+  // 'fr'
+] as const
 export const dynamicPathSegments = ['course']
 
 export const localePrefix = 'as-needed'
@@ -18,7 +21,7 @@ export const pathnames = {
 
   '[locale]/course/[slug]': {
     en: '/course/[slug]',
-    fr: '/cours/[slug]',
+    // fr: '/cours/[slug]',
   },
 } satisfies Pathnames<typeof locales> & Record<string & {}, string | {}>
 
