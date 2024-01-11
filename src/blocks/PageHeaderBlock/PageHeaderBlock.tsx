@@ -68,7 +68,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               </a>
             )}
           </div>
-          {hasOtherSponsors && (
+          {hasOtherSponsors && otherSponsorsLabel && (
             <OtherSponsorsCarousel
               otherSponsors={otherSponsors}
               otherSponsorsLabel={otherSponsorsLabel}
