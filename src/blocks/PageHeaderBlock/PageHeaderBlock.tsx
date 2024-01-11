@@ -76,6 +76,12 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               />
             )}
           </div>
+          {hasOtherSponsors && otherSponsorsLabel && (
+            <OtherSponsorsCarousel
+              otherSponsors={otherSponsors}
+              otherSponsorsLabel={otherSponsorsLabel}
+            />
+          )}
         </GridContainer>
       ) : (
         <div className="relative flex min-h-[400px] justify-start overflow-hidden">
