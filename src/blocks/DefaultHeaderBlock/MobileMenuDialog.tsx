@@ -33,7 +33,7 @@ export const MobileMenuDialog = (props: Props) => {
   return (
     <Dialog
       as="div"
-      className="xl:hidden"
+      className="lg:hidden"
       open={mobileMenuOpen}
       onClose={setMobileMenuOpen}
     >

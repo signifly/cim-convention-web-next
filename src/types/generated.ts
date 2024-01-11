@@ -3564,6 +3564,12 @@ export type MenuMenuItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type MenuMenuItemRecordListListNonNullMultiLocaleField = {
+  __typename?: 'MenuMenuItemRecordListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<MenuMenuItemRecord>
+}
+
 export type MenuModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<MenuModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<MenuModelFilter>>>
@@ -3605,6 +3611,10 @@ export enum MenuModelOrderBy {
 /** Record of type Menu (menu) */
 export type MenuRecord = RecordInterface & {
   __typename?: 'MenuRecord'
+  _allMenuItemsLocales?: Maybe<
+    Array<MenuMenuItemRecordListListNonNullMultiLocaleField>
+  >
+  _allNameLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -3624,7 +3634,29 @@ export type MenuRecord = RecordInterface & {
 }
 
 /** Record of type Menu (menu) */
+export type MenuRecord_AllMenuItemsLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Menu (menu) */
 export type MenuRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecordMenuItemsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Menu (menu) */
+export type MenuRecordNameArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
 
