@@ -30,6 +30,7 @@ import { SPONSOR_LIST_BLOCK_FRAGMENT } from '@/blocks/SponsorListBlock/SponsorLi
 // Shared fragments
 import { RESPONSIVE_IMAGE_FRAGMENT } from '../fragments/responsiveImage'
 import { CTA_BUTTON_FRAGMENT } from '../fragments/ctaButton'
+import { LINK_TO_FRAGMENT } from '../fragments/linkToFragment'
 import { CARDS_CONTAINER_BLOCK_FRAGMENT } from '@/blocks/CardsContainerBlock/CardsContainerBlock.fragment'
 import { CONTACT_BLOCK_FRAGMENT } from '@/blocks/ContactBlock/ContactBlock.fragment'
 import { CONTACT_CARD_BLOCK_FRAGMENT } from '@/blocks/ContactCardBlock/ContactCardBlock.fragment'

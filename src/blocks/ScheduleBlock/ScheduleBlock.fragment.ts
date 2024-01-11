@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request'
 
-const PageFields = `id slug _modelApiKey`
+import { PageFields } from '@/lib/datocms/fragments/ctaButton'
 
 export const SCHEDULE_BlOCK_FRAGMENT = gql`
   fragment ScheduleBlockFragment on ScheduleBlockRecord {
