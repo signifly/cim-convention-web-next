@@ -8,6 +8,14 @@
   @apply pt-20 lg:pt-[112px];
 }
 
+.page-layout:has(.announcement-banner) {
+  @apply pt-[120px] lg:pt-[152px];
+}
+
+header:has(~ .announcement-banner) {
+  top: 40px;
+}
+
 *:not(.ring-0):focus,
 button:not(.ring-0):focus {
   @apply outline-none ring-2 ring-brand-blue ring-opacity-50 ring-offset-2;
