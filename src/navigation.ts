@@ -3,6 +3,7 @@ import {
   Pathnames,
 } from 'next-intl/navigation'
 
+// @todo: enable fr locale for Monday launch
 export const locales = [
   'en',
   // 'fr'
@@ -21,6 +22,7 @@ export const pathnames = {
 
   '[locale]/course/[slug]': {
     en: '/course/[slug]',
+    // @todo: enable fr locale for Monday launch
     // fr: '/cours/[slug]',
   },
 } satisfies Pathnames<typeof locales> & Record<string & {}, string | {}>
