@@ -5,7 +5,14 @@ import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 
 export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
-  const { title, subTitle, mainSponsor, mainSponsorLabel, heroImage } = props
+  const {
+    title,
+    subTitle,
+    paragraph,
+    mainSponsor,
+    mainSponsorLabel,
+    heroImage,
+  } = props
 
   return (
     <section className="bg-brand-gradient-light">
@@ -20,6 +27,12 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
             <h1 className="text-20/[140%] font-semibold tracking-[-0.1px] lg:col-start-1 lg:text-32/[125%] lg:tracking-[-0.16px]">
               {title}
             </h1>
+            {paragraph && (
+              <div
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+                className="mt-2 text-16/[150%] md:mt-4 md:text-18/[155%]"
+              ></div>
+            )}
           </div>
           <div className="flex min-h-full flex-col gap-y-2">
             {mainSponsorLabel && (
@@ -64,6 +77,12 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               <h1 className="text-20/[140%] font-semibold tracking-[-0.1px] lg:col-start-1 lg:text-32/[125%] lg:tracking-[-0.16px]">
                 {title}
               </h1>
+              {paragraph && (
+                <div
+                  className="mt-2 text-16/[150%] md:mt-4 md:text-18/[155%]"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                ></div>
+              )}
             </div>
             <div className="col-start-1 flex min-h-full flex-col gap-y-2">
               {mainSponsorLabel && (

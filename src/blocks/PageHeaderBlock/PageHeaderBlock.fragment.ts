@@ -6,6 +6,7 @@ export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
     _modelApiKey
     title
     subTitle
+    paragraph(markdown: true)
     mainSponsor {
       id
       name
