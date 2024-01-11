@@ -100,6 +100,10 @@ export const getPageBySlugQuery = ({
         }
 
         ${queryType} (locale: ${l} ${filter}) {
+						_allSlugLocales {
+							locale
+							value
+						}
             _seoMetaTags {
                 attributes
                 tag
