@@ -1,11 +1,11 @@
 @tailwind base;
 
 * {
-  @apply scroll-mt-20 lg:scroll-mt-[112px];
+  @apply scroll-mt-20 xl:scroll-mt-[112px];
 }
 
 .page-layout {
-  @apply pt-20 lg:pt-[112px];
+  @apply pt-20 xl:pt-[112px];
 }
 
 *:not(.ring-0):focus,

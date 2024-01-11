@@ -29,7 +29,7 @@ export const StatisticsBlock = (props: StatisticsBlockRecord) => {
             {subHeadline}
           </p>
         </div>
-        <ul className="col-span-4 flex flex-wrap justify-center gap-x-8 gap-y-6 text-center lg:col-span-full lg:gap-x-[120px] lg:px-8">
+        <ul className="col-span-4 flex flex-wrap justify-center gap-x-8 gap-y-6 text-center lg:col-span-full lg:gap-x-[120px]">
           {stats.map((stat) => (
             <li key={stat.id} className="space-y-2 lg:space-y-4">
               <div className="text-24/[140%] font-medium lg:text-40/[115%]">

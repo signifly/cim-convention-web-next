@@ -7,7 +7,7 @@ import { Link } from '@/navigation'
 
 export const DesktopMenuContent = ({ menu }: { menu: MenuRecord }) => {
   return (
-    <Popover.Group className="hidden lg:flex lg:gap-x-9">
+    <Popover.Group className="hidden shrink-0 xl:flex xl:gap-x-7">
       {menu?.menuItems.map((item) => {
         const { subMenuItems } = item
         if (subMenuItems.length > 0) {

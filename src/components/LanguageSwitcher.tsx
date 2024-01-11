@@ -30,7 +30,7 @@ export function LanguageSwitcher({
 
   return (
     <div aria-label={languageToggleLabel}>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <Popover>
           <PopoverTrigger className="group flex items-center gap-x-1 uppercase">
             {currentLocale}
@@ -58,7 +58,7 @@ export function LanguageSwitcher({
       </div>
 
       {/* Mobile version: */}
-      <div className="flex gap-x-8 py-5 lg:hidden">
+      <div className="flex gap-x-8 py-5 xl:hidden">
         {locales.map((l) => {
           const slug = _allSlugLocales.find((s) => s.locale === l)?.value
           const href = `/${dynamicPath}${slug ?? ''}` // if there's no slug for this language, link to the homepage
