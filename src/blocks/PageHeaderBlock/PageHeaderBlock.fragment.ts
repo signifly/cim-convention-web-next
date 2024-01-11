@@ -1,13 +1,6 @@
 import { gql } from 'graphql-request'
 
-export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
-  fragment PageHeaderBlockFragment on PageHeaderBlockRecord {
-    id
-    _modelApiKey
-    title
-    subTitle
-    paragraph(markdown: true)
-    mainSponsor {
+const sponsorFields = gql`
       id
       name
       logo {
@@ -21,8 +14,24 @@ export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
         }
       }
       websiteUrl
-    }
+`
+
+export const PAGE_HEADER_BLOCK_FRAGMENT = gql`
+  fragment PageHeaderBlockFragment on PageHeaderBlockRecord {
+    id
+    _modelApiKey
+    title
+    subTitle
+    paragraph(markdown: true)
     mainSponsorLabel
+    mainSponsor {
+			${sponsorFields}
+    }
+    hasOtherSponsors
+    otherSponsorsLabel
+    otherSponsors {
+			${sponsorFields}
+    }
     heroImage {
       url
       alt

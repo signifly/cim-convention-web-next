@@ -6,10 +6,10 @@ import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-// console.log(
-//   '[WARN] - (home-page)/page.tsx: Update revalidate interval before pushing to production',
-// )
-// export const revalidate = 10
+console.log(
+  '[WARN] - (home-page)/page.tsx: Update revalidate interval before pushing to production',
+)
+export const revalidate = 10
 
 type HomePageProps = {
   children: React.ReactNode
