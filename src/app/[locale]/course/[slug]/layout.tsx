@@ -1,16 +1,36 @@
 import React from 'react'
+import { Metadata } from 'next'
 import { unstable_setRequestLocale } from 'next-intl/server'
-
 import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getAllCoursesSlugQuery } from '@/lib/datocms/queries/getAllCoursesBySlugQuery'
 import { PageProps } from './page'
 import { Locale } from '@/navigation'
 import { getCourseBySlugQuery } from '@/lib/datocms/queries/getCourseBySlugQuery'
+import { toNextMetadata } from 'react-datocms/seo'
 
 // console.log(
 //   '[WARN] - [...slug]/page.tsx: Update revalidate interval before pushing to production',
 // )
 // export const revalidate = 10
+
+type CoursePageProps = {
+  children: React.ReactNode
+  params: { slug: string; locale: Locale }
+}
+
+export const generateMetadata = async ({
+  params: { locale, slug },
+}: CoursePageProps): Promise<Metadata> => {
+  const { data } = await fetchDatoContent(
+    getCourseBySlugQuery({
+      locale,
+      slug,
+    }),
+  )
+  return !data.shortCourse
+    ? {}
+    : toNextMetadata([...data.shortCourse._seoMetaTags])
+}
 
 export async function generateStaticParams({ params }: PageProps) {
   const res = await fetchDatoContent(
@@ -28,10 +48,7 @@ export async function generateStaticParams({ params }: PageProps) {
 export default async function HomePageLayout({
   children,
   params: { slug, locale },
-}: {
-  children: React.ReactNode
-  params: { slug: string; locale: Locale }
-}) {
+}: CoursePageProps) {
   unstable_setRequestLocale(locale)
   const { data: courseData } = await fetchDatoContent(
     getCourseBySlugQuery({
