@@ -13,7 +13,7 @@ export const CtaButton = (props: CtaButtonRecord) => {
         href={{
           pathname: '/[...slug]',
           // @ts-ignore linkTo will always have slug defined as it is a required field from DatoCMS
-          params: { slug: [linkTo.slug] },
+          params: { slug: [linkTo.slug === 'home-page' ? '' : linkTo.slug] },
         }}
         variant={stylingOption as 'primary' | 'secondary'}
       >
