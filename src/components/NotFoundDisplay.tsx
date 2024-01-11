@@ -12,7 +12,6 @@ export const NotFoundDisplay = async () => {
       slug: 'not-found',
     }),
   )
-  console.log(pageData)
 
   return (
     <>

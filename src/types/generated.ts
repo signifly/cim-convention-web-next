@@ -3693,6 +3693,7 @@ export type PageHeaderBlockRecord = RecordInterface & {
   id: Scalars['ItemId']['output']
   mainSponsor?: Maybe<SponsorRecord>
   mainSponsorLabel?: Maybe<Scalars['String']['output']>
+  paragraph?: Maybe<Scalars['String']['output']>
   subTitle?: Maybe<Scalars['String']['output']>
   title: Scalars['String']['output']
 }
@@ -3700,6 +3701,11 @@ export type PageHeaderBlockRecord = RecordInterface & {
 /** Block of type Page Header Block (page_header_block) */
 export type PageHeaderBlockRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Page Header Block (page_header_block) */
+export type PageHeaderBlockRecordParagraphArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
 export type PageModelBodyField =

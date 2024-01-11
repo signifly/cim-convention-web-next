@@ -7,8 +7,8 @@ import { PageProps } from './page'
 import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 
-console.log('[WARN]: comment this out before pushing to production')
-export const revalidate = 10
+// console.log('[WARN]: comment this out before pushing to production')
+// export const revalidate = 10
 
 export async function generateStaticParams({ params }: PageProps) {
   const res = await fetchDatoContent(
