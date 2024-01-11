@@ -1,7 +1,7 @@
 # Redirect with a 301
 [[redirects]]
-from = "/home-page"
-to = "/"
+from = "/en/home-page"
+to = "/en"
 status = 301
 
 [[redirects]]
