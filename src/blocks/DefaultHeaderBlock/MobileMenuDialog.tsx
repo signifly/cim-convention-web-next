@@ -6,11 +6,16 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Link } from '@/navigation'
 import Image from 'next/image'
 import { CtaButton } from '@/components/CtaButton'
-import { DefaultHeaderBlockRecord } from '@/types/generated'
+import {
+  DefaultHeaderBlockRecord,
+  StringMultiLocaleField,
+} from '@/types/generated'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 
 type Props = DefaultHeaderBlockRecord & {
   mobileMenuOpen: boolean
   setMobileMenuOpen: Dispatch<SetStateAction<boolean>>
+  _allSlugLocales: StringMultiLocaleField[]
 }
 
 export const MobileMenuDialog = (props: Props) => {
@@ -21,6 +26,8 @@ export const MobileMenuDialog = (props: Props) => {
     siteLogo,
     cimLogo,
     ctaButton,
+    _allSlugLocales,
+    languageToggleLabel,
   } = props
 
   return (
@@ -52,7 +59,7 @@ export const MobileMenuDialog = (props: Props) => {
           </button>
         </div>
         <div className="mt-6 flow-root">
-          <div className="-my-6 divide-y divide-brand-grey-300">
+          <div className="-my-6 divide-y divide-brand-grey-200">
             <div className="space-y-2 py-6">
               {menu?.menuItems.map((item) => {
                 if (item.subMenuItems.length > 0) {
@@ -120,6 +127,10 @@ export const MobileMenuDialog = (props: Props) => {
                 }
               })}
             </div>
+            <LanguageSwitcher
+              _allSlugLocales={_allSlugLocales}
+              languageToggleLabel={languageToggleLabel}
+            />
             <div className="flex items-center justify-center gap-x-8 py-8">
               <CtaButton {...ctaButton[0]} />
               {cimLogo && (

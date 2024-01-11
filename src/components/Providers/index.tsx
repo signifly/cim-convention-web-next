@@ -5,9 +5,7 @@ type ProviderProps = {
   params: { locale: string }
 }
 
-export async function Providers({ children }: ProviderProps) {
-  //@TODO: fetch i18n messages from Dato instead
-
+export function Providers({ children }: ProviderProps) {
   return (
     <>
       {/* <ThemeProvider> */}
