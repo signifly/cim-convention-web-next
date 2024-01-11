@@ -33,6 +33,12 @@ export const TestimonialsBlock = (props: TestimonialsBlockRecord) => {
     type: 'loop',
     padding: '7.5%',
     gap: '16px',
+    autoplay: true,
+    speed: 2000,
+    interval: 4000,
+    trimSpace: false,
+    focus: 0,
+    omitEnd: true,
   }
 
   return (
