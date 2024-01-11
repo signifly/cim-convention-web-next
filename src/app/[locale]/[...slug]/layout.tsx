@@ -8,8 +8,8 @@ import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { PageProps } from './page'
 
-// console.log('[WARN]: comment this out before pushing to production')
-// export const revalidate = 10
+console.log('[WARN]: comment this out before pushing to production')
+export const revalidate = 10
 
 type LayoutProps = {
   children: React.ReactNode

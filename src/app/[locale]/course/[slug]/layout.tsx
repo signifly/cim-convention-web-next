@@ -8,10 +8,10 @@ import { Locale } from '@/navigation'
 import { getCourseBySlugQuery } from '@/lib/datocms/queries/getCourseBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-// console.log(
-//   '[WARN] - [...slug]/page.tsx: Update revalidate interval before pushing to production',
-// )
-// export const revalidate = 10
+console.log(
+  '[WARN] - [...slug]/page.tsx: Update revalidate interval before pushing to production',
+)
+export const revalidate = 10
 
 type CoursePageProps = {
   children: React.ReactNode
