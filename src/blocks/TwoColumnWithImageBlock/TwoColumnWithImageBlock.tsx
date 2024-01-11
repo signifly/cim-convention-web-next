@@ -204,7 +204,10 @@ export const TwoColumnWithImageBlock = (
     backgroundColor === 'grey' ? 'bg-brand-grey-100' : 'bg-brand-grey-25'
 
   return (
-    <section id={anchorId} className={cn('py-8 lg:py-16', backgroundStyle)}>
+    <section
+      id={anchorId ?? undefined}
+      className={cn('py-8 lg:py-16', backgroundStyle)}
+    >
       <GridContainer>
         <TextContentWrapper
           block={textContent[0]}

@@ -8,7 +8,7 @@ export const CtaBlock = (props: CtaBlockRecord) => {
 
   return (
     <section
-      id={anchorId ?? ''}
+      id={anchorId ?? undefined}
       className="bg-gradient-to-b from-brand-grey-200 via-white/50 to-white/50"
     >
       <GridContainer className="grid-cols-1 place-items-center py-14 text-center lg:grid-cols-1 lg:py-20">

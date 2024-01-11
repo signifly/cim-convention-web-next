@@ -7,7 +7,7 @@ export function ContactBlock(props: ContactBlockRecord) {
   return (
     <section
       className="flex min-h-[50vh] bg-brand-grey-100 pb-12 pt-6 md:pb-[100px] md:pt-12"
-      id={anchorId}
+      id={anchorId ?? undefined}
     >
       <GridContainer className="gap-4 lg:gap-8">
         <div className="col-span-full lg:col-span-3">

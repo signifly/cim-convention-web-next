@@ -54,7 +54,10 @@ export function CardsCarouselBlock(props: CardsCarouselBlockRecord) {
   }
 
   return (
-    <section className={`${sectionBg} py-8 md:py-20`} id={anchorId || ''}>
+    <section
+      className={`${sectionBg} py-8 md:py-20`}
+      id={anchorId || undefined}
+    >
       <h2 className="mb-8 text-center text-20/[140%] font-semibold md:mb-16 md:text-32/[125%]">
         {title}
       </h2>

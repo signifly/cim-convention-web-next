@@ -25,7 +25,7 @@ export function HeroBlock(props: HeroBlockRecord) {
 
   return (
     <section
-      id={anchorId}
+      id={anchorId ?? undefined}
       className="relative overflow-y-hidden bg-brand-grey-100"
       aria-label="hero section"
     >

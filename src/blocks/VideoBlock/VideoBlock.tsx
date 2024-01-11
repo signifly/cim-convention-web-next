@@ -13,7 +13,10 @@ export function VideoBlock(props: VideoBlockRecord) {
   if (!videoUrl) return null
 
   return (
-    <section className="bg-brand-gradient-light py-8 md:py-20" id={anchorId}>
+    <section
+      className="bg-brand-gradient-light py-8 md:py-20"
+      id={anchorId ?? undefined}
+    >
       <GridContainer className="gap-8">
         {title && (
           <div className="col-span-full flex justify-center">

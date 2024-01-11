@@ -39,7 +39,10 @@ export function CardsContainerBlock(props: CardsContainerBlockRecord) {
   let textAligned = `text-${textAlignment}`
 
   return (
-    <section className={`${sectionBg} py-8 md:py-20`} id={anchorId}>
+    <section
+      className={`${sectionBg} py-8 md:py-20`}
+      id={anchorId ?? undefined}
+    >
       <GridContainer>
         {title && (
           <h2

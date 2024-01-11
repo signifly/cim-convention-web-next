@@ -13,7 +13,7 @@ export const DocumentLinksBlock = (props: DocumentLinksBlockRecord) => {
     'flex items-center justify-start text-14/[140%] font-medium text-brand-grey-700 hover:opacity-50 md:text-18/[140%]'
   return (
     <section
-      id={anchorId || ''}
+      id={anchorId || undefined}
       className="structured-text bg-brand-gradient-light"
     >
       <GridContainer className="py-8 lg:py-16">

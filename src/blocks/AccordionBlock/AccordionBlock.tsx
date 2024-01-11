@@ -15,7 +15,7 @@ export const AccordionBlock = (props: AccordionBlockRecord) => {
   return (
     <section
       className="bg-brand-grey-25 pt-8 last:pb-8 lg:pt-16 lg:last:pb-16"
-      id={anchorId}
+      id={anchorId ?? undefined}
     >
       <GridContainer>
         {title && (

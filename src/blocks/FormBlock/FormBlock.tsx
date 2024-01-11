@@ -180,7 +180,7 @@ export function FormBlock(props: FormBlockRecord) {
   return (
     <section
       className="flex flex-col gap-8 bg-brand-gradient-form py-10 md:gap-16 md:py-20"
-      id={anchorId}
+      id={anchorId ?? undefined}
     >
       <div className="container flex max-w-[100%] flex-col items-center justify-center gap-4 text-center">
         <h2 className="text-20/[140%] font-semibold md:text-32/[125%]">

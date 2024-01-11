@@ -179,7 +179,7 @@ export const ScheduleBlock = (props: ScheduleBlockRecord) => {
   const { anchorId, displayAnchorLinks, days, linkSupportLabel } = props
 
   return (
-    <section id={anchorId} className="bg-brand-grey-25">
+    <section id={anchorId ?? undefined} className="bg-brand-grey-25">
       {displayAnchorLinks && (
         <GridContainer className="flex overflow-scroll py-4 lg:gap-x-4">
           {days.map((day) => (

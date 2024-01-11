@@ -9,7 +9,7 @@ export const StatisticsBlock = (props: StatisticsBlockRecord) => {
 
   return (
     <section
-      id={anchorId || ''}
+      id={anchorId || undefined}
       className={cn(
         'bg-brand-grey-800 py-8 text-white lg:py-16',
         styleOptions === 'light' && 'bg-brand-grey-25 text-brand-grey-800',
