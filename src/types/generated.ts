@@ -4949,7 +4949,6 @@ export type SponsorListBlockRowRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
   logoSize: Scalars['String']['output']
-  logos: Array<AltFileField>
   sponsors: Array<SponsorRecord>
   title: Scalars['String']['output']
 }

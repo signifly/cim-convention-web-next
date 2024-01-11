@@ -5,20 +5,6 @@ const nextConfig = {
   images: {
     domains: ['www.datocms-assets.com'],
   },
-  redirects: async () => {
-    return [
-      {
-        source: '/home-page',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/fr/home-page',
-        destination: '/fr',
-        permanent: true,
-      },
-    ]
-  },
 }
 
 module.exports = withNextIntl(nextConfig)
