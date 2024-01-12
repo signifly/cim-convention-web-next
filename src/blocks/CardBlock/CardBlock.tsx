@@ -50,9 +50,10 @@ export function CardBlock(props: CardBlockRecordExt) {
       {(title || subtitle || paragraph) && (
         <div className="p-3 md:p-[24px]">
           {title && (
-            <p className="mb-1 text-16/[140%] font-semibold md:text-20/[140%]">
-              {title}
-            </p>
+            <div
+              className="mb-1 text-16/[140%] font-semibold md:text-20/[140%]"
+              dangerouslySetInnerHTML={{ __html: title }}
+            ></div>
           )}
           {subtitle && (
             <p className="text-12/[130%] font-normal text-brand-grey-600 md:text-16/[140%]">

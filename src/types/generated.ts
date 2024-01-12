@@ -624,6 +624,7 @@ export type ContactCardBlockRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   description?: Maybe<Scalars['String']['output']>
   email?: Maybe<Scalars['String']['output']>
+  ext?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   name?: Maybe<Scalars['String']['output']>
   phone?: Maybe<Scalars['String']['output']>
