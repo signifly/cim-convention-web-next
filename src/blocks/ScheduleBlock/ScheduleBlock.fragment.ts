@@ -14,8 +14,6 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
       date
       timeSlots {
         id
-        startTime
-        endTime
         time
 				tags {
 					id
