@@ -75,7 +75,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
 
   return (
     <footer className="flex-none bg-gray-800 text-sm text-white">
-      <div className="container mx-auto grid max-w-[1264px] grid-cols-4 items-center justify-between gap-x-4 gap-y-4 py-4 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[20px] lg:py-6">
+      <div className="container mx-auto grid max-w-[1264px] grid-cols-4 items-center justify-between gap-x-4 gap-y-4 py-8 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[20px] lg:py-10">
         {/* Contact */}
         <div className="col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 lg:col-span-3">
           <h6 className="uppercase">{contactTitle}</h6>
