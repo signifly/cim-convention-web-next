@@ -56,9 +56,7 @@ export default function LocaleLayout({
     >
       <body className="flex h-full bg-zinc-50">
         <Providers params={params}>
-          <div className="page-layout relative flex h-fit w-full flex-col">
-            {children}
-          </div>
+          <div className="relative flex h-fit w-full flex-col">{children}</div>
         </Providers>
       </body>
       <MarkerIoScript />

@@ -476,6 +476,11 @@ export type CardBlockRecordParagraphArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
+/** Block of type Card Block (card_block) */
+export type CardBlockRecordTitleArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
 /** Block of type Cards Carousel Block (cards_carousel_block) */
 export type CardsCarouselBlockRecord = RecordInterface & {
   __typename?: 'CardsCarouselBlockRecord'

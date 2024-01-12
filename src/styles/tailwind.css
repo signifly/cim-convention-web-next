@@ -8,10 +8,6 @@ html {
   @apply scroll-smooth;
 }
 
-.page-layout {
-  @apply pt-20 lg:pt-[112px];
-}
-
 *:not(.ring-0):focus,
 button:not(.ring-0):focus {
   @apply outline-none ring-2 ring-brand-blue ring-opacity-50 ring-offset-2;
