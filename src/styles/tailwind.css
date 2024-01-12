@@ -4,6 +4,10 @@
   @apply scroll-mt-20 lg:scroll-mt-[112px];
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 .page-layout {
   @apply pt-20 lg:pt-[112px];
 }
