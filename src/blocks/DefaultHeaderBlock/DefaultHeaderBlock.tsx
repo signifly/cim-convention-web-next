@@ -62,7 +62,7 @@ export function DefaultHeaderBlock(
   )
 
   return (
-    <header className="fixed top-0 z-50 w-[100%] border-b border-brand-grey-300 bg-white">
+    <header className="sticky top-0 z-50 w-[100%] border-b border-brand-grey-300 bg-white">
       <nav
         className="container mx-auto box-border flex max-w-[1264px] items-center justify-between py-4 lg:py-6"
         aria-label="Global"

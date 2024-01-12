@@ -4,17 +4,17 @@
   @apply scroll-mt-20 lg:scroll-mt-[112px];
 }
 
-.page-layout {
-  @apply pt-20 lg:pt-[112px];
-}
+/* .page-layout { */
+/*   @apply pt-20 lg:pt-[112px]; */
+/* } */
 
-.page-layout:has(.announcement-banner) {
-  @apply pt-[120px] lg:pt-[152px];
-}
-
-header:has(~ .announcement-banner) {
-  top: 40px;
-}
+/* .page-layout:has(.announcement-banner) { */
+/*   @apply pt-[120px] lg:pt-[152px]; */
+/* } */
+/**/
+/* header:has(~ .announcement-banner) { */
+/*   top: 40px; */
+/* } */
 
 *:not(.ring-0):focus,
 button:not(.ring-0):focus {
