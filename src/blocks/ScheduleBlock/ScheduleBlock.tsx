@@ -1,15 +1,15 @@
 import React from 'react'
 import { GridContainer } from '@/components/GridContainer'
-import {
-  ScheduleBlockRecord,
-  ScheduleBlockDayRecord,
-  ScheduleBlockDayTimeSlotRecord,
-} from '@/types/generated'
 import { useFormatter } from 'next-intl'
 import { Link } from '@/navigation'
 import { cn } from '@/utils/clsxMerge'
 import ArrowSquareOutIcon from '@/components/IconSelector/Icons/ArrowSquareOutIcon'
 import { ProgramTag } from '@/components/ProgramTag'
+import {
+  ScheduleBlockRecord,
+  ScheduleBlockDayRecord,
+  ScheduleBlockDayTimeSlotRecord,
+} from '@/types/generated'
 
 const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   const format = useFormatter()
