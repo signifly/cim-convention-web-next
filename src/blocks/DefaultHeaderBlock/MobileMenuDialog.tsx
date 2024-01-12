@@ -133,7 +133,9 @@ export const MobileMenuDialog = (props: Props) => {
             {/*   languageToggleLabel={languageToggleLabel} */}
             {/* /> */}
             <div className="flex items-center justify-center gap-x-8 py-8">
-              <CtaButton {...ctaButton[0]} />
+              <div className="grow [&_a]:w-full [&_a]:text-center">
+                <CtaButton {...ctaButton[0]} />
+              </div>
               {cimLogo && (
                 <>
                   <div
