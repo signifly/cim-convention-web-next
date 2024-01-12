@@ -45,6 +45,7 @@ export function DefaultHeaderBlock(
     ctaButton,
     _allSlugLocales,
     languageToggleLabel,
+    sponsorLink,
   } = props
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -85,9 +86,13 @@ export function DefaultHeaderBlock(
             <CtaButton {...ctaButton[0]} />
           </div>
           <div className="h-full min-h-[56px] border-r border-brand-grey-300" />
-          <div className="relative h-full min-h-[56px] w-[40px]">
+          <a
+            className="relative h-full min-h-[56px] w-[40px]"
+            href={sponsorLink}
+            target="_blank"
+          >
             <Image src={cimLogo.url} alt={cimLogo.alt} fill />
-          </div>
+          </a>
         </div>
       </nav>
 

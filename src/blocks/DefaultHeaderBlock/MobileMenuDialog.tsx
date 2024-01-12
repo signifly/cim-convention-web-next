@@ -28,6 +28,7 @@ export const MobileMenuDialog = (props: Props) => {
     ctaButton,
     _allSlugLocales,
     languageToggleLabel,
+    sponsorLink,
   } = props
 
   return (
@@ -142,9 +143,13 @@ export const MobileMenuDialog = (props: Props) => {
                     aria-hidden
                     className="min-h-[56px] border-r border-brand-grey-300"
                   />
-                  <div className="relative min-h-[56px] w-[40px]">
+                  <a
+                    className="relative min-h-[56px] w-[40px]"
+                    href={sponsorLink}
+                    target="_blank"
+                  >
                     <Image src={cimLogo.url} alt={cimLogo.alt} fill />
-                  </div>
+                  </a>
                 </>
               )}
             </div>

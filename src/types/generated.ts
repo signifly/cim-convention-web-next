@@ -850,6 +850,7 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
   languageToggleLabel: Scalars['String']['output']
   menu?: Maybe<MenuRecord>
   siteLogo: AltFileField
+  sponsorLink: Scalars['String']['output']
 }
 
 /** Block of type Default Header Block (default_header_block) */
