@@ -157,7 +157,7 @@ const TimeSlot = ({
           }`}
         </time>
       </span>
-      <h3 className="my-2 flex flex-wrap items-center gap-x-2 whitespace-nowrap text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
+      <h3 className="my-2 flex flex-wrap items-center gap-x-2 text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
         {timeSlot.title}
         {timeSlot.tags.length > 0 &&
           timeSlot.tags.map((each) => <ProgramTag {...each} key={each.id} />)}
