@@ -6,6 +6,7 @@
     "generate-ts-types": "graphql-codegen --config graphql.config.js",
     "dev": "concurrently \"next dev\" \"graphql-codegen --watch --config graphql.config.js\"",
     "build": "yarn generate-ts-types && next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint --no-cache",
     "serve": "next build && next start --port 8000",

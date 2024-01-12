@@ -1,0 +1,153 @@
+const {
+  DATO_API_TOKEN,
+  NEXT_PUBLIC_DATO_DRAFT_ENABLED,
+  NEXT_PUBLIC_DATO_ENV,
+  SITE_URL,
+} = process.env
+
+const locales = ['en', 'fr'] // @important: make sure this matches the locales in ./src/navigation.ts
+
+const sitemapQuery = String.raw`
+	query SitemapQuery {
+		allPages(first: 100) {
+			_allSlugLocales {
+				locale
+				value
+			}
+		}
+		allShortCourses(first: 100) {
+			_allSlugLocales {
+				locale
+				value
+			}
+		}
+	}
+`
+
+let dataCache = null
+
+// we cannot import utils from ./src here since this script runs in post build
+const getPagesSlugLocales = async () => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${DATO_API_TOKEN}`,
+    ...(NEXT_PUBLIC_DATO_DRAFT_ENABLED === 'true' && {
+      'X-Include-Drafts': 'true',
+    }),
+
+    ...(NEXT_PUBLIC_DATO_ENV !== 'production' && {
+      'X-Environment': NEXT_PUBLIC_DATO_ENV,
+    }),
+  }
+
+  const body = JSON.stringify({
+    query: sitemapQuery,
+  })
+
+  const options = {
+    method: 'POST',
+    headers,
+    body,
+  }
+
+  try {
+    const response = await fetch(
+      NEXT_PUBLIC_DATO_DRAFT_ENABLED === 'true'
+        ? 'https://graphql.datocms.com/preview'
+        : 'https://graphql.datocms.com/',
+      options,
+    ).then((res) => res.json())
+    console.log(response.errors)
+
+    if (response.errors) {
+      // eslint-disable-next-line no-console
+      console.log(
+        `[ ERROR ]: ${query.split(' ').find((s) => s.includes('Query'))}`,
+        JSON.stringify(response.errors, null, 2),
+      )
+      return {
+        data: null,
+        error: new Error(
+          '[ ERROR ]: next-sitemap.config.js - error fetching sitemap content',
+        ),
+      }
+    }
+
+    dataCache = response.data // cache the first response to avoid multiple requests
+    return response.data
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log('[ ERROR ]', JSON.stringify(error, null, 2))
+    return [] // return empty array to prevent build error and fail silently
+  }
+}
+
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+  siteUrl: SITE_URL || 'https://convention.cim.org',
+  generateRobotsTxt: true, // (optional)
+  transform: async (config, path) => {
+    const commonProps = {
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.lastmod ? new Date().toISOString() : undefined,
+    }
+
+    const data = dataCache || (await getPagesSlugLocales()) // attempt to get data from cache or fetch it
+    const locale = path.split('/')[1]
+
+    const pathWithoutLocale = path.replace(/\/(en|fr)/, '')
+
+    const slug =
+      pathWithoutLocale.split('/')[pathWithoutLocale.split('/').length - 1]
+
+    // home page
+    if (slug === '') {
+      return {
+        ...commonProps,
+        loc: `/`,
+        alternateRefs: [
+          {
+            href: `${SITE_URL}/en`,
+            hreflang: 'en',
+          },
+          {
+            href: `${SITE_URL}/fr`,
+            hreflang: 'fr',
+          },
+        ],
+      }
+    }
+
+    const isCourse =
+      pathWithoutLocale.split('/').filter((s) => s !== '')[0] === 'course'
+
+    const _allSlugLocales = isCourse
+      ? data.allShortCourses.find((c) =>
+          c._allSlugLocales.find((s) => s.value === slug),
+        )?._allSlugLocales
+      : data.allPages.find((c) =>
+          c._allSlugLocales.find((s) => s.value === slug),
+        )?._allSlugLocales
+
+    if (!_allSlugLocales) {
+      return {
+        ...commonProps,
+        loc: path,
+      }
+    }
+
+    console.log({ locale, pathWithoutLocale, isCourse, slug, _allSlugLocales })
+
+    return {
+      ...commonProps,
+      loc: slug,
+      alternateRefs: _allSlugLocales.map((s) => ({
+        href: `${SITE_URL}/${s.locale}/${isCourse ? 'course/' : ''}`,
+        hreflang: s.locale,
+      })),
+    }
+  },
+  // ...other options
+}
