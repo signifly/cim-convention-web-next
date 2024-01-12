@@ -30,7 +30,7 @@ const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   return (
     <a
       href={`#${day.id}`}
-      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium lg:box-content lg:px-6 lg:py-3"
+      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium transition-colors hover:bg-brand-grey-200 lg:box-content lg:px-6 lg:py-3"
     >
       <time dateTime={day.date} className="text-12/[100%] lg:text-16/[125%]">
         {weekDayString}
