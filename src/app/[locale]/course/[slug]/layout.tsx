@@ -8,9 +8,6 @@ import { Locale } from '@/navigation'
 import { getCourseBySlugQuery } from '@/lib/datocms/queries/getCourseBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-console.log(
-  '[WARN] - [...slug]/page.tsx: Update revalidate interval before pushing to production',
-)
 export const revalidate = 10
 
 type CoursePageProps = {
@@ -60,19 +57,20 @@ export default async function HomePageLayout({
   return (
     <>
       {/* Header */}
-      {courseData?.shortCourse?.header?.blocks.map(
-        (block: any) =>
-          block.id && (
-            <ComponentParser
-              key={block.id}
-              data={{
-                ...block,
-                _allSlugLocales: courseData.shortCourse._allSlugLocales,
-              }}
-            />
-          ),
-      )}
-
+      <div className="sticky top-0 z-50">
+        {courseData?.shortCourse?.header?.blocks.map(
+          (block: any) =>
+            block.id && (
+              <ComponentParser
+                key={block.id}
+                data={{
+                  ...block,
+                  _allSlugLocales: courseData.shortCourse._allSlugLocales,
+                }}
+              />
+            ),
+        )}
+      </div>
       {children}
 
       {/* Footer */}

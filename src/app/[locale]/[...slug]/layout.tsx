@@ -8,7 +8,6 @@ import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { PageProps } from './page'
 
-console.log('[WARN]: comment this out before pushing to production')
 export const revalidate = 10
 
 type LayoutProps = {
@@ -55,18 +54,20 @@ export default async function PageLayout({
 
   return (
     <>
-      {pageData?.page?.header?.blocks.map(
-        (block: any) =>
-          block.id && (
-            <ComponentParser
-              key={block.id}
-              data={{
-                ...block,
-                _allSlugLocales: pageData.page._allSlugLocales,
-              }}
-            />
-          ),
-      )}
+      <div className="sticky top-0 z-50">
+        {pageData?.page?.header?.blocks.map(
+          (block: any) =>
+            block.id && (
+              <ComponentParser
+                key={block.id}
+                data={{
+                  ...block,
+                  _allSlugLocales: pageData.page._allSlugLocales,
+                }}
+              />
+            ),
+        )}
+      </div>
       {children}
       {pageData?.page?.footer?.blocks.map(
         (block: any) =>
