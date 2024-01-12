@@ -6,7 +6,10 @@ export const OneColumnTextBlock = (props: OneColumnTextBlockRecord) => {
   const { text, anchorId } = props
 
   return (
-    <div className="bg-brand-grey-25 py-6" id={anchorId ?? undefined}>
+    <div
+      className="bg-brand-grey-25 py-6 last:lg:py-20"
+      id={anchorId ?? undefined}
+    >
       <GridContainer>
         <div
           dangerouslySetInnerHTML={{ __html: text }}
