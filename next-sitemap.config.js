@@ -87,6 +87,8 @@ module.exports = {
   siteUrl: SITE_URL || 'https://convention.cim.org',
   generateRobotsTxt: true, // (optional)
   transform: async (config, path) => {
+    console.info(`[ INFO ]: generating sitemap for path: ${path}`)
+
     if (ENABLE_SITEMAP !== 'true') {
       return null
     }
@@ -99,7 +101,6 @@ module.exports = {
 
     // if i18n is disabled, return the path as is
     if (ENABLE_I18N !== 'true') {
-      console.log('no i18n')
       return {
         ...commonProps,
         loc: path,
@@ -141,8 +142,6 @@ module.exports = {
     ]?.find((c) =>
       c._allSlugLocales.find((s) => s.value === slug),
     )?._allSlugLocales
-
-    console.log({ _allSlugLocales, slug, firstSegment, path })
 
     if (!_allSlugLocales) {
       return {
