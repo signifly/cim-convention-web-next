@@ -36,13 +36,15 @@ export const StatisticsBlock = (props: StatisticsBlockRecord) => {
                 {stat.value}
               </div>
               <div className="flex items-center gap-x-2 text-14/[150%] lg:text-20/[155%]">
-                <IconSelector
-                  selectorId={stat.iconSelection}
-                  className={cn(
-                    'aspect-square h-4 w-4 lg:h-6 lg:w-6',
-                    styleOptions === 'light' && 'text-brand-grey-800',
-                  )}
-                />
+                {stat.iconSelection && (
+                  <IconSelector
+                    selectorId={stat.iconSelection}
+                    className={cn(
+                      'aspect-square h-4 w-4 lg:h-6 lg:w-6',
+                      styleOptions === 'light' && 'text-brand-grey-800',
+                    )}
+                  />
+                )}
                 {stat.label}
               </div>
 

@@ -8,7 +8,7 @@ type CustomLinkProps = {
 
 // @todo: Check why "text-14/[125%]" from baseStyle is not working with the cn function, adding it manually for now.
 const baseStyle =
-  'py-[10px] px-6 rounded font-[500] shadow-xs text-14/[125%] lg:text-16 inline-block whitespace-nowrap'
+  'py-[10px] px-6 rounded font-[500] shadow-xs text-14/[125%] lg:text-16 inline-block whitespace-nowrap hover:ring hover:ring-brand-blue/30'
 const primaryStyle =
   'text-white bg-brand-gradient disabled:bg-brand-gradient-light focus:shadow-skyblue transition-all focus:outline-none'
 const secondaryStyle =

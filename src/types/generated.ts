@@ -850,6 +850,7 @@ export type DefaultHeaderBlockRecord = RecordInterface & {
   languageToggleLabel: Scalars['String']['output']
   menu?: Maybe<MenuRecord>
   siteLogo: AltFileField
+  sponsorLink: Scalars['String']['output']
 }
 
 /** Block of type Default Header Block (default_header_block) */
@@ -5075,7 +5076,7 @@ export type StatisticsBlockStatRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
-  iconSelection: Scalars['String']['output']
+  iconSelection?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   label: Scalars['String']['output']
   value: Scalars['String']['output']
@@ -5204,7 +5205,7 @@ export type TestimonialsBlockTestimonialRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   author: Scalars['String']['output']
-  company: Scalars['String']['output']
+  company?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   quote?: Maybe<Scalars['String']['output']>
 }

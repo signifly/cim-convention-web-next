@@ -30,7 +30,7 @@ const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   return (
     <a
       href={`#${day.id}`}
-      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium lg:box-content lg:px-6 lg:py-3"
+      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium transition-colors hover:bg-brand-grey-200 lg:box-content lg:px-6 lg:py-3"
     >
       <time dateTime={day.date} className="text-12/[100%] lg:text-16/[125%]">
         {weekDayString}
@@ -157,7 +157,7 @@ const TimeSlot = ({
           }`}
         </time>
       </span>
-      <h3 className="my-2 flex flex-wrap items-center gap-x-2 whitespace-nowrap text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
+      <h3 className="my-2 flex flex-wrap items-center gap-x-2 text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
         {timeSlot.title}
         {timeSlot.tags.length > 0 &&
           timeSlot.tags.map((each) => <ProgramTag {...each} key={each.id} />)}
@@ -166,9 +166,9 @@ const TimeSlot = ({
         {timeSlot.description}
       </p>
       {isLink && (
-        <div className="flex items-center gap-x-[6px] text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-2 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
+        <div className="flex items-center gap-x-[6px] whitespace-nowrap text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-2 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
           {linkSupportLabel}
-          <ArrowSquareOutIcon className="text-brand-green transition-colors group-hover:text-brand-green lg:text-brand-grey-700" />
+          <ArrowSquareOutIcon className="shrink-0 text-brand-green transition-colors group-hover:text-brand-green lg:text-brand-grey-700" />
         </div>
       )}
     </Comp>

@@ -21,6 +21,7 @@ export const DEFAULT_HEADER_BLOCK_FRAGMENT = gql`
 				ctaButton {
 					...CtaButtonFragment
 				}
+				sponsorLink
 				cimLogo {
 					url
 					alt

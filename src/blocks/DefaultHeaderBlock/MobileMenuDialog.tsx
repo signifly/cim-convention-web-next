@@ -28,6 +28,7 @@ export const MobileMenuDialog = (props: Props) => {
     ctaButton,
     _allSlugLocales,
     languageToggleLabel,
+    sponsorLink,
   } = props
 
   return (
@@ -133,16 +134,22 @@ export const MobileMenuDialog = (props: Props) => {
             {/*   languageToggleLabel={languageToggleLabel} */}
             {/* /> */}
             <div className="flex items-center justify-center gap-x-8 py-8">
-              <CtaButton {...ctaButton[0]} />
+              <div className="grow [&_a]:w-full [&_a]:text-center">
+                <CtaButton {...ctaButton[0]} />
+              </div>
               {cimLogo && (
                 <>
                   <div
                     aria-hidden
                     className="min-h-[56px] border-r border-brand-grey-300"
                   />
-                  <div className="relative min-h-[56px] w-[40px]">
+                  <a
+                    className="relative min-h-[56px] w-[40px]"
+                    href={sponsorLink}
+                    target="_blank"
+                  >
                     <Image src={cimLogo.url} alt={cimLogo.alt} fill />
-                  </div>
+                  </a>
                 </>
               )}
             </div>
