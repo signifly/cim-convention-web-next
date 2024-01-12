@@ -4534,6 +4534,7 @@ export type ScheduleBlockDayTimeSlotRecord = RecordInterface & {
   linkTo?: Maybe<ScheduleBlockDayTimeSlotModelLinkToField>
   startTime: Scalars['DateTime']['output']
   tags: Array<ProgramTagRecord>
+  time?: Maybe<Scalars['String']['output']>
   title: Scalars['String']['output']
   useExternalLink?: Maybe<Scalars['BooleanType']['output']>
 }
