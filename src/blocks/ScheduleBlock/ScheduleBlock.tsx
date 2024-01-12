@@ -166,9 +166,9 @@ const TimeSlot = ({
         {timeSlot.description}
       </p>
       {isLink && (
-        <div className="flex items-center gap-x-[6px] text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-2 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
+        <div className="flex items-center gap-x-[6px] whitespace-nowrap text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-2 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
           {linkSupportLabel}
-          <ArrowSquareOutIcon className="text-brand-green transition-colors group-hover:text-brand-green lg:text-brand-grey-700" />
+          <ArrowSquareOutIcon className="shrink-0 text-brand-green transition-colors group-hover:text-brand-green lg:text-brand-grey-700" />
         </div>
       )}
     </Comp>
