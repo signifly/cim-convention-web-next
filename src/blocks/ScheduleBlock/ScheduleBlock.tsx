@@ -93,10 +93,6 @@ const TimeSlot = ({
 }) => {
   const format = useFormatter()
   const startTime = new Date(timeSlot.startTime)
-  const IANATimezone = timeSlot.startTime.toLocaleString('en', {
-    timeZoneName: 'long',
-  })
-  console.log(IANATimezone)
 
   const endTime = new Date(timeSlot.endTime)
   const startHour = format.dateTime(startTime, {
