@@ -7,6 +7,7 @@ export const CONTACT_CARD_BLOCK_FRAGMENT = gql`
     name
     phone
     email
+    ext
     description(markdown: true)
   }
 `

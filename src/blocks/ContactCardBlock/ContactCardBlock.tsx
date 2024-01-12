@@ -1,7 +1,7 @@
 import { ContactCardBlockRecord } from '@/types/generated'
 
 export function ContactCardBlock(props: ContactCardBlockRecord) {
-  let { name, phone, email, description } = props
+  let { name, phone, ext, email, description } = props
   return (
     <div className=" flex flex-col gap-6 rounded bg-white p-6">
       <div className="flex flex-col items-start justify-start gap-2">
@@ -18,8 +18,11 @@ export function ContactCardBlock(props: ContactCardBlockRecord) {
         >
           {email}
         </a>
-        <p className="text-14/[125%] font-medium text-brand-green md:text-16/[125%]">
-          {phone}
+        <p className="cursor-default text-14/[125%] font-medium text-brand-green md:text-16/[125%]">
+          <a className="cursor-pointer underline" href={`tel:${phone}`}>
+            {phone}
+          </a>
+          {ext && <span>&nbsp;ext. {ext}</span>}
         </p>
       </div>
     </div>
