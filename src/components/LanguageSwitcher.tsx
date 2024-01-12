@@ -29,7 +29,10 @@ export function LanguageSwitcher({
   const dynamicPath = isDynamicPath ? `${firstSegment}/` : ''
 
   return (
-    <div aria-label={languageToggleLabel}>
+    <div
+      aria-label={languageToggleLabel}
+      className="text-14/[140%] tracking-[0.28px]"
+    >
       <div className="hidden lg:block">
         <Popover>
           <PopoverTrigger className="group flex items-center gap-x-1 uppercase">
