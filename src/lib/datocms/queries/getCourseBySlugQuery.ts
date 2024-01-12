@@ -16,7 +16,7 @@ type Params = {
 }
 
 export const getCourseBySlugQuery = ({ locale, slug }: Params): string => {
-  const l = locales.includes(locale) ? locale : defaultLocale
+  const l = locales.includes(locale as any) ? locale : defaultLocale
 
   return gql`
 			${DEFAULT_FOOTER_BLOCK_FRAGMENT}

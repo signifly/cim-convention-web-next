@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cn } from '@/utils/clsxMerge'
 import { MarkerIoScript } from '@/components/MarkerIoScript'
-import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
+import { fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
@@ -14,7 +14,9 @@ import { Providers } from '@/components/Providers'
 import { Locale, locales } from '@/navigation'
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+  return process.env.ENABLE_I18N === 'true'
+    ? locales.map((locale) => ({ locale }))
+    : [{ locale: 'en' }]
 }
 
 export const generateMetadata = async ({
