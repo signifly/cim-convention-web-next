@@ -62,9 +62,11 @@ export const TestimonialsBlock = (props: TestimonialsBlockRecord) => {
                 <p className="text-16/[140%] font-semibold tracking-[-0.08px] lg:text-20">
                   {testimonial.author}
                 </p>
-                <p className="text-14/[150%] text-brand-grey-600 lg:text-16">
-                  {testimonial.company}
-                </p>
+                {testimonial.company && (
+                  <p className="text-14/[150%] text-brand-grey-600 lg:text-16">
+                    {testimonial.company}
+                  </p>
+                )}
               </cite>
             </blockquote>
           </SplideSlide>
