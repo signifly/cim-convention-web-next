@@ -624,6 +624,7 @@ export type ContactCardBlockRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']['output']
   description?: Maybe<Scalars['String']['output']>
   email?: Maybe<Scalars['String']['output']>
+  ext?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   name?: Maybe<Scalars['String']['output']>
   phone?: Maybe<Scalars['String']['output']>
@@ -4528,13 +4529,11 @@ export type ScheduleBlockDayTimeSlotRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   description?: Maybe<Scalars['String']['output']>
-  endTime: Scalars['DateTime']['output']
   externalLink?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   linkTo?: Maybe<ScheduleBlockDayTimeSlotModelLinkToField>
-  startTime: Scalars['DateTime']['output']
   tags: Array<ProgramTagRecord>
-  time?: Maybe<Scalars['String']['output']>
+  time: Scalars['String']['output']
   title: Scalars['String']['output']
   useExternalLink?: Maybe<Scalars['BooleanType']['output']>
 }
