@@ -170,7 +170,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           </div>
         </div>
         {/* Copyright */}
-        <div className="col-span-full mt-[40px] flex h-[100%] flex-col items-start justify-start border-t-[1px] border-gray-700 pb-[40px] pt-[24px]">
+        <div className="col-span-full mt-6 flex flex-col items-start justify-start border-t-[1px] border-gray-700 pt-[24px]">
           <p className="text-gray-400">{copyright}</p>
         </div>
       </div>
