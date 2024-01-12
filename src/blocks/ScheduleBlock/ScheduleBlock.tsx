@@ -1,15 +1,15 @@
 import React from 'react'
 import { GridContainer } from '@/components/GridContainer'
-import {
-  ScheduleBlockRecord,
-  ScheduleBlockDayRecord,
-  ScheduleBlockDayTimeSlotRecord,
-} from '@/types/generated'
 import { useFormatter } from 'next-intl'
 import { Link } from '@/navigation'
 import { cn } from '@/utils/clsxMerge'
 import ArrowSquareOutIcon from '@/components/IconSelector/Icons/ArrowSquareOutIcon'
 import { ProgramTag } from '@/components/ProgramTag'
+import {
+  ScheduleBlockRecord,
+  ScheduleBlockDayRecord,
+  ScheduleBlockDayTimeSlotRecord,
+} from '@/types/generated'
 
 const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   const format = useFormatter()
@@ -89,30 +89,6 @@ const TimeSlot = ({
   timeSlot: ScheduleBlockDayTimeSlotRecord
   linkSupportLabel: string
 }) => {
-  const format = useFormatter()
-  const startTime = new Date(timeSlot.startTime)
-  const endTime = new Date(timeSlot.endTime)
-  const startHour = format.dateTime(startTime, {
-    hour: '2-digit',
-    timeZone: 'UTC',
-    hour12: false,
-  })
-  const endHour = format.dateTime(endTime, {
-    hour: '2-digit',
-    timeZone: 'UTC',
-    hour12: false,
-  })
-  const startMinutes = format.dateTime(startTime, {
-    minute: '2-digit',
-    timeZone: 'UTC',
-    hour12: false,
-  })
-  const endMinutes = format.dateTime(endTime, {
-    minute: '2-digit',
-    timeZone: 'UTC',
-    hour12: false,
-  })
-
   const isLink = Boolean(timeSlot.linkTo) || timeSlot.externalLink
   const Comp = isLink ? (timeSlot.useExternalLink ? 'a' : Link) : 'li'
   let url: string | undefined = undefined
@@ -145,17 +121,7 @@ const TimeSlot = ({
         aria-label="time slot"
         className="mb-3 text-16/[150%] text-brand-grey-600 lg:col-span-2 lg:mb-0 lg:text-18/[155%]"
       >
-        <time dateTime={timeSlot.startTime} aria-label="from">
-          {`${startHour}h${
-            startMinutes.length === 1 ? '0'.concat(startMinutes) : startMinutes
-          }`}
-        </time>
-        {' – '}
-        <time dateTime={timeSlot.endTime} aria-label="to">
-          {`${endHour}h${
-            endMinutes.length === 1 ? '0'.concat(endMinutes) : endMinutes
-          }`}
-        </time>
+        <p>{timeSlot.time}</p>
       </span>
       <h3 className="my-2 flex flex-wrap items-center gap-x-2 text-16/[150%] font-medium lg:col-span-7 lg:my-0 lg:gap-x-4 lg:text-18/[155%]">
         {timeSlot.title}

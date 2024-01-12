@@ -14,8 +14,7 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
       date
       timeSlots {
         id
-        startTime
-        endTime
+        time
 				tags {
 					id
 					title
@@ -34,7 +33,7 @@ export const SCHEDULE_BlOCK_FRAGMENT = gql`
 						${PageFields}
           }
         }
-				useExternalLink 
+				useExternalLink
 				externalLink
       }
     }
