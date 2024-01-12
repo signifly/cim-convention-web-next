@@ -6,9 +6,6 @@ import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-console.log(
-  '[WARN] - (home-page)/page.tsx: Update revalidate interval before pushing to production',
-)
 export const revalidate = 10
 
 type HomePageProps = {
@@ -44,18 +41,20 @@ export default async function HomePageLayout({
 
   return (
     <>
-      {pageData?.homePage?.header?.blocks.map(
-        (block: any) =>
-          block.id && (
-            <ComponentParser
-              key={block.id}
-              data={{
-                ...block,
-                _allSlugLocales: pageData.homePage._allSlugLocales,
-              }}
-            />
-          ),
-      )}
+      <div className="sticky top-0 z-50">
+        {pageData?.homePage?.header?.blocks.map(
+          (block: any) =>
+            block.id && (
+              <ComponentParser
+                key={block.id}
+                data={{
+                  ...block,
+                  _allSlugLocales: pageData.homePage._allSlugLocales,
+                }}
+              />
+            ),
+        )}
+      </div>
       {children}
       {pageData?.homePage?.footer?.blocks.map(
         (block: any) =>
