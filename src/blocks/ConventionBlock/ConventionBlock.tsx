@@ -6,7 +6,7 @@ export function ConventionBlock(props: ConventionBlockRecord) {
   let { name, logo, url } = props
   return (
     <div className="w-[145px] md:w-[180px]">
-      <a href={url || ''}>
+      <a href={url || ''} target="_blank">
         <div className="h-[80px] w-[100%] md:h-[100px]">
           {logo &&
             (logo?.responsiveImage ? (
