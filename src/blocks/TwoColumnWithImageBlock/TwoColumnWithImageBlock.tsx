@@ -38,7 +38,7 @@ const TextWithFeatureList = (
         return (
           <li key={feature.id} className="flex gap-x-4">
             <CheckIcon
-              className="h-[20px] w-[20px] text-brand-green"
+              className="h-[20px] w-[20px] shrink-0 text-brand-green"
               aria-hidden
             />
             <div className="text-16 lg:text-18">
