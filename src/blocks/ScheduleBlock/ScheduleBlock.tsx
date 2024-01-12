@@ -11,20 +11,22 @@ import { cn } from '@/utils/clsxMerge'
 import ArrowSquareOutIcon from '@/components/IconSelector/Icons/ArrowSquareOutIcon'
 import { ProgramTag } from '@/components/ProgramTag'
 
+const timeZone = 'America/Montreal'
+
 const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   const format = useFormatter()
   const date = new Date(day.date)
   const monthString = format.dateTime(date, {
     month: 'long',
-    timeZone: 'UTC',
+    timeZone,
   })
   const dateString = format.dateTime(date, {
     day: 'numeric',
-    timeZone: 'UTC',
+    timeZone,
   })
   const weekDayString = format.dateTime(date, {
     weekday: 'long',
-    timeZone: 'UTC',
+    timeZone,
   })
 
   return (
@@ -51,15 +53,15 @@ const Day = ({
   const date = new Date(day.date)
   const monthString = format.dateTime(date, {
     month: 'long',
-    timeZone: 'UTC',
+    timeZone,
   })
   const dateString = format.dateTime(date, {
     day: 'numeric',
-    timeZone: 'UTC',
+    timeZone,
   })
   const weekDayString = format.dateTime(date, {
     weekday: 'long',
-    timeZone: 'UTC',
+    timeZone,
   })
 
   return (
@@ -91,25 +93,27 @@ const TimeSlot = ({
 }) => {
   const format = useFormatter()
   const startTime = new Date(timeSlot.startTime)
+  const IANATimezone = timeSlot.startTime.toLocaleString('en', {
+    timeZoneName: 'long',
+  })
+  console.log(IANATimezone)
+
   const endTime = new Date(timeSlot.endTime)
   const startHour = format.dateTime(startTime, {
     hour: '2-digit',
-    timeZone: 'UTC',
+    timeZone: 'America/Montreal',
     hour12: false,
   })
   const endHour = format.dateTime(endTime, {
     hour: '2-digit',
-    timeZone: 'UTC',
     hour12: false,
   })
   const startMinutes = format.dateTime(startTime, {
     minute: '2-digit',
-    timeZone: 'UTC',
     hour12: false,
   })
   const endMinutes = format.dateTime(endTime, {
     minute: '2-digit',
-    timeZone: 'UTC',
     hour12: false,
   })
 
