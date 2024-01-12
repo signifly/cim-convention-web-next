@@ -13,39 +13,9 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 export const OtherSponsorsCarousel = (props: {
   otherSponsorsLabel: string
   otherSponsors: SponsorRecord[]
+  className?: string
 }) => {
-  const { otherSponsorsLabel, otherSponsors: sponsors } = props
-
-  const generateSplideBreakpoints = ([...breakpoints]: {
-    px: string
-    maxItems: number
-  }[]): {
-    [key: string]: any
-  } => {
-    const breakpointsObject: {
-      [key: string]: any
-    } = {}
-
-    breakpoints.forEach((each) => {
-      const isOverflowing = sponsors.length > each.maxItems
-      breakpointsObject[each.px] = {
-        // Show the number of logos or the max number of logos per breakpoint, whichever is smaller
-        perPage: Math.min(sponsors.length, each.maxItems),
-        // If there are more logos than the max number of logos per breakpoint, enable autoscroll
-        autoScroll: {
-          autoStart: isOverflowing,
-          pauseOnHover: isOverflowing,
-          speed: isOverflowing ? 1 : 0,
-        },
-        fixedWidth: `${
-          (parseInt(each.px) - (each.maxItems - 1) * 32) / each.maxItems // (breakpoint width - num of gaps * gap length) / numof logos
-        }px`,
-        type: isOverflowing ? 'loop' : 'slide',
-      }
-    })
-
-    return breakpointsObject
-  }
+  const { otherSponsorsLabel, otherSponsors: sponsors, className } = props
 
   const options = {
     perPage: 1,
@@ -58,15 +28,16 @@ export const OtherSponsorsCarousel = (props: {
       rewind: false,
       speed: 0.25,
     },
-    fixedHeight: '58px',
-    width: '176px',
+    fixedWidth: '180px',
     height: '58px',
     direction: 'ttb',
     type: sponsors.length > 2 ? 'loop' : 'slide',
   }
 
   return (
-    <div className="flex min-h-full flex-col gap-y-2 lg:items-end">
+    <div
+      className={cn('flex min-h-full flex-col gap-y-2 lg:items-end', className)}
+    >
       <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
         {otherSponsorsLabel}
       </p>
@@ -77,7 +48,7 @@ export const OtherSponsorsCarousel = (props: {
       >
         {sponsors.map(({ id, logo, name, websiteUrl }) => {
           return (
-            <SplideSlide key={id} className="">
+            <SplideSlide key={id}>
               <a href={websiteUrl} target="_blank">
                 {logo.responsiveImage && (
                   <DatoImage

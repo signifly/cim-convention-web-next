@@ -38,34 +38,42 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               ></div>
             )}
           </div>
-          <div className="flex min-h-full flex-col gap-y-2">
-            {mainSponsorLabel && (
-              <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
-                {mainSponsorLabel}
-              </p>
-            )}
-            {mainSponsor && (
-              <a
-                href={mainSponsor.websiteUrl}
-                target="_blank"
-                className="relative block max-h-[58px]"
-              >
-                {mainSponsor.logo.responsiveImage && (
-                  <DatoImage
-                    data={mainSponsor.logo.responsiveImage}
-                    className={'max-h-[58px] object-contain'}
-                    pictureClassName="max-h-[58px] object-contain object-left lg:object-right"
-                    priority
-                  />
-                )}
-                {!mainSponsor.logo.responsiveImage && (
-                  <Image
-                    src={mainSponsor.logo.url}
-                    alt={mainSponsor.logo.alt || mainSponsor.name || ''}
-                    fill
-                  />
-                )}
-              </a>
+          <div className="flex flex-col gap-y-6 lg:flex-row lg:gap-x-8">
+            <div className="flex min-h-full flex-col gap-y-2">
+              {mainSponsorLabel && (
+                <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
+                  {mainSponsorLabel}
+                </p>
+              )}
+              {mainSponsor && (
+                <a
+                  href={mainSponsor.websiteUrl}
+                  target="_blank"
+                  className="relative block max-h-[58px] max-w-[176px]"
+                >
+                  {mainSponsor.logo.responsiveImage && (
+                    <DatoImage
+                      data={mainSponsor.logo.responsiveImage}
+                      className={'max-h-[58px] object-contain'}
+                      pictureClassName="max-h-[58px] object-contain object-left lg:object-right"
+                      priority
+                    />
+                  )}
+                  {!mainSponsor.logo.responsiveImage && (
+                    <Image
+                      src={mainSponsor.logo.url}
+                      alt={mainSponsor.logo.alt || mainSponsor.name || ''}
+                      fill
+                    />
+                  )}
+                </a>
+              )}
+            </div>
+            {hasOtherSponsors && otherSponsorsLabel && (
+              <OtherSponsorsCarousel
+                otherSponsors={otherSponsors}
+                otherSponsorsLabel={otherSponsorsLabel}
+              />
             )}
           </div>
           {hasOtherSponsors && otherSponsorsLabel && (
@@ -94,34 +102,43 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                 ></div>
               )}
             </div>
-            <div className="col-start-1 flex min-h-full flex-col gap-y-2">
-              {mainSponsorLabel && (
-                <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
-                  {mainSponsorLabel}
-                </p>
-              )}
-              {mainSponsor && (
-                <a
-                  href={mainSponsor.websiteUrl}
-                  target="_blank"
-                  className="relative block max-h-[58px]"
-                >
-                  {mainSponsor.logo.responsiveImage && (
-                    <DatoImage
-                      data={mainSponsor.logo.responsiveImage}
-                      className={'max-h-[58px] object-contain'}
-                      pictureClassName="max-h-[58px] object-contain object-left lg:object-right"
-                      priority
-                    />
-                  )}
-                  {!mainSponsor.logo.responsiveImage && (
-                    <Image
-                      src={mainSponsor.logo.url}
-                      alt={mainSponsor.logo.alt || mainSponsor.name || ''}
-                      fill
-                    />
-                  )}
-                </a>
+            <div className="col-start-1 flex gap-x-8">
+              <div className="flex min-h-full flex-col gap-y-2">
+                {mainSponsorLabel && (
+                  <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
+                    {mainSponsorLabel}
+                  </p>
+                )}
+                {mainSponsor && (
+                  <a
+                    href={mainSponsor.websiteUrl}
+                    target="_blank"
+                    className="relative block max-h-[58px] max-w-[176px]"
+                  >
+                    {mainSponsor.logo.responsiveImage && (
+                      <DatoImage
+                        data={mainSponsor.logo.responsiveImage}
+                        className={'max-h-[58px] object-contain'}
+                        pictureClassName="max-h-[58px] object-contain object-left"
+                        priority
+                      />
+                    )}
+                    {!mainSponsor.logo.responsiveImage && (
+                      <Image
+                        src={mainSponsor.logo.url}
+                        alt={mainSponsor.logo.alt || mainSponsor.name || ''}
+                        fill
+                      />
+                    )}
+                  </a>
+                )}
+              </div>
+              {hasOtherSponsors && otherSponsorsLabel && (
+                <OtherSponsorsCarousel
+                  otherSponsors={otherSponsors}
+                  otherSponsorsLabel={otherSponsorsLabel}
+                  className="lg:items-start"
+                />
               )}
             </div>
           </GridContainer>
