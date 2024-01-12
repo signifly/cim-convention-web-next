@@ -6,7 +6,7 @@ type Params = {
 }
 
 export const getAllPagesSlugQuery = ({ locale }: Params): string => {
-  const l = locales.includes(locale) ? locale : defaultLocale
+  const l = locales.includes(locale as any) ? locale : defaultLocale
 
   const result = gql`
     query AllPagesQuery {

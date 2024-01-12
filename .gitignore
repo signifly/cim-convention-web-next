@@ -38,3 +38,8 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# generated public files
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-*.xml

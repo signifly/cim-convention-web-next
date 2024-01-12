@@ -51,7 +51,7 @@ export const getPageBySlugQuery = ({
   slug,
   isHomePage,
 }: Params): string => {
-  const l = locales.includes(locale) ? locale : defaultLocale
+  const l = locales.includes(locale as any) ? locale : defaultLocale
 
   const queryType = isHomePage ? 'homePage' : 'page'
   const filter = isHomePage ? '' : `filter: { slug: { eq: "${slug}" } }`

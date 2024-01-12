@@ -3,9 +3,9 @@ const {
   NEXT_PUBLIC_DATO_DRAFT_ENABLED,
   NEXT_PUBLIC_DATO_ENV,
   SITE_URL,
+  ENABLE_I18N,
+  ENABLE_SITEMAP,
 } = process.env
-
-const locales = ['en', 'fr'] // @important: make sure this matches the locales in ./src/navigation.ts
 
 const sitemapQuery = String.raw`
 	query SitemapQuery {
@@ -58,7 +58,6 @@ const getPagesSlugLocales = async () => {
         : 'https://graphql.datocms.com/',
       options,
     ).then((res) => res.json())
-    console.log(response.errors)
 
     if (response.errors) {
       // eslint-disable-next-line no-console
@@ -88,21 +87,38 @@ module.exports = {
   siteUrl: SITE_URL || 'https://convention.cim.org',
   generateRobotsTxt: true, // (optional)
   transform: async (config, path) => {
+    if (ENABLE_SITEMAP !== 'true') {
+      return null
+    }
+
     const commonProps = {
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.lastmod ? new Date().toISOString() : undefined,
     }
 
+    // if i18n is disabled, return the path as is
+    if (ENABLE_I18N !== 'true') {
+      console.log('no i18n')
+      return {
+        ...commonProps,
+        loc: path,
+      }
+    }
+
     const data = dataCache || (await getPagesSlugLocales()) // attempt to get data from cache or fetch it
-    const locale = path.split('/')[1]
-
-    const pathWithoutLocale = path.replace(/\/(en|fr)/, '')
-
+    const pathWithoutLocale = path.replace(/\/(en|fr)/, '') // @important: make sure this matches all locales in ./src/navigation.ts
     const slug =
       pathWithoutLocale.split('/')[pathWithoutLocale.split('/').length - 1]
+    const firstSegment = pathWithoutLocale.split('/').filter((s) => s !== '')[0]
+    const isCourse =
+      pathWithoutLocale.split('/').filter((s) => s !== '')[0] === 'course'
 
-    // home page
+    const dynamicRouteSegments = {
+      course: 'allShortCourses',
+    }
+
+    // home page special case
     if (slug === '') {
       return {
         ...commonProps,
@@ -120,16 +136,13 @@ module.exports = {
       }
     }
 
-    const isCourse =
-      pathWithoutLocale.split('/').filter((s) => s !== '')[0] === 'course'
+    const _allSlugLocales = data[
+      dynamicRouteSegments[firstSegment] ?? 'allPages'
+    ]?.find((c) =>
+      c._allSlugLocales.find((s) => s.value === slug),
+    )?._allSlugLocales
 
-    const _allSlugLocales = isCourse
-      ? data.allShortCourses.find((c) =>
-          c._allSlugLocales.find((s) => s.value === slug),
-        )?._allSlugLocales
-      : data.allPages.find((c) =>
-          c._allSlugLocales.find((s) => s.value === slug),
-        )?._allSlugLocales
+    console.log({ _allSlugLocales, slug, firstSegment, path })
 
     if (!_allSlugLocales) {
       return {
@@ -137,8 +150,6 @@ module.exports = {
         loc: path,
       }
     }
-
-    console.log({ locale, pathWithoutLocale, isCourse, slug, _allSlugLocales })
 
     return {
       ...commonProps,
