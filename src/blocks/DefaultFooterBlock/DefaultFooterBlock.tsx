@@ -150,7 +150,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
         <div className="relative col-span-full col-start-1 flex h-[100%] flex-col items-start justify-start gap-8 border-t-[1px] border-gray-700 pt-[20px] lg:col-span-2 lg:col-start-11 lg:border-t-0  lg:pt-0  lg:after:absolute lg:after:left-[-24px] lg:after:top-[50%] lg:after:h-[100%] lg:after:w-[1px] lg:after:translate-y-[-50%] lg:after:bg-gray-700 lg:after:content-['']">
           <h6 className=" uppercase">{sponsorTitle}</h6>
           <div className="flex">
-            <a href={sponsorLink || ''}>
+            <a href={sponsorLink || ''} target="_blank">
               <div className="relative h-[77px] w-[56px]">
                 {sponsorLogo?.responsiveImage ? (
                   <DatoImage
