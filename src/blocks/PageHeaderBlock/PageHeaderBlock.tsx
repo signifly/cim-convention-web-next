@@ -49,13 +49,13 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                 <a
                   href={mainSponsor.websiteUrl}
                   target="_blank"
-                  className="relative block max-h-[58px] max-w-[176px]"
+                  className="relative block h-[58px] w-[176px]"
                 >
                   {mainSponsor.logo.responsiveImage && (
                     <DatoImage
                       data={mainSponsor.logo.responsiveImage}
-                      className={'max-h-[58px] object-contain'}
-                      pictureClassName="max-h-[58px] object-contain object-left lg:object-right"
+                      className={'h-[58px] object-contain'}
+                      pictureClassName="h-[58px] object-contain object-left lg:object-right"
                       priority
                     />
                   )}
@@ -84,7 +84,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
           )}
         </GridContainer>
       ) : (
-        <div className="relative flex min-h-[400px] justify-start overflow-hidden">
+        <div className="relative flex min-h-[400px] flex-col justify-start overflow-hidden md:flex-row">
           <GridContainer className="relative h-[100%] flex-col gap-y-[48px] p-6 md:gap-y-[174px] lg:flex-row lg:items-stretch lg:justify-between lg:py-12">
             <div className="col-span-4">
               {subTitle && (
@@ -113,13 +113,13 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                   <a
                     href={mainSponsor.websiteUrl}
                     target="_blank"
-                    className="relative block max-h-[58px] max-w-[176px]"
+                    className="relative block h-[58px] w-[176px]"
                   >
                     {mainSponsor.logo.responsiveImage && (
                       <DatoImage
                         data={mainSponsor.logo.responsiveImage}
-                        className={'max-h-[58px] object-contain'}
-                        pictureClassName="max-h-[58px] object-contain object-left"
+                        className={'h-[58px] object-contain'}
+                        pictureClassName="h-[58px] object-contain object-left"
                         priority
                       />
                     )}
@@ -142,7 +142,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               )}
             </div>
           </GridContainer>
-          <div className="absolute bottom-0 z-0 h-[50%] w-[100%] overflow-hidden md:right-0 md:h-[100%] md:w-[50%]">
+          <div className="relative bottom-0 z-0 h-[50%] w-[100%] overflow-hidden md:absolute md:right-0 md:h-[100%] md:w-[50%]">
             <div className="absolute z-10 h-[50%] w-[100%] bg-brand-gradient-light md:h-[100%] md:w-[50%] md:bg-brand-gradient-light-90deg"></div>
             {heroImage.responsiveImage && (
               <DatoImage

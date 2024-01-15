@@ -72,6 +72,9 @@ const config: Config = {
         ...rem(40),
         ...rem(48),
       },
+      screens: {
+        betterhover: { raw: '(hover: hover)' },
+      },
     },
   },
   plugins: [],
