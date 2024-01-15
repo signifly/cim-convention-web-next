@@ -38,8 +38,8 @@ export const MobileMenuDialog = (props: Props) => {
       open={mobileMenuOpen}
       onClose={setMobileMenuOpen}
     >
-      <div className="fixed inset-0 z-10" />
-      <Dialog.Panel className="container fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div className="fixed inset-0 z-[60]" />
+      <Dialog.Panel className="container fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-white py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div className="flex items-center justify-between">
           <Link href="/" className="relative h-[48px] w-1/2">
             <span className="sr-only">CIM Convention</span>
