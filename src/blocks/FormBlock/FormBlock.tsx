@@ -66,6 +66,10 @@ export function FormBlock(props: FormBlockRecord) {
     }
   }
 
+  const handleTextInputChange = (e: any) => {
+    e.target.value = e.target.value.replace(/[^0-9()+-\s]/g, '')
+  }
+
   const getFormObject = () => {
     const formData = new FormData(formRef.current as any)
     const formObject = {} as any
@@ -107,7 +111,7 @@ export function FormBlock(props: FormBlockRecord) {
 
       // Field Type Errors (pattern): Phone
       if (fieldData?._modelApiKey === 'form_text_input') {
-        const phonePattern = /^[0-9()-+]{4,15}$/g
+        const phonePattern = /^[0-9()+-]{6,18}$/g
         if (
           fieldData?.fieldType === 'tel' &&
           !phonePattern.test(formObject[key])
@@ -242,6 +246,8 @@ export function FormBlock(props: FormBlockRecord) {
                   {/* Text Input */}
                   {field._modelApiKey === 'form_text_input' && (
                     <input
+                      {...(field?.fieldType === 'tel' && { maxLength: 18 })}
+                      onChange={(e) => handleTextInputChange(e)}
                       type={field.fieldType || 'text'}
                       id={field.fieldId}
                       name={field.fieldId}
