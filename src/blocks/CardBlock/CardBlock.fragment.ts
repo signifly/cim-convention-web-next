@@ -6,7 +6,7 @@ export const CARD_BLOCK_FRAGMENT = gql`
     _modelApiKey
     paragraph(markdown: true)
     subtitle
-    title
+    title(markdown: true)
     buttons {
       ...CtaButtonFragment
     }
