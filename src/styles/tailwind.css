@@ -40,6 +40,10 @@ button:not(.ring-0):focus {
   }
 }
 
+.cookiefirst-cookie-declaration {
+  @apply space-y-4 lg:space-y-8;
+}
+
 .registration-tier-details {
   ul {
     @apply flex flex-col items-start gap-2;
