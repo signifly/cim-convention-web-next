@@ -6,6 +6,7 @@ import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import SocialMedia from '@/components/SocialMedia'
 import { useRef, useState } from 'react'
+import { Link } from '@/navigation'
 
 type DefaultFooterBlockRecordExt = DefaultFooterBlockRecord & {
   socialLinks: SocialLinkRecord
@@ -33,6 +34,8 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
     sponsorLink,
     sponsorTitle,
     socialLinks,
+    privacyPolicyPage,
+    cookiePolicyPage,
   } = props
 
   const [postSubmit, setPostSubmit] = useState<PostSubmit>({
@@ -170,8 +173,26 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
           </div>
         </div>
         {/* Copyright */}
-        <div className="col-span-full mt-6 flex flex-col items-start justify-start border-t-[1px] border-gray-700 pt-[24px]">
-          <p className="text-gray-400">{copyright}</p>
+        <div className="col-span-full mt-6 flex flex-col items-start justify-start gap-y-4 border-t-[1px] border-gray-700 pt-[24px] text-gray-400 lg:flex-row lg:justify-between">
+          <p>{copyright}</p>
+          <div>
+            {privacyPolicyPage && (
+              <Link
+                href={privacyPolicyPage.slug}
+                className="capitalize underline"
+              >
+                {privacyPolicyPage.title}
+              </Link>
+            )}
+            {cookiePolicyPage && (
+              <Link
+                href={cookiePolicyPage.slug}
+                className="ml-6 capitalize underline"
+              >
+                {cookiePolicyPage.title}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </footer>

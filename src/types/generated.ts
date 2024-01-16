@@ -800,12 +800,14 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   contactButtonLink?: Maybe<Scalars['String']['output']>
   contactParagraph?: Maybe<Scalars['String']['output']>
   contactTitle?: Maybe<Scalars['String']['output']>
+  cookiePolicyPage: PageRecord
   copyright?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   newsletterButtonLabel?: Maybe<Scalars['String']['output']>
   newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
   newsletterParagraph?: Maybe<Scalars['String']['output']>
   newsletterTitle?: Maybe<Scalars['String']['output']>
+  privacyPolicyPage: PageRecord
   sponsorLink?: Maybe<Scalars['String']['output']>
   sponsorLogo?: Maybe<FileField>
   sponsorTitle?: Maybe<Scalars['String']['output']>
@@ -1185,6 +1187,7 @@ export type FooterRecord = RecordInterface & {
   _allBlocksLocales?: Maybe<
     Array<DefaultFooterBlockRecordListListNonNullMultiLocaleField>
   >
+  _allNameLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -1210,12 +1213,23 @@ export type FooterRecord_AllBlocksLocalesArgs = {
 }
 
 /** Record of type Footer (footer) */
+export type FooterRecord_AllNameLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Footer (footer) */
 export type FooterRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Footer (footer) */
 export type FooterRecordBlocksArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Footer (footer) */
+export type FooterRecordNameArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
