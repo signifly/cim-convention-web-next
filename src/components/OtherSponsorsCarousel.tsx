@@ -54,7 +54,7 @@ export const OtherSponsorsCarousel = (props: {
                   <DatoImage
                     data={logo.responsiveImage}
                     className={cn('max-h-[58px] object-contain')}
-                    pictureClassName="object-cover object-left lg:object-right"
+                    pictureClassName="object-contain object-left lg:object-right"
                     priority
                   />
                 )}
