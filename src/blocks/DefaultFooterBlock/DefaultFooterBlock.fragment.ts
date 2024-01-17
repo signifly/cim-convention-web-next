@@ -24,6 +24,7 @@ export const DEFAULT_FOOTER_BLOCK_FRAGMENT = gql`
       url
       alt
     }
+    externalLinkPolicies
     privacyPolicyPage {
       id
       title

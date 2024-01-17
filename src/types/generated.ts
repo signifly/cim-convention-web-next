@@ -807,6 +807,7 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   contactTitle?: Maybe<Scalars['String']['output']>
   cookiePolicyPage: PageRecord
   copyright?: Maybe<Scalars['String']['output']>
+  externalLinkPolicies?: Maybe<Scalars['BooleanType']['output']>
   id: Scalars['ItemId']['output']
   newsletterButtonLabel?: Maybe<Scalars['String']['output']>
   newsletterInputPlaceholder?: Maybe<Scalars['String']['output']>
