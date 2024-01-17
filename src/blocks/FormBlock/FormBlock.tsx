@@ -247,7 +247,9 @@ export function FormBlock(props: FormBlockRecord) {
                   {field._modelApiKey === 'form_text_input' && (
                     <input
                       {...(field?.fieldType === 'tel' && { maxLength: 18 })}
-                      onChange={(e) => handleTextInputChange(e)}
+                      onChange={(e) =>
+                        field?.fieldType === 'tel' && handleTextInputChange(e)
+                      }
                       type={field.fieldType || 'text'}
                       id={field.fieldId}
                       name={field.fieldId}
