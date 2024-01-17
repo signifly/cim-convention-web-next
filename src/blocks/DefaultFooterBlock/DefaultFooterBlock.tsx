@@ -34,6 +34,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
     sponsorLink,
     sponsorTitle,
     socialLinks,
+    externalLinkPolicies,
     privacyPolicyPage,
     cookiePolicyPage,
   } = props
@@ -176,23 +177,48 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
         <div className="col-span-full mt-6 flex flex-col items-start justify-start gap-y-4 border-t-[1px] border-gray-700 pt-[24px] text-gray-400 lg:flex-row lg:justify-between">
           <p>{copyright}</p>
           <div>
-            {privacyPolicyPage && (
-              <Link
-                href={privacyPolicyPage.slug}
-                className="capitalize underline"
-                prefetch={false}
-              >
-                {privacyPolicyPage.title}
-              </Link>
-            )}
-            {cookiePolicyPage && (
-              <Link
-                href={cookiePolicyPage.slug}
-                className="ml-6 capitalize underline"
-                prefetch={false}
-              >
-                {cookiePolicyPage.title}
-              </Link>
+            {externalLinkPolicies ? (
+              <>
+                {privacyPolicyPage && (
+                  <a
+                    href={privacyPolicyPage.slug}
+                    className="capitalize underline"
+                    target="_blank"
+                  >
+                    {privacyPolicyPage.title}
+                  </a>
+                )}
+                {cookiePolicyPage && (
+                  <a
+                    href={cookiePolicyPage.slug}
+                    className="ml-6 capitalize underline"
+                    target="_blank"
+                  >
+                    {cookiePolicyPage.title}
+                  </a>
+                )}
+              </>
+            ) : (
+              <>
+                {privacyPolicyPage && (
+                  <Link
+                    href={privacyPolicyPage.slug}
+                    className="capitalize underline"
+                    prefetch={false}
+                  >
+                    {privacyPolicyPage.title}
+                  </Link>
+                )}
+                {cookiePolicyPage && (
+                  <Link
+                    href={cookiePolicyPage.slug}
+                    className="ml-6 capitalize underline"
+                    prefetch={false}
+                  >
+                    {cookiePolicyPage.title}
+                  </Link>
+                )}
+              </>
             )}
           </div>
         </div>
