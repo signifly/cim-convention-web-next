@@ -11,7 +11,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
 export const OtherSponsorsCarousel = (props: {
-  otherSponsorsLabel: string
+  otherSponsorsLabel?: string
   otherSponsors: SponsorRecord[]
   className?: string
 }) => {

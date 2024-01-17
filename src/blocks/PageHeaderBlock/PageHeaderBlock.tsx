@@ -69,10 +69,10 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                 </a>
               )}
             </div>
-            {hasOtherSponsors && otherSponsorsLabel && (
+            {hasOtherSponsors && (
               <OtherSponsorsCarousel
                 otherSponsors={otherSponsors}
-                otherSponsorsLabel={otherSponsorsLabel}
+                otherSponsorsLabel={otherSponsorsLabel || undefined}
               />
             )}
           </div>
@@ -127,10 +127,10 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                   </a>
                 )}
               </div>
-              {hasOtherSponsors && otherSponsorsLabel && (
+              {hasOtherSponsors && (
                 <OtherSponsorsCarousel
                   otherSponsors={otherSponsors}
-                  otherSponsorsLabel={otherSponsorsLabel}
+                  otherSponsorsLabel={otherSponsorsLabel || undefined}
                   className="lg:items-start"
                 />
               )}
