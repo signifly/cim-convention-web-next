@@ -180,6 +180,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
               <Link
                 href={privacyPolicyPage.slug}
                 className="capitalize underline"
+                prefetch={false}
               >
                 {privacyPolicyPage.title}
               </Link>
@@ -188,6 +189,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
               <Link
                 href={cookiePolicyPage.slug}
                 className="ml-6 capitalize underline"
+                prefetch={false}
               >
                 {cookiePolicyPage.title}
               </Link>
