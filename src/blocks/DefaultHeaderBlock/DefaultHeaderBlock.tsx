@@ -78,10 +78,10 @@ export function DefaultHeaderBlock(
         {/* Right side  */}
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-3 xl:gap-x-8">
           {/* @todo: add language switcher for Monday launch */}
-          {/* <LanguageSwitcher */}
-          {/*   _allSlugLocales={_allSlugLocales} */}
-          {/*   languageToggleLabel={languageToggleLabel} */}
-          {/* /> */}
+          <LanguageSwitcher
+            _allSlugLocales={_allSlugLocales}
+            languageToggleLabel={languageToggleLabel}
+          />
           <div className="shrink-0">
             <CtaButton {...ctaButton[0]} />
           </div>

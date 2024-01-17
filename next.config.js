@@ -13,7 +13,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/fr/home-page',
+        source: '/fr/accueil',
         destination: '/fr',
         permanent: true,
       },

@@ -477,6 +477,11 @@ export type CardBlockRecordParagraphArgs = {
 }
 
 /** Block of type Card Block (card_block) */
+export type CardBlockRecordSubtitleArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+/** Block of type Card Block (card_block) */
 export type CardBlockRecordTitleArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
@@ -4641,6 +4646,12 @@ export type ShortCourseModelDescriptionField = {
   value: Scalars['JsonField']['output']
 }
 
+export type ShortCourseModelDescriptionFieldMultiLocaleField = {
+  __typename?: 'ShortCourseModelDescriptionFieldMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value?: Maybe<ShortCourseModelDescriptionField>
+}
+
 export type ShortCourseModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<ShortCourseModelFilter>>>
   OR?: InputMaybe<Array<InputMaybe<ShortCourseModelFilter>>>
@@ -4706,6 +4717,9 @@ export type ShortCourseRecord = RecordInterface & {
   >
   _allCourseTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allDatesLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
+  _allDescriptionLocales?: Maybe<
+    Array<ShortCourseModelDescriptionFieldMultiLocaleField>
+  >
   _allDurationLocales?: Maybe<Array<StringMultiLocaleField>>
   _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
@@ -4728,7 +4742,7 @@ export type ShortCourseRecord = RecordInterface & {
   buttons: Array<CtaButtonRecord>
   courseTitle: Scalars['String']['output']
   dates: Scalars['String']['output']
-  description: ShortCourseModelDescriptionField
+  description?: Maybe<ShortCourseModelDescriptionField>
   duration?: Maybe<Scalars['String']['output']>
   footer?: Maybe<FooterRecord>
   header: HeaderRecord
@@ -4752,6 +4766,11 @@ export type ShortCourseRecord_AllCourseTitleLocalesArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecord_AllDatesLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecord_AllDescriptionLocalesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -4799,6 +4818,12 @@ export type ShortCourseRecordCourseTitleArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecordDatesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Short Course (short_course) */
+export type ShortCourseRecordDescriptionArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }

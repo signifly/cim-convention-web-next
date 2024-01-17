@@ -128,11 +128,10 @@ export const MobileMenuDialog = (props: Props) => {
                 }
               })}
             </div>
-            {/* @todo: add language switcher for Monday launch */}
-            {/* <LanguageSwitcher */}
-            {/*   _allSlugLocales={_allSlugLocales} */}
-            {/*   languageToggleLabel={languageToggleLabel} */}
-            {/* /> */}
+            <LanguageSwitcher
+              _allSlugLocales={_allSlugLocales}
+              languageToggleLabel={languageToggleLabel}
+            />
             <div className="flex items-center justify-center gap-x-8 py-8">
               <div className="grow [&_a]:w-full [&_a]:text-center">
                 <CtaButton {...ctaButton[0]} />

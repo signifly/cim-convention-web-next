@@ -3,11 +3,9 @@ import {
   Pathnames,
 } from 'next-intl/navigation'
 
-// @todo: enable fr locale for Monday launch
-export const locales =
-  process.env.ENABLE_I18N === 'true'
-    ? (['en', 'fr'] as const)
-    : (['en'] as const)
+// const { NEXT_PUBLIC_ENABLE_I18N } = process.env
+
+export const locales = ['en', 'fr'] as const
 export const dynamicPathSegments = ['course']
 
 export const localePrefix = 'as-needed'
@@ -20,14 +18,10 @@ export const pathnames = {
   '/[locale]/[...slug]': '/[locale]/[...slug]',
   '/[...slug]': '/[...slug]',
 
-  '[locale]/course/[slug]':
-    process.env.ENABLE_I18N === 'true'
-      ? {
-          en: '/course/[slug]',
-          // @todo: enable fr locale for Monday launch
-          fr: '/cours/[slug]',
-        }
-      : '/course/[slug]',
+  '[locale]/course/[slug]': {
+    en: '/course/[slug]',
+    fr: '/cours/[slug]',
+  },
 } satisfies Pathnames<typeof locales> & Record<string & {}, string | {}>
 
 export const { Link, redirect, usePathname, useRouter } =
