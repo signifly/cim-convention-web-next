@@ -38,9 +38,11 @@ export const OtherSponsorsCarousel = (props: {
     <div
       className={cn('flex min-h-full flex-col gap-y-2 lg:items-end', className)}
     >
-      <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
-        {otherSponsorsLabel}
-      </p>
+      {otherSponsorsLabel && (
+        <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
+          {otherSponsorsLabel}
+        </p>
+      )}
       <Splide
         aria-labelledby="sponsor-list-title"
         options={options}
