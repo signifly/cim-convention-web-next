@@ -47,12 +47,18 @@ button:not(.ring-0):focus {
 }
 
 .registration-tier-details {
+  @apply text-brand-grey-600;
+
+  p {
+    @apply my-2;
+  }
+
   ul {
     @apply flex flex-col items-start gap-2;
   }
 
   li {
-    @apply relative flex items-start justify-start text-brand-grey-600;
+    @apply relative flex items-start justify-start;
   }
 
   li::before {
