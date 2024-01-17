@@ -3,8 +3,6 @@ import {
   Pathnames,
 } from 'next-intl/navigation'
 
-// const { NEXT_PUBLIC_ENABLE_I18N } = process.env
-
 export const locales = ['en', 'fr'] as const
 export const dynamicPathSegments = ['course']
 
