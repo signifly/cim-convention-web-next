@@ -1,7 +1,9 @@
 @tailwind base;
 
-* {
-  @apply scroll-mt-20 lg:scroll-mt-[112px];
+main {
+  * {
+    @apply scroll-mt-20 lg:scroll-mt-[112px];
+  }
 }
 
 html {

@@ -59,7 +59,9 @@ export default async function Page({
           data={courseData.shortCourse.image.responsiveImage}
         />
         <section className="structured-text col-span-full">
-          <StructuredText data={courseData.shortCourse.description.value} />
+          {courseData.shortCourse.description && (
+            <StructuredText data={courseData.shortCourse.description.value} />
+          )}
         </section>
         <section className="col-span-full gap-x-6 space-y-4 lg:flex lg:flex-row lg:space-y-0 [&_*]:block [&_*]:max-w-max">
           {buttons.length > 0 &&
