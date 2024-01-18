@@ -20,7 +20,7 @@ export const AlertBlock = (props: AlertBlockRecord) => {
             className="col-span-full mb-6 lg:col-span-8 lg:col-start-3 lg:mb-8 [&_a]:underline"
           />
         )}
-        {image.responsiveImage && (
+        {image && image.responsiveImage && (
           <DatoImage
             data={image.responsiveImage}
             className="col-span-full lg:col-span-4 lg:col-start-5"
