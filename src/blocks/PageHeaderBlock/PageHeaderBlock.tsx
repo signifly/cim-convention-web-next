@@ -4,6 +4,7 @@ import { PageHeaderBlockRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import { OtherSponsorsCarousel } from '@/components/OtherSponsorsCarousel'
+import { cn } from '@/utils/clsxMerge'
 
 export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
   const {
@@ -38,10 +39,15 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
               ></div>
             )}
           </div>
-          <div className="flex flex-col gap-y-6 lg:flex-row lg:gap-x-8">
+          <div className="flex shrink-0 flex-col gap-y-6 lg:flex-row lg:gap-x-8">
             <div className="flex min-h-full flex-col gap-y-2">
               {mainSponsorLabel && (
-                <p className="col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]">
+                <p
+                  className={cn(
+                    'col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]',
+                    !hasOtherSponsors && 'text-right',
+                  )}
+                >
                   {mainSponsorLabel}
                 </p>
               )}
