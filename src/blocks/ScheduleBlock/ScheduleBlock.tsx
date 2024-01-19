@@ -14,16 +14,15 @@ import {
 const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   const format = useFormatter()
   const date = new Date(day.date)
-  const monthString = format.dateTime(date, {
-    month: 'long',
-    timeZone: 'UTC',
-  })
-  const dateString = format.dateTime(date, {
-    day: 'numeric',
-    timeZone: 'UTC',
-  })
+
   const weekDayString = format.dateTime(date, {
     weekday: 'long',
+    timeZone: 'UTC',
+  })
+
+  const dateMonthString = format.dateTime(date, {
+    month: 'long',
+    day: 'numeric',
     timeZone: 'UTC',
   })
 
@@ -35,7 +34,7 @@ const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
       <time dateTime={day.date} className="text-12/[100%] lg:text-16/[125%]">
         {weekDayString}
       </time>
-      <div className="text-14/[125%] text-brand-green lg:text-20/[140%]">{`${monthString} ${dateString}`}</div>
+      <div className="text-14/[125%] text-brand-green lg:text-20/[140%]">{`${dateMonthString}`}</div>
     </a>
   )
 }
@@ -49,16 +48,13 @@ const Day = ({
 }) => {
   const format = useFormatter()
   const date = new Date(day.date)
-  const monthString = format.dateTime(date, {
-    month: 'long',
-    timeZone: 'UTC',
-  })
-  const dateString = format.dateTime(date, {
-    day: 'numeric',
-    timeZone: 'UTC',
-  })
   const weekDayString = format.dateTime(date, {
     weekday: 'long',
+    timeZone: 'UTC',
+  })
+  const dateMonthString = format.dateTime(date, {
+    month: 'long',
+    day: 'numeric',
     timeZone: 'UTC',
   })
 
@@ -67,7 +63,7 @@ const Day = ({
       <h2 className="mb-6 flex items-center gap-x-1 space-x-2 text-20/[140%] font-medium capitalize lg:text-24">
         <time dateTime={day.date}>{weekDayString}</time>
         <div className="h-[20px] border-r border-brand-grey-300" />
-        <span className="text-brand-green">{`${monthString} ${dateString}`}</span>
+        <span className="text-brand-green">{`${dateMonthString}`}</span>
       </h2>
       <ul className="col-span-full flex flex-col gap-y-4">
         {day.timeSlots.map((timeSlot) => (
