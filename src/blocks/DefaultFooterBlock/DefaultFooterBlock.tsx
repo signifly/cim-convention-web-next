@@ -181,7 +181,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
               <a
                 href={privacyPolicyPage.slug}
                 className="capitalize underline"
-                target={externalLinkPolicies && '_blank'}
+                target={externalLinkPolicies ? '_blank' : undefined}
               >
                 {privacyPolicyPage.title}
               </a>
@@ -190,7 +190,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
               <a
                 href={cookiePolicyPage.slug}
                 className="ml-6 capitalize underline"
-                target={externalLinkPolicies && '_blank'}
+                target={externalLinkPolicies ? '_blank' : undefined}
               >
                 {cookiePolicyPage.title}
               </a>
