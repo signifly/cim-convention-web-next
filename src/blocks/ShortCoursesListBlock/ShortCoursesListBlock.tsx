@@ -37,7 +37,7 @@ export const ShortCoursesListBlock = (props: ShortCoursesListBlockRecord) => {
                     href={`/course/${shortCourse.slug}`}
                   >
                     {shortCourse.courseTitle}
-                    <span className="text-14/[140%] text-brand-grey-700 underline transition-colors group-hover:text-brand-green">
+                    <span className="whitespace-nowrap text-14/[140%] text-brand-grey-700 underline transition-colors group-hover:text-brand-green">
                       {linkLabel}
                     </span>
                   </Link>
