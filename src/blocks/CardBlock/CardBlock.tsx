@@ -33,13 +33,13 @@ export function CardBlock(props: CardBlockRecordExt) {
         <div
           className={`${
             mobileLayout === 'single' ? 'h-[285px]' : 'h-[136px]'
-          } overflow-hidden md:h-[300px]`}
+          } relative flex items-stretch justify-stretch overflow-hidden md:h-[300px]`}
         >
           {image?.responsiveImage ? (
             <DatoImage
               data={image.responsiveImage}
-              className="h-[100%] w-auto object-cover"
-              pictureClassName="object-cover"
+              className="relative min-w-full"
+              pictureClassName="absolute inset-0 object-cover"
             />
           ) : (
             <Image src={image?.url || ''} alt={image?.alt || ''} fill />
