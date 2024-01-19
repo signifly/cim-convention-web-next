@@ -29,9 +29,12 @@ const AnchorLink = ({ day }: { day: ScheduleBlockDayRecord }) => {
   return (
     <a
       href={`#${day.id}`}
-      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium capitalize transition-colors hover:bg-brand-grey-200 lg:box-content lg:px-6 lg:py-3"
+      className="inline min-w-[120px] rounded border border-brand-grey-300 bg-white p-3 pt-1 font-medium transition-colors hover:bg-brand-grey-200 lg:box-content lg:px-6 lg:py-3"
     >
-      <time dateTime={day.date} className="text-12/[100%] lg:text-16/[125%]">
+      <time
+        dateTime={day.date}
+        className="text-12/[100%] capitalize lg:text-16/[125%]"
+      >
         {weekDayString}
       </time>
       <div className="text-14/[125%] text-brand-green lg:text-20/[140%]">{`${dateMonthString}`}</div>
@@ -60,8 +63,10 @@ const Day = ({
 
   return (
     <li key={day.id} id={day.id}>
-      <h2 className="mb-6 flex items-center gap-x-1 space-x-2 text-20/[140%] font-medium capitalize lg:text-24">
-        <time dateTime={day.date}>{weekDayString}</time>
+      <h2 className="mb-6 flex items-center gap-x-1 space-x-2 text-20/[140%] font-medium lg:text-24">
+        <time dateTime={day.date} className="capitalize">
+          {weekDayString}
+        </time>
         <div className="h-[20px] border-r border-brand-grey-300" />
         <span className="text-brand-green">{`${dateMonthString}`}</span>
       </h2>
