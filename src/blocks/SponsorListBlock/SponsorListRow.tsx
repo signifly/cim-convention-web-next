@@ -24,7 +24,13 @@ export const SponsorListRow = (props: SponsorListBlockRowRecord) => {
     } = {}
 
     breakpoints.forEach((each) => {
-      const isOverflowing = sponsors.length > each.maxItems
+      const isOverflowing = sponsors.length > each.maxItems - 2
+      console.log({
+        title,
+        isOverflowing,
+        length: sponsors.length,
+        maxItems: each.maxItems,
+      })
       breakpointsObject[each.px] = {
         // Show the number of logos or the max number of logos per breakpoint, whichever is smaller
         perPage: Math.min(sponsors.length, each.maxItems),
