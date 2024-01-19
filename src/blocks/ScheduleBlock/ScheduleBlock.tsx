@@ -131,7 +131,7 @@ const TimeSlot = ({
       <p className="mb-2 text-14/[150%] font-normal text-brand-grey-600 lg:col-span-7 lg:col-start-3 lg:mb-0 lg:text-16">
         {timeSlot.description}
       </p>
-      <div className="flex items-center gap-x-[6px] text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-2 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
+      <div className="flex items-center gap-x-[6px] text-16/[150%] text-brand-green underline transition-colors group-hover:text-brand-green lg:col-span-3 lg:col-start-12 lg:row-start-1 lg:text-brand-grey-700">
         {isLink && (
           <>
             {linkSupportLabel}
