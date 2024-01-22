@@ -45,7 +45,7 @@ export const PageHeaderBlock = (props: PageHeaderBlockRecord) => {
                 <p
                   className={cn(
                     'col-span-full whitespace-nowrap text-12/[130%] font-normal uppercase tracking-[0.24px] lg:col-span-2 lg:text-14/[140%] lg:tracking-[0.28px]',
-                    !hasOtherSponsors && 'text-right',
+                    !hasOtherSponsors && 'text-left lg:text-right',
                   )}
                 >
                   {mainSponsorLabel}
