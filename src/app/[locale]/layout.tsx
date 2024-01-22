@@ -17,7 +17,7 @@ import CookieFirstScript from '@/components/CookieFirstScript'
 export function generateStaticParams() {
   return process.env.ENABLE_I18N === 'true'
     ? locales.map((locale) => ({ locale }))
-    : [{ locale: defaultLocale }]
+    : [{ locale: defaultLocale || 'en' }]
 }
 
 export const generateMetadata = async ({
