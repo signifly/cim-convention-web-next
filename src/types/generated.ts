@@ -273,9 +273,9 @@ export type AlertBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
-  image: ImageAltFileField
-  paragraphs: Scalars['String']['output']
-  title: Scalars['String']['output']
+  image?: Maybe<ImageAltFileField>
+  paragraphs?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Alert Block (alert_block) */
@@ -4725,7 +4725,6 @@ export type ShortCourseRecord = RecordInterface & {
   _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
-  _allStartEndTimeLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -4796,11 +4795,6 @@ export type ShortCourseRecord_AllSlugLocalesArgs = {
 }
 
 /** Record of type Short Course (short_course) */
-export type ShortCourseRecord_AllStartEndTimeLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Short Course (short_course) */
 export type ShortCourseRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -4849,12 +4843,6 @@ export type ShortCourseRecordSeoArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Short Course (short_course) */
-export type ShortCourseRecordStartEndTimeArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
