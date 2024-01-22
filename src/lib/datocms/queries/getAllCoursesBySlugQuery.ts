@@ -10,7 +10,7 @@ export const getAllCoursesSlugQuery = ({ locale }: Params): string => {
 
   const result = gql`
     query AllShortCoursesQuery {
-      allShortCourses (locale: ${l}) {
+      allShortCourses (locale: ${l}, first: 100) {
         id
         courseTitle
         _status

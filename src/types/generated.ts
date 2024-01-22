@@ -5852,6 +5852,13 @@ export const AllPagesQueryDocument = {
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'allPages' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'first' },
+                value: { kind: 'IntValue', value: '100' },
+              },
+            ],
             selectionSet: {
               kind: 'SelectionSet',
               selections: [
