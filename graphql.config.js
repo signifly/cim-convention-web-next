@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   ],
-  documents: './src/lib/datocms/queries/**/*',
+  documents: ['./src/lib/datocms/(fragments|queries)/**/*', './src/app/**/*'],
   generates: {
     './src/types/generated.ts': {
       plugins: [

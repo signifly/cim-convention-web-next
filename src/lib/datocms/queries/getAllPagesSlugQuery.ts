@@ -10,7 +10,7 @@ export const getAllPagesSlugQuery = ({ locale }: Params): string => {
 
   const result = gql`
     query AllPagesQuery {
-      allPages(first: 100) {
+      allPages(locale: ${l}, first: 100) {
         id
         title
         _status

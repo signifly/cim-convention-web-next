@@ -5825,56 +5825,47 @@ export type FocalPoint = {
   y: Scalars['FloatType']['output']
 }
 
-export type AllPagesQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type AllPagesQueryQuery = {
-  __typename?: 'Query'
-  allPages: Array<{
-    __typename?: 'PageRecord'
-    id: string
-    title: string
-    _status: ItemStatus
-    _firstPublishedAt?: string | null
-    slug: string
-  }>
+export type ResponsiveImageFragmentFragment = {
+  __typename?: 'ResponsiveImage'
+  src: string
+  srcSet: string
+  webpSrcSet: string
+  sizes: string
+  width: number
+  height: number
+  aspectRatio: number
+  alt?: string | null
+  title?: string | null
+  base64?: string | null
+  bgColor?: string | null
 }
 
-export const AllPagesQueryDocument = {
+export const ResponsiveImageFragmentFragmentDoc = {
   kind: 'Document',
   definitions: [
     {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'AllPagesQuery' },
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ResponsiveImageFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ResponsiveImage' },
+      },
       selectionSet: {
         kind: 'SelectionSet',
         selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'allPages' },
-            arguments: [
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'first' },
-                value: { kind: 'IntValue', value: '100' },
-              },
-            ],
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                { kind: 'Field', name: { kind: 'Name', value: '_status' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: '_firstPublishedAt' },
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-              ],
-            },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'srcSet' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'webpSrcSet' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'sizes' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'aspectRatio' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'bgColor' } },
         ],
       },
     },
   ],
-} as unknown as DocumentNode<AllPagesQueryQuery, AllPagesQueryQueryVariables>
+} as unknown as DocumentNode<ResponsiveImageFragmentFragment, unknown>
