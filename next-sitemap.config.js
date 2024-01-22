@@ -74,7 +74,6 @@ const getPagesSlugLocales = async () => {
     }
 
     dataCache = response.data // cache the first response to avoid multiple requests
-    console.log(JSON.stringify(dataCache, null, 2))
     return response.data
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -116,8 +115,6 @@ module.exports = {
     const isCourse =
       pathWithoutLocale.split('/').filter((s) => s !== '')[0] === 'course'
 
-    console.log(isCourse)
-
     const dynamicRouteSegments = {
       course: 'allShortCourses',
     }
@@ -157,7 +154,6 @@ module.exports = {
       ...commonProps,
       loc: `${isCourse ? 'course/' : ''}${slug}`,
       alternateRefs: _allSlugLocales.map((s) => {
-        console.log(`${SITE_URL}/${s.locale}/${isCourse ? 'course/' : ''}`)
         return {
           href: `${SITE_URL}/${s.locale}/${isCourse ? 'course/' : ''}`,
           hreflang: s.locale,
