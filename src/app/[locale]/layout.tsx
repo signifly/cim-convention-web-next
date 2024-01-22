@@ -11,13 +11,13 @@ import { toNextMetadata } from 'react-datocms/seo'
 
 // i18n
 import { Providers } from '@/components/Providers'
-import { Locale, locales } from '@/navigation'
+import { Locale, defaultLocale, locales } from '@/navigation'
 import CookieFirstScript from '@/components/CookieFirstScript'
 
 export function generateStaticParams() {
   return process.env.ENABLE_I18N === 'true'
     ? locales.map((locale) => ({ locale }))
-    : [{ locale: 'en' }]
+    : [{ locale: defaultLocale }]
 }
 
 export const generateMetadata = async ({
