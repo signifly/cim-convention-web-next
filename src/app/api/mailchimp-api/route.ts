@@ -34,22 +34,22 @@ export async function POST(event: Request) {
       return {
         ...responseObj,
         status: response.status,
-        body: JSON.stringify({
-          success: false,
-        }),
-      }
+        // body: JSON.stringify({
+        //   success: false,
+        // }),
+      } as Response
     }
 
     const responseObj = new Response()
 
     return {
       ...responseObj,
-      body: JSON.stringify({
-        success: true,
-        message: 'Contact added successfully',
-      }),
+      // body: JSON.stringify({
+      //   success: true,
+      //   message: 'Contact added successfully',
+      // }),
       status: 200,
-    }
+    } as Response
   } catch (error: any) {
     console.error('Error adding contact to Mailchimp', {
       error: error?.response?.body || error,
@@ -62,10 +62,12 @@ export async function POST(event: Request) {
     return {
       ...responseObj,
       status: error?.status || 400,
-      body: JSON.stringify({
-        success: false,
-        message: error?.response?.body || error || 'Unknown error',
-      }),
-    }
+      // body: JSON.stringify({
+      //   success: false,
+      //   message: error?.response?.body || error || 'Unknown error',
+      // }),
+    } as Response
   }
 }
+
+// @todo: Remove comments if deployment succeeds
