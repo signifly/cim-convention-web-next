@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server'
 const client = require('@mailchimp/mailchimp_marketing')
 
 const mailchimpApiKey = process.env.MAILCHIMP_API_KEY
@@ -38,13 +37,16 @@ export async function POST(event: Request) {
       }
     }
 
-    return NextResponse.json({
-      statusCode: 200,
+    const responseObj = new Response()
+
+    return {
+      ...responseObj,
       body: JSON.stringify({
         success: true,
         message: 'Contact added successfully',
       }),
-    })
+      status: 200,
+    }
   } catch (error: any) {
     console.error('Error adding contact to Mailchimp', {
       error: error?.response?.body || error,
