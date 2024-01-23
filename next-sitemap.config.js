@@ -152,11 +152,13 @@ module.exports = {
 
     return {
       ...commonProps,
-      loc: slug,
-      alternateRefs: _allSlugLocales.map((s) => ({
-        href: `${SITE_URL}/${s.locale}/${isCourse ? 'course/' : ''}`,
-        hreflang: s.locale,
-      })),
+      loc: `${isCourse ? 'course/' : ''}${slug}`,
+      alternateRefs: _allSlugLocales.map((s) => {
+        return {
+          href: `${SITE_URL}/${s.locale}/${isCourse ? 'course/' : ''}`,
+          hreflang: s.locale,
+        }
+      }),
     }
   },
   // ...other options

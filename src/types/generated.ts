@@ -273,9 +273,9 @@ export type AlertBlockRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
   id: Scalars['ItemId']['output']
-  image: ImageAltFileField
-  paragraphs: Scalars['String']['output']
-  title: Scalars['String']['output']
+  image?: Maybe<ImageAltFileField>
+  paragraphs?: Maybe<Scalars['String']['output']>
+  title?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Alert Block (alert_block) */
@@ -4725,7 +4725,6 @@ export type ShortCourseRecord = RecordInterface & {
   _allPageTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _allSeoLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allSlugLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
-  _allStartEndTimeLocales?: Maybe<Array<StringNonNullMultiLocaleField>>
   _createdAt: Scalars['DateTime']['output']
   /** Editing URL */
   _editingUrl?: Maybe<Scalars['String']['output']>
@@ -4796,11 +4795,6 @@ export type ShortCourseRecord_AllSlugLocalesArgs = {
 }
 
 /** Record of type Short Course (short_course) */
-export type ShortCourseRecord_AllStartEndTimeLocalesArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Short Course (short_course) */
 export type ShortCourseRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -4849,12 +4843,6 @@ export type ShortCourseRecordSeoArgs = {
 
 /** Record of type Short Course (short_course) */
 export type ShortCourseRecordSlugArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Short Course (short_course) */
-export type ShortCourseRecordStartEndTimeArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   locale?: InputMaybe<SiteLocale>
 }
@@ -5837,49 +5825,47 @@ export type FocalPoint = {
   y: Scalars['FloatType']['output']
 }
 
-export type AllPagesQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type AllPagesQueryQuery = {
-  __typename?: 'Query'
-  allPages: Array<{
-    __typename?: 'PageRecord'
-    id: string
-    title: string
-    _status: ItemStatus
-    _firstPublishedAt?: string | null
-    slug: string
-  }>
+export type ResponsiveImageFragmentFragment = {
+  __typename?: 'ResponsiveImage'
+  src: string
+  srcSet: string
+  webpSrcSet: string
+  sizes: string
+  width: number
+  height: number
+  aspectRatio: number
+  alt?: string | null
+  title?: string | null
+  base64?: string | null
+  bgColor?: string | null
 }
 
-export const AllPagesQueryDocument = {
+export const ResponsiveImageFragmentFragmentDoc = {
   kind: 'Document',
   definitions: [
     {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'AllPagesQuery' },
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ResponsiveImageFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'ResponsiveImage' },
+      },
       selectionSet: {
         kind: 'SelectionSet',
         selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'allPages' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                { kind: 'Field', name: { kind: 'Name', value: '_status' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: '_firstPublishedAt' },
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-              ],
-            },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'srcSet' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'webpSrcSet' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'sizes' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'aspectRatio' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'bgColor' } },
         ],
       },
     },
   ],
-} as unknown as DocumentNode<AllPagesQueryQuery, AllPagesQueryQueryVariables>
+} as unknown as DocumentNode<ResponsiveImageFragmentFragment, unknown>

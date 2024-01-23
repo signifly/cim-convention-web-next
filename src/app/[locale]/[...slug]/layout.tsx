@@ -28,13 +28,12 @@ export async function generateStaticParams({ params }: PageProps) {
 }
 
 export const generateMetadata = async ({
-  params: { locale },
+  params: { slug, locale },
 }: LayoutProps): Promise<Metadata> => {
   const { data } = await fetchDatoContent(
     getPageBySlugQuery({
-      locale: locale,
-      slug: '',
-      isHomePage: true,
+      locale,
+      slug,
     }),
   )
   return !data.page ? {} : toNextMetadata([...data.page._seoMetaTags])
