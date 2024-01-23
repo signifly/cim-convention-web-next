@@ -6,7 +6,6 @@ import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 import SocialMedia from '@/components/SocialMedia'
 import { useRef, useState } from 'react'
-import { Link } from '@/navigation'
 
 type DefaultFooterBlockRecordExt = DefaultFooterBlockRecord & {
   socialLinks: SocialLinkRecord
@@ -56,7 +55,7 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
       formObject[key] = value
     })
 
-    fetch('https://formspree.io/f/xoqgqpea', {
+    fetch('/api/mailchimp-api', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
