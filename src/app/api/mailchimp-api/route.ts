@@ -29,8 +29,11 @@ export async function POST(event: Request) {
         response: response,
       })
 
+      const responseObj = new Response()
+
       return {
-        statusCode: response.status,
+        ...responseObj,
+        status: response.status,
         body: JSON.stringify({
           success: false,
         }),
@@ -54,8 +57,11 @@ export async function POST(event: Request) {
       fields: event.body,
     })
 
+    const responseObj = new Response()
+
     return {
-      statusCode: error?.status || 400,
+      ...responseObj,
+      status: error?.status || 400,
       body: JSON.stringify({
         success: false,
         message: error?.response?.body || error || 'Unknown error',
