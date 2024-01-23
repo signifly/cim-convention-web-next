@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server'
 const client = require('@mailchimp/mailchimp_marketing')
 
 const mailchimpApiKey = process.env.MAILCHIMP_API_KEY
@@ -17,7 +18,6 @@ client.setConfig({
 
 export async function POST(event: Request) {
   const { email } = await event.json()
-  console.log('Received event', email)
   try {
     const response = await client.lists.addListMember(mailchimpAudienceId, {
       email_address: email,
@@ -25,49 +25,29 @@ export async function POST(event: Request) {
     })
 
     if (!response.id) {
-      console.error('Error adding contact to Mailchimp', {
-        response: response,
-      })
-
-      const responseObj = new Response()
-
-      return {
-        ...responseObj,
-        status: response.status,
-        // body: JSON.stringify({
-        //   success: false,
-        // }),
-      } as Response
+      return NextResponse.json(
+        { message: 'Error adding contact to Mailchimp' },
+        {
+          status: response.status,
+        },
+      )
     }
 
-    const responseObj = new Response()
-
-    return {
-      ...responseObj,
-      // body: JSON.stringify({
-      //   success: true,
-      //   message: 'Contact added successfully',
-      // }),
+    return NextResponse.json({
+      response: response,
       status: 200,
-    } as Response
-  } catch (error: any) {
-    console.error('Error adding contact to Mailchimp', {
-      error: error?.response?.body || error,
-      status: error?.status,
-      fields: event.body,
     })
-
-    const responseObj = new Response()
-
-    return {
-      ...responseObj,
-      status: error?.status || 400,
-      // body: JSON.stringify({
-      //   success: false,
-      //   message: error?.response?.body || error || 'Unknown error',
-      // }),
-    } as Response
+  } catch (error: any) {
+    return NextResponse.json(
+      {
+        message: 'Error adding contact to Mailchimp',
+        error: error?.response?.body || error,
+        status: error?.status,
+        fields: event.body,
+      },
+      {
+        status: error?.status || 400,
+      },
+    )
   }
 }
-
-// @todo: Remove comments if deployment succeeds
