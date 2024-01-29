@@ -8,7 +8,7 @@ import { Locale } from '@/navigation'
 import { getCourseBySlugQuery } from '@/lib/datocms/queries/getCourseBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-export const revalidate = 10
+export const revalidate = 7200 // 2 hours
 
 type CoursePageProps = {
   children: React.ReactNode
