@@ -6,7 +6,7 @@ import { ComponentParser, fetchDatoContent } from '@/lib/datocms'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { toNextMetadata } from 'react-datocms/seo'
 
-export const revalidate = 10
+export const revalidate = 7200 // 2 hours
 
 type HomePageProps = {
   children: React.ReactNode
