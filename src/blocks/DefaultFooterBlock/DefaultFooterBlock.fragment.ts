@@ -17,6 +17,8 @@ export const DEFAULT_FOOTER_BLOCK_FRAGMENT = gql`
     submitErrorMessage
     sponsorTitle
     sponsorLink
+    whistleblowerPolicyLabel
+    whistleblowerPolicyLink
     sponsorLogo {
       responsiveImage(imgixParams: { auto: format }) {
         ...ResponsiveImageFragment
