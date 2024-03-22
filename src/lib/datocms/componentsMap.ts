@@ -16,6 +16,7 @@ import { PastConventionsBlock } from '@/blocks/PastConventionsBlock/PastConventi
 import { ConventionBlock } from '@/blocks/ConventionBlock/ConventionBlock'
 import { StatisticsBlock } from '@/blocks/StatisticsBlock/StatisticsBlock'
 import { FormBlock } from '@/blocks/FormBlock/FormBlock'
+import { FormCarbonBlock } from '@/blocks/FormCarbonBlock/FormCarbonBlock' /// line 59 too
 import { AccordionBlock } from '@/blocks/AccordionBlock/AccordionBlock'
 import { OneColumnTextBlock } from '@/blocks/OneColumnTextBlock/OneColumnTextBlock'
 import { SponsorListBlock } from '@/blocks/SponsorListBlock/SponsorListBlock'
@@ -55,6 +56,7 @@ export const componentsMap = {
   convention_block: ConventionBlock,
   statistics_block: StatisticsBlock,
   form_block: FormBlock,
+  form_carbon_block: FormCarbonBlock,
   accordion_block: AccordionBlock,
   one_column_text_block: OneColumnTextBlock,
   sponsor_list_block: SponsorListBlock,

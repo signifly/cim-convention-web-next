@@ -1,0 +1,971 @@
+[
+  {
+    "City": "Calgary",
+    "Province_State": " AB",
+    "Country": "Canada",
+    "Car_Gasoline": 228.40378874870754,
+    "Car_Diesel": 182.4986995508729,
+    "Car_Hybrid": 121.66629635429092,
+    "Car_BEV": 63.46477553587051
+  },
+  {
+    "City": "Edmonton",
+    "Province_State": " AB",
+    "Country": "Canada",
+    "Car_Gasoline": 277.4858470283544,
+    "Car_Diesel": 221.71613922815757,
+    "Car_Hybrid": 147.81136286586334,
+    "Car_BEV": 77.10282343613297,
+    "Train": 114.72099999999999
+  },
+  {
+    "City": "Medicine Hat",
+    "Province_State": " AB",
+    "Country": "Canada",
+    "Car_Gasoline": 291.04799471088836,
+    "Car_Diesel": 232.55253703372307,
+    "Car_Hybrid": 155.03565755985045,
+    "Car_BEV": 80.87123140857392
+  },
+  {
+    "City": "Prince Rupert",
+    "Province_State": " BC",
+    "Country": "Canada",
+    "Car_Gasoline": 324.8457278245049,
+    "Car_Diesel": 259.5575283904498,
+    "Car_Hybrid": 173.03905862264372,
+    "Car_BEV": 90.262343339895,
+    "Train": 134.301
+  },
+  {
+    "City": "Winnipeg",
+    "Province_State": " MB",
+    "Country": "Canada",
+    "Car_Gasoline": 312.7904854400302,
+    "Car_Diesel": 249.9251747855027,
+    "Car_Hybrid": 166.61746333909963,
+    "Car_BEV": 86.91264736439194
+  },
+  {
+    "City": "Fredericton",
+    "Province_State": " NB",
+    "Country": "Canada",
+    "Car_Gasoline": 1227.4820013620456,
+    "Car_Diesel": 980.7800045608647,
+    "Car_Hybrid": 653.8560054780083,
+    "Car_BEV": 341.07082950568673
+  },
+  {
+    "City": "Halifax",
+    "Province_State": " NS",
+    "Country": "Canada",
+    "Car_Gasoline": 1306.9174377883162,
+    "Car_Diesel": 1044.250334564891,
+    "Car_Hybrid": 696.16973154279,
+    "Car_BEV": 363.1429333442694,
+    "Train": 540.319
+  },
+  {
+    "City": "Yellowknife",
+    "Province_State": " NWT",
+    "Country": "Canada",
+    "Car_Gasoline": 372.4208808060924,
+    "Car_Diesel": 297.57092386711605,
+    "Car_Hybrid": 198.38142572377313,
+    "Car_BEV": 103.48167924321957
+  },
+  {
+    "City": "Ottawa",
+    "Province_State": " ON",
+    "Country": "Canada",
+    "Car_Gasoline": 1002.3072953948938,
+    "Car_Diesel": 800.8613997256025,
+    "Car_Hybrid": 533.9097792889524,
+    "Car_BEV": 278.5032939632545
+  },
+  {
+    "City": "Sault Ste Marie",
+    "Province_State": " ON",
+    "Country": "Canada",
+    "Car_Gasoline": 798.6598079714466,
+    "Car_Diesel": 638.143426327746,
+    "Car_Hybrid": 425.43068753479673,
+    "Car_BEV": 221.91735837707782
+  },
+  {
+    "City": "Thunder Bay",
+    "Province_State": " ON",
+    "Country": "Canada",
+    "Car_Gasoline": 650.1220000198838,
+    "Car_Diesel": 519.4590694096477,
+    "Car_Hybrid": 346.30745993398546,
+    "Car_BEV": 180.6443186789151
+  },
+  {
+    "City": "Toronto",
+    "Province_State": " ON",
+    "Country": "Canada",
+    "Car_Gasoline": 955.5932311550544,
+    "Car_Diesel": 763.5360295064324,
+    "Car_Hybrid": 509.026097565219,
+    "Car_BEV": 265.5232220581802
+  },
+  {
+    "City": "Windsor",
+    "Province_State": " ON",
+    "Country": "Canada",
+    "Car_Gasoline": 743.3348563141254,
+    "Car_Diesel": 593.9378035336138,
+    "Car_Hybrid": 395.9601520371032,
+    "Car_BEV": 206.54464648950128,
+    "Train": 307.317
+  },
+  {
+    "City": "Charlottetown",
+    "Province_State": " PEI",
+    "Country": "Canada",
+    "Car_Gasoline": 1308.8548874572496,
+    "Car_Diesel": 1045.7983913942576,
+    "Car_Hybrid": 697.201773641931,
+    "Car_BEV": 363.68127734033243
+  },
+  {
+    "City": "Montreal",
+    "Province_State": " QU",
+    "Country": "Canada",
+    "Car_Gasoline": 1045.3617324823033,
+    "Car_Diesel": 835.2626626004137,
+    "Car_Hybrid": 556.8440481587528,
+    "Car_BEV": 290.4664938757655
+  },
+  {
+    "City": "Quebec City",
+    "Province_State": " QU",
+    "Country": "Canada",
+    "Car_Gasoline": 1101.1172285104985,
+    "Car_Diesel": 879.812298023294,
+    "Car_Hybrid": 586.5439263451442,
+    "Car_BEV": 305.95883776246717
+  },
+  {
+    "City": "Regina",
+    "Province_State": " SK",
+    "Country": "Canada",
+    "Car_Gasoline": 385.33721193231526,
+    "Car_Diesel": 307.8913027295594,
+    "Car_Hybrid": 205.26170638471325,
+    "Car_BEV": 107.07063921697286
+  },
+  {
+    "City": "Saskatoon",
+    "Province_State": " SK",
+    "Country": "Canada",
+    "Car_Gasoline": 365.74744305754393,
+    "Car_Diesel": 292.23872812152035,
+    "Car_Hybrid": 194.82661404895407,
+    "Car_BEV": 101.62738325678039,
+    "Train": 151.21099999999998
+  },
+  {
+    "City": "Whitehorse",
+    "Province_State": " YK",
+    "Country": "Canada",
+    "Car_Gasoline": 325.491544380816,
+    "Car_Diesel": 260.073547333572,
+    "Car_Hybrid": 173.38307265569074,
+    "Car_BEV": 90.44179133858266
+  },
+  {
+    "City": "Banff",
+    "Province_State": "AB",
+    "Country": "Canada",
+    "Car_Gasoline": 182.33554106517934,
+    "Car_Diesel": 145.68934827482502,
+    "Car_Hybrid": 97.12662866360454,
+    "Car_BEV": 50.664151629483804
+  },
+  {
+    "City": "Jasper",
+    "Province_State": "AB",
+    "Country": "Canada",
+    "Car_Gasoline": 170.9261152370158,
+    "Car_Diesel": 136.5730136130001,
+    "Car_Hybrid": 91.04904741310743,
+    "Car_BEV": 47.49390365266841,
+    "Train": 70.666
+  },
+  {
+    "City": "Abbotsford",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 13.992692053408096,
+    "Car_Diesel": 11.18041043431361,
+    "Car_Hybrid": 7.453637382685118,
+    "Car_BEV": 0.14396271594899937,
+    "Train": 5.785
+  },
+  {
+    "City": "Bella Coola",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 214.41109669529942,
+    "Car_Diesel": 171.3182891165593,
+    "Car_Hybrid": 114.2126589716058,
+    "Car_BEV": 2.2059517705415903
+  },
+  {
+    "City": "Burnaby",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 2.5832662252445715,
+    "Car_Diesel": 2.0640757724886662,
+    "Car_Hybrid": 1.3760561321880216,
+    "Car_BEV": 0.026577732175199882
+  },
+  {
+    "City": "Campbell River",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 15.499597351467429,
+    "Car_Diesel": 12.384454634931998,
+    "Car_Hybrid": 8.25633679312813,
+    "Car_BEV": 0.1594663930511993,
+    "Cruise": 57.75
+  },
+  {
+    "City": "Chilliwack",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 21.74249072914181,
+    "Car_Diesel": 17.37263775177961,
+    "Car_Hybrid": 11.581805779249182,
+    "Car_BEV": 0.223695912474599,
+    "Train": 8.988999999999999
+  },
+  {
+    "City": "Coquitlam",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 5.812349006800286,
+    "Car_Diesel": 4.644170488099499,
+    "Car_Hybrid": 3.096126297423049,
+    "Car_BEV": 0.05979989739419973
+  },
+  {
+    "City": "Kamloops",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 75.77580927384076,
+    "Car_Diesel": 60.54622265966755,
+    "Car_Hybrid": 40.364313210848636,
+    "Car_BEV": 0.7796134771391965
+  },
+  {
+    "City": "Kelowna",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 83.52560794957448,
+    "Car_Diesel": 66.73844997713354,
+    "Car_Hybrid": 44.4924816074127,
+    "Car_BEV": 0.8593466736647962
+  },
+  {
+    "City": "Nanaimo",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 18.082863576712,
+    "Car_Diesel": 14.448530407420664,
+    "Car_Hybrid": 9.632392925316152,
+    "Car_BEV": 0.18604412522639918,
+    "Cruise": 20.325
+  },
+  {
+    "City": "Nelson",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 141.4338258321403,
+    "Car_Diesel": 113.00814854375449,
+    "Car_Hybrid": 75.33907323729419,
+    "Car_BEV": 1.4551308365921936
+  },
+  {
+    "City": "New Westminster",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 4.090171523303905,
+    "Car_Diesel": 3.268119973107055,
+    "Car_Hybrid": 2.1787555426310345,
+    "Car_BEV": 0.04208140927739981
+  },
+  {
+    "City": "North Vancouver",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 2.798538410681619,
+    "Car_Diesel": 2.236082086862722,
+    "Car_Hybrid": 1.4907274765370235,
+    "Car_BEV": 0.028792543189799874
+  },
+  {
+    "City": "Port Coquitlam",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 6.242893377674381,
+    "Car_Diesel": 4.98818311684761,
+    "Car_Hybrid": 3.3254689861210522,
+    "Car_BEV": 0.06422951942339972
+  },
+  {
+    "City": "Port Hardy",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 88.26159602918952,
+    "Car_Diesel": 70.52258889336277,
+    "Car_Hybrid": 47.01525118309074,
+    "Car_BEV": 0.9080725159859959,
+    "Cruise": 115.875
+  },
+  {
+    "City": "Prince George",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 169.20393775351943,
+    "Car_Diesel": 135.19696309800764,
+    "Car_Hybrid": 90.13167665831543,
+    "Car_BEV": 1.7408414574755924,
+    "Train": 69.954
+  },
+  {
+    "City": "Prince Rupert",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 323.33882252644554,
+    "Car_Diesel": 258.3534841898314,
+    "Car_Hybrid": 172.2363592122007,
+    "Car_BEV": 3.3266461439291852,
+    "Train": 133.678
+  },
+  {
+    "City": "Revelstoke",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 121.6287847719319,
+    "Car_Diesel": 97.18356762134137,
+    "Car_Hybrid": 64.78930955718602,
+    "Car_BEV": 1.2513682232489944
+  },
+  {
+    "City": "Surrey",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 6.888709933985524,
+    "Car_Diesel": 5.504202059969777,
+    "Car_Hybrid": 3.669483019168058,
+    "Car_BEV": 0.07087395246719969
+  },
+  {
+    "City": "Tofino",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 48.866786094209814,
+    "Car_Diesel": 39.04543336291061,
+    "Car_Hybrid": 26.03039516722341,
+    "Car_BEV": 0.5027621003141978,
+    "Cruise": 70.625
+  },
+  {
+    "City": "Vernon",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 94.50448940686391,
+    "Car_Diesel": 75.51077201021037,
+    "Car_Hybrid": 50.34072016921179,
+    "Car_BEV": 0.9723020354093956
+  },
+  {
+    "City": "Victoria",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 24.32575695438638,
+    "Car_Diesel": 19.436713524268274,
+    "Car_Hybrid": 12.957861911437204,
+    "Car_BEV": 0.2502736446497989,
+    "Cruise": 29.6
+  },
+  {
+    "City": "Whistler",
+    "Province_State": "BC",
+    "Country": "Canada",
+    "Car_Gasoline": 26.478478808756858,
+    "Car_Diesel": 21.15677666800883,
+    "Car_Hybrid": 14.104575354927222,
+    "Car_BEV": 0.2724217547957988
+  },
+  {
+    "City": "St John’s",
+    "Province_State": "NFLD",
+    "Country": "Canada",
+    "Car_Gasoline": 1522.620167596238,
+    "Car_Diesel": 1216.6006615676947,
+    "Car_Hybrid": 811.0704185804898,
+    "Car_BEV": 423.0785649059492
+  },
+  {
+    "City": "Seattle",
+    "Province_State": "Washington",
+    "Country": "USA",
+    "Car_Gasoline": 49.512602650520954,
+    "Car_Diesel": 39.56145230603277,
+    "Car_Hybrid": 26.374409200270417,
+    "Car_BEV": 13.757679899387574
+  },
+  {
+    "City": "Olympia",
+    "Province_State": "Washington",
+    "Country": "USA",
+    "Car_Gasoline": 70.60927682335162,
+    "Car_Diesel": 56.418071114690214,
+    "Car_Hybrid": 37.61220094647259,
+    "Car_BEV": 19.619647856517933
+  },
+  {
+    "City": "Portland",
+    "Province_State": "Oregon",
+    "Country": "USA",
+    "Car_Gasoline": 109.57354238745724,
+    "Car_Diesel": 87.55121401639427,
+    "Car_Hybrid": 58.36771427364192,
+    "Car_BEV": 30.446343777340328
+  },
+  {
+    "City": "Salem",
+    "Province_State": "Oregon",
+    "Country": "USA",
+    "Car_Gasoline": 125.28841192436172,
+    "Car_Diesel": 100.10767496570031,
+    "Car_Hybrid": 66.73872241111906,
+    "Car_BEV": 34.812911745406815
+  },
+  {
+    "City": "Montgomery",
+    "Province_State": "Alabama",
+    "Country": "USA",
+    "Car_Gasoline": 954.9474145987433,
+    "Car_Diesel": 763.0200105633103,
+    "Car_Hybrid": 508.68208353217204,
+    "Car_BEV": 265.34377405949255
+  },
+  {
+    "City": "Juneau",
+    "Province_State": "Alaska",
+    "Country": "USA",
+    "Car_Gasoline": 569.610202666428,
+    "Car_Diesel": 455.1287078337509,
+    "Car_Hybrid": 303.4203771474588,
+    "Car_BEV": 158.27313484251965
+  },
+  {
+    "City": "Phoenix",
+    "Province_State": "Arizona",
+    "Country": "USA",
+    "Car_Gasoline": 534.3055642547522,
+    "Car_Diesel": 426.91967227640583,
+    "Car_Hybrid": 284.6142766742225,
+    "Car_BEV": 148.4633109142607
+  },
+  {
+    "City": "Little Rock",
+    "Province_State": "Arkansas",
+    "Country": "USA",
+    "Car_Gasoline": 830.9506357870039,
+    "Car_Diesel": 663.9443734838543,
+    "Car_Hybrid": 442.63138918714697,
+    "Car_BEV": 230.88975831146104
+  },
+  {
+    "City": "Sacramento",
+    "Province_State": "California",
+    "Country": "USA",
+    "Car_Gasoline": 309.9919470293486,
+    "Car_Diesel": 247.68909269863997,
+    "Car_Hybrid": 165.1267358625626,
+    "Car_BEV": 86.13503937007873
+  },
+  {
+    "City": "Denver",
+    "Province_State": "Colorado",
+    "Country": "USA",
+    "Car_Gasoline": 500.07728677026165,
+    "Car_Diesel": 399.570668290931,
+    "Car_Hybrid": 266.3815329227312,
+    "Car_BEV": 138.9525669838145
+  },
+  {
+    "City": "Hartford",
+    "Province_State": "Connecticut",
+    "Country": "USA",
+    "Car_Gasoline": 1070.3333059930007,
+    "Car_Diesel": 855.2153950678041,
+    "Car_Hybrid": 570.145924103237,
+    "Car_BEV": 297.40514982502185
+  },
+  {
+    "City": "Dover",
+    "Province_State": "Delaware",
+    "Country": "USA",
+    "Car_Gasoline": 1033.3064900978286,
+    "Car_Diesel": 825.6303089954665,
+    "Car_Hybrid": 550.4224528752087,
+    "Car_BEV": 287.11679790026244
+  },
+  {
+    "City": "Tallahassee",
+    "Province_State": "Florida",
+    "Country": "USA",
+    "Car_Gasoline": 1028.3552298327766,
+    "Car_Diesel": 821.6741637648632,
+    "Car_Hybrid": 547.7850119551816,
+    "Car_BEV": 285.7410299103237
+  },
+  {
+    "City": "Atlanta",
+    "Province_State": "Georgia",
+    "Country": "USA",
+    "Car_Gasoline": 960.7597636055435,
+    "Car_Diesel": 767.6641810514099,
+    "Car_Hybrid": 511.7782098295951,
+    "Car_BEV": 266.9588060476815
+  },
+  {
+    "City": "Boise",
+    "Province_State": "Idaho",
+    "Country": "USA",
+    "Car_Gasoline": 218.2859960331663,
+    "Car_Diesel": 174.4144027752923,
+    "Car_Hybrid": 116.27674316988784,
+    "Car_BEV": 60.65342355643044
+  },
+  {
+    "City": "Chicago",
+    "Province_State": "Illinois",
+    "Country": "USA",
+    "Car_Gasoline": 760.5135767120018,
+    "Car_Diesel": 607.6639074206635,
+    "Car_Hybrid": 405.1109253161536,
+    "Car_BEV": 211.31796325459317
+  },
+  {
+    "City": "Springfield",
+    "Province_State": "Illinois",
+    "Country": "USA",
+    "Car_Gasoline": 765.7231635995784,
+    "Car_Diesel": 611.8264602285155,
+    "Car_Hybrid": 407.8859718493994,
+    "Car_BEV": 212.76551044400696
+  },
+  {
+    "City": "Indianapolis",
+    "Province_State": "Indiana",
+    "Country": "USA",
+    "Car_Gasoline": 825.7841033365147,
+    "Car_Diesel": 659.816221938877,
+    "Car_Hybrid": 439.87927692277094,
+    "Car_BEV": 229.45417432195973
+  },
+  {
+    "City": "Des Moines",
+    "Province_State": "Iowa",
+    "Country": "USA",
+    "Car_Gasoline": 655.50380465581,
+    "Car_Diesel": 523.7592272689991,
+    "Car_Hybrid": 349.1742435427105,
+    "Car_BEV": 182.13971866797897
+  },
+  {
+    "City": "Topeka",
+    "Province_State": "Kansas",
+    "Country": "USA",
+    "Car_Gasoline": 677.0310231995148,
+    "Car_Diesel": 540.9598587064046,
+    "Car_Hybrid": 360.64137797761066,
+    "Car_BEV": 188.12131862423445
+  },
+  {
+    "City": "Frankfort",
+    "Province_State": "Kentucky",
+    "Country": "USA",
+    "Car_Gasoline": 883.0465046627694,
+    "Car_Diesel": 705.5699015623758,
+    "Car_Hybrid": 470.38185451960544,
+    "Car_BEV": 245.36523020559926
+  },
+  {
+    "City": "Baton Rouge",
+    "Province_State": "Louisiana",
+    "Country": "USA",
+    "Car_Gasoline": 921.3649536705639,
+    "Car_Diesel": 736.1870255209577,
+    "Car_Hybrid": 490.7933538137277,
+    "Car_BEV": 256.01247812773397
+  },
+  {
+    "City": "Augusta",
+    "Province_State": "Maine",
+    "Country": "USA",
+    "Car_Gasoline": 1155.3658192406347,
+    "Car_Diesel": 923.157889245556,
+    "Car_Hybrid": 615.4411051210927,
+    "Car_BEV": 321.03246965223093
+  },
+  {
+    "City": "Annapolis",
+    "Province_State": "Maryland",
+    "Country": "USA",
+    "Car_Gasoline": 1012.2098159249979,
+    "Car_Diesel": 808.7736901868091,
+    "Car_Hybrid": 539.1846611290065,
+    "Car_BEV": 281.25482994313205
+  },
+  {
+    "City": "Boston",
+    "Province_State": "Massachusetts",
+    "Country": "USA",
+    "Car_Gasoline": 1102.4088616231209,
+    "Car_Diesel": 880.8443359095384,
+    "Car_Hybrid": 587.2319544112382,
+    "Car_BEV": 306.3177337598425
+  },
+  {
+    "City": "Lansing",
+    "Province_State": "Michigan",
+    "Country": "USA",
+    "Car_Gasoline": 839.9920675753598,
+    "Car_Diesel": 671.1686386875647,
+    "Car_Hybrid": 447.44758564980503,
+    "Car_BEV": 233.40203029308833
+  },
+  {
+    "City": "St. Paul",
+    "Province_State": "Minnesota",
+    "Country": "USA",
+    "Car_Gasoline": 624.9351543237492,
+    "Car_Diesel": 499.3343306278832,
+    "Car_Hybrid": 332.89091264515224,
+    "Car_BEV": 173.64584673009622
+  },
+  {
+    "City": "Jackson",
+    "Province_State": "Mississippi",
+    "Country": "USA",
+    "Car_Gasoline": 919.2122318161934,
+    "Car_Diesel": 734.4669623772171,
+    "Car_Hybrid": 489.6466403702377,
+    "Car_BEV": 255.41431813210843
+  },
+  {
+    "City": "Jefferson City",
+    "Province_State": "Missouri",
+    "Country": "USA",
+    "Car_Gasoline": 737.7377794927622,
+    "Car_Diesel": 589.4656393598883,
+    "Car_Hybrid": 392.9786970840292,
+    "Car_BEV": 204.98943050087485
+  },
+  {
+    "City": "Billings",
+    "Province_State": "Montana",
+    "Country": "USA",
+    "Car_Gasoline": 326.86928636761314,
+    "Car_Diesel": 261.1743877455659,
+    "Car_Hybrid": 174.11696925952435,
+    "Car_BEV": 90.82461373578302
+  },
+  {
+    "City": "Helena",
+    "Province_State": "Montana",
+    "Country": "USA",
+    "Car_Gasoline": 251.00736821959754,
+    "Car_Diesel": 200.55936256014874,
+    "Car_Hybrid": 133.7067875109361,
+    "Car_BEV": 69.74545548993875
+  },
+  {
+    "City": "Lincoln",
+    "Province_State": "Nebraska",
+    "Country": "USA",
+    "Car_Gasoline": 623.858793396564,
+    "Car_Diesel": 498.4742990560129,
+    "Car_Hybrid": 332.3175559234072,
+    "Car_BEV": 173.34676673228344
+  },
+  {
+    "City": "Carson City",
+    "Province_State": "Nevada",
+    "Country": "USA",
+    "Car_Gasoline": 303.10323709536306,
+    "Car_Diesel": 242.1848906386702,
+    "Car_Hybrid": 161.45725284339454,
+    "Car_BEV": 84.22092738407697
+  },
+  {
+    "City": "Concord",
+    "Province_State": "New Hampshire",
+    "Country": "USA",
+    "Car_Gasoline": 1094.2285185765131,
+    "Car_Diesel": 874.3080959633243,
+    "Car_Hybrid": 582.8744433259762,
+    "Car_BEV": 304.0447257764654
+  },
+  {
+    "City": "Trenton",
+    "Province_State": "New Jersey",
+    "Country": "USA",
+    "Car_Gasoline": 1031.3690404288952,
+    "Car_Diesel": 824.0822521661,
+    "Car_Hybrid": 549.3904107760677,
+    "Car_BEV": 286.5784539041994
+  },
+  {
+    "City": "Albuquerque",
+    "Province_State": "New Mexico",
+    "Country": "USA",
+    "Car_Gasoline": 546.6191332617514,
+    "Car_Diesel": 436.75843345860187,
+    "Car_Hybrid": 291.1734775709854,
+    "Car_BEV": 151.88478608923884
+  },
+  {
+    "City": "Santa Fe",
+    "Province_State": "New Mexico",
+    "Country": "USA",
+    "Car_Gasoline": 542.48590730136,
+    "Car_Diesel": 433.45591222261993,
+    "Car_Hybrid": 288.9717877594846,
+    "Car_BEV": 150.73631889763777
+  },
+  {
+    "City": "Buffalo",
+    "Province_State": "New York",
+    "Country": "USA",
+    "Car_Gasoline": 945.4754384395131,
+    "Car_Diesel": 755.4517327308519,
+    "Car_Hybrid": 503.63654438081596,
+    "Car_BEV": 262.7118700787401
+  },
+  {
+    "City": "New York",
+    "Province_State": "New York",
+    "Country": "USA",
+    "Car_Gasoline": 1035.3731030780243,
+    "Car_Diesel": 827.2815696134576,
+    "Car_Hybrid": 551.5232977809592,
+    "Car_BEV": 287.691031496063
+  },
+  {
+    "City": "Charlotte",
+    "Province_State": "North Carolina",
+    "Country": "USA",
+    "Car_Gasoline": 1023.6622961902489,
+    "Car_Diesel": 817.9244261115089,
+    "Car_Hybrid": 545.2851766483734,
+    "Car_BEV": 284.43704111985994
+  },
+  {
+    "City": "Fargo",
+    "Province_State": "North Dakota",
+    "Country": "USA",
+    "Car_Gasoline": 538.0082458442695,
+    "Car_Diesel": 429.87818088363963,
+    "Car_Hybrid": 286.58662379702537,
+    "Car_BEV": 149.49214610673664
+  },
+  {
+    "City": "Cincinnati ",
+    "Province_State": "Ohio",
+    "Country": "USA",
+    "Car_Gasoline": 862.8109192316869,
+    "Car_Diesel": 689.4013080112146,
+    "Car_Hybrid": 459.60274815079924,
+    "Car_BEV": 239.7425262467191
+  },
+  {
+    "City": "Cleveland",
+    "Province_State": "Ohio",
+    "Country": "USA",
+    "Car_Gasoline": 878.3105165831544,
+    "Car_Diesel": 701.7857626461465,
+    "Car_Hybrid": 467.85908494392737,
+    "Car_BEV": 244.04927821522307
+  },
+  {
+    "City": "Oklahoma City",
+    "Province_State": "Oklahoma",
+    "Country": "USA",
+    "Car_Gasoline": 735.7142209496541,
+    "Car_Diesel": 587.8487800047723,
+    "Car_Hybrid": 391.9007864471486,
+    "Car_BEV": 204.42716010498685
+  },
+  {
+    "City": "Philadelphia",
+    "Province_State": "Pennsylvania",
+    "Country": "USA",
+    "Car_Gasoline": 1020.5623767199554,
+    "Car_Diesel": 815.4475351845225,
+    "Car_Hybrid": 543.6339092897477,
+    "Car_BEV": 283.5756907261592
+  },
+  {
+    "City": "Pittsburgh",
+    "Province_State": "Pennsylvania",
+    "Country": "USA",
+    "Car_Gasoline": 919.2983406903683,
+    "Car_Diesel": 734.5357649029668,
+    "Car_Hybrid": 489.69250890797736,
+    "Car_BEV": 255.4382445319335
+  },
+  {
+    "City": "Providence",
+    "Province_State": "Rhode Island",
+    "Country": "USA",
+    "Car_Gasoline": 1090.4827825499085,
+    "Car_Diesel": 871.3151860932157,
+    "Car_Hybrid": 580.8791619343036,
+    "Car_BEV": 303.003927384077
+  },
+  {
+    "City": "Columbia",
+    "Province_State": "South Carolina",
+    "Country": "USA",
+    "Car_Gasoline": 1027.2788689055913,
+    "Car_Diesel": 820.814132192993,
+    "Car_Hybrid": 547.2116552334367,
+    "Car_BEV": 285.4419499125109
+  },
+  {
+    "City": "Pierre",
+    "Province_State": "South Dakota",
+    "Country": "USA",
+    "Car_Gasoline": 490.60531061103154,
+    "Car_Diesel": 392.0023904584726,
+    "Car_Hybrid": 261.3359937713751,
+    "Car_BEV": 136.3206630030621
+  },
+  {
+    "City": "Nashville",
+    "Province_State": "Tennessee",
+    "Country": "USA",
+    "Car_Gasoline": 878.999387576553,
+    "Car_Diesel": 702.3361828521436,
+    "Car_Hybrid": 468.22603324584423,
+    "Car_BEV": 244.24068941382325
+  },
+  {
+    "City": "Amarillo",
+    "Province_State": "Texas",
+    "Country": "USA",
+    "Car_Gasoline": 651.6719597550307,
+    "Car_Diesel": 520.6975148731409,
+    "Car_Hybrid": 347.1330936132983,
+    "Car_BEV": 181.07499387576553
+  },
+  {
+    "City": "Austin",
+    "Province_State": "Texas",
+    "Country": "USA",
+    "Car_Gasoline": 785.9587490306609,
+    "Car_Diesel": 627.9950537796767,
+    "Car_Hybrid": 418.6650782182056,
+    "Car_BEV": 218.38821440288712
+  },
+  {
+    "City": "Brownsville",
+    "Province_State": "Texas",
+    "Country": "USA",
+    "Car_Gasoline": 919.2983406903683,
+    "Car_Diesel": 734.5357649029668,
+    "Car_Hybrid": 489.69250890797736,
+    "Car_BEV": 255.4382445319335
+  },
+  {
+    "City": "Dallas",
+    "Province_State": "Texas",
+    "Country": "USA",
+    "Car_Gasoline": 806.6679332697049,
+    "Car_Diesel": 644.5420612224609,
+    "Car_Hybrid": 429.6964615445796,
+    "Car_BEV": 224.14251356080487
+  },
+  {
+    "City": "Salt Lake City",
+    "Province_State": "Utah",
+    "Country": "USA",
+    "Car_Gasoline": 331.691383321403,
+    "Car_Diesel": 265.0273291875448,
+    "Car_Hybrid": 176.685607372942,
+    "Car_BEV": 92.16449212598425
+  },
+  {
+    "City": "Montpelier",
+    "Province_State": "Vermont",
+    "Country": "USA",
+    "Car_Gasoline": 1090.3536192386462,
+    "Car_Diesel": 871.2119823045913,
+    "Car_Hybrid": 580.8103591276941,
+    "Car_BEV": 302.9680377843394
+  },
+  {
+    "City": "Richmond",
+    "Province_State": "Virginia",
+    "Country": "USA",
+    "Car_Gasoline": 1033.3064900978286,
+    "Car_Diesel": 825.6303089954665,
+    "Car_Hybrid": 550.4224528752087,
+    "Car_BEV": 287.11679790026244
+  },
+  {
+    "City": "Charleston",
+    "Province_State": "West Virginia",
+    "Country": "USA",
+    "Car_Gasoline": 932.7743794987274,
+    "Car_Diesel": 745.3033601827826,
+    "Car_Hybrid": 496.87093506422485,
+    "Car_BEV": 259.1827261045494
+  },
+  {
+    "City": "Madison",
+    "Province_State": "Wisconsin",
+    "Country": "USA",
+    "Car_Gasoline": 1130.7817356637238,
+    "Car_Diesel": 903.514768144039,
+    "Car_Hybrid": 602.3456375964367,
+    "Car_BEV": 314.20148250218716
+  },
+  {
+    "City": "Milwaukee",
+    "Province_State": "Wisconsin",
+    "Country": "USA",
+    "Car_Gasoline": 735.3697854529547,
+    "Car_Diesel": 587.5735699017737,
+    "Car_Hybrid": 391.7173122961902,
+    "Car_BEV": 204.33145450568676
+  },
+  {
+    "City": "Casper",
+    "Province_State": "Wyoming",
+    "Country": "USA",
+    "Car_Gasoline": 423.6556609401097,
+    "Car_Diesel": 338.5084266881413,
+    "Car_Hybrid": 225.67320567883556,
+    "Car_BEV": 117.71788713910759
+  },
+  {
+    "City": "Cheyenne",
+    "Province_State": "Wyoming",
+    "Country": "USA",
+    "Car_Gasoline": 468.0878400143164,
+    "Car_Diesel": 374.01052997494634,
+    "Car_Hybrid": 249.34137115246955,
+    "Car_BEV": 130.0639094488189
+  }
+]
