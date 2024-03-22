@@ -6,20 +6,20 @@ export const AD_BLOCK_FRAGMENT = gql`
     _modelApiKey
     anchorId
     banner
-
     ad {
       id
       url
+      googleAdCodeHtml
       image {
         responsiveImage(imgixParams: { auto: format }) {
           ...ResponsiveImageFragment
         }
       }
     }
-
     ads {
       id
       url
+      googleAdCodeHtml
       image {
         responsiveImage(imgixParams: { auto: format }) {
           ...ResponsiveImageFragment
