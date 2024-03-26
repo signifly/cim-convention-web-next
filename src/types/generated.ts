@@ -173,6 +173,7 @@ export type AdModelFilter = {
   _status?: InputMaybe<StatusFilter>
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
   _updatedAt?: InputMaybe<UpdatedAtFilter>
+  googleAdCodeHtml?: InputMaybe<TextFilter>
   id?: InputMaybe<ItemIdFilter>
   image?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
@@ -223,6 +224,7 @@ export type AdRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
   _updatedAt: Scalars['DateTime']['output']
+  googleAdCodeHtml?: Maybe<Scalars['String']['output']>
   id: Scalars['ItemId']['output']
   image?: Maybe<FileField>
   name?: Maybe<Scalars['String']['output']>
@@ -242,6 +244,11 @@ export type AdRecord_AllUrlLocalesArgs = {
 /** Record of type Ad (ad) */
 export type AdRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Ad (ad) */
+export type AdRecordGoogleAdCodeHtmlArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
 /** Record of type Ad (ad) */
@@ -819,6 +826,8 @@ export type DefaultFooterBlockRecord = RecordInterface & {
   sponsorTitle?: Maybe<Scalars['String']['output']>
   submitErrorMessage?: Maybe<Scalars['String']['output']>
   submitSuccessMessage?: Maybe<Scalars['String']['output']>
+  whistleblowerPolicyLabel?: Maybe<Scalars['String']['output']>
+  whistleblowerPolicyLink?: Maybe<Scalars['String']['output']>
 }
 
 /** Block of type Default Footer Block (default_footer_block) */
@@ -1274,6 +1283,338 @@ export type FormBlockRecordDescriptionArgs = {
   markdown?: InputMaybe<Scalars['Boolean']['input']>
 }
 
+/** Block of type Form Carbon Block  (form_carbon_block) */
+export type FormCarbonBlockRecord = RecordInterface & {
+  __typename?: 'FormCarbonBlockRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  anchorId?: Maybe<Scalars['String']['output']>
+  description?: Maybe<Scalars['String']['output']>
+  form: FormCarbonRecord
+  id: Scalars['ItemId']['output']
+  image?: Maybe<FileField>
+  title?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Form Carbon Block  (form_carbon_block) */
+export type FormCarbonBlockRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form Carbon Block  (form_carbon_block) */
+export type FormCarbonBlockRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>
+}
+
+export type FormCarbonModelFieldsetField =
+  | FormCheckboxGroupRecord
+  | FormSelectCitieRecord
+  | FormSelectboxGroupRecord
+  | FormSignatureRecord
+  | FormTextInputRecord
+  | FormTextareaRecord
+
+export type FormCarbonModelFieldsetFieldListListNonNullMultiLocaleField = {
+  __typename?: 'FormCarbonModelFieldsetFieldListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<FormCarbonModelFieldsetField>
+}
+
+export type FormCarbonModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FormCarbonModelFilter>>>
+  OR?: InputMaybe<Array<InputMaybe<FormCarbonModelFilter>>>
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  _locales?: InputMaybe<LocalesFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  carbonFootprintResults?: InputMaybe<StringFilter>
+  fieldErrorMsg?: InputMaybe<StringFilter>
+  fieldTypeErrorMsg?: InputMaybe<StringFilter>
+  formErrorMsg?: InputMaybe<StringFilter>
+  fromCity?: InputMaybe<StringFilter>
+  id?: InputMaybe<ItemIdFilter>
+  name?: InputMaybe<StringFilter>
+  nextStepBtn?: InputMaybe<StringFilter>
+  previousStepBtn?: InputMaybe<StringFilter>
+  priceCreditsTitle?: InputMaybe<StringFilter>
+  redirectionBtnUrl?: InputMaybe<StringFilter>
+  redirectionLinkBtn?: InputMaybe<StringFilter>
+  requireSignature?: InputMaybe<BooleanFilter>
+  signatureClear?: InputMaybe<StringFilter>
+  signatureErrorMsg?: InputMaybe<StringFilter>
+  signatureLabel?: InputMaybe<StringFilter>
+  step2Title?: InputMaybe<StringFilter>
+  submitBtnLabel?: InputMaybe<StringFilter>
+  submitErrorMessage?: InputMaybe<StringFilter>
+  submitSuccessMessage?: InputMaybe<StringFilter>
+}
+
+export enum FormCarbonModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  CarbonFootprintResultsAsc = 'carbonFootprintResults_ASC',
+  CarbonFootprintResultsDesc = 'carbonFootprintResults_DESC',
+  FieldErrorMsgAsc = 'fieldErrorMsg_ASC',
+  FieldErrorMsgDesc = 'fieldErrorMsg_DESC',
+  FieldTypeErrorMsgAsc = 'fieldTypeErrorMsg_ASC',
+  FieldTypeErrorMsgDesc = 'fieldTypeErrorMsg_DESC',
+  FormErrorMsgAsc = 'formErrorMsg_ASC',
+  FormErrorMsgDesc = 'formErrorMsg_DESC',
+  FromCityAsc = 'fromCity_ASC',
+  FromCityDesc = 'fromCity_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  NextStepBtnAsc = 'nextStepBtn_ASC',
+  NextStepBtnDesc = 'nextStepBtn_DESC',
+  PreviousStepBtnAsc = 'previousStepBtn_ASC',
+  PreviousStepBtnDesc = 'previousStepBtn_DESC',
+  PriceCreditsTitleAsc = 'priceCreditsTitle_ASC',
+  PriceCreditsTitleDesc = 'priceCreditsTitle_DESC',
+  RedirectionBtnUrlAsc = 'redirectionBtnUrl_ASC',
+  RedirectionBtnUrlDesc = 'redirectionBtnUrl_DESC',
+  RedirectionLinkBtnAsc = 'redirectionLinkBtn_ASC',
+  RedirectionLinkBtnDesc = 'redirectionLinkBtn_DESC',
+  RequireSignatureAsc = 'requireSignature_ASC',
+  RequireSignatureDesc = 'requireSignature_DESC',
+  SignatureClearAsc = 'signatureClear_ASC',
+  SignatureClearDesc = 'signatureClear_DESC',
+  SignatureErrorMsgAsc = 'signatureErrorMsg_ASC',
+  SignatureErrorMsgDesc = 'signatureErrorMsg_DESC',
+  SignatureLabelAsc = 'signatureLabel_ASC',
+  SignatureLabelDesc = 'signatureLabel_DESC',
+  Step2TitleAsc = 'step2Title_ASC',
+  Step2TitleDesc = 'step2Title_DESC',
+  SubmitBtnLabelAsc = 'submitBtnLabel_ASC',
+  SubmitBtnLabelDesc = 'submitBtnLabel_DESC',
+  SubmitErrorMessageAsc = 'submitErrorMessage_ASC',
+  SubmitErrorMessageDesc = 'submitErrorMessage_DESC',
+  SubmitSuccessMessageAsc = 'submitSuccessMessage_ASC',
+  SubmitSuccessMessageDesc = 'submitSuccessMessage_DESC',
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord = RecordInterface & {
+  __typename?: 'FormCarbonRecord'
+  _allFieldErrorMsgLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allFieldTypeErrorMsgLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allFieldsetLocales?: Maybe<
+    Array<FormCarbonModelFieldsetFieldListListNonNullMultiLocaleField>
+  >
+  _allFormErrorMsgLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allNextStepBtnLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allPreviousStepBtnLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSignatureClearLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSignatureErrorMsgLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSignatureLabelLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSubmitBtnLabelLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSubmitErrorMessageLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allSubmitSuccessMessageLocales?: Maybe<Array<StringMultiLocaleField>>
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _locales: Array<SiteLocale>
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  carbonFootprintResults?: Maybe<Scalars['String']['output']>
+  fieldErrorMsg?: Maybe<Scalars['String']['output']>
+  fieldTypeErrorMsg?: Maybe<Scalars['String']['output']>
+  fieldset: Array<FormCarbonModelFieldsetField>
+  formErrorMsg?: Maybe<Scalars['String']['output']>
+  fromCity?: Maybe<Scalars['String']['output']>
+  id: Scalars['ItemId']['output']
+  name?: Maybe<Scalars['String']['output']>
+  nextStepBtn?: Maybe<Scalars['String']['output']>
+  previousStepBtn?: Maybe<Scalars['String']['output']>
+  priceCreditsTitle?: Maybe<Scalars['String']['output']>
+  redirectionBtnUrl?: Maybe<Scalars['String']['output']>
+  redirectionLinkBtn?: Maybe<Scalars['String']['output']>
+  requireSignature?: Maybe<Scalars['BooleanType']['output']>
+  signatureClear?: Maybe<Scalars['String']['output']>
+  signatureErrorMsg?: Maybe<Scalars['String']['output']>
+  signatureLabel?: Maybe<Scalars['String']['output']>
+  step2Title?: Maybe<Scalars['String']['output']>
+  submitBtnLabel?: Maybe<Scalars['String']['output']>
+  submitErrorMessage?: Maybe<Scalars['String']['output']>
+  submitSuccessMessage?: Maybe<Scalars['String']['output']>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllFieldErrorMsgLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllFieldTypeErrorMsgLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllFieldsetLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllFormErrorMsgLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllNextStepBtnLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllPreviousStepBtnLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSignatureClearLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSignatureErrorMsgLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSignatureLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSubmitBtnLabelLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSubmitErrorMessageLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_AllSubmitSuccessMessageLocalesArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordFieldErrorMsgArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordFieldTypeErrorMsgArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordFieldsetArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordFormErrorMsgArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordNextStepBtnArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordPreviousStepBtnArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSignatureClearArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSignatureErrorMsgArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSignatureLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSubmitBtnLabelArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSubmitErrorMessageArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Form Carbon (form_carbon) */
+export type FormCarbonRecordSubmitSuccessMessageArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Form > Checkbox Group (form_checkbox_group) */
 export type FormCheckboxGroupRecord = RecordInterface & {
   __typename?: 'FormCheckboxGroupRecord'
@@ -1568,6 +1909,88 @@ export type FormRecordSubmitSuccessMessageArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Form > Select Cities (form_select_citie) */
+export type FormSelectCitieRecord = RecordInterface & {
+  __typename?: 'FormSelectCitieRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  citySelectionActive?: Maybe<Scalars['BooleanType']['output']>
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+}
+
+/** Block of type Form > Select Cities (form_select_citie) */
+export type FormSelectCitieRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > SelectBox Group (form_selectbox_group) */
+export type FormSelectboxGroupRecord = RecordInterface & {
+  __typename?: 'FormSelectboxGroupRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  checkboxOptions: Array<FormSelectboxRecord>
+  fieldId: Scalars['String']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  required?: Maybe<Scalars['BooleanType']['output']>
+}
+
+/** Block of type Form > SelectBox Group (form_selectbox_group) */
+export type FormSelectboxGroupRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Form > SelectBox (form_selectbox) */
+export type FormSelectboxRecord = RecordInterface & {
+  __typename?: 'FormSelectboxRecord'
+  _createdAt: Scalars['DateTime']['output']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>
+  _isValid: Scalars['BooleanType']['output']
+  _modelApiKey: Scalars['String']['output']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>
+  _updatedAt: Scalars['DateTime']['output']
+  id: Scalars['ItemId']['output']
+  label: Scalars['String']['output']
+  value: Scalars['String']['output']
+  valueNumeric?: Maybe<Scalars['String']['output']>
+}
+
+/** Block of type Form > SelectBox (form_selectbox) */
+export type FormSelectboxRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Form > Signature (form_signature) */
 export type FormSignatureRecord = RecordInterface & {
   __typename?: 'FormSignatureRecord'
@@ -1808,6 +2231,7 @@ export type HomePageModelBodyField =
   | DividerBlockRecord
   | DocumentLinksBlockRecord
   | FormBlockRecord
+  | FormCarbonBlockRecord
   | HeroBlockRecord
   | MapBlockRecord
   | OneColumnTextBlockRecord
@@ -3008,6 +3432,12 @@ export type ImgixParams = {
    */
   skip?: InputMaybe<Scalars['IntType']['input']>
   /**
+   * Bypasses any [DatoCMS Automatic Image Optimization](https://www.datocms.com/docs/cdn-settings/advanced-asset-settings) that might be set up for the project.
+   *
+   * Exercise caution when using this parameter, as it could significantly increase your bandwidth costs.
+   */
+  skipDefaultOptimizations?: InputMaybe<Scalars['BooleanType']['input']>
+  /**
    * Transparency
    *
    * Adds checkerboard behind images which support transparency.
@@ -3783,6 +4213,7 @@ export type PageModelBodyField =
   | DividerBlockRecord
   | DocumentLinksBlockRecord
   | FormBlockRecord
+  | FormCarbonBlockRecord
   | HeroBlockRecord
   | MapBlockRecord
   | OneColumnTextBlockRecord
@@ -4062,6 +4493,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allFootersMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allFormCarbonsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allFormsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allHeadersMeta: CollectionMetadata
@@ -4086,6 +4519,8 @@ export type Query = {
   /** Returns a collection of records */
   allFooters: Array<FooterRecord>
   /** Returns a collection of records */
+  allFormCarbons: Array<FormCarbonRecord>
+  /** Returns a collection of records */
   allForms: Array<FormRecord>
   /** Returns a collection of records */
   allHeaders: Array<HeaderRecord>
@@ -4105,6 +4540,8 @@ export type Query = {
   footer?: Maybe<FooterRecord>
   /** Returns a specific record */
   form?: Maybe<FormRecord>
+  /** Returns a specific record */
+  formCarbon?: Maybe<FormCarbonRecord>
   /** Returns a specific record */
   header?: Maybe<HeaderRecord>
   /** Returns the single instance record */
@@ -4134,6 +4571,12 @@ export type Query_AllAdsMetaArgs = {
 /** The query root for this schema */
 export type Query_AllFootersMetaArgs = {
   filter?: InputMaybe<FooterModelFilter>
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** The query root for this schema */
+export type Query_AllFormCarbonsMetaArgs = {
+  filter?: InputMaybe<FormCarbonModelFilter>
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -4216,6 +4659,16 @@ export type QueryAllFootersArgs = {
   first?: InputMaybe<Scalars['IntType']['input']>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<FooterModelOrderBy>>>
+  skip?: InputMaybe<Scalars['IntType']['input']>
+}
+
+/** The query root for this schema */
+export type QueryAllFormCarbonsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FormCarbonModelFilter>
+  first?: InputMaybe<Scalars['IntType']['input']>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FormCarbonModelOrderBy>>>
   skip?: InputMaybe<Scalars['IntType']['input']>
 }
 
@@ -4313,6 +4766,14 @@ export type QueryFormArgs = {
   filter?: InputMaybe<FormModelFilter>
   locale?: InputMaybe<SiteLocale>
   orderBy?: InputMaybe<Array<InputMaybe<FormModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryFormCarbonArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<FormCarbonModelFilter>
+  locale?: InputMaybe<SiteLocale>
+  orderBy?: InputMaybe<Array<InputMaybe<FormCarbonModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -5248,6 +5709,20 @@ export type TestimonialsBlockTestimonialRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Specifies how to filter text fields */
+export type TextFilter = {
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with the specified field set as blank (null or empty string) */
+  isBlank?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']['input']>
+  /** Filter records based on a regular expression */
+  matches?: InputMaybe<StringMatchesFilter>
+  /** Exclude records based on a regular expression */
+  notMatches?: InputMaybe<StringMatchesFilter>
+}
+
 export type TwoColumnWithImageBlockDefaultModelStructuredTextField = {
   __typename?: 'TwoColumnWithImageBlockDefaultModelStructuredTextField'
   blocks: Array<Scalars['String']['output']>
@@ -5741,13 +6216,32 @@ export type UploadUpdatedAtFilter = {
 
 export type UploadVideoField = {
   __typename?: 'UploadVideoField'
+  alt?: Maybe<Scalars['String']['output']>
+  blurUpThumb?: Maybe<Scalars['String']['output']>
+  blurhash?: Maybe<Scalars['String']['output']>
   duration?: Maybe<Scalars['Int']['output']>
   framerate?: Maybe<Scalars['Int']['output']>
+  height: Scalars['IntType']['output']
   mp4Url?: Maybe<Scalars['String']['output']>
   muxAssetId: Scalars['String']['output']
   muxPlaybackId: Scalars['String']['output']
   streamingUrl: Scalars['String']['output']
+  thumbhash?: Maybe<Scalars['String']['output']>
   thumbnailUrl: Scalars['String']['output']
+  title?: Maybe<Scalars['String']['output']>
+  width: Scalars['IntType']['output']
+}
+
+export type UploadVideoFieldAltArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type UploadVideoFieldBlurUpThumbArgs = {
+  imgixParams?: InputMaybe<ImgixParams>
+  punch?: Scalars['Float']['input']
+  quality?: Scalars['Int']['input']
+  size?: Scalars['Int']['input']
 }
 
 export type UploadVideoFieldMp4UrlArgs = {
@@ -5757,6 +6251,11 @@ export type UploadVideoFieldMp4UrlArgs = {
 
 export type UploadVideoFieldThumbnailUrlArgs = {
   format?: InputMaybe<MuxThumbnailFormatType>
+}
+
+export type UploadVideoFieldTitleArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  locale?: InputMaybe<SiteLocale>
 }
 
 /** Specifies how to filter by width */

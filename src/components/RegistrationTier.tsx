@@ -5,6 +5,7 @@ import { RegistrationTierBlockRecord } from '@/types/generated'
 import { CtaButton } from './CtaButton'
 import { GridContainer } from './GridContainer'
 import IconSelector from './IconSelector/IconSelector'
+import { cn } from '@/utils/clsxMerge'
 
 export const RegistrationTier = (
   props: RegistrationTierBlockRecord & {
@@ -70,7 +71,14 @@ export const RegistrationTier = (
           {/* Early */}
           <div className="flex w-[100%] grow flex-row items-center justify-between border-t border-brand-grey-300 py-2 pl-0 lg:w-[50%] lg:flex-col lg:items-start lg:justify-normal lg:border-l lg:border-t-0 lg:py-0 lg:pl-8">
             <div className="flex flex-col">
-              <p className="mb-2 font-medium text-brand-green">{earlyPrice}</p>
+              <p
+                className={cn(
+                  'mb-2 font-medium',
+                  registrationPeriod === 'early' && 'text-brand-green',
+                )}
+              >
+                {earlyPrice}
+              </p>
               <p className="text-12/[130%] uppercase text-brand-grey-600 md:text-14/[140%]">
                 {earlyLabel}
               </p>
@@ -84,7 +92,14 @@ export const RegistrationTier = (
           {/* Late */}
           <div className="flex w-[100%] grow flex-row items-center justify-between border-t border-brand-grey-300 py-2 pl-0 lg:w-[50%] lg:flex-col lg:items-start lg:justify-normal lg:border-l lg:border-t-0 lg:py-0 lg:pl-8">
             <div className="flex flex-col">
-              <p className="mb-2 font-medium">{latePrice}</p>
+              <p
+                className={cn(
+                  'mb-2 font-medium',
+                  registrationPeriod === 'late' && 'text-brand-green',
+                )}
+              >
+                {latePrice}
+              </p>
               <p className="text-12/[130%] uppercase text-brand-grey-600 md:text-14/[140%]">
                 {lateLabel}
               </p>
