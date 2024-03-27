@@ -8,7 +8,7 @@ import { Locale } from '@/navigation'
 import { getPageBySlugQuery } from '@/lib/datocms/queries/getPageBySlugQuery'
 import { PageProps } from './page'
 
-export const revalidate = 7200 // 2 hours
+export const revalidate = 10 // 2 hours
 
 type LayoutProps = {
   children: React.ReactNode
