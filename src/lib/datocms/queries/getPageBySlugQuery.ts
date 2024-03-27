@@ -25,6 +25,7 @@ import { VIDEO_BLOCK_FRAGMENT } from '@/blocks/VideoBlock/VideoBlock.fragment'
 import { PAST_CONVENTIONS_BLOCK_FRAGMENT } from '@/blocks/PastConventionsBlock/PastConventionsBlock.fragment'
 import { CONVENTION_BLOCK_FRAGMENT } from '@/blocks/ConventionBlock/ConventionBlock.fragment'
 import { FORM_BLOCK_FRAGMENT } from '@/blocks/FormBlock/FormBlock.fragment'
+import { FORM_CARBON_BLOCK_FRAGMENT } from '@/blocks/FormCarbonBlock/FormCarbonBlock.fragment' // line
 import { SPONSOR_LIST_BLOCK_FRAGMENT } from '@/blocks/SponsorListBlock/SponsorListBlock.fragment'
 
 // Shared fragments
@@ -75,6 +76,7 @@ export const getPageBySlugQuery = ({
 		${CONVENTION_BLOCK_FRAGMENT}
 		${STATISTICS_BLOCK_FRAGMENT}
 		${FORM_BLOCK_FRAGMENT}
+    ${FORM_CARBON_BLOCK_FRAGMENT}
 		${ACCORDION_BLOCK_FRAGMENT}
 		${ONE_COLUMN_TEXT_BLOCK_FRAGMENT}
 		${SPONSOR_LIST_BLOCK_FRAGMENT}
@@ -144,6 +146,9 @@ export const getPageBySlugQuery = ({
                 ...AnchorLinksBlockFragment
                 ...DocumentLinksBlockFragment
                 ...TwoColumnsTextBlockFragment
+                ...FormCarbonBlockFragment
+
+            
             }
             footer {
               blocks {

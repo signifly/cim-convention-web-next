@@ -2,8 +2,9 @@ import { AdRecord } from '@/types/generated'
 import { Image as DatoImage } from 'react-datocms'
 import Image from 'next/image'
 
-export const Ad = (props: AdRecord) => {
-  const { image, url } = props
+export const Ad = (props: AdRecord & { googleAdHtml?: string }) => {
+  // Make googleAdHtml prop optional
+  const { image, url, googleAdHtml } = props
   const commonClasses = 'relative flex flex-1 items-center justify-center'
   const imageElement =
     image && image.responsiveImage ? (
@@ -15,10 +16,28 @@ export const Ad = (props: AdRecord) => {
     <>
       {url ? (
         <a href={url} target="_blank" className={commonClasses}>
-          {imageElement}
+          {googleAdHtml ? (
+            <div
+              className="google-ad-box"
+              style={{ backgroundColor: '#f5f5f585' }}
+              dangerouslySetInnerHTML={{ __html: googleAdHtml }}
+            />
+          ) : (
+            imageElement
+          )}
         </a>
       ) : (
-        <div className={commonClasses}>{imageElement}</div>
+        <div className={commonClasses}>
+          {googleAdHtml ? (
+            <div
+              className="google-ad-box"
+              style={{ backgroundColor: '#f5f5f585' }}
+              dangerouslySetInnerHTML={{ __html: googleAdHtml }}
+            />
+          ) : (
+            imageElement
+          )}
+        </div>
       )}
     </>
   )

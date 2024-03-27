@@ -36,6 +36,8 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
     externalLinkPolicies,
     privacyPolicyPage,
     cookiePolicyPage,
+    whistleblowerPolicyLabel,
+    whistleblowerPolicyLink,
   } = props
 
   const [postSubmit, setPostSubmit] = useState<PostSubmit>({
@@ -176,10 +178,21 @@ export function DefaultFooterBlock(props: DefaultFooterBlockRecordExt) {
         <div className="col-span-full mt-6 flex flex-col items-start justify-start gap-y-4 border-t-[1px] border-gray-700 pt-[24px] text-gray-400 lg:flex-row lg:justify-between">
           <p>{copyright}</p>
           <div>
+            {/* {whistleblowerPolicyLink&& <a target="_blank" href={whistleblowerPolicyLink}>{whistleblowerPolicyLabel}</a>} */}
+            {whistleblowerPolicyLink && (
+              <a
+                href={whistleblowerPolicyLink}
+                className="capitalize underline"
+                target="_blank"
+              >
+                {whistleblowerPolicyLabel}
+              </a>
+            )}
+
             {privacyPolicyPage && (
               <a
                 href={privacyPolicyPage.slug}
-                className="capitalize underline"
+                className="ml-6 capitalize underline"
                 target={externalLinkPolicies ? '_blank' : undefined}
               >
                 {privacyPolicyPage.title}
